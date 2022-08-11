@@ -7,7 +7,7 @@
     border-bottom: 1px solid black;
 
     height: 75px;
-    transition: height ease .1s;
+    transition: height ease .2s;
 }
 
 .clockNav-expanded{
@@ -34,7 +34,6 @@
 }
 
 
-
 @keyframes append-animate {
   from{
     transform: translateY(-20px);
@@ -46,20 +45,10 @@
   }
 }
 
-
-@keyframes suffix-animate {
-  from{
-    transform: translateY(0px);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-}
-
 .expandClocksSubContent-expanded {
   animation: append-animate ease .4s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
 }
 
 /* .expandClocksSubContent {
@@ -73,7 +62,12 @@
       /* display:flex; */
       width:260px;
       /* height: 100%; */
-      height: 105px;
+      height: fit-content;
+    }
+
+    .clockNav-expanded{
+      width: 260px;
+      height: fit-content;
     }
   }
   

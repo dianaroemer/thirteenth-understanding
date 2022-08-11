@@ -22,6 +22,8 @@
   .sideBarNav {
     background: #24282a;
     border-right: 1px solid black;
+    max-width: 260px;
+
   }
 }
 
@@ -38,6 +40,7 @@
   .sideBarNav {
     background: #24282a;
     border-right: 1px solid black;
+    max-width: 260px;
   }
 }
 
