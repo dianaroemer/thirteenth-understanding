@@ -1,0 +1,13 @@
+.clockNav {
+    text-align: center;
+
+    padding-top: 15px;
+    padding-bottom: 10px;
+
+    border-bottom: 1px black;
+}
+
+.toggleExpandClocks {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}

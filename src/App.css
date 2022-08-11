@@ -1,6 +1,33 @@
 .App {
   /* text-align: center; */
+  height: 100%;
+  width: 100%;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** 
+
 
 .appNav {
   border-bottom: solid 1px;
@@ -19,17 +46,14 @@
   width: 30%;
   text-align: center;
   max-width: 300px;
-  /* padding-bottom: 0; */
-}
+  padding-bottom: 0;
+} 
 
 
 .titleContainer {
-  /* width: 21rem; */
   text-align:start;
   overflow: break-word;
 }
-
-
 
 
 .navTitle {
@@ -49,11 +73,15 @@
 }
 
 .navClockContainer {
-  /* width: 21rem; */
 }
 
 .navOtherThings {
   text-align: end;
+}
+
+.appContent {
+  display: block;
+  background-color: #333;
 }
 
 @media only screen and (max-width: 768px) {
@@ -64,7 +92,8 @@
   .appNav{
     justify-content: center;
   }
-}
+} 
+*/
 
 
 /* .App-logo {
