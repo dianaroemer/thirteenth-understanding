@@ -141,7 +141,7 @@ function ClockNav(props) {
             encounterSeconds = encounterSeconds + 1;
             encounterTimer = encounterTimer - msInSeconds;
         }
-        let encounterString = `${encounterHours ? `${encounterHours}:` : ''}${encounterMinutes ? `${encounterMinutes}:` : ''}${encounterSeconds ? `${encounterSeconds}` : ''} on this encounter`;
+        let encounterString = `${encounterHours ? `${encounterHours}:` : ''}${encounterMinutes ? `${encounterMinutes}:` : ''}${encounterSeconds ? `${encounterSeconds}` : ''} on encounter`;
 
         setTimeEncounterString(encounterString);
 
@@ -160,7 +160,7 @@ function ClockNav(props) {
             breakSeconds = breakSeconds + 1;
             breakTimer = breakTimer - msInSeconds;
         }
-        let breakString = `${breakHours ? `${breakHours}:` : ''}${breakMinutes ? `${breakMinutes}:` : ''}${breakSeconds ? `${breakSeconds}` : ''} most recent break`;
+        let breakString = `${breakHours ? `${breakHours}:` : ''}${breakMinutes ? `${breakMinutes}:` : ''}${breakSeconds ? `${breakSeconds}` : ''} since break`;
 
         setTimeBreakString(breakString);
     }, [encounterBegan, timeSinceBreak, currentDate])
