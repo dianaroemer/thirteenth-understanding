@@ -67,7 +67,7 @@ function ClockNav(props) {
                     seconds = seconds + 1;
                     remainingMillis = remainingMillis - msInSeconds;
                 }
-                dateString = `${days ? `${days} days, ` : ''} ${hours ? `${hours}:` : ''}${minutes ? `${minutes}:` : ""}${seconds} Remaining`;
+                dateString = `${days ? `${days} days, ` : ''} ${hours ? `${hours}:` : ''}${minutes ? `${minutes}:` : ""}${seconds} remaining`;
                 setHeaderClock(dateString);
             } else { //If the contest has begun, do calculations in here
                 let timeElapsed = currentDate - clockContestStart;
@@ -83,7 +83,7 @@ function ClockNav(props) {
                     seconds = seconds + 1;
                     timeElapsed = timeElapsed - msInSeconds;
                 }
-                dateString = `${hours ? `${hours}:` : ''}${minutes ? `${minutes}:` : ""}${seconds} Elapsed`
+                dateString = `${hours ? `${hours}:` : ''}${minutes ? `${minutes}:` : ""}${seconds} total elapsed`
                 setContestTimeElapsed(dateString)
 
                 // Values here are Actual-1 because code counts 0 as interval when counting down
@@ -91,7 +91,7 @@ function ClockNav(props) {
                 let remainingMinutes = 59 - minutes;
                 let remainingSeconds = 60 - seconds;
 
-                let remainingString = `${remainingHours}:${remainingMinutes}:${remainingSeconds === 60 ? '00' : remainingSeconds} Remaining`
+                let remainingString = `${remainingHours}:${remainingMinutes}:${remainingSeconds === 60 ? '00' : remainingSeconds} remaining`
                 setContestTimeRemaining(remainingString)
             }
             return dateString;
@@ -110,11 +110,11 @@ function ClockNav(props) {
 
     }, [currentDate])
 
-    useEffect( () => {
-        if(contestTimeElapsed) {
-            toggleContestActive(true);
-        }
-    }, [contestTimeElapsed]);
+    // useEffect( () => {
+    //     if(contestTimeElapsed) {
+    //         toggleContestActive(true);
+    //     }
+    // }, [contestTimeElapsed]);
 
     useEffect( () => {
         let encounterTimer = currentDate - encounterBegan;
@@ -154,18 +154,10 @@ function ClockNav(props) {
             breakSeconds = breakSeconds + 1;
             breakTimer = breakTimer - msInSeconds;
         }
-        let breakString = `${breakHours ? `${breakHours}:` : ''}${breakMinutes ? `${breakMinutes}:` : ''}${breakSeconds ? `${breakSeconds}:` : ''} since last break`;
+        let breakString = `${breakHours ? `${breakHours}:` : ''}${breakMinutes ? `${breakMinutes}:` : ''}${breakSeconds ? `${breakSeconds}` : ''} since last break`;
 
         setTimeBreakString(breakString);
-
-
-
-
     }, [encounterBegan, timeSinceBreak, currentDate])
-
-    // useEffect( () => {
-        // let timeSince = currentDate - 
-    // }, [timeSinceBreak])
 
     return (
         <div className='clockNav'
@@ -202,19 +194,64 @@ function ActiveClocks(props) {
     const [altClocksOne, setAltClockOne] = useState();
     const [altClocksTwo, setAltClockTwo] = useState();
     const [altClocksThree, setAltClockThree] = useState();
+    const [cycleClocks, setCycleClocks] = useState(0);
 
     useEffect(() => {
-        setViewClock(props.contestTimeElapsed);
-        setAltClockOne(props.contestTimeRemaining);
-        setAltClockTwo(props.timeSinceBreak);
-        setAltClockThree(props.encounterTimer)
+
+
+        switch (cycleClocks) {
+            case 0:
+                setViewClock(props.contestTimeElapsed);
+                setAltClockOne(props.contestTimeRemaining);
+                setAltClockTwo(props.timeSinceBreak);
+                setAltClockThree(props.encounterTimer)
+                break;
+            case 1:
+                setAltClockThree(props.contestTimeElapsed);
+                setViewClock(props.contestTimeRemaining);
+                setAltClockOne(props.timeSinceBreak);
+                setAltClockTwo(props.encounterTimer)
+                break;
+            case 2:
+                setAltClockTwo(props.contestTimeElapsed);
+                setAltClockThree(props.contestTimeRemaining);
+                setViewClock(props.timeSinceBreak);
+                setAltClockOne(props.encounterTimer)
+                break;
+            case 3:
+                setAltClockOne(props.contestTimeElapsed);
+                setAltClockTwo(props.contestTimeRemaining);
+                setAltClockThree(props.timeSinceBreak);
+                setViewClock(props.encounterTimer)
+                break;
+            default:
+                console.log(`hit default in useEffect, from ActiveClocks in ClockNav.js`)
+                break;
+        }
+
     },[props.contestTimeElapsed, props.contestTimeRemaining, props.timeSinceBreak, props.encounterTimer])
+
+    function handleCycleClocks(e) {
+        e.preventDefault();
+        if(cycleClocks <= 2){
+            setCycleClocks(cycleClocks + 1)
+        } else (
+            setCycleClocks(0)
+        )
+
+        let temp = viewClock;
+        setViewClock(altClocksOne);
+        setAltClockOne(altClocksTwo)
+        setAltClockTwo(altClocksThree);
+        setAltClockThree(temp);
+
+    }
 
     return (
         <div className='expandClocksContent' style={{color:'green'}}>
-            <p>
+            <div className='primaryClock' onClick={e => handleCycleClocks(e)}>
                 {viewClock}
-            </p>
+            </div>
         
             <div className="expandClocks" onClick={e => handleExpandClocks(e)}>
 

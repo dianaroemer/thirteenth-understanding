@@ -7,6 +7,10 @@
     border-bottom: 1px black;
 }
 
+.primaryClock{
+    font-size: x-large;
+}
+
 .toggleExpandClocks {
     padding-bottom: 0;
     margin-bottom: 0;

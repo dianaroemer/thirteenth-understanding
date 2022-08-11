@@ -8,6 +8,8 @@ import ClockNav from './Components/ClockNav';
 
 function App() {
 
+  const [coffeesImbibed, setCoffeesImbibed] = useState(1);
+
   const [darkMode, toggleDarkMode] = useState(true);
   // const [darkStyle, setDarkStyle] = useState({
     // backgroundColor: '',
