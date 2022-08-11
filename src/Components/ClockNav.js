@@ -182,6 +182,7 @@ function ClockNav(props) {
                         encounterTimer={timeEncounterString}
                         expandClocks={expandClocks}
                         handleExpandClocks={handleExpandClocks}
+                        darkMode={props.darkMode}
                         />
                 }
             </div>
@@ -258,34 +259,33 @@ function ActiveClocks(props) {
         
             <div className="expandClocks" onClick={e => props.handleExpandClocks(e)}>
 
-            {!props.expandClocks &&
-            <div className='expandClocksContent'>
-                <p className='toggleExpandClocks' style={{color: 'white'}}>
-                    <FontAwesomeIcon icon={faAngleDown}/>&nbsp;
-                    Show Additional Timers&nbsp;
-                    <FontAwesomeIcon icon={faAngleDown}/>
-                </p>
-            </div>}
+                {!props.expandClocks &&
+                <div className='expandClocksSubContent'>
+                    <p className='toggleExpandClocks' style={props.darkMode ? {color: 'white'} : {color: 'black'}}>
+                        <FontAwesomeIcon icon={faAngleDown}/>&nbsp;
+                        Show Additional Timers&nbsp;
+                        <FontAwesomeIcon icon={faAngleDown}/>
+                    </p>
+                </div>}
 
-            {props.expandClocks && 
-            <div className='expandClocksContent expanded'>
-                <div>
-                    {altClocksOne}
-                </div>
-                <div>
-                    {altClocksTwo}    
-                </div>
-                <div>
-                    {altClocksThree}    
-                </div>
-                
-                <p className='toggleExpandClocks' style={{color: 'white'}}>
-                    <FontAwesomeIcon icon={faAngleUp}/>&nbsp;
-                    Collapse Clocks &nbsp;
-                    <FontAwesomeIcon icon={faAngleUp}/>
-                </p>
-            </div>}
-                
+                {props.expandClocks && 
+                <div className='expandClocksSubContent-expanded'>
+                    <div>
+                        {altClocksOne}
+                    </div>
+                    <div>
+                        {altClocksTwo}    
+                    </div>
+                    <div>
+                        {altClocksThree}    
+                    </div>
+                    <p className='toggleExpandClocks' style={props.darkMode ? {color: 'white'} : {color: 'black'}}>
+                        <FontAwesomeIcon icon={faAngleUp}/>&nbsp;
+                        Collapse Clocks &nbsp;
+                        <FontAwesomeIcon icon={faAngleUp}/>
+                    </p>
+                </div>}
+                    
             </div>
         </div>
     )

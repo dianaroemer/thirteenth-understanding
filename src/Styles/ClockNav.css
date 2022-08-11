@@ -7,7 +7,7 @@
     border-bottom: 1px solid black;
 
     height: 75px;
-    transition: height ease .3s;
+    transition: height ease .1s;
 }
 
 .clockNav-expanded{
@@ -33,12 +33,37 @@
     margin-bottom: 0;
 }
 
-/* .expandClocksContent {
-    height: 75px;
+
+
+@keyframes append-animate {
+  from{
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
 
-.expandClocksContent:expanded {
-    height: 100px;
+
+@keyframes suffix-animate {
+  from{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}
+
+.expandClocksSubContent-expanded {
+  animation: append-animate ease .4s;
+}
+
+/* .expandClocksSubContent {
+  animation: suffix-animate ease .3s
 } */
 
 
