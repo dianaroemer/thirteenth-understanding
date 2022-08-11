@@ -40,10 +40,14 @@ function App() {
 
   return (
     <div className="App"
-      style={darkMode ? {background: '#333', color: '#fff'} : {}}>
+      style={darkMode ? {background: '#33373a', color: '#fff'} : {}}>
 
-      <ClockNav darkMode={darkMode}/>
-
+      <nav className='sideBarNav'>
+        <ClockNav darkMode={darkMode}/>
+        <div>
+          and also this
+        </div>
+      </nav>
       {/* <nav className='appNav'
         style={darkMode ? {background: '#1c1c1c'} : {}}>
 

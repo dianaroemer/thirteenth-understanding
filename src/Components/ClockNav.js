@@ -35,6 +35,12 @@ function ClockNav(props) {
     const [timeBreakString, setTimeBreakString] = useState();
     const [timeEncounterString, setTimeEncounterString] = useState();
     
+    const [expandClocks, toggleExpandClocks] = useState(false);
+    function handleExpandClocks(e) {
+        e.preventDefault();
+        toggleExpandClocks(!expandClocks);
+    }
+
     
     function clockTick() {
         setCurrentDate(new Date())
@@ -135,7 +141,7 @@ function ClockNav(props) {
             encounterSeconds = encounterSeconds + 1;
             encounterTimer = encounterTimer - msInSeconds;
         }
-        let encounterString = `${encounterHours ? `${encounterHours}:` : ''}${encounterMinutes ? `${encounterMinutes}:` : ''}${encounterSeconds ? `${encounterSeconds}:` : ''} spent on this encounter`;
+        let encounterString = `${encounterHours ? `${encounterHours}:` : ''}${encounterMinutes ? `${encounterMinutes}:` : ''}${encounterSeconds ? `${encounterSeconds}` : ''} on this encounter`;
 
         setTimeEncounterString(encounterString);
 
@@ -154,13 +160,13 @@ function ClockNav(props) {
             breakSeconds = breakSeconds + 1;
             breakTimer = breakTimer - msInSeconds;
         }
-        let breakString = `${breakHours ? `${breakHours}:` : ''}${breakMinutes ? `${breakMinutes}:` : ''}${breakSeconds ? `${breakSeconds}` : ''} since last break`;
+        let breakString = `${breakHours ? `${breakHours}:` : ''}${breakMinutes ? `${breakMinutes}:` : ''}${breakSeconds ? `${breakSeconds}` : ''} most recent break`;
 
         setTimeBreakString(breakString);
     }, [encounterBegan, timeSinceBreak, currentDate])
 
     return (
-        <div className='clockNav'
+        <div className={expandClocks ? 'clockNav-expanded' : 'clockNav'}
         style={props.darkMode ? {background: '#1c1c1c', color: '#fff'} : {}}>
             <div className='headerClockContainer'>
                 {clockContestStart - currentDate > 0 &&                     
@@ -174,6 +180,8 @@ function ClockNav(props) {
                         contestTimeRemaining={contestTimeRemaining}
                         timeSinceBreak={timeBreakString}
                         encounterTimer={timeEncounterString}
+                        expandClocks={expandClocks}
+                        handleExpandClocks={handleExpandClocks}
                         />
                 }
             </div>
@@ -183,12 +191,7 @@ function ClockNav(props) {
 
 function ActiveClocks(props) {
 
-    const [expandClocks, toggleExpandClocks] = useState(false);
 
-    function handleExpandClocks(e) {
-        e.preventDefault();
-        toggleExpandClocks(!expandClocks);
-    }
 
     const [viewClock, setViewClock] = useState()
     const [altClocksOne, setAltClockOne] = useState();
@@ -197,8 +200,6 @@ function ActiveClocks(props) {
     const [cycleClocks, setCycleClocks] = useState(0);
 
     useEffect(() => {
-
-
         switch (cycleClocks) {
             case 0:
                 setViewClock(props.contestTimeElapsed);
@@ -244,8 +245,10 @@ function ActiveClocks(props) {
         setAltClockOne(altClocksTwo)
         setAltClockTwo(altClocksThree);
         setAltClockThree(temp);
-
     }
+
+
+
 
     return (
         <div className='expandClocksContent' style={{color:'green'}}>
@@ -253,19 +256,19 @@ function ActiveClocks(props) {
                 {viewClock}
             </div>
         
-            <div className="expandClocks" onClick={e => handleExpandClocks(e)}>
+            <div className="expandClocks" onClick={e => props.handleExpandClocks(e)}>
 
-            {!expandClocks &&
+            {!props.expandClocks &&
             <div className='expandClocksContent'>
-                <p className='toggleExpandClocks'>
+                <p className='toggleExpandClocks' style={{color: 'white'}}>
                     <FontAwesomeIcon icon={faAngleDown}/>&nbsp;
                     Show Additional Timers&nbsp;
                     <FontAwesomeIcon icon={faAngleDown}/>
                 </p>
             </div>}
 
-            {expandClocks && 
-            <div className='expandClocksContent'>
+            {props.expandClocks && 
+            <div className='expandClocksContent expanded'>
                 <div>
                     {altClocksOne}
                 </div>
@@ -276,7 +279,7 @@ function ActiveClocks(props) {
                     {altClocksThree}    
                 </div>
                 
-                <p className='toggleExpandClocks'>
+                <p className='toggleExpandClocks' style={{color: 'white'}}>
                     <FontAwesomeIcon icon={faAngleUp}/>&nbsp;
                     Collapse Clocks &nbsp;
                     <FontAwesomeIcon icon={faAngleUp}/>

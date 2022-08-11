@@ -1,3 +1,4 @@
+
 .App {
   /* text-align: center; */
   height: 100%;
@@ -9,8 +10,36 @@
 
 
 
+@media only screen and (min-width: 769px) {
+  /* For desktop: */
+  .App{
+    display:flex;
+    /* flex-grow: 1; */
+    width:100%;
+    height: 100%;
+  }
+
+  .sideBarNav {
+    background: #24282a;
+    border-right: 1px solid black;
+  }
+}
 
 
+@media only screen and (min-height: 1441px) {
+  /* For vertical monitor desktop: */
+  .App{
+    /* display:flex; */
+    /* flex-grow: 1; */
+    width:100%;
+    height: 100%;
+  }
+
+  .sideBarNav {
+    background: #24282a;
+    border-right: 1px solid black;
+  }
+}
 
 
 
