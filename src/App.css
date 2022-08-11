@@ -12,6 +12,7 @@
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
+  max-height: 120px;
 }
 
 .navContainer {
@@ -27,6 +28,9 @@
   text-align:start;
   overflow: break-word;
 }
+
+
+
 
 .navTitle {
   margin-top: 1rem;
@@ -50,6 +54,16 @@
 
 .navOtherThings {
   text-align: end;
+}
+
+@media only screen and (max-width: 768px) {
+  .titleContainer, .navOtherThings {
+    display: none;
+  }
+
+  .appNav{
+    justify-content: center;
+  }
 }
 
 
