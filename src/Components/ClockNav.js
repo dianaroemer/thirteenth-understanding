@@ -1,6 +1,8 @@
 import { isFocusable } from '@testing-library/user-event/dist/utils';
 import React, {useState, useEffect} from 'react';
 import '../Styles/ClockNav.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 // const clockContestStart = 1661533200000;
 // const clockContestEnd = 1661619600000;
@@ -137,14 +139,20 @@ function ClockNav(props) {
 
                             {!expandClocks &&
                             <div className='expandClocksContent'>
-                                <p className='toggleExpandClocks'>Expand Clocks</p>
+                                <p className='toggleExpandClocks'>
+                                    <FontAwesomeIcon icon={faAngleDown}/>
+                                    Expand Clocks
+                                    <FontAwesomeIcon icon={faAngleDown}/>
+                                </p>
                             </div>}
 
                             {expandClocks && 
                             <div className='expandClocksContent'>
                                 {contestTimeRemaining}
                                 <p className='toggleExpandClocks'>
+                                    <FontAwesomeIcon icon={faAngleUp}/>
                                     Collapse Clocks 
+                                    <FontAwesomeIcon icon={faAngleUp}/>
                                 </p>
                             </div>}
                             
