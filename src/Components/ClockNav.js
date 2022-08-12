@@ -167,7 +167,7 @@ function ClockNav(props) {
     let { menuCheck, handleToggleMenuCheck } = props;
 
     return (
-        <div className={expandClocks ? 'clockNav-expanded' : 'clockNav'}
+        <div className={props.expandClocks ? 'clockNav-expanded' : 'clockNav'}
         style={props.darkMode ? {background: '#1c1c1c', color: '#fff'} : {}}>
             <div className='headerClockContainer'>
                 {clockContestStart - currentDate > 0 &&                     
@@ -181,8 +181,8 @@ function ClockNav(props) {
                         contestTimeRemaining={contestTimeRemaining}
                         timeSinceBreak={timeBreakString}
                         encounterTimer={timeEncounterString}
-                        expandClocks={expandClocks}
-                        handleExpandClocks={handleExpandClocks}
+                        expandClocks={props.expandClocks}
+                        handleExpandClocks={props.handleExpandClocks}
                         darkMode={props.darkMode}
                         />
                 }
@@ -262,7 +262,7 @@ function ActiveClocks(props) {
 
     return (
         <div className='expandClocksContent' style={{color:'green'}}>
-            <div className='primaryClock' onClick={e => handleCycleClocks(e)}>
+            <div className='primaryClock' onClick={e => handleCycleClocks(e)} style={props.darkMode ? {color: '#ad4646'} : {color: 'black'}}>
                 {viewClock}
             </div>
         
@@ -278,7 +278,7 @@ function ActiveClocks(props) {
                 </div>}
 
                 {props.expandClocks && 
-                <div className='expandClocksSubContent-expanded'>
+                <div className='expandClocksSubContent-expanded' style={props.darkMode ? {color: 'green'} : {color: 'black'}}>
                     <div>
                         {altClocksOne}
                     </div>

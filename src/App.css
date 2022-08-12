@@ -3,6 +3,33 @@
   /* text-align: center; */
   height: 100%;
   width: 100%;
+  display: flex;
+}
+
+
+.backgroundTitle{
+
+  color: #5d6164;
+
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 100px;
+  width: 100%;
+  height: calc(50% - 102px);
+  /* top: 0; */
+  /* height: 200%; */
+  text-align: center;
+  pointer-events: none;
+  z-index: 0;
+} 
+
+.sideBarNav {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
 }
 
 .navMenu {
@@ -12,8 +39,8 @@
   visibility: hidden;
   opacity: 0;
   background: #24282a;
-  /* position: ; */
-  /* z-index: 3; */
+  /* position: fixed; */
+  z-index: 100;
 
   transition: opacity .3s ease, height .3s ease;
 }
@@ -24,32 +51,28 @@
   /* height: 50px; */
   /* width: 60px; */
   background: #24282a;
-  height: 270px;
+  height: 285px;
   opacity: 1;
   visibility: visible;
   border-bottom: solid 1px black;
   margin-bottom: 4px;
-
+  z-index: 100;
 
   padding: 5px;
 }
 
-.backgroundTitle{
-
-  color: #5d6164;
 
 
-  display: flex;
-  position: absolute;
+.appContent {
+   padding-top: 102px;
+   transition: padding-top ease .3s;
+   z-index: 1;
+}
 
-
-  flex-direction: column;
-  justify-content: center;
-  font-size: 100px;
-  /* width: auto; */
-  height: 50%;
-  text-align: center;
-} 
+.appContent.expand{
+  padding-top: 152px;
+  z-index: 1;
+}
 
 @media only screen and (min-width: 769px) {
   /* For desktop: */
@@ -77,6 +100,23 @@
   .appContent{
     margin-left: 260px;
     width: auto;
+    padding-top: 0;
+  }
+
+  .appContent.expand{
+    padding-top: 0;
+  }
+
+  .backgroundTitle{
+
+    height: 100px;
+    width: 160px;
+
+    display: block;
+    position: absolute;
+    left: calc((100% - 260px)/2 + 260px - 80px); /* This calculation centers the title card by halving appContent viewport, offsetting left by the width of the navMenu, and subtracting half the size of the titleObject*/
+    bottom: calc(50% - 50px);
+    /* flex-direction: row; */
   }
 
   /* .backgroundTitle{

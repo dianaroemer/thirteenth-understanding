@@ -47,6 +47,10 @@
   animation: append-animate ease .4s;
 }
 
+.mobileMenuIconContainer {
+  width: 2px;
+  height: 2px;
+}
 
 /* --------------------- The follow section animates the menu on mobile */
 #menuInput {

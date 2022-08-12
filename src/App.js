@@ -90,6 +90,24 @@ function App() {
     console.log(blindMode)
   }
   
+  const [expandClocks, toggleExpandClocks] = useState(false);
+  function handleExpandClocks(e) {
+      e.preventDefault();
+      toggleExpandClocks(!expandClocks);
+  }
+  const [appContentClassString, setAppContentClassString] = useState('appContent');
+  useEffect(()=>{
+    if(expandClocks){
+      setAppContentClassString('appContent expand')
+    } else {
+      setAppContentClassString('appContent')
+    }
+    console.log('here')
+
+    console.log(appContentClassString)
+
+  }, [expandClocks])
+
 
   return (
     <div className="App"
@@ -99,11 +117,13 @@ function App() {
           XIII
       </div> */}
 
-      <nav className='sideBarNav'>
+      <div className='sideBarNav' style={darkMode ? {background: '#24282a'} : {background: 'grey'}}>
         <ClockNav darkMode={darkMode} 
           isMobileViewport={isMobileViewport}
           menuCheck={menuCheck}
           handleToggleMenuCheck={handleToggleMenuCheck}
+          expandClocks={expandClocks}
+          handleExpandClocks={handleExpandClocks}
           />
         {/* If you aren't on mobile and menuCheck isn't true, show menu at all times  */}
         { (!isMobileViewport) && 
@@ -122,11 +142,11 @@ function App() {
             darkMode={darkMode}/>
         </div>}
 
-      </nav>
+      </div>
 
 
 
-      <div className='appContent'>
+      <div className={appContentClassString}>
        <button onClick={e => handleDarkModeToggle(e)}>
             Darkmode Toggle</button>
 

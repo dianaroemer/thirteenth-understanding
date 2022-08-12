@@ -10,6 +10,9 @@ function Menu(props) {
     return (
         <div className='menuContainer'>
             {/* I am Menu */}
+            <div className='menuHeader' style={{color: 'white'}}>
+                Encounters
+            </div>
             <div className='navMenuSlot' onClick={e => props.handleClickNavEncounter(e, 'e1')}>
                 <div className='navMenuEncounterTitle'>
                     {(!props.blindMode || props.seenEncounters.e1) ? 'The Court of Oryx' : '? ? ? ? ? ? ? ? ? ?'}
