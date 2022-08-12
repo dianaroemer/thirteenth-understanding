@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter,
+          Routes,
+          Route
+         } from "react-router-dom";
 import './index.css';
 import App from './App';
+import E1 from './Components/kf/E1';
+import E2 from './Components/kf/E2';
 import '.'
 
 // import reportWebVitals from './reportWebVitals';
@@ -10,9 +15,16 @@ import '.'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <BrowserRouter> */}
-      <App />
-    {/* </BrowserRouter> */}
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<App />}>
+        <Route path="kf/e1" element={<E1 />} />
+        <Route path="kf/e2" element={<E2 />} />
+
+      </Route>
+    </Routes>
+      {/* <App /> */}
+    </BrowserRouter>
   </React.StrictMode>
 );
 

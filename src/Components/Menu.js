@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Outlet, Link} from 'react-router-dom'
 import '../Styles/Menu.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faXmark  } from '@fortawesome/free-solid-svg-icons';
@@ -15,7 +16,8 @@ function Menu(props) {
             </div>
             <div className='navMenuSlot' onClick={e => props.handleClickNavEncounter(e, 'e1')}>
                 <div className='navMenuEncounterTitle'>
-                    {(!props.blindMode || props.seenEncounters.e1) ? 'The Court of Oryx' : '? ? ? ? ? ? ? ? ? ?'}
+                <Link to="/kf/e1">E1</Link>
+                    {/* {(!props.blindMode || props.seenEncounters.e1) ? 'The Court of Oryx' : '? ? ? ? ? ? ? ? ? ?'} */}
                 </div>
                 <div className='navMenuEncounterCheck'>
                     <FontAwesomeIcon icon={faCheck} style={{color:'green'}}/>
@@ -24,7 +26,8 @@ function Menu(props) {
 
             <div className='navMenuSlot' onClick={e => props.handleClickNavEncounter(e, 'e2')}>
                 <div className='navMenuEncounterTitle'>
-                    {(!props.blindMode || props.seenEncounters.e2) ? 'Totem Ships Jumping Puzzle' : '? ? ? ? ? ? ? ? ? ?'}
+                <Link to="/kf/e2">E2</Link>
+                    {/* {(!props.blindMode || props.seenEncounters.e2) ? 'Totem Ships Jumping Puzzle' : '? ? ? ? ? ? ? ? ? ?'} */}
                 </div>
                 <div className='navMenuEncounterCheck'>
                     <FontAwesomeIcon icon={faXmark} style={{color:'red'}}/>

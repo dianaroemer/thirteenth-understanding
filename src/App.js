@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import React, {useEffect, useState} from 'react';
-import {link} from "react-router-dom";
+import {Outlet, Link,} from "react-router-dom";
 import './App.css';
 
 import ClockNav from './Components/ClockNav';
@@ -9,13 +9,13 @@ import Menu from './Components/Menu';
 
 function App() {
 
-  const [coffeesImbibed, setCoffeesImbibed] = useState(2);
+  const [coffeesImbibed, setCoffeesImbibed] = useState(3);
 
   const [darkMode, toggleDarkMode] = useState(true);
   function handleDarkModeToggle(e){
     e.preventDefault();
     toggleDarkMode(!darkMode);
-    console.log(window.innerWidth);
+    // console.log(window.innerWidth);
   }
 
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth)
@@ -78,6 +78,7 @@ function App() {
       e9: true,
       e10: true,
   })
+  console.log(Location);
   }
   function handleClickNavEncounter(e, targetEncounter){
     e.preventDefault();
@@ -85,9 +86,6 @@ function App() {
       ...seenEncounters,
       [targetEncounter]: true,
     })
-    console.log('here');
-    console.log(seenEncounters)
-    console.log(blindMode)
   }
   
   const [expandClocks, toggleExpandClocks] = useState(false);
@@ -102,10 +100,6 @@ function App() {
     } else {
       setAppContentClassString('appContent')
     }
-    console.log('here')
-
-    console.log(appContentClassString)
-
   }, [expandClocks])
 
 
@@ -147,6 +141,9 @@ function App() {
 
 
       <div className={appContentClassString}>
+
+          <Outlet />
+
        <button onClick={e => handleDarkModeToggle(e)}>
             Darkmode Toggle</button>
 
