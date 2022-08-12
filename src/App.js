@@ -1,9 +1,10 @@
 import logo from './logo.svg';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {link} from "react-router-dom";
 import './App.css';
 
 import ClockNav from './Components/ClockNav';
+import Menu from './Components/Menu';
 
 
 function App() {
@@ -11,39 +12,35 @@ function App() {
   const [coffeesImbibed, setCoffeesImbibed] = useState(1);
 
   const [darkMode, toggleDarkMode] = useState(true);
-  // const [darkStyle, setDarkStyle] = useState({
-    // backgroundColor: '',
-    // color: '',
-  // })
-
   function handleDarkModeToggle(e){
     e.preventDefault();
     toggleDarkMode(!darkMode);
-    
-    // if(darkMode) {
-    //   setDarkStyle({
-    //     backgroundColor: '',
-    //     color: '',
-    //   })
-    //   toggleDarkMode(!darkMode);
-    // } else {
-    //   setDarkStyle({
-    //     backgroundColor: '#333',
-    //     color: '#fff',
-    //   })
-    //   toggleDarkMode(!darkMode);
-    // }
+    console.log(window.innerWidth);
   }
 
+  const [viewportWidth, setViewportWidth] = useState(window.innerWidth)
+  window.onresize = handleWindowResize
+  function handleWindowResize() {
+    // console.log(window.innerHeight, window.innerWidth);
+    setViewportWidth(window.innerWidth);
+  }
 
-
+  const [isMobileViewport, toggleMobileViewport] = useState((window.innerWidth > 768))
+  useEffect(() => {
+    if(viewportWidth > 768) {
+      toggleMobileViewport(false)
+    } else {
+      toggleMobileViewport(true)
+    }
+  }, [viewportWidth])
 
   return (
     <div className="App"
       style={darkMode ? {background: '#33373a', color: '#fff'} : {}}>
 
       <nav className='sideBarNav'>
-        <ClockNav darkMode={darkMode}/>
+        <ClockNav darkMode={darkMode} isMobileViewport={isMobileViewport}/>
+        <Menu />
         <div>
           and also this
         </div>

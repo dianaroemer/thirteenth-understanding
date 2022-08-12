@@ -6,11 +6,11 @@
 
     border-bottom: 1px solid black;
 
-    height: fit-content;
-    transition: height ease .2s;
+    height: 75px;
+    transition: all ease .2s;
 }
 
-.clockNav-expanded{
+.clockNav-expanded {
     text-align: center;
 
     padding-top: 15px;
@@ -18,11 +18,9 @@
 
     border-bottom: 1px solid black;
 
-    height: fit-content;
-    transition: height ease .3s;
-
+    height: 125px;
+    transition: all ease .3s;
 }
-
 
 .primaryClock{
     font-size: xx-large;
@@ -51,23 +49,129 @@
   animation-direction: alternate;
 }
 
-/* .expandClocksSubContent {
-  animation: suffix-animate ease .3s
-} */
+#menuInput {
+  display:none;
+  background: #898b8d;
+}
+
+.menuIcon {
+  /* background: #1C1C1C; */
+  /* background: purple; */
+  cursor: pointer;
+  display: block;
+  height: 24px;
+  padding: 16px;
+  width: 24px;
+  overflow: none;
+}
+
+.menuIcon {
+  position: relative;
+  z-index: 100;
+  bottom: 40px;
+  left: 5px;
+}
+
+.menuIcon .subMenu,
+.menuIcon .subMenu::before,
+.menuIcon .subMenu::after {
+  background: #9FB1BD;
+  content: '';
+  display: block;
+  height: 2px;
+  position: absolute;
+  transition: background ease .3s,
+   top ease .3s .3s,
+   transform ease .3s;
+  width: 30px;
+}
+
+.menuIcon:hover .subMenu,
+.menuIcon:hover .subMenu::before,
+.menuIcon:hover .subMenu::after {
+  background: #CBD0D0;
+}
+
+.menuIcon .subMenu {
+  left: 18px;
+  top: 27px;
+}
+
+.menuIcon .subMenu::before {
+  top: -6px;
+}
+
+.menuIcon .subMenu::after {
+  top: 6px;
+}
+
+#menuInput:checked + .menuIcon .subMenu {
+  background: transparent;
+}
+
+#menuInput:checked + .menuIcon .subMenu::before {
+  transform: rotate(45deg);
+}
+
+#menuInput:checked + .menuIcon .subMenu::after {
+  transform: rotate(-45deg);
+}
+
+#menuInput:checked + .menuIcon .subMenu::before,
+#menuInput:checked + .menuIcon .subMenu::after {
+  top: 0;
+  transition: top ease .3s, transform ease .3s .3s;
+}
+
+@media only screen and (max-width: 425px) {
+  label.menuIcon {
+    left: 15px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  label.menuIcon {
+    left: 10px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+
+  .primaryClock{
+    font-size: x-large;
+  }
+
+  label.menuIcon {
+    left: 0px;
+    right: 12px;
+  }
+}
+
+
+
+
 
 
 @media only screen and (min-width: 769px) {
     /* For desktop: */
+    .primaryClock{
+      font-size: x-large;
+    }
+    
     .clockNav{
       /* display:flex; */
       width:260px;
       /* height: 100%; */
-      height: fit-content;
+      height: 60px;
     }
 
     .clockNav-expanded{
       width: 260px;
-      height: fit-content;
+      height: 110px;
+    }
+
+    label.menuIcon {
+      display: none;
     }
   }
   

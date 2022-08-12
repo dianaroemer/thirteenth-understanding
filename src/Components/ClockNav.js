@@ -165,6 +165,13 @@ function ClockNav(props) {
         setTimeBreakString(breakString);
     }, [encounterBegan, timeSinceBreak, currentDate])
 
+
+    const [menuCheck, toggleMenuCheck] = useState(false);
+    function handleToggleMenuCheck(e){
+        toggleMenuCheck(!menuCheck);
+    }
+
+
     return (
         <div className={expandClocks ? 'clockNav-expanded' : 'clockNav'}
         style={props.darkMode ? {background: '#1c1c1c', color: '#fff'} : {}}>
@@ -184,6 +191,14 @@ function ClockNav(props) {
                         handleExpandClocks={handleExpandClocks}
                         darkMode={props.darkMode}
                         />
+                }
+                {props.isMobileViewport && 
+                    <div className='mobileMenuIconContainer'>
+                        <input type="checkbox" id="menuInput" checked={menuCheck} onChange={e => handleToggleMenuCheck(e)}/>
+                        <label className="menuIcon" htmlFor='menuInput'>
+                            <div className="subMenu"></div>
+                        </label>
+                    </div>
                 }
             </div>
         </div>
