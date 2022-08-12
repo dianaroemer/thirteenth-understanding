@@ -8,6 +8,7 @@
 .navMenu {
   height: 0px;
   overflow: hidden;
+  visibility: hidden;
   opacity: 0;
   background: purple;
   /* position: ; */
@@ -22,6 +23,7 @@
   background: purple;
   height: 90px;
   opacity: 1;
+  visibility: visible;
 }
 
 

@@ -34,6 +34,7 @@ function App() {
     }
   }, [viewportWidth])
 
+  
   const [menuCheck, toggleMenuCheck] = useState(false);
   function handleToggleMenuCheck(e){
       toggleMenuCheck(!menuCheck);
@@ -47,8 +48,6 @@ function App() {
       setNavClassesString('navMenu')
     }
   }, [menuCheck])
-
-
 
 
   return (
