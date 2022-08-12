@@ -288,7 +288,7 @@ function ActiveClocks(props) {
                     <div>
                         {altClocksThree}    
                     </div>
-                    <p className='toggleExpandClocks' style={props.darkMode ? {color: 'white'} : {color: 'black'}}>
+                    <p className='toggleExpandClocks expanded' style={props.darkMode ? {color: 'white'} : {color: 'black'}}>
                         <FontAwesomeIcon icon={faAngleUp}/>&nbsp;
                         Collapse Clocks &nbsp;
                         <FontAwesomeIcon icon={faAngleUp}/>

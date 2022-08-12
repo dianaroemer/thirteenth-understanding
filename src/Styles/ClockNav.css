@@ -50,23 +50,25 @@
 .mobileMenuIconContainer {
   width: 2px;
   height: 2px;
+  /* transition: all ease .3s; */
 }
 
 /* --------------------- The follow section animates the menu on mobile */
 #menuInput {
   display:none;
   background: #898b8d;
+  /* transition: all ease .3s; */
 }
 
 .menuIcon {
   /* background: #1C1C1C; */
-  /* background: purple; */
   cursor: pointer;
   display: block;
   height: 24px;
   padding: 16px;
   width: 24px;
   overflow: none;
+  /* transition: all ease .3s; */
 }
 
 .menuIcon {
@@ -74,6 +76,7 @@
   z-index: 100;
   bottom: 40px;
   left: 5px;
+  /* transition: all ease .3s; */
 }
 
 .menuIcon .subMenu,
