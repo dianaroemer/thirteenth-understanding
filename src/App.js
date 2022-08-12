@@ -95,6 +95,10 @@ function App() {
     <div className="App"
       style={darkMode ? {background: '#33373a', color: '#fff'} : {}}>
 
+      {/* <div className='backgroundTitle'>
+          XIII
+      </div> */}
+
       <nav className='sideBarNav'>
         <ClockNav darkMode={darkMode} 
           isMobileViewport={isMobileViewport}
@@ -120,6 +124,8 @@ function App() {
 
       </nav>
 
+
+
       <div className='appContent'>
        <button onClick={e => handleDarkModeToggle(e)}>
             Darkmode Toggle</button>
@@ -138,9 +144,14 @@ function App() {
           </button>
         </div>
         
+        <div className='backgroundTitle'>
+          XIII
+        </div>
+
 
 
       </div>
+
     </div>
   );
 }

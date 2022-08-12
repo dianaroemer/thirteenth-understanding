@@ -6,17 +6,20 @@
 }
 
 .navMenu {
+  /* position:sticky; */
   height: 0px;
   overflow: hidden;
   visibility: hidden;
   opacity: 0;
   background: #24282a;
   /* position: ; */
+  /* z-index: 3; */
 
   transition: opacity .3s ease, height .3s ease;
 }
 
 .navMenu.open {
+  /* position:sticky; */
   color:green;
   /* height: 50px; */
   /* width: 60px; */
@@ -27,16 +30,33 @@
   border-bottom: solid 1px black;
   margin-bottom: 4px;
 
+
   padding: 5px;
 }
 
+.backgroundTitle{
+
+  color: #5d6164;
+
+
+  display: flex;
+  position: absolute;
+
+
+  flex-direction: column;
+  justify-content: center;
+  font-size: 100px;
+  /* width: auto; */
+  height: 50%;
+  text-align: center;
+} 
 
 @media only screen and (min-width: 769px) {
   /* For desktop: */
   .App{
     display:flex;
     /* flex-grow: 1; */
-    width:100%;
+    width: 100%;
     height: 100%;
   }
 
@@ -46,33 +66,27 @@
     max-width: 260px;
     border-bottom: none;
     margin-bottom: 0;
+    position: fixed;
+    height: 100%;
   }
 
   .navMenu.open {
     border: none;
   }
-}
 
-
-@media only screen and (min-height: 1441px) {
-  /* For vertical monitor desktop: */
-  .App{
-    /* display:flex; */
-    /* flex-grow: 1; */
-    width:100%;
-    height: 100%;
+  .appContent{
+    margin-left: 260px;
+    width: auto;
   }
 
-  .sideBarNav {
-    background: #24282a;
-    border-right: 1px solid black;
-    max-width: 260px;
-  }
+  /* .backgroundTitle{
+    font-size: 120px;
+    height: 100vh;
+    width: 100vh;
+    overflow:hidden;
+    margin-left: 260px;
+  } */
 }
-
-
-
-
 
 
 
