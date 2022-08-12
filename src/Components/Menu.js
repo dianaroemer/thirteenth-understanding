@@ -12,12 +12,12 @@ function Menu(props) {
         <div className='menuContainer'>
             {/* I am Menu */}
             <div className='menuHeader' style={{color: 'white'}}>
-                Encounters
+                <Link to="/">Encounters</Link>
             </div>
             <div className='navMenuSlot' onClick={e => props.handleClickNavEncounter(e, 'e1')}>
                 <div className='navMenuEncounterTitle'>
-                <Link to="/kf/e1">E1</Link>
-                    {/* {(!props.blindMode || props.seenEncounters.e1) ? 'The Court of Oryx' : '? ? ? ? ? ? ? ? ? ?'} */}
+                <Link to="/kf/e1">{(!props.blindMode || props.seenEncounters.e1) ? 'The Court of Oryx' : '? ? ? ? ? ? ? ? ? ?'}</Link>
+
                 </div>
                 <div className='navMenuEncounterCheck'>
                     <FontAwesomeIcon icon={faCheck} style={{color:'green'}}/>
@@ -26,8 +26,8 @@ function Menu(props) {
 
             <div className='navMenuSlot' onClick={e => props.handleClickNavEncounter(e, 'e2')}>
                 <div className='navMenuEncounterTitle'>
-                <Link to="/kf/e2">E2</Link>
-                    {/* {(!props.blindMode || props.seenEncounters.e2) ? 'Totem Ships Jumping Puzzle' : '? ? ? ? ? ? ? ? ? ?'} */}
+                <Link to="/kf/e2">{(!props.blindMode || props.seenEncounters.e2) ? 'Totem Ships Jumping Puzzle' : '? ? ? ? ? ? ? ? ? ?'}</Link>
+
                 </div>
                 <div className='navMenuEncounterCheck'>
                     <FontAwesomeIcon icon={faXmark} style={{color:'red'}}/>
