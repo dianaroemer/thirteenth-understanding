@@ -4,20 +4,20 @@ import '../Styles/ClockNav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
-// const clockContestStart = 1661533200000;
-// const clockContestEnd = 1661619600000;
-
-const clockContestStart = 1660201149000;
-const clockContestEnd = 1660283681000;
-
-
 const msInDays = 86400000;
 const msInHours = 3600000;
 const msInMinutes = 60000;
 const msInSeconds = 1000;
 
-const encounterBegan = new Date(1660201801000)
-const timeSinceBreak = new Date(1660201201000)
+// const clockContestStart = 1661533200000;
+// const clockContestEnd = 1661619600000;
+
+// Temp values for development mode
+const clockContestStart = 1660287718000;
+const clockContestEnd = 1660283681000;
+
+const encounterBegan = new Date(1660287718000)
+const timeSinceBreak = new Date(1660289761000)
 
 
 function ClockNav(props) {

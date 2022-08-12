@@ -45,10 +45,10 @@
 
 .expandClocksSubContent-expanded {
   animation: append-animate ease .4s;
-  animation-iteration-count: 1;
-  animation-direction: alternate;
 }
 
+
+/* --------------------- The follow section animates the menu on mobile */
 #menuInput {
   display:none;
   background: #898b8d;
@@ -123,6 +123,9 @@
   transition: top ease .3s, transform ease .3s .3s;
 }
 
+/* ------------- Media queries for desktop viewing */
+
+
 @media only screen and (max-width: 425px) {
   label.menuIcon {
     left: 15px;
@@ -148,10 +151,6 @@
 }
 
 
-
-
-
-
 @media only screen and (min-width: 769px) {
     /* For desktop: */
     .primaryClock{
@@ -167,21 +166,11 @@
 
     .clockNav-expanded{
       width: 260px;
-      height: 110px;
+      height: 120px;
     }
 
     label.menuIcon {
       display: none;
     }
 }
-  
-  @media only screen and (min-height: 1441px) {
-    /* For vertical monitor desktop: */
-    /* .App{ */
-      /* display:flex; */
-      /* flex-grow: 1; */
-      /* width:100%; */
-      /* height: 100%; */
-    /* } */ 
-  }
   

@@ -9,7 +9,7 @@ import Menu from './Components/Menu';
 
 function App() {
 
-  const [coffeesImbibed, setCoffeesImbibed] = useState(1);
+  const [coffeesImbibed, setCoffeesImbibed] = useState(2);
 
   const [darkMode, toggleDarkMode] = useState(true);
   function handleDarkModeToggle(e){
@@ -34,12 +34,11 @@ function App() {
     }
   }, [viewportWidth])
 
-  
+  // Functionality for toggling animated navMenu in mobile and desktop
   const [menuCheck, toggleMenuCheck] = useState(false);
   function handleToggleMenuCheck(e){
       toggleMenuCheck(!menuCheck);
   }
-
   const [navClassesString, setNavClassesString] = useState('navMenu')
   useEffect( () => {
     if(menuCheck) {
@@ -49,6 +48,48 @@ function App() {
     }
   }, [menuCheck])
 
+  // Functionality for managing blind mode - hiding information from users until it's appropriately clicked on or enabled by disabling blind mode
+  const [blindMode, toggleBlindMode] = useState(true);
+  const [seenEncounters, setSeenEncounters] = useState({
+    e1: false,
+    e2: false,
+    e3: false,
+    e4: false,
+    e5: false,
+    e6: false,
+    e7: false,
+    e8: false,
+    e9: false,
+    e10: false,
+  })
+  function handleToggleBlindMode(e) {
+    e.preventDefault();
+    toggleBlindMode(!blindMode)
+    console.log(seenEncounters)
+    setSeenEncounters({
+      e1: true,
+      e2: true,
+      e3: true,
+      e4: true,
+      e5: true,
+      e6: true,
+      e7: true,
+      e8: true,
+      e9: true,
+      e10: true,
+  })
+  }
+  function handleClickNavEncounter(e, targetEncounter){
+    e.preventDefault();
+    setSeenEncounters({
+      ...seenEncounters,
+      [targetEncounter]: true,
+    })
+    console.log('here');
+    console.log(seenEncounters)
+    console.log(blindMode)
+  }
+  
 
   return (
     <div className="App"
@@ -61,28 +102,23 @@ function App() {
           handleToggleMenuCheck={handleToggleMenuCheck}
           />
         {/* If you aren't on mobile and menuCheck isn't true, show menu at all times  */}
-        { (!isMobileViewport && !menuCheck) && 
-          <div className='navMenu'>
-            <Menu />
+        { (!isMobileViewport) && 
+          <div className='navMenu open'>
+            <Menu blindMode={blindMode}
+              seenEncounters={seenEncounters}
+              handleClickNavEncounter={handleClickNavEncounter}
+              darkMode={darkMode}/>
           </div>}
         {/* If you are on mobile, this menu shows */}
+        {isMobileViewport && 
         <div className={navClassesString}>
-          <Menu/>
-        </div>
-        <div>
-          and also this
-        </div>
+          <Menu blindMode={blindMode}
+            seenEncounters={seenEncounters}
+            handleClickNavEncounter={handleClickNavEncounter}
+            darkMode={darkMode}/>
+        </div>}
 
       </nav>
-      {/* <nav className='appNav'
-        style={darkMode ? {background: '#1c1c1c'} : {}}>
-
-        <div className='navClockContainer navContainer'>
-          <div className='navClock'>
-            CLOCK
-          </div>
-        </div>
-      </nav> */}
 
       <div className='appContent'>
        <button onClick={e => handleDarkModeToggle(e)}>
@@ -92,30 +128,19 @@ function App() {
           <p>
             something here
           </p>
-          <p> 
-            and here
-          </p>
         </div>
-      <div className='toolBox'>
-        Expand Toolbox
-      </div>
+        <div className='toolBox'>
+          Expand Toolbox
+        </div>
+        <div className='blindModeContainer'>
+          <button onClick={e=> handleToggleBlindMode(e)}>
+            Toggle Blind Run Mode
+          </button>
+        </div>
+        
+
 
       </div>
-
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
     </div>
   );
 }

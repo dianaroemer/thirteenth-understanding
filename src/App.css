@@ -10,7 +10,7 @@
   overflow: hidden;
   visibility: hidden;
   opacity: 0;
-  background: purple;
+  background: #24282a;
   /* position: ; */
 
   transition: opacity .3s ease, height .3s ease;
@@ -20,10 +20,14 @@
   color:green;
   /* height: 50px; */
   /* width: 60px; */
-  background: purple;
-  height: 90px;
+  background: #24282a;
+  height: 270px;
   opacity: 1;
   visibility: visible;
+  border-bottom: solid 1px black;
+  margin-bottom: 4px;
+
+  padding: 5px;
 }
 
 
@@ -40,7 +44,12 @@
     background: #24282a;
     border-right: 1px solid black;
     max-width: 260px;
+    border-bottom: none;
+    margin-bottom: 0;
+  }
 
+  .navMenu.open {
+    border: none;
   }
 }
 
