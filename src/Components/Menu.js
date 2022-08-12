@@ -5,11 +5,6 @@ import '../Styles/Menu.css';
 function Menu() {
 
 
-    const [menuCheck, toggleMenuCheck] = useState(false);
-    function handleToggleMenuCheck(e){
-        toggleMenuCheck(!menuCheck);
-    }
-
     return (
         <div className='menuContainer'>
             I am Menu, nihao are ya

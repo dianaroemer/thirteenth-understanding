@@ -40,7 +40,6 @@ function ClockNav(props) {
         e.preventDefault();
         toggleExpandClocks(!expandClocks);
     }
-
     
     function clockTick() {
         setCurrentDate(new Date())
@@ -116,12 +115,6 @@ function ClockNav(props) {
 
     }, [currentDate])
 
-    // useEffect( () => {
-    //     if(contestTimeElapsed) {
-    //         toggleContestActive(true);
-    //     }
-    // }, [contestTimeElapsed]);
-
     useEffect( () => {
         let encounterTimer = currentDate - encounterBegan;
         let breakTimer = currentDate - timeSinceBreak;
@@ -166,11 +159,12 @@ function ClockNav(props) {
     }, [encounterBegan, timeSinceBreak, currentDate])
 
 
-    const [menuCheck, toggleMenuCheck] = useState(false);
-    function handleToggleMenuCheck(e){
-        toggleMenuCheck(!menuCheck);
-    }
+    // const [menuCheck, toggleMenuCheck] = useState(false);
+    // function handleToggleMenuCheck(e){
+        // toggleMenuCheck(!menuCheck);
+    // }
 
+    let { menuCheck, handleToggleMenuCheck } = props;
 
     return (
         <div className={expandClocks ? 'clockNav-expanded' : 'clockNav'}

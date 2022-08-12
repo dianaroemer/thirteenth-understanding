@@ -34,16 +34,34 @@ function App() {
     }
   }, [viewportWidth])
 
+  const [menuCheck, toggleMenuCheck] = useState(false);
+  function handleToggleMenuCheck(e){
+      toggleMenuCheck(!menuCheck);
+  }
+
   return (
     <div className="App"
       style={darkMode ? {background: '#33373a', color: '#fff'} : {}}>
 
       <nav className='sideBarNav'>
-        <ClockNav darkMode={darkMode} isMobileViewport={isMobileViewport}/>
-        <Menu />
+        <ClockNav darkMode={darkMode} 
+          isMobileViewport={isMobileViewport}
+          menuCheck={menuCheck}
+          handleToggleMenuCheck={handleToggleMenuCheck}
+          />
+        {/* If you aren't on mobile and menuCheck isn't true, show menu at all times  */}
+        { (!isMobileViewport && !menuCheck) && 
+          <div className='navMenu'>
+            <Menu />
+          </div>}
+        {/*  */}
+        {menuCheck && <div className='navMenu'>
+          <Menu/>
+          </div>}
         <div>
           and also this
         </div>
+
       </nav>
       {/* <nav className='appNav'
         style={darkMode ? {background: '#1c1c1c'} : {}}>
