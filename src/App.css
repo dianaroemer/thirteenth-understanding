@@ -42,9 +42,10 @@
   /* position: fixed; */
   z-index: 100;
 
-  transform: translateY(-20px);
+  transform: translateY(-30px);
 
   transition: opacity .3s ease, height .3s ease, transform .3s ease;
+  /* transition: all .3s ease */
 }
 
 .navMenu.open {
