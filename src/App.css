@@ -42,21 +42,26 @@
   /* position: fixed; */
   z-index: 100;
 
-  transition: opacity .3s ease, height .3s ease;
+  transform: translateY(-20px);
+
+  transition: opacity .3s ease, height .3s ease, transform .3s ease;
 }
 
 .navMenu.open {
   /* position:sticky; */
-  color:green;
+  /* color:green; */
   /* height: 50px; */
   /* width: 60px; */
-  background: #24282a;
+  /* background: #24282a; */
   height: 285px;
   opacity: 1;
   visibility: visible;
   border-bottom: solid 1px black;
   margin-bottom: 4px;
   z-index: 100;
+
+  transform: translateY(0px);
+
 
   padding: 5px;
 }
