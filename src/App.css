@@ -5,6 +5,24 @@
   width: 100%;
 }
 
+.navMenu {
+  height: 0px;
+  overflow: hidden;
+  opacity: 0;
+  background: purple;
+  /* position: ; */
+
+  transition: opacity .3s ease, height .3s ease;
+}
+
+.navMenu.open {
+  color:green;
+  /* height: 50px; */
+  /* width: 60px; */
+  background: purple;
+  height: 90px;
+  opacity: 1;
+}
 
 
 @media only screen and (min-width: 769px) {

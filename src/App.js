@@ -39,6 +39,18 @@ function App() {
       toggleMenuCheck(!menuCheck);
   }
 
+  const [navClassesString, setNavClassesString] = useState('navMenu')
+  useEffect( () => {
+    if(menuCheck) {
+      setNavClassesString('navMenu open')
+    } else {
+      setNavClassesString('navMenu')
+    }
+  }, [menuCheck])
+
+
+
+
   return (
     <div className="App"
       style={darkMode ? {background: '#33373a', color: '#fff'} : {}}>
@@ -54,10 +66,10 @@ function App() {
           <div className='navMenu'>
             <Menu />
           </div>}
-        {/*  */}
-        {menuCheck && <div className='navMenu'>
+        {/* If you are on mobile, this menu shows */}
+        <div className={navClassesString}>
           <Menu/>
-          </div>}
+        </div>
         <div>
           and also this
         </div>

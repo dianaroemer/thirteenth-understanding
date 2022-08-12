@@ -173,7 +173,7 @@
     label.menuIcon {
       display: none;
     }
-  }
+}
   
   @media only screen and (min-height: 1441px) {
     /* For vertical monitor desktop: */
