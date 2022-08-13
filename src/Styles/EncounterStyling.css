@@ -1,5 +1,5 @@
 .encounterContentContainer {
-    margin: 10px;
+    /* margin: 10px; */
     /* background: grey; */
 }
 
@@ -7,18 +7,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 0;
+    transform: translateY(-2px);
+    padding-top: 5px;
+    width: 100%;
 }
 
 .encounterTools.pinned {
     position: fixed;
     height: 75px;
     width: 100%;
+    
     border-bottom: 2px solid black;
-    transform: translateX(-10px) translateY(-12px);
-    padding-top: 12px;
-    /* transform: translateY(-12px); */
-    /* translate: -12px; */
     background: #24282A;
 }
 
@@ -37,14 +36,22 @@
     transform: translateY(25px) scale(1.5);
 }
 
+.encounterContent{
+    padding-top: 3px;
+}
+
 .encounterContent.pinned {
-    padding-top: 75px;
+    padding-top: 80px;
 }
 
 @media only screen and (min-width: 769px) {
 
+    .encounterTools{
+
+    }
+
     .encounterTools.pinned {
-        width: calc(100% - 260px);
+        width: calc((100% - 260px));
     }
 
 }
