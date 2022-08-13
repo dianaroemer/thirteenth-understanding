@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 function E2() {
 
     return(
-        <div className='encounterContentContainer e1'>
+        <div className='encounterContentContainer e2'>
             I am E2, we did it, I'm displaying! Hecking nice my dude,
              it is nearly content o'clock!
         </div>

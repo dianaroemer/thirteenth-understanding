@@ -144,22 +144,23 @@ function App() {
 
           <Outlet />
 
-       <button onClick={e => handleDarkModeToggle(e)}>
-            Darkmode Toggle</button>
 
-        <div className='shitGoesHere'>
-          <p>
-            something here
-          </p>
-        </div>
+        {/* <div className='shitGoesHere'>
+
+        </div> */}
         <div className='toolBox'>
-          Expand Toolbox
-        </div>
-        <div className='blindModeContainer'>
-          <button onClick={e=> handleToggleBlindMode(e)}>
-            Toggle Blind Run Mode
+          Expand Toolbox (not implemented yet)
+
+          <button onClick={e => handleDarkModeToggle(e)}>
+            Darkmode Toggle
           </button>
+          <div className='blindModeContainer'>
+            <button onClick={e=> handleToggleBlindMode(e)}>
+              Toggle Blind Run Mode
+            </button>
+          </div>
         </div>
+
         
         <div className='backgroundTitle'>
           XIII
@@ -174,3 +175,4 @@ function App() {
 }
 
 export default App;
+
