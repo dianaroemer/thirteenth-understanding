@@ -16,6 +16,7 @@
     width: 100%;
     border-bottom: 2px solid black;
     transform: translateX(-10px) translateY(-12px);
+    padding-top: 12px;
     /* transform: translateY(-12px); */
     /* translate: -12px; */
     background: #24282A;
