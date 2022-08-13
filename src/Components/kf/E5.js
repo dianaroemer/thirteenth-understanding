@@ -35,10 +35,11 @@ function E5() {
         <div className='encounterContentContainer e5'>
             <div className={encounterToolsClass}>
                 {/* I am encounter toolbox */}
-                <FontAwesomeIcon icon={faThumbTack} 
-                    className='pinEncounterTools'
-                    onClick={e=> handleToggleStickTools(e)}
-                        />
+                <div className='pinEncounterToolsContainer'                         onClick={e=> handleToggleStickTools(e)}>
+                    <FontAwesomeIcon icon={faThumbTack} 
+                        className='pinEncounterTools'/>
+
+                </div>
 
                 <div className='encounterClearedButtonContainer'>
                     <button onClick={e=> e.preventDefault()}>
