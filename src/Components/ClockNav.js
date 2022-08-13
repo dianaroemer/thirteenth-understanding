@@ -16,8 +16,8 @@ const msInSeconds = 1000;
 const clockContestStart = 1660375491000;
 const clockContestEnd = 1660283681000;
 
-const encounterBegan = new Date(1660287718000)
-const timeSinceBreak = new Date(1660289761000)
+const encounterBegan = new Date(1660381229000)
+const timeSinceBreak = new Date(1660382249000)
 
 
 function ClockNav(props) {

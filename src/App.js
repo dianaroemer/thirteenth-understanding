@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import React, {useEffect, useState} from 'react';
 import {Outlet, Link,} from "react-router-dom";
 import './App.css';
+import './Styles/EncounterStyling.css';
+
 
 import ClockNav from './Components/ClockNav';
 import Menu from './Components/Menu';
@@ -105,7 +107,7 @@ function App() {
 
   return (
     <div className="App"
-      style={darkMode ? {background: '#33373a', color: '#fff'} : {}}>
+      style={darkMode ? {backgroundColor: '#33373a', color: '#fff'} : {}}>
 
       {/* <div className='backgroundTitle'>
           XIII

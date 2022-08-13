@@ -1,9 +1,71 @@
 import React, {useState, useEffect} from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye, faEyeSlash, faThumbTack } from '@fortawesome/free-solid-svg-icons';
+
 
 function E5() {
 
+    const [attemptVisibility, toggleAttemptVisibility] = useState(false)
+    function handleToggleAttemptVisibility(e) {
+        e.preventDefault();
+        toggleAttemptVisibility(!attemptVisibility)
+    }
+
+    const [stickTools, toggleStickTools] = useState(false)
+    function handleToggleStickTools(e) {
+        e.preventDefault();
+        toggleStickTools(!stickTools);
+        if(stickTools){
+            setEncounterToolsClass('encounterTools pinned')
+            setEncounterContentClass('encounterContent pinned')
+        } else {
+            setEncounterToolsClass('encounterTools')
+            setEncounterContentClass('encounterContent')
+
+        }
+        // console.log('here')
+        // console.log(stickTools)
+        // console.log(encounterToolsClass)
+    }
+
+    const [encounterToolsClass, setEncounterToolsClass] = useState('encounterTools');
+    const [encounterContentClass, setEncounterContentClass] = useState('encounterContent')
+
     return(
         <div className='encounterContentContainer e5'>
+            <div className={encounterToolsClass}>
+                {/* I am encounter toolbox */}
+                <FontAwesomeIcon icon={faThumbTack} 
+                    className='pinEncounterTools'
+                    onClick={e=> handleToggleStickTools(e)}
+                        />
+
+                <div className='encounterClearedButtonContainer'>
+                    <button onClick={e=> e.preventDefault()}>
+                        Encounter Cleared!     
+                    </button>
+                </div>
+
+                <div className='encounterAttemptsContainer'>
+                    <div onClick={e => handleToggleAttemptVisibility(e)}>
+                        <FontAwesomeIcon icon={attemptVisibility ? faEyeSlash : faEye}/>&nbsp;
+                         { attemptVisibility ? 'Attempt # 78' : 'Show Attempts' }&nbsp;
+                         <FontAwesomeIcon icon={attemptVisibility ? faEyeSlash : faEye}/>
+                    </div>
+                    <button onClick={e=> e.preventDefault()}>
+                        + Add Attempt +
+                    </button>
+                    <div className='encounterAttemptsVisibility'>
+
+                    </div>
+
+                </div>
+                
+            </div>
+            <div className={encounterContentClass}>
+                I'm here or something
+            </div>
+            
             I am E5
 
             <p>

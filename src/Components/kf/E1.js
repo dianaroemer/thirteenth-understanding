@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from 'react';
+// import '../../Styles/EncounterStyling.css';
+
 
 function E1() {
 
