@@ -7,6 +7,7 @@ import { BrowserRouter,
          } from "react-router-dom";
 import './index.css';
 import App from './App';
+import BackgroundTitle from './Components/BackgroundTitle';
 import E1 from './Components/kf/E1';
 import E2 from './Components/kf/E2';
 import E3 from './Components/kf/E3';
@@ -37,6 +38,14 @@ root.render(
         <Route path="kf/e7" element={<E7 />} />
         <Route path="kf/e8" element={<E8 />} />
         <Route path="kf/e9" element={<E9 />} />
+
+
+        <Route
+          index
+          element={
+            <BackgroundTitle/>
+          }
+        />
 
 
         <Route path="*"

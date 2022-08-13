@@ -161,10 +161,10 @@ function App() {
           </div>
         </div>
 
-        
-        <div className='backgroundTitle'>
+        {/* <div className='backgroundTitle'>
           XIII
-        </div>
+        </div> */}
+
 
 
 
@@ -175,4 +175,3 @@ function App() {
 }
 
 export default App;
-
