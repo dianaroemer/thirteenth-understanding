@@ -1,9 +1,15 @@
 import React, {useState, useEffect} from 'react';
+import { useOutletContext } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash, faThumbTack } from '@fortawesome/free-solid-svg-icons';
 
 
 function E5() {
+
+    const thisRaid = 'kf';
+    const thisEncounter = 'e5'
+
+    const [raidStateKF, handleRaidStateUpdate, handleEncounterCompletion] = useOutletContext();
 
     const [attemptVisibility, toggleAttemptVisibility] = useState(false)
     function handleToggleAttemptVisibility(e) {
@@ -44,7 +50,7 @@ function E5() {
                 </div>
 
                 <div className='encounterClearedButtonContainer'>
-                    <button onClick={e=> e.preventDefault()}>
+                    <button onClick={e=> handleEncounterCompletion(e, thisRaid, thisEncounter)}>
                         Encounter Cleared!     
                     </button>
                 </div>
@@ -52,10 +58,10 @@ function E5() {
                 <div className='encounterAttemptsContainer'>
                     <div onClick={e => handleToggleAttemptVisibility(e)}>
                         <FontAwesomeIcon icon={attemptVisibility ? faEyeSlash : faEye}/>&nbsp;
-                         { attemptVisibility ? 'Attempt # 78' : 'Show Attempts' }&nbsp;
+                         { attemptVisibility ? `Attempt # ${raidStateKF[thisEncounter].attempts}` : 'Show Attempts' }&nbsp;
                          <FontAwesomeIcon icon={attemptVisibility ? faEyeSlash : faEye}/>
                     </div>
-                    <button onClick={e=> e.preventDefault()}>
+                    <button onClick={e=> handleRaidStateUpdate(e, thisRaid, thisEncounter, 'attempts', (raidStateKF[thisEncounter].attempts+1))}>
                         + Add Attempt +
                     </button>
 
@@ -68,10 +74,9 @@ function E5() {
                 
             </div>
             <div className={encounterContentClass}>
-                I'm here or something
+                I am E5
             </div>
             
-            I am E5
 
             <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas viverra risus enim. Phasellus at turpis diam. Donec in blandit tellus, vitae faucibus libero. Sed posuere iaculis bibendum. Suspendisse massa libero, venenatis in ex nec, eleifend lobortis eros. Pellentesque a viverra augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec fringilla ipsum vitae ornare pellentesque. Aenean efficitur felis sit amet nunc rhoncus vestibulum. Duis pharetra venenatis volutpat. Curabitur in arcu urna. Aliquam rutrum venenatis massa, vel consequat risus sagittis vitae. Cras ac nunc blandit, hendrerit velit id, maximus libero. Duis sodales orci et blandit posuere.

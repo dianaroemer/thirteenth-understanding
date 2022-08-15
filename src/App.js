@@ -11,7 +11,7 @@ import Menu from './Components/Menu';
 
 function App() {
 
-  const [coffeesImbibed, setCoffeesImbibed] = useState(3);
+  const [coffeesImbibed, setCoffeesImbibed] = useState(4);
 
   const [darkMode, toggleDarkMode] = useState(true);
   function handleDarkModeToggle(e){
@@ -198,7 +198,6 @@ function App() {
 });
   const [mostRecentEncounterCompletion, setMostRecentEncounter] = useState(new Date())
 
-
   function handleRaidStateUpdate(e, raid, encounter, targetField, newValue) {
       e.preventDefault();
 
@@ -212,7 +211,7 @@ function App() {
           })
       }
 
-      console.log(raidStateKF)
+      // console.log(raidStateKF)
 }
 
   function handleEncounterCompletion(e, raid, encounter) {
@@ -293,7 +292,8 @@ function App() {
             <Menu blindMode={blindMode}
               seenEncounters={seenEncounters}
               handleClickNavEncounter={handleClickNavEncounter}
-              darkMode={darkMode}/>
+              darkMode={darkMode}
+              raidStateKF={raidStateKF}/>
           </div>}
         {/* If you are on mobile, this menu shows */}
         {isMobileViewport && 
@@ -301,7 +301,8 @@ function App() {
           <Menu blindMode={blindMode}
             seenEncounters={seenEncounters}
             handleClickNavEncounter={handleClickNavEncounter}
-            darkMode={darkMode}/>
+            darkMode={darkMode}
+            raidStateKF={raidStateKF}/>
         </div>}
 
       </div>
@@ -310,7 +311,7 @@ function App() {
 
       <div className={appContentClassString}>
 
-          <Outlet />
+          <Outlet context={[raidStateKF,handleRaidStateUpdate, handleEncounterCompletion]}/>
 
 
         {/* <div className='shitGoesHere'>

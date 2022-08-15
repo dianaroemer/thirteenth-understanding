@@ -34,7 +34,8 @@ function Menu(props) {
                         to="/kf/e1">{(!props.blindMode || props.seenEncounters.e1) ? 'The Court of Oryx' : '? ? ? ? ? ? ? ? ? ?'}</NavLink>
                 </div>
                 <div className='navMenuEncounterCheck'>
-                    <FontAwesomeIcon icon={faCheck} style={{color:'green'}}/>
+                    <FontAwesomeIcon icon={props.raidStateKF.e1.completed ?faCheck : faXmark} style={props.raidStateKF.e1.completed ? {color:'green'} : {color:'red'}}/>&nbsp;
+                    <FontAwesomeIcon icon={props.raidStateKF.e6c.completed ?faCheck : faXmark} style={props.raidStateKF.e1c.completed ? {color:'green'} : {color:'red'}}/>
                 </div>
             </div>
 
@@ -47,10 +48,11 @@ function Menu(props) {
                             color: isActive ? "#ad4646" : 'white',
                         };
                     }}
-                    to="/kf/e2">{(!props.blindMode || props.seenEncounters.e2) ? 'Totem Ships Jumping Puzzle' : '? ? ? ? ? ? ? ? ? ?'}</NavLink>
+                    to="/kf/e2">{(!props.blindMode || props.seenEncounters.e2) ? 'Totem Ships' : '? ? ? ? ? ? ? ? ? ?'}</NavLink>
                 </div>
                 <div className='navMenuEncounterCheck'>
-                    <FontAwesomeIcon icon={faXmark} style={{color:'red'}}/>
+                <FontAwesomeIcon icon={props.raidStateKF.e2.completed ?faCheck : faXmark} style={props.raidStateKF.e2.completed ? {color:'green'} : {color:'red'}}/>&nbsp;
+                    <FontAwesomeIcon icon={props.raidStateKF.e2c.completed ?faCheck : faXmark} style={props.raidStateKF.e2c.completed ? {color:'green'} : {color:'red'}}/>
                 </div>
             </div>
 
@@ -66,7 +68,8 @@ function Menu(props) {
                     to="/kf/e3">{(!props.blindMode || props.seenEncounters.e3) ? 'Annihilator Totems' : '? ? ? ? ? ? ? ? ? ?'}</NavLink>
                 </div>
                 <div className='navMenuEncounterCheck'>
-                    <FontAwesomeIcon icon={faXmark} style={{color:'red'}}/>
+                    <FontAwesomeIcon icon={props.raidStateKF.e3.completed ?faCheck : faXmark} style={props.raidStateKF.e3.completed ? {color:'green'} : {color:'red'}}/>&nbsp;
+                    <FontAwesomeIcon icon={props.raidStateKF.e3c.completed ?faCheck : faXmark} style={props.raidStateKF.e3c.completed ? {color:'green'} : {color:'red'}}/>
                 </div>
             </div>
 
@@ -82,7 +85,8 @@ function Menu(props) {
                     to="/kf/e4">{(!props.blindMode || props.seenEncounters.e4) ? 'Warpriest' : '? ? ? ? ? ? ? ? ? ?'}</NavLink>
                 </div>
                 <div className='navMenuEncounterCheck'>
-                    <FontAwesomeIcon icon={faXmark} style={{color:'red'}}/>
+                    <FontAwesomeIcon icon={props.raidStateKF.e4.completed ?faCheck : faXmark} style={props.raidStateKF.e4.completed ? {color:'green'} : {color:'red'}}/>&nbsp;
+                    <FontAwesomeIcon icon={props.raidStateKF.e4c.completed ?faCheck : faXmark} style={props.raidStateKF.e4c.completed ? {color:'green'} : {color:'red'}}/>
                 </div>
             </div>
 
@@ -98,7 +102,8 @@ function Menu(props) {
                     to="/kf/e5">{(!props.blindMode || props.seenEncounters.e5) ? "Golgoroth's Cellar" : '? ? ? ? ? ? ? ? ? ?'}</NavLink>
                 </div>
                 <div className='navMenuEncounterCheck'>
-                    <FontAwesomeIcon icon={faXmark} style={{color:'red'}}/>
+                    <FontAwesomeIcon icon={props.raidStateKF.e5.completed ?faCheck : faXmark} style={props.raidStateKF.e5.completed ? {color:'green'} : {color:'red'}}/>&nbsp;
+                    <FontAwesomeIcon icon={props.raidStateKF.e5c.completed ?faCheck : faXmark} style={props.raidStateKF.e5c.completed ? {color:'green'} : {color:'red'}}/>
                 </div>
             </div>
 
@@ -114,8 +119,9 @@ function Menu(props) {
                     to="/kf/e6">{(!props.blindMode || props.seenEncounters.e6) ? "Golgoroth" : '? ? ? ? ? ? ? ? ? ?'}</NavLink>
                 </div>
                 <div className='navMenuEncounterCheck'>
-                    <FontAwesomeIcon icon={faXmark} style={{color:'red'}}/>
-                </div>
+                    <FontAwesomeIcon icon={props.raidStateKF.e6.completed ?faCheck : faXmark} style={props.raidStateKF.e6.completed ? {color:'green'} : {color:'red'}}/>&nbsp;
+                    <FontAwesomeIcon icon={props.raidStateKF.e6c.completed ?faCheck : faXmark} style={props.raidStateKF.e6c.completed ? {color:'green'} : {color:'red'}}/> 
+                   </div>
             </div>
 
             <div className='navMenuSlot' onClick={e => props.handleClickNavEncounter(e, 'e7')}>
@@ -130,7 +136,8 @@ function Menu(props) {
                     to="/kf/e7">{(!props.blindMode || props.seenEncounters.e7) ? "Piston Jumping Puzzle" : '? ? ? ? ? ? ? ? ? ?'}</NavLink>
                 </div>
                 <div className='navMenuEncounterCheck'>
-                    <FontAwesomeIcon icon={faXmark} style={{color:'red'}}/>
+                    <FontAwesomeIcon icon={props.raidStateKF.e7.completed ?faCheck : faXmark} style={props.raidStateKF.e7.completed ? {color:'green'} : {color:'red'}}/>&nbsp;
+                    <FontAwesomeIcon icon={props.raidStateKF.e7c.completed ?faCheck : faXmark} style={props.raidStateKF.e7c.completed ? {color:'green'} : {color:'red'}}/>
                 </div>
             </div>
 
@@ -146,7 +153,8 @@ function Menu(props) {
                     to="/kf/e8">{(!props.blindMode || props.seenEncounters.e8) ? "Daughters of Oryx" : '? ? ? ? ? ? ? ? ? ?'}</NavLink>
                 </div>
                 <div className='navMenuEncounterCheck'>
-                    <FontAwesomeIcon icon={faXmark} style={{color:'red'}}/>
+                    <FontAwesomeIcon icon={props.raidStateKF.e8.completed ?faCheck : faXmark} style={props.raidStateKF.e8.completed ? {color:'green'} : {color:'red'}}/>&nbsp;
+                    <FontAwesomeIcon icon={props.raidStateKF.e8c.completed ?faCheck : faXmark} style={props.raidStateKF.e8c.completed ? {color:'green'} : {color:'red'}}/> 
                 </div>
             </div>
 
@@ -162,7 +170,8 @@ function Menu(props) {
                     to="/kf/e9">{(!props.blindMode || props.seenEncounters.e9) ? "Oryx, the Taken King" : '? ? ? ? ? ? ? ? ? ?'}</NavLink>
                 </div>
                 <div className='navMenuEncounterCheck'>
-                    <FontAwesomeIcon icon={faXmark} style={{color:'red'}}/>
+                    <FontAwesomeIcon icon={props.raidStateKF.e9.completed ?faCheck : faXmark} style={props.raidStateKF.e9.completed ? {color:'green'} : {color:'red'}}/>&nbsp;
+                    <FontAwesomeIcon icon={props.raidStateKF.e9c.completed ?faCheck : faXmark} style={props.raidStateKF.e9c.completed ? {color:'green'} : {color:'red'}}/>
                 </div>
             </div>
 
