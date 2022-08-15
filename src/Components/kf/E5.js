@@ -31,6 +31,8 @@ function E5() {
     const [encounterToolsClass, setEncounterToolsClass] = useState('encounterTools');
     const [encounterContentClass, setEncounterContentClass] = useState('encounterContent')
 
+
+
     return(
         <div className='encounterContentContainer e5'>
             <div className={encounterToolsClass}>
@@ -56,6 +58,8 @@ function E5() {
                     <button onClick={e=> e.preventDefault()}>
                         + Add Attempt +
                     </button>
+
+
                     <div className='encounterAttemptsVisibility'>
 
                     </div>

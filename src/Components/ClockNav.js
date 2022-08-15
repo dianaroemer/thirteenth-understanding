@@ -13,8 +13,8 @@ const msInSeconds = 1000;
 // const clockContestEnd = 1661619600000;
 
 // Temp values for development mode
-const clockContestStart = 1660375491000;
-const clockContestEnd = 1660283681000;
+const clockContestStart = 1660601873000;
+const clockContestEnd = 1660688251000;
 
 const encounterBegan = new Date(1660381229000)
 const timeSinceBreak = new Date(1660382249000)
@@ -116,7 +116,7 @@ function ClockNav(props) {
     }, [currentDate])
 
     useEffect( () => {
-        let encounterTimer = currentDate - encounterBegan;
+        let encounterTimer = currentDate - (props.mostRecentEncounterCompletion.getTime());
         let breakTimer = currentDate - timeSinceBreak;
 
         let encounterHours = 0;
@@ -156,7 +156,7 @@ function ClockNav(props) {
         let breakString = `${breakHours ? `${breakHours}:` : ''}${breakMinutes ? `${breakMinutes}:` : ''}${breakSeconds ? `${breakSeconds}` : ''} since break`;
 
         setTimeBreakString(breakString);
-    }, [encounterBegan, timeSinceBreak, currentDate])
+    }, [props.mostRecentEncounterCompletion, timeSinceBreak, currentDate])
 
 
     // const [menuCheck, toggleMenuCheck] = useState(false);

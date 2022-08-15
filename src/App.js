@@ -104,6 +104,171 @@ function App() {
     }
   }, [expandClocks])
 
+  const [raidStateKF, setRaidStateKF] = useState({
+    e1: {
+        startTime: new Date(1661533200000),
+        attempts: 0,
+        completed: false,
+    },
+    e2: {
+        startTime: new Date(),
+        attempts: 0,
+        completed: false,
+    },
+    e3: {
+        startTime: new Date(),
+        attempts: 0,
+        completed: false,
+    },
+    e4: {
+        startTime: new Date(),
+        attempts: 0,
+        completed: false,
+    },
+    e5: {
+        startTime: new Date(),
+        attempts: 0,
+        completed: false,
+    },
+    e6: {
+        startTime: new Date(),
+        attempts: 0,
+        completed: false,
+    },
+    e7: {
+        startTime: new Date(),
+        attempts: 0,
+        completed: false,
+    },
+    e8: {
+        startTime: new Date(),
+        attempts: 0,
+        completed: false,
+    },
+    e9: {
+        startTime: new Date(),
+        attempts: 0,
+        completed: false,
+    },
+    e1c: {
+        startTime: new Date(),
+        attempts: 0,
+        completed: false,
+    },
+    e2c: {
+        startTime: new Date(),
+        attempts: 0,
+        completed: false,
+    },
+    e3c: {
+        startTime: new Date(),
+        attempts: 0,
+        completed: false,
+    },
+    e4c: {
+        startTime: new Date(),
+        attempts: 0,
+        completed: false,
+    },
+    e5c: {
+        startTime: new Date(),
+        attempts: 0,
+        completed: false,
+    },
+    e6c: {
+        startTime: new Date(),
+        attempts: 0,
+        completed: false,
+    },
+    e7c: {
+        startTime: new Date(),
+        attempts: 0,
+        completed: false,
+    },
+    e8c: {
+        startTime: new Date(),
+        attempts: 0,
+        completed: false,
+    },
+    e9c: {
+        startTime: new Date(),
+        attempts: 0,
+        completed: false,
+    }
+});
+  const [mostRecentEncounterCompletion, setMostRecentEncounter] = useState(new Date())
+
+
+  function handleRaidStateUpdate(e, raid, encounter, targetField, newValue) {
+      e.preventDefault();
+
+      if( raid === "kf"){
+          setRaidStateKF({
+              ...raidStateKF,
+              [encounter]: {
+                  ...raidStateKF[encounter],
+                  [targetField]: newValue,
+              }
+          })
+      }
+
+      console.log(raidStateKF)
+}
+
+  function handleEncounterCompletion(e, raid, encounter) {
+    e.preventDefault()
+    // console.log(raidStateKF.e2, raidStateKF.e3)
+
+    if(raid === 'kf'){
+      if(raidStateKF[encounter].completed) {
+        return; // If this encounter is already completed, do nothing.
+      }
+      if(encounter === 'e9') {
+        setRaidStateKF({
+          ...raidStateKF,
+          [encounter]: {
+            ...raidStateKF[encounter],
+            completed: true,
+          },
+          e1c: {
+            ...raidStateKF[`e1c`],
+            startTime: new Date(),
+          }
+        })
+      }
+      else if(encounter.length === 3 ) {
+        setRaidStateKF({
+          ...raidStateKF,
+          [encounter]: {
+            ...raidStateKF[encounter],
+            completed: true,
+          },
+          [`e`+(Number(encounter[1])+1)+`c`]: {
+            ...raidStateKF[`e`+(Number(encounter[1])+1)+`c`],
+            startTime: new Date(),
+          }
+        })
+      } else {
+        setRaidStateKF({
+          ...raidStateKF,
+          [encounter]: {
+            ...raidStateKF[encounter],
+            completed: true,
+          },
+          [`e`+(Number(encounter[1])+1)]: {
+            ...raidStateKF[`e`+(Number(encounter[1])+1)],
+            startTime: new Date(),
+          }
+        })
+      }
+      
+      // Set most recent raid encounter completion 
+      setMostRecentEncounter(new Date())
+
+      // Flush new changes to localStorage  here XXXUPDATEXXX
+    }
+  }
+
 
   return (
     <div className="App"
@@ -120,6 +285,7 @@ function App() {
           handleToggleMenuCheck={handleToggleMenuCheck}
           expandClocks={expandClocks}
           handleExpandClocks={handleExpandClocks}
+          mostRecentEncounterCompletion={mostRecentEncounterCompletion}
           />
         {/* If you aren't on mobile and menuCheck isn't true, show menu at all times  */}
         { (!isMobileViewport) && 
@@ -161,6 +327,12 @@ function App() {
               Toggle Blind Run Mode
             </button>
           </div>
+          <button onClick={e => handleRaidStateUpdate(e, 'kf', 'e2', 'completed', true)}>Test handleRaidStateUpdate completion</button>
+          <button onClick={e => handleRaidStateUpdate(e, 'kf', 'e2', 'attempts', (raidStateKF.e2.attempts+1))}>Test handleRaidStateUpdate attemps</button>
+          <button onClick={e => handleEncounterCompletion(e, 'kf', 'e2')}>Test handleEncounterCompletion</button>
+          <button onClick={e => handleEncounterCompletion(e, 'kf', 'e9')}>Test handleEncounterCompletion e9</button>
+          <button onClick={e => handleEncounterCompletion(e, 'kf', 'e2c')}>Test handleEncounterCompletion e2c</button>
+
         </div>
 
         {/* <div className='backgroundTitle'>
