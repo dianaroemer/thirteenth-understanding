@@ -60,11 +60,7 @@
   /* transition: all ease .3s; */
 }
 
-/* .menuIcon {
-  background: #1C1C1C;
 
-  transition: all ease .3s;
-} */
 
 .menuIcon {
   position: relative;
@@ -91,7 +87,7 @@
   display: block;
   height: 2px;
   position: absolute;
-  transition: background ease .3s,
+  transition: background ease .6s,
    top ease .3s .3s,
    transform ease .3s;
   width: 30px;
