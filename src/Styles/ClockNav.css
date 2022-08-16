@@ -76,6 +76,7 @@
   z-index: 100;
   bottom: 40px;
   left: 5px;
+  -webkit-tap-highlight-color: rbga(0,0,0,0);
   /* transition: all ease .3s; */
 }
 

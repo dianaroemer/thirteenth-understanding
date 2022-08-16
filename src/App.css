@@ -158,6 +158,7 @@
 
   .navMenu.open {
     border: none;
+    box-shadow: none;
   }
 
   .appContent{
