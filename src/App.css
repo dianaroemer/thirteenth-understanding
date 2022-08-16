@@ -59,14 +59,16 @@
   height: 285px;
   opacity: 1;
   visibility: visible;
-  border-bottom: solid 1px black;
-  margin-bottom: 4px;
+  border-bottom: solid 1px grey;
+  box-shadow: 0 5px 10px black;
+  /* margin-bottom: 2px; */
+  padding: 5px;
+  padding-bottom: 10px;
   z-index: 100;
 
   transform: translateY(0px);
 
 
-  padding: 5px;
 }
 
 
@@ -81,6 +83,57 @@
 .appContent.expand{
   padding-top: 152px;
   z-index: 1;
+}
+
+.welcomePaneContainer {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  overflow: none;
+  backdrop-filter: blur(3px);
+  z-index: 20;
+
+  display: flex;
+  justify-content: center;
+  /* background: green; */
+}
+
+.welcomePane {
+
+  position: fixed;
+  margin: 20px;
+  height: fit-content;
+  width: 70%;
+  background: #5d6164;
+  border-radius: 5px;
+  border: 1px solid rgb(29, 27, 27);
+  box-shadow: 10px 10px 10px rgb(29, 27, 27);
+  padding: 10px;
+
+  text-align: center;
+  /* left: 5%; */
+}
+
+.welcomePaneHeader {
+  font-size: larger;
+}
+
+.welcomePaneHeader:after{  
+  /* text-align: center; */
+  content: '';
+  position: absolute;
+  bottom: 20;
+  left: 7.5%;
+  right: 0;
+
+  height: 1.5em;
+  width: 85%;
+  border-bottom: 2px solid black;
+}
+
+.welcomePaneContent {
+  text-align: start;
+  padding-top: 5px;
 }
 
 @media only screen and (min-width: 769px) {
@@ -115,6 +168,22 @@
 
   .appContent.expand{
     padding-top: 0;
+  }
+
+  .welcomePaneContainer {
+    /* position: fixed; */
+    /* right: calc(100% - 260%); */
+    /* left: 0; */
+    width: 100%;
+  }
+
+  .welcomePane {
+    display: block;
+    position: fixed;
+    width: 550px;
+    left: calc(35% - 250px);
+    right: 0;
+    top: 30%;
   }
 
   .backgroundTitle{

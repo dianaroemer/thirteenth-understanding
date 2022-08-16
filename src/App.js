@@ -1,12 +1,17 @@
 import logo from './logo.svg';
 import React, {useEffect, useState} from 'react';
 import {Outlet, Link,} from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPeopleGroup  } from '@fortawesome/free-solid-svg-icons';
+
 import './App.css';
 import './Styles/EncounterStyling.css';
 
 
 import ClockNav from './Components/ClockNav';
 import Menu from './Components/Menu';
+
+
 
 
 function App() {
@@ -195,7 +200,7 @@ function App() {
         completed: false,
         completionTime: null,
     }
-});
+  });
   const [mostRecentEncounterCompletion, setMostRecentEncounter] = useState(new Date())
   function handleRaidStateUpdate(e, raid, encounter, targetField, newValue) {
       e.preventDefault();
@@ -210,7 +215,7 @@ function App() {
           })
       }
 
-      console.log(raidStateKF)
+      // console.log(raidStateKF)
   }
   function handleEncounterCompletion(e, raid, encounter) {
     e.preventDefault()
@@ -280,6 +285,8 @@ function App() {
     toggleChallengeMode(!challengeMode)
   }
 
+  const [welcomePane, toggleWelcomePane] = useState(true);
+
 
   return (
     <div className="App"
@@ -288,6 +295,8 @@ function App() {
       {/* <div className='backgroundTitle'>
           XIII
       </div> */}
+
+
 
       <div className='sideBarNav' style={darkMode ? {background: '#24282a'} : {background: 'grey'}}>
         <ClockNav darkMode={darkMode} 
@@ -326,8 +335,36 @@ function App() {
 
 
       <div className={appContentClassString}>
+        {/* If this is the user's first time coming to this website, show them welcome pane with tips. */}
+        {welcomePane && <div className='welcomePaneContainer' onClick={e=> toggleWelcomePane(false)}>
+            <div className='welcomePane'>
+              <div className='welcomePaneHeader'> 
+                Welcome to 13th Understanding, a Destiny 2 raid race assistant.
+              </div>
+              <div className='welcomePaneContent'>
+                <ul>
+                  <li>
+                    Click the top timer to cycle through visibile timers.
+                  </li>
+                  <li>
+                    Disable Blind-Run mode from Tools. This cannot be undone!
+                  </li>
+                  <li>
+                    Access Challenge Mode by disabling Blind-Run mode or completing the final encounter.
+                  </li>
+                  <li>
+                    Add your fireteam members in Tools for easy role assignment
+                  </li>
+                </ul>
+                <div style={{textAlign: 'center', fontSize: 'small'}}>
+                  Click anywhere to close this tooltip  
+                </div>
+                
+              </div>
+            </div>
+          </div>}
 
-          <Outlet context={[raidStateKF,handleRaidStateUpdate, handleEncounterCompletion, challengeMode]}/>
+          <Outlet context={[raidStateKF,handleRaidStateUpdate, handleEncounterCompletion]}/>
 
 
         {/* <div className='shitGoesHere'>
@@ -349,6 +386,12 @@ function App() {
           <button onClick={e => handleEncounterCompletion(e, 'kf', 'e2')}>Test handleEncounterCompletion</button>
           <button onClick={e => handleEncounterCompletion(e, 'kf', 'e9')}>Test handleEncounterCompletion e9</button>
           <button onClick={e => handleEncounterCompletion(e, 'kf', 'e2c')}>Test handleEncounterCompletion e2c</button>
+
+          <div className='fireteamMenuContainer'>
+            Set Fireteam 
+          <FontAwesomeIcon icon={faPeopleGroup} style={{color:''}}/>
+          </div>
+          
 
         </div>
 

@@ -12,7 +12,7 @@ function E5() {
     const navigate = useNavigate();
 
 
-    const [raidStateKF, handleRaidStateUpdate, handleEncounterCompletion, challengeMode] = useOutletContext();
+    const [raidStateKF, handleRaidStateUpdate, handleEncounterCompletion] = useOutletContext();
 
     const [attemptVisibility, toggleAttemptVisibility] = useState(false)
     function handleToggleAttemptVisibility(e) {
