@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { useOutletContext } from 'react-router-dom';
+import { useOutletContext, NavLink, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash, faThumbTack } from '@fortawesome/free-solid-svg-icons';
 
@@ -9,7 +9,10 @@ function E5() {
     const thisRaid = 'kf';
     const thisEncounter = 'e5'
 
-    const [raidStateKF, handleRaidStateUpdate, handleEncounterCompletion] = useOutletContext();
+    const navigate = useNavigate();
+
+
+    const [raidStateKF, handleRaidStateUpdate, handleEncounterCompletion, challengeMode] = useOutletContext();
 
     const [attemptVisibility, toggleAttemptVisibility] = useState(false)
     function handleToggleAttemptVisibility(e) {
@@ -50,9 +53,12 @@ function E5() {
                 </div>
 
                 <div className='encounterClearedButtonContainer'>
-                    <button onClick={e=> handleEncounterCompletion(e, thisRaid, thisEncounter)}>
-                        Encounter Cleared!     
-                    </button>
+
+                    <button onClick={( e=> {
+                        handleEncounterCompletion(e, thisRaid, thisEncounter);
+                        navigate('/kf/e6');
+                    })}> Encounter Cleared! </button>
+
                 </div>
 
                 <div className='encounterAttemptsContainer'>

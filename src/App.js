@@ -327,7 +327,7 @@ function App() {
 
       <div className={appContentClassString}>
 
-          <Outlet context={[raidStateKF,handleRaidStateUpdate, handleEncounterCompletion]}/>
+          <Outlet context={[raidStateKF,handleRaidStateUpdate, handleEncounterCompletion, challengeMode]}/>
 
 
         {/* <div className='shitGoesHere'>
@@ -341,7 +341,7 @@ function App() {
           </button>
           <div className='blindModeContainer'>
             <button onClick={e=> handleToggleBlindMode(e)}>
-              Toggle Blind Run Mode
+              Disable Blind Run Mode
             </button>
           </div>
           <button onClick={e => handleRaidStateUpdate(e, 'kf', 'e2', 'completed', true)}>Test handleRaidStateUpdate completion</button>
