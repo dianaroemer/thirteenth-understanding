@@ -60,23 +60,26 @@
   /* transition: all ease .3s; */
 }
 
+/* .menuIcon {
+  background: #1C1C1C;
+
+  transition: all ease .3s;
+} */
+
 .menuIcon {
-  /* background: #1C1C1C; */
+  position: relative;
+
   cursor: pointer;
   display: block;
   height: 24px;
   padding: 16px;
   width: 24px;
   overflow: none;
-  /* transition: all ease .3s; */
-}
 
-.menuIcon {
-  position: relative;
   z-index: 100;
   bottom: 40px;
   left: 5px;
-  -webkit-tap-highlight-color: rbga(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
   /* transition: all ease .3s; */
 }
 
