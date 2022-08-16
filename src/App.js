@@ -66,8 +66,8 @@ function App() {
   })
   function handleToggleBlindMode(e) {
     e.preventDefault();
-    toggleBlindMode(!blindMode)
-    console.log(seenEncounters)
+    toggleBlindMode(false)
+    // console.log(seenEncounters)
     setSeenEncounters({
       e1: true,
       e2: true,
@@ -79,8 +79,7 @@ function App() {
       e8: true,
       e9: true,
       e10: true,
-  })
-  console.log(Location);
+    })
   }
   function handleClickNavEncounter(e, targetEncounter){
     e.preventDefault();
@@ -194,10 +193,10 @@ function App() {
         startTime: new Date(),
         attempts: 0,
         completed: false,
+        completionTime: null,
     }
 });
   const [mostRecentEncounterCompletion, setMostRecentEncounter] = useState(new Date())
-
   function handleRaidStateUpdate(e, raid, encounter, targetField, newValue) {
       e.preventDefault();
 
@@ -211,9 +210,8 @@ function App() {
           })
       }
 
-      // console.log(raidStateKF)
-}
-
+      console.log(raidStateKF)
+  }
   function handleEncounterCompletion(e, raid, encounter) {
     e.preventDefault()
     // console.log(raidStateKF.e2, raidStateKF.e3)
@@ -234,8 +232,15 @@ function App() {
             startTime: new Date(),
           }
         })
-      }
-      else if(encounter.length === 3 ) {
+      } else if(encounter === 'e9c'){ 
+        setRaidStateKF({
+          ...raidStateKF,
+          e9c: {
+            completed: true,
+            completionTime: new Date(),
+          }
+        })
+      } else if(encounter.length === 3 ) {
         setRaidStateKF({
           ...raidStateKF,
           [encounter]: {
@@ -268,6 +273,13 @@ function App() {
     }
   }
 
+  const [challengeMode, toggleChallengeMode] = useState(false)
+  function handleChallengeModeToggle(e){
+    e.preventDefault();
+    if( !blindMode || raidStateKF.e9.completed)
+    toggleChallengeMode(!challengeMode)
+  }
+
 
   return (
     <div className="App"
@@ -293,7 +305,9 @@ function App() {
               seenEncounters={seenEncounters}
               handleClickNavEncounter={handleClickNavEncounter}
               darkMode={darkMode}
-              raidStateKF={raidStateKF}/>
+              raidStateKF={raidStateKF}
+              inChallengeMode={challengeMode}
+              handleChallengeModeToggle={handleChallengeModeToggle}/>
           </div>}
         {/* If you are on mobile, this menu shows */}
         {isMobileViewport && 
@@ -302,7 +316,9 @@ function App() {
             seenEncounters={seenEncounters}
             handleClickNavEncounter={handleClickNavEncounter}
             darkMode={darkMode}
-            raidStateKF={raidStateKF}/>
+            raidStateKF={raidStateKF}
+            inChallengeMode={challengeMode}
+            handleChallengeModeToggle={handleChallengeModeToggle}/>
         </div>}
 
       </div>

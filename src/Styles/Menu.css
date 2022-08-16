@@ -17,12 +17,33 @@
 }
 
 .menuHeader{
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    /* text-align: center; */
     font-size: large;
+    /* width: 200px; */
+    padding-bottom: 8px;
+    /* background: gray; */
+}
+
+.menuHeader:after{
+    content: "";
+    border-bottom: 2px solid black;
+    height: 0;
+    left: 0;
+    right: 0;
+    top: 33px;
+    bottom: 0;
+    position: fixed;
 }
 
 .menuHeaderLink {
     text-decoration: none;
+    background-color: gray;
+    padding: 5px;
+    padding-top: 2px;
+    padding-bottom: 0;
+    border-radius: 5px 5px 0 0 ;
 }
 
 .navMenuEncounterLink {
@@ -60,5 +81,11 @@
         padding: 5px;
         margin-right: 10px;
     }
+
+    .menuHeaderLink {
+        padding: 2px;
+        padding-bottom: 0;
+    }
+
 }
 

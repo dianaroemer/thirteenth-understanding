@@ -17,6 +17,8 @@ import E7 from './Components/kf/E7';
 import E8 from './Components/kf/E8';
 import E9 from './Components/kf/E9';
 
+import E1C from './Components/kf/E1C';
+
 
 import '.'
 
@@ -37,6 +39,8 @@ root.render(
         <Route path="kf/e7" element={<E7 />} />
         <Route path="kf/e8" element={<E8 />} />
         <Route path="kf/e9" element={<E9 />} />
+
+        <Route path="kf/e1c" element={<E1C />} />
 
 
         <Route
