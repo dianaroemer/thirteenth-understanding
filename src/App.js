@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import React, {useEffect, useState} from 'react';
-import {Outlet, Link,} from "react-router-dom";
+import {Outlet} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPeopleGroup  } from '@fortawesome/free-solid-svg-icons';
 
@@ -16,7 +15,7 @@ import Menu from './Components/Menu';
 
 function App() {
 
-  const [coffeesImbibed, setCoffeesImbibed] = useState(4);
+  const [coffeesImbibed, setCoffeesImbibed] = useState(5);
 
   const [darkMode, toggleDarkMode] = useState(true);
   function handleDarkModeToggle(e){
@@ -287,6 +286,43 @@ function App() {
 
   const [welcomePane, toggleWelcomePane] = useState(true);
 
+  const [breaks, setBreaks] = useState([{
+    breakStart: new Date(1660769861000), //this date should coincide with the contest mode's start time
+    duration: 0,
+  }])
+  const [remainingBreakDuration, setRemainingBreakDuration] = useState(0);
+  function addBreak(e, duration){
+    e.preventDefault();
+    if(remainingBreakDuration === 0){
+      setBreaks(() => [...breaks, {breakStart: new Date(), duration: duration}]);
+      setRemainingBreakDuration((remainingBreakDuration)=>remainingBreakDuration + duration)
+    } else {
+      setBreaks( (()=> {
+        let old = [...breaks];
+        old[breaks.length-1] = {
+          breakStart: old[breaks.length-1].breakStart,
+          duration: breaks[breaks.length-1].duration + duration,}
+        return old;
+        }))
+        setRemainingBreakDuration( () => remainingBreakDuration + duration);
+    }
+
+    (() => console.log(breaks, remainingBreakDuration))();
+    
+  }
+  // Countdown remainingBreakDuration, once every second, until remainingbreakDuration == 0
+  useEffect(() => {
+    let breakTimer;
+    if(remainingBreakDuration > 0){
+      breakTimer = setInterval(
+        ()=>{setRemainingBreakDuration(()=>remainingBreakDuration - 1)}, 
+        1000) 
+    }
+    return (()=> clearInterval(breakTimer));
+  }, [remainingBreakDuration])
+
+  
+
 
   return (
     <div className="App"
@@ -344,16 +380,16 @@ function App() {
               <div className='welcomePaneContent'>
                 <ul>
                   <li>
-                    Click the top timer to cycle through visibile timers.
+                    Click the top timer to cycle through visibile timers
                   </li>
                   <li>
-                    Disable Blind-Run mode from Tools. This cannot be undone!
+                    Disable Blind-Run mode from Tools. This cannot be undone
                   </li>
                   <li>
-                    Access Challenge Mode by disabling Blind-Run mode or completing the final encounter.
+                    Access Challenge Mode by disabling Blind-Run mode or completing the final normal encounter
                   </li>
                   <li>
-                    Add your fireteam members in Tools for easy role assignment
+                    Add your fireteam members in Tools for easy role assignment in encounters
                   </li>
                 </ul>
                 <div style={{textAlign: 'center', fontSize: 'small'}}>
@@ -386,6 +422,13 @@ function App() {
           <button onClick={e => handleEncounterCompletion(e, 'kf', 'e2')}>Test handleEncounterCompletion</button>
           <button onClick={e => handleEncounterCompletion(e, 'kf', 'e9')}>Test handleEncounterCompletion e9</button>
           <button onClick={e => handleEncounterCompletion(e, 'kf', 'e2c')}>Test handleEncounterCompletion e2c</button>
+          <button onClick={e => addBreak(e, 5)}>
+            Test add break, 5 minutes
+          </button>
+          <button onClick={e => addBreak(e, 20)}>
+            Test add break, 20 minutes
+          </button>
+          <button onClick={e => console.log( breaks,' & ', remainingBreakDuration)}>state check</button>
 
           <div className='fireteamMenuContainer'>
             Set Fireteam 
