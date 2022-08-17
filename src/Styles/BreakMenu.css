@@ -1,0 +1,47 @@
+.breakMenu {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 10px;
+    height: 20px;
+    width: fit-content;
+    padding: 2px;
+    background-color: #24282a;
+    border-radius: 5px 5px 0 0;
+    border: solid 1px black;
+    border-bottom: 0;
+    transition: height .3s ease;
+    overflow: none;
+}
+
+.breakMenu:after{
+    content: "";
+    border-bottom: 2px solid green;
+    height: .5em;
+    /* left: 0; */
+    /* right: 0; */
+    /* top: 34px; */
+    /* bottom: 0; */
+    position: fixed;
+}
+
+
+.breakMenu.expanded {
+    height: 100px;
+}
+
+.breakMenuContent {
+    overflow: hidden;
+    visibility: hidden;
+    height: 0;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.breakMenuContent.expanded {
+    overflow:visible;
+    visibility: visible;
+    height: 10px;
+    opacity: 1;
+    transition: opacity .3s ease;
+}

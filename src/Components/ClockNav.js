@@ -1,4 +1,4 @@
-import { isFocusable } from '@testing-library/user-event/dist/utils';
+// import { isFocusable } from '@testing-library/user-event/dist/utils';
 import React, {useState, useEffect} from 'react';
 import '../Styles/ClockNav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -72,6 +72,18 @@ function ClockNav(props) {
                     seconds = seconds + 1;
                     remainingMillis = remainingMillis - msInSeconds;
                 }
+
+
+                if(hours < 10) {
+                    hours = `0`+hours
+                }
+                if(minutes < 10) {
+                    minutes = `0`+minutes
+                }
+                if(seconds < 10) {
+                    seconds = `0`+seconds
+                }
+
                 dateString = `${days ? `${days} days, ` : ''} ${hours ? `${hours}:` : ''}${minutes ? `${minutes}:` : ""}${seconds} remaining`;
                 setHeaderClock(dateString);
             } else { //If the contest has begun, do calculations in here
@@ -88,13 +100,36 @@ function ClockNav(props) {
                     seconds = seconds + 1;
                     timeElapsed = timeElapsed - msInSeconds;
                 }
-                dateString = `${hours ? `${hours}:` : ''}${minutes ? `${minutes}:` : ""}${seconds} total elapsed`
-                setContestTimeElapsed(dateString)
 
                 // Values here are Actual-1 because code counts 0 as interval when counting down
                 let remainingHours = 23 - hours;
                 let remainingMinutes = 59 - minutes;
                 let remainingSeconds = 60 - seconds;
+
+                if(hours < 10) {
+                    hours = `0`+hours
+                }
+                if(minutes < 10) {
+                    minutes = `0`+minutes
+                }
+                if(seconds < 10) {
+                    seconds = `0`+seconds
+                }
+
+                dateString = `${hours ? `${hours}:` : ''}${minutes ? `${minutes}:` : ""}${seconds} total elapsed`
+                setContestTimeElapsed(dateString)
+
+
+
+                if(remainingHours < 10) {
+                    remainingHours = `0`+remainingHours
+                }
+                if(remainingMinutes < 10) {
+                    remainingMinutes = `0`+remainingMinutes
+                }
+                if(remainingSeconds < 10) {
+                    remainingSeconds = `0`+remainingSeconds
+                }
 
                 let remainingString = `${remainingHours}:${remainingMinutes}:${remainingSeconds === 60 ? '00' : remainingSeconds} remaining`
                 setContestTimeRemaining(remainingString)
@@ -134,6 +169,14 @@ function ClockNav(props) {
             encounterSeconds = encounterSeconds + 1;
             encounterTimer = encounterTimer - msInSeconds;
         }
+
+        if(encounterMinutes < 10) {
+            encounterMinutes = `0`+encounterMinutes
+        }
+        if(encounterSeconds < 10) {
+            encounterSeconds = `0`+encounterSeconds
+        }
+
         let encounterString = `${encounterHours ? `${encounterHours}:` : ''}${encounterMinutes ? `${encounterMinutes}:` : ''}${encounterSeconds ? `${encounterSeconds}` : ''} on encounter`;
 
         setTimeEncounterString(encounterString);
@@ -153,7 +196,18 @@ function ClockNav(props) {
             breakSeconds = breakSeconds + 1;
             breakTimer = breakTimer - msInSeconds;
         }
-        let breakString = `${breakHours ? `${breakHours}:` : ''}${breakMinutes ? `${breakMinutes}:` : ''}${breakSeconds ? `${breakSeconds}` : ''} since break`;
+        
+        if(breakHours < 10) {
+            breakHours = `0`+breakHours
+        }
+        if(breakMinutes < 10) {
+            breakMinutes = `0`+breakMinutes
+        }
+        if(breakSeconds < 10) {
+            breakSeconds = `0`+breakSeconds
+        }
+        
+        let breakString = `${breakHours ? `${breakHours}:` : ''}${breakMinutes ? `${breakMinutes}:` : ''}${breakSeconds ? `${breakSeconds}` : '00'} since break`;
 
         setTimeBreakString(breakString);
     }, [props.mostRecentEncounterCompletion, timeSinceBreak, currentDate])

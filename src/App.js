@@ -9,6 +9,7 @@ import './Styles/EncounterStyling.css';
 
 import ClockNav from './Components/ClockNav';
 import Menu from './Components/Menu';
+import BreakMenu from './Components/BreakMenu';
 
 
 
@@ -284,12 +285,13 @@ function App() {
     toggleChallengeMode(!challengeMode)
   }
 
-  const [welcomePane, toggleWelcomePane] = useState(true);
+  // XXXUPDATEXXX ENABLE THIS WHENEVER DEPLOYING XXXUPDATEXXX
+  const [welcomePane, toggleWelcomePane] = useState(false);
 
-  const [breaks, setBreaks] = useState([{
-    breakStart: new Date(1660769861000), //this date should coincide with the contest mode's start time
-    duration: 0,
-  }])
+  const [breaks, setBreaks] = useState([
+    { breakStart: new Date(1660769861000), 
+    duration: 0, }
+  ])
   const [remainingBreakDuration, setRemainingBreakDuration] = useState(0);
   function addBreak(e, duration){
     e.preventDefault();
@@ -423,12 +425,19 @@ function App() {
           <button onClick={e => handleEncounterCompletion(e, 'kf', 'e9')}>Test handleEncounterCompletion e9</button>
           <button onClick={e => handleEncounterCompletion(e, 'kf', 'e2c')}>Test handleEncounterCompletion e2c</button>
           <button onClick={e => addBreak(e, 5)}>
-            Test add break, 5 minutes
+            Test add break, 5 seconds
           </button>
           <button onClick={e => addBreak(e, 20)}>
-            Test add break, 20 minutes
+            Test add break, 20 seconds
+          </button>
+          <button onClick={e => addBreak(e, 60)}>
+            Test add break, 60 seconds
+          </button>
+          <button onClick={e => addBreak(e, 3540)}>
+            Test add break, 59 minutes
           </button>
           <button onClick={e => console.log( breaks,' & ', remainingBreakDuration)}>state check</button>
+          {remainingBreakDuration !== 0 && remainingBreakDuration}
 
           <div className='fireteamMenuContainer'>
             Set Fireteam 
@@ -442,7 +451,10 @@ function App() {
           XIII
         </div> */}
 
-
+        <BreakMenu 
+          breaks={breaks}
+          remainingBreakDuration={remainingBreakDuration}
+          addBreak={addBreak}/>
 
 
       </div>
