@@ -24,7 +24,30 @@ function BreakMenu(props) {
 
     const [readableRemainingBreakDuration, setReadbleRemainingBreakDuration] = useState('');
     useEffect(()=> {
-        let remTime = props.remainingBreakDuration;
+        // let remTime = props.remainingBreakDuration;
+        // let readableString = ''
+        // let hours = 0;
+        // let minutes = 0;
+        // let seconds = 0;
+        // while(remTime >= 3600){
+        //     remTime = remTime - 3600;
+        //     hours = hours + 1;
+        // }
+        // while(remTime >= 60){
+        //     remTime = remTime - 60;
+        //     minutes = minutes + 1;
+        // }
+        // seconds = remTime;
+
+        // if(seconds < 10){
+        //     seconds = `0`+seconds
+        // }
+        // setReadbleRemainingBreakDuration(`${hours ? `${hours}:` : ''}${minutes ? `${minutes}:` : `00:`}${seconds ? `${seconds}` : `00`}`)
+        setReadbleRemainingBreakDuration(generateReadableTimeString(props.remainingBreakDuration))
+    }, [[props.remainingBreakDuration]])
+
+    function generateReadableTimeString(duration) {
+        let remTime = duration;
         let readableString = ''
         let hours = 0;
         let minutes = 0;
@@ -38,14 +61,17 @@ function BreakMenu(props) {
             minutes = minutes + 1;
         }
         seconds = remTime;
-        // if(minutes < 10) {
-        //     minutes = `0`+minutes;
-        // }
+
+        if(minutes < 10){
+            minutes = `0`+minutes
+        }
         if(seconds < 10){
             seconds = `0`+seconds
         }
-        setReadbleRemainingBreakDuration(`${hours ? `${hours}:` : ''}${minutes ? `${minutes}:` : `00:`}${seconds ? `${seconds}` : `00`}`)
-    }, [[props.remainingBreakDuration]])
+
+        readableString = (`${hours ? `${hours}:` : ''}${minutes ? `${minutes}:` : `00:`}${seconds ? `${seconds}` : `00`}`);
+        return readableString;
+    }
 
 
     return(
@@ -64,12 +90,29 @@ function BreakMenu(props) {
             }
             
             <div className={breakMenuContentClassString}>
-                here
 
-                Total Break Time: {(()=> {
-                    let t = 0;
+                {props.breaks[1] && <div>
+                    Breaks Taken: {
+                        props.breaks.length - 1
+                    }
 
-                })}
+                    <br/>
+                    Total Break Time: {(()=> {
+                        let t= 0;
+                        props.breaks.forEach(element =>{
+                            t = t + element.duration;
+                        })
+
+                        if(t !== 0) {
+                            return generateReadableTimeString(t);}
+                        // } else {
+                        //     return ;
+                        // }
+
+                    })()
+                    } 
+                
+                </div>}
             </div>
         </div>
     )

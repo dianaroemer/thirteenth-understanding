@@ -6,6 +6,7 @@
     height: 20px;
     width: fit-content;
     padding: 2px;
+    /* margin-bottom: 5px; */
     background-color: #24282a;
     border-radius: 5px 5px 0 0;
     border: solid 1px black;
@@ -14,20 +15,21 @@
     overflow: none;
 }
 
-.breakMenu:after{
+/* .breakMenu.expanded:after{
     content: "";
     border-bottom: 2px solid green;
     height: .5em;
-    /* left: 0; */
-    /* right: 0; */
-    /* top: 34px; */
-    /* bottom: 0; */
+    left: 0;
+    right: 0;
+    top: 34px;
+    bottom: 0;
     position: fixed;
-}
+} */
 
 
 .breakMenu.expanded {
-    height: 100px;
+    height: 120px;
+    
 }
 
 .breakMenuContent {
@@ -35,13 +37,25 @@
     visibility: hidden;
     height: 0;
     opacity: 0;
-    transition: opacity .3s ease;
+    transition: opacity .3s ease, width .3s ease;
+    position: fixed;
+    width: inherit;
+    /* right: 0px; */
+    /* left: 80%; */
+    background: #24282a;
+    margin-top: 5px;
+    padding: 2px;
 }
 
 .breakMenuContent.expanded {
     overflow:visible;
     visibility: visible;
-    height: 10px;
+    height: 100px;
+    right: 10px;
+    width: 200px;
+    border-radius: 5px 5px 0 0;
+    border: solid 1px black;
+
     opacity: 1;
     transition: opacity .3s ease;
 }
