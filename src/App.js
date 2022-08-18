@@ -294,7 +294,9 @@ function App() {
   ])
   const [remainingBreakDuration, setRemainingBreakDuration] = useState(0);
   function addBreak(e, duration){
+    // console.log(e.target)
     e.preventDefault();
+    e.stopPropagation();
     if(remainingBreakDuration === 0){
       setBreaks(() => [...breaks, {breakStart: new Date(), duration: duration}]);
       setRemainingBreakDuration((remainingBreakDuration)=>remainingBreakDuration + duration)
@@ -309,7 +311,7 @@ function App() {
         setRemainingBreakDuration( () => remainingBreakDuration + duration);
     }
 
-    (() => console.log(breaks, remainingBreakDuration))();
+    // (() => console.log(breaks, remainingBreakDuration))();
     
   }
   // Countdown remainingBreakDuration, once every second, until remainingbreakDuration == 0
@@ -437,7 +439,6 @@ function App() {
             Test add break, 59 minutes
           </button>
           <button onClick={e => console.log( breaks,' & ', remainingBreakDuration)}>state check</button>
-          {remainingBreakDuration !== 0 && remainingBreakDuration}
 
           <div className='fireteamMenuContainer'>
             Set Fireteam 

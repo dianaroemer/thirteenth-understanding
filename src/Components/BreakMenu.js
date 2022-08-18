@@ -75,11 +75,14 @@ function BreakMenu(props) {
 
 
     return(
-        <div className={breakMenuClassString} onClick={e => handleBreakMenuClick(e)}>
+        <div className={breakMenuClassString} onClick={e => handleBreakMenuClick(e)}
+            style={(props.remainingBreakDuration > 0) ? {background: '#5b6851'} : {}}>
             {(props.remainingBreakDuration !== 0) ? 
                 <div>
                     <FontAwesomeIcon icon={breakMenuExpanded ? faAngleUp : faAngleDown}/>&nbsp;
                     Break Remaining: {readableRemainingBreakDuration}
+
+                    {/* <div className={breakMenuExpanded ? 'breakMenuBackingPlate' : 'breakMenuBackingPlate expanded'} style={{background: '#24282a'}}> </div> */}
 
                 </div> : 
                 <div>
@@ -90,6 +93,26 @@ function BreakMenu(props) {
             }
             
             <div className={breakMenuContentClassString}>
+
+
+
+                <div className='breakMenuButtonContainer'>
+                    <button onClick={e=> props.addBreak(e, 300)} className='breakMenuButton'>
+                        {(props.remainingBreakDuration > 0) ? 
+                        '+5 min':
+                        '5 min'}
+                    </button>
+                    <button onClick={e=> props.addBreak(e, 600)} className='breakMenuButton'>
+                    {(props.remainingBreakDuration > 0) ? 
+                        '+10 min':
+                        '10 min'}
+                    </button>
+                    <button onClick={e=> props.addBreak(e, 1200)} className='breakMenuButton'>
+                    {(props.remainingBreakDuration > 0) ? 
+                        '+20 min':
+                        '20 min'}
+                    </button>
+                </div>
 
                 {props.breaks[1] && <div>
                     Breaks Taken: {
@@ -105,10 +128,6 @@ function BreakMenu(props) {
 
                         if(t !== 0) {
                             return generateReadableTimeString(t);}
-                        // } else {
-                        //     return ;
-                        // }
-
                     })()
                     } 
                 
