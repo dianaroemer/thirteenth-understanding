@@ -332,6 +332,37 @@ function App() {
   }, [remainingBreakDuration, breaks])
 
 
+  // This testbed is to determine if I can pass a group of states or functions into a single object, which is then passed into component children via Outlet
+    // Lessons learned: I can pass multiple functions (even if they modify the state of an object in App.js) into a container, and pass that container to an Outlet's children. Those children will be able to call those functions and update parent state accordingly. That said, I cannot pass state itself (e.g., test1 or test2) into an object container - those references become stale and DO NOT UPDATE in the child container. Instead, I must pass the state itself into the Outlet's recieving array.
+    // For Example:
+      // <Outlet content={[functionContainer, state1, state2, etc.]}
+      // The functions in functionContainer can target and modify state1 and state2 in their parent container, which then propogates down towards <Outlet>.
+  const [test1, setTest1] = useState(1);
+  const [test2, setTest2] = useState(2);
+  const [test3, setTest3] = useState(3);
+  const [test4, setTest4] = useState(4);
+  function handleTest() {
+    console.log('blek');
+    console.log(test1);
+  }
+  function handleBlarp() {
+    console.log('blarg')
+    setTest1(()=>'woops');
+  }
+  const [testContainer, setTestContainer] = useState({
+    test1: test1,
+    test2: test2,
+    test3: test3,
+    test4: test4,
+    handleTest: handleTest,
+    handleBlarp: handleBlarp,
+  })
+  useEffect( ()=> {
+    setTestContainer( {...testContainer,
+      [test1] : 4})
+  }, [test1])
+  // XXXUPDATEXXX REMOVE ABOVE BEFORE PRODUCTION XXXUPDATEXXX
+
   return (
     <div className="App"
       style={darkMode ? {backgroundColor: '#33373a', color: '#fff'} : {}}>
@@ -428,7 +459,7 @@ function App() {
             </div>
           </div>}
 
-          <Outlet context={[raidStateKF,handleRaidStateUpdate, handleEncounterCompletion, handleToggleBlindMode]}/>
+          <Outlet context={[raidStateKF,handleRaidStateUpdate, handleEncounterCompletion, handleToggleBlindMode, testContainer, test1]}/>
 
 
 

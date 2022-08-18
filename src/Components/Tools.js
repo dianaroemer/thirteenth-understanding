@@ -5,12 +5,17 @@ import { faPeopleGroup } from '@fortawesome/free-solid-svg-icons';
 
 function Tools(props) {
 
-    const [raidStateKF,handleRaidStateUpdate,handleEncounterCompletion,handleToggleBlindMode] = useOutletContext();
+    const [raidStateKF,handleRaidStateUpdate,handleEncounterCompletion,handleToggleBlindMode, testContainer, test1] = useOutletContext();
 
     return(
         <div className='toolsContainer'>
             {/* I am tools */}
-
+            <button onClick={e=> {e.preventDefault(); testContainer.handleTest()}}>
+                test {test1}
+            </button>
+            <button onClick={e=> {e.preventDefault(); testContainer.handleBlarp()}}>
+                test updateTest1
+            </button>
             <div className='blindModeContainer' >
                 <button onClick={e=> handleToggleBlindMode(e)}>
                 Disable Blind Run Mode
