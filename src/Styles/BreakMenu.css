@@ -91,3 +91,22 @@
     left: 0;
     bottom: -2px;
 } */
+
+@media only screen and (min-width: 769px) {
+
+    .breakMenu{
+        display: block;
+        right: 0;
+        left: 10px;
+        z-index: 22;
+        position: fixed;
+        background: rgb(51 55 58);
+    }
+
+    .breakMenuContent {
+        right: 0px;
+        left: 10px;
+        background: rgb(51 55 58);
+    }
+
+}

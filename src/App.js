@@ -370,9 +370,17 @@ function App() {
             inChallengeMode={challengeMode}
             handleChallengeModeToggle={handleChallengeModeToggle}/>
         </div>}
+        {/* {!isMobileViewport && <BreakMenu 
+          breaks={breaks}
+          remainingBreakDuration={remainingBreakDuration}
+          addBreak={addBreak}/>} */}
 
       </div>
 
+      <BreakMenu 
+          breaks={breaks}
+          remainingBreakDuration={remainingBreakDuration}
+          addBreak={addBreak}/>
 
 
       <div className={appContentClassString}>
@@ -454,10 +462,11 @@ function App() {
           XIII
         </div> */}
 
-        <BreakMenu 
+        {/* {isMobileViewport && <BreakMenu 
           breaks={breaks}
           remainingBreakDuration={remainingBreakDuration}
-          addBreak={addBreak}/>
+          addBreak={addBreak}/>}
+         */}
 
 
       </div>
