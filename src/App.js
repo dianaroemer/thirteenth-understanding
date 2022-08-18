@@ -286,7 +286,7 @@ function App() {
   }
 
   // XXXUPDATEXXX ENABLE THIS WHENEVER DEPLOYING XXXUPDATEXXX
-  const [welcomePane, toggleWelcomePane] = useState(false);
+  const [welcomePane, toggleWelcomePane] = useState(true);
 
   const [breaks, setBreaks] = useState([
     { breakStart: new Date(1660769861000), 
@@ -296,7 +296,7 @@ function App() {
   function addBreak(e, duration){
     // console.log(e.target)
     e.preventDefault();
-    e.stopPropagation();
+    e.stopPropagation(); // prevent clickthrough to parent, which closes breakMenu
     if(remainingBreakDuration === 0){
       setBreaks(() => [...breaks, {breakStart: new Date(), duration: duration}]);
       setRemainingBreakDuration((remainingBreakDuration)=>remainingBreakDuration + duration)
@@ -413,14 +413,15 @@ function App() {
         <div className='toolBox'>
           Expand Toolbox (not implemented yet)
 
-          <button onClick={e => handleDarkModeToggle(e)}>
+          {/* <button onClick={e => handleDarkModeToggle(e)}>
             Darkmode Toggle
-          </button>
+          </button> */}
           <div className='blindModeContainer'>
             <button onClick={e=> handleToggleBlindMode(e)}>
               Disable Blind Run Mode
             </button>
           </div>
+          {/*
           <button onClick={e => handleRaidStateUpdate(e, 'kf', 'e2', 'completed', true)}>Test handleRaidStateUpdate completion</button>
           <button onClick={e => handleRaidStateUpdate(e, 'kf', 'e2', 'attempts', (raidStateKF.e2.attempts+1))}>Test handleRaidStateUpdate attemps</button>
           <button onClick={e => handleEncounterCompletion(e, 'kf', 'e2')}>Test handleEncounterCompletion</button>
@@ -438,7 +439,7 @@ function App() {
           <button onClick={e => addBreak(e, 3540)}>
             Test add break, 59 minutes
           </button>
-          <button onClick={e => console.log( breaks,' & ', remainingBreakDuration)}>state check</button>
+          <button onClick={e => console.log( breaks,' & ', remainingBreakDuration)}>state check</button> */}
 
           <div className='fireteamMenuContainer'>
             Set Fireteam 

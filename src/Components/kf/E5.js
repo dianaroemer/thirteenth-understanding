@@ -20,9 +20,11 @@ function E5() {
         toggleAttemptVisibility(!attemptVisibility)
     }
 
-    const [stickTools, toggleStickTools] = useState(false)
+    const [stickTools, toggleStickTools] = useState(true)
     function handleToggleStickTools(e) {
         e.preventDefault();
+        console.log(e)
+        // e.stopPropagation();
         toggleStickTools(!stickTools);
         if(stickTools){
             setEncounterToolsClass('encounterTools pinned')
