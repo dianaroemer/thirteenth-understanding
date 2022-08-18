@@ -97,15 +97,18 @@
     .breakMenu{
         display: block;
         right: 0;
-        left: 10px;
+        left: 35px;
+        top: 20px;
+        /* bottom: 25%; */
+        /* top: 450px; */
         z-index: 22;
-        position: fixed;
+        position: relative;
         background: rgb(51 55 58);
     }
 
     .breakMenuContent {
         right: 0px;
-        left: 10px;
+        left: 25px;
         background: rgb(51 55 58);
     }
 

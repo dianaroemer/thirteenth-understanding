@@ -375,12 +375,15 @@ function App() {
           remainingBreakDuration={remainingBreakDuration}
           addBreak={addBreak}/>} */}
 
+      <BreakMenu 
+        breaks={breaks}
+        remainingBreakDuration={remainingBreakDuration}
+        addBreak={addBreak}
+        isMobileViewport={isMobileViewport}/>
+
       </div>
 
-      <BreakMenu 
-          breaks={breaks}
-          remainingBreakDuration={remainingBreakDuration}
-          addBreak={addBreak}/>
+
 
 
       <div className={appContentClassString}>

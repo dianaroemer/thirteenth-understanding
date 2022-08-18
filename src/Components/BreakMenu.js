@@ -77,7 +77,7 @@ function BreakMenu(props) {
     return(
         <div className={breakMenuClassString} onClick={e => handleBreakMenuClick(e)}
             style={(props.remainingBreakDuration > 0) ? {background: '#5b6851'} : {}}>
-            {(props.remainingBreakDuration !== 0) ? 
+            {(props.remainingBreakDuration !== 0 || !props.isMobileViewport) ? 
                 <div>
                     <FontAwesomeIcon icon={breakMenuExpanded ? faAngleUp : faAngleDown}/>&nbsp;
                     Break Remaining: {readableRemainingBreakDuration}
@@ -89,7 +89,7 @@ function BreakMenu(props) {
                 <FontAwesomeIcon icon={breakMenuExpanded ? faAngleUp : faAngleDown}/>&nbsp;
                 Take a Break&nbsp;
                 <FontAwesomeIcon icon={breakMenuExpanded ? faAngleUp : faAngleDown}/>
-            </div>
+                </div>  
             }
             
             <div className={breakMenuContentClassString}>
