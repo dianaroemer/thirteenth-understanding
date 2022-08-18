@@ -72,7 +72,7 @@ function App() {
     e10: false,
   })
   function handleToggleBlindMode(e) {
-    e.preventDefault();
+    // e.preventDefault();
     console.log('here')
     toggleBlindMode(false)
     // console.log(seenEncounters)
@@ -459,7 +459,7 @@ function App() {
             </div>
           </div>}
 
-          <Outlet context={[raidStateKF,handleRaidStateUpdate, handleEncounterCompletion, handleToggleBlindMode, testContainer, test1]}/>
+          <Outlet context={[raidStateKF,handleRaidStateUpdate, handleEncounterCompletion, handleToggleBlindMode, blindMode]}/>
 
 
 

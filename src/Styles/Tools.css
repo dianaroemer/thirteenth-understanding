@@ -1,0 +1,12 @@
+.toolsContainer {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.blindModeContainer {
+    padding: 3px;
+    padding-bottom: 15px;
+}

@@ -20,5 +20,6 @@ code {
 #root {
   height: fit-content;
   /* min-height: 100%; */
+  width: 100%;
 
 }
