@@ -346,6 +346,7 @@ function App() {
           expandClocks={expandClocks}
           handleExpandClocks={handleExpandClocks}
           mostRecentEncounterCompletion={mostRecentEncounterCompletion}
+          breaks={breaks}
           />
         {/* If you aren't on mobile and menuCheck isn't true, show menu at all times  */}
         { (!isMobileViewport) && 
