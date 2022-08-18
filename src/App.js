@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Outlet} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPeopleGroup  } from '@fortawesome/free-solid-svg-icons';
+import { faCropSimple, faPeopleGroup  } from '@fortawesome/free-solid-svg-icons';
 
 import './App.css';
 import './Styles/EncounterStyling.css';
@@ -315,17 +315,39 @@ function App() {
     
   }
   // Countdown remainingBreakDuration, once every second, until remainingbreakDuration == 0
+  // useEffect(() => {
+  //   let breakTimer;
+  //   if(remainingBreakDuration > 0){
+  //     breakTimer = setInterval(
+  //       ()=>{setRemainingBreakDuration(()=>remainingBreakDuration - 1)}, 
+  //       1000) 
+  //   }
+  //   return (()=> clearInterval(breakTimer));
+  // }, [remainingBreakDuration])
+
+  // const [breakTimer, setBreakTimer] = useState();
+
   useEffect(() => {
     let breakTimer;
-    if(remainingBreakDuration > 0){
-      breakTimer = setInterval(
-        ()=>{setRemainingBreakDuration(()=>remainingBreakDuration - 1)}, 
-        1000) 
-    }
-    return (()=> clearInterval(breakTimer));
-  }, [remainingBreakDuration])
 
-  
+    let breakStart = breaks[breaks.length-1].breakStart.getTime();
+
+    if(remainingBreakDuration > 0 ){
+      breakTimer = setInterval(
+          ()=>{
+            let now = new Date()
+            // console.log('now', now.getTime())
+            // console.log('breakStart', breakStart)
+            // console.log('The math', Math.floor((now.getTime() - breakStart)/1000));
+            setRemainingBreakDuration(() => 
+              breaks[breaks.length-1].duration - Math.floor(((now.getTime() - breakStart)/1000)));
+          }, 
+          1000) 
+    };
+
+    // console.log(remainingBreakDuration, breaks)
+    return (()=> clearInterval(breakTimer));
+  }, [remainingBreakDuration, breaks])
 
 
   return (
@@ -406,6 +428,9 @@ function App() {
                   </li>
                   <li>
                     Add your fireteam members in Tools for easy role assignment in encounters
+                  </li>
+                  <li>
+                    On mobile, locking your phone can cause the Break timer to desync. Avoid this by extending your screen's timeout, taking shorter breaks, or disabling it altogether
                   </li>
                 </ul>
                 <div style={{textAlign: 'center', fontSize: 'small'}}>
