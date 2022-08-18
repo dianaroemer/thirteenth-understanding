@@ -429,9 +429,6 @@ function App() {
                   <li>
                     Add your fireteam members in Tools for easy role assignment in encounters
                   </li>
-                  <li>
-                    On mobile, locking your phone can cause the Break timer to desync. Avoid this by extending your screen's timeout, taking shorter breaks, or disabling it altogether
-                  </li>
                 </ul>
                 <div style={{textAlign: 'center', fontSize: 'small'}}>
                   Click anywhere to close this tooltip  
