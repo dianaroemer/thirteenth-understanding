@@ -6,11 +6,10 @@ import { faEye, faEyeSlash, faThumbTack } from '@fortawesome/free-solid-svg-icon
 
 function E5() {
 
-    const thisRaid = 'kf';
-    const thisEncounter = 'e5'
-
     const navigate = useNavigate();
 
+    const thisRaid = 'kf';
+    const thisEncounter = 'e5'
 
     const [raidStateKF, handleRaidStateUpdate, handleEncounterCompletion] = useOutletContext();
 

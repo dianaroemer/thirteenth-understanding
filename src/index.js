@@ -19,6 +19,8 @@ import E9 from './Components/kf/E9';
 
 import E1C from './Components/kf/E1C';
 
+import Tools from './Components/Tools';
+
 
 import '.'
 
@@ -42,6 +44,7 @@ root.render(
 
         <Route path="kf/e1c" element={<E1C />} />
 
+        <Route path="tools" element={<Tools />} />
 
         <Route
           index
@@ -53,9 +56,10 @@ root.render(
 
         <Route path="*"
           element={
-            <main style={{padding: "1rem"}}>
+            <div className="error404Page">
               <p>Are you lost, little light? There's nothing here!</p>
-            </main>
+              <BackgroundTitle />
+            </div>
           }
         />
 

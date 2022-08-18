@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {Outlet} from "react-router-dom";
+import {Outlet, useNavigate} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCropSimple, faPeopleGroup  } from '@fortawesome/free-solid-svg-icons';
+import { faPeopleGroup, faScrewdriverWrench  } from '@fortawesome/free-solid-svg-icons';
 
 import './App.css';
 import './Styles/EncounterStyling.css';
@@ -17,6 +17,8 @@ import BreakMenu from './Components/BreakMenu';
 function App() {
 
   const [coffeesImbibed, setCoffeesImbibed] = useState(5);
+
+  const navigate = useNavigate();
 
   const [darkMode, toggleDarkMode] = useState(true);
   function handleDarkModeToggle(e){
@@ -71,6 +73,7 @@ function App() {
   })
   function handleToggleBlindMode(e) {
     e.preventDefault();
+    console.log('here')
     toggleBlindMode(false)
     // console.log(seenEncounters)
     setSeenEncounters({
@@ -311,41 +314,20 @@ function App() {
         setRemainingBreakDuration( () => remainingBreakDuration + duration);
     }
 
-    // (() => console.log(breaks, remainingBreakDuration))();
-    
   }
-  // Countdown remainingBreakDuration, once every second, until remainingbreakDuration == 0
-  // useEffect(() => {
-  //   let breakTimer;
-  //   if(remainingBreakDuration > 0){
-  //     breakTimer = setInterval(
-  //       ()=>{setRemainingBreakDuration(()=>remainingBreakDuration - 1)}, 
-  //       1000) 
-  //   }
-  //   return (()=> clearInterval(breakTimer));
-  // }, [remainingBreakDuration])
-
-  // const [breakTimer, setBreakTimer] = useState();
-
+  // This useEffect updates remainingBreakDuration once per second by taking the difference between the expectedBreakDuration and the differential of now (each individual clock tick) and the breakStart, or remainingBreakDuration=(expectedBreakDuration - (now - breakStart)).
   useEffect(() => {
     let breakTimer;
-
     let breakStart = breaks[breaks.length-1].breakStart.getTime();
-
     if(remainingBreakDuration > 0 ){
       breakTimer = setInterval(
           ()=>{
             let now = new Date()
-            // console.log('now', now.getTime())
-            // console.log('breakStart', breakStart)
-            // console.log('The math', Math.floor((now.getTime() - breakStart)/1000));
             setRemainingBreakDuration(() => 
               breaks[breaks.length-1].duration - Math.floor(((now.getTime() - breakStart)/1000)));
           }, 
           1000) 
     };
-
-    // console.log(remainingBreakDuration, breaks)
     return (()=> clearInterval(breakTimer));
   }, [remainingBreakDuration, breaks])
 
@@ -397,11 +379,16 @@ function App() {
           remainingBreakDuration={remainingBreakDuration}
           addBreak={addBreak}/>} */}
 
-      <BreakMenu 
-        breaks={breaks}
-        remainingBreakDuration={remainingBreakDuration}
-        addBreak={addBreak}
-        isMobileViewport={isMobileViewport}/>
+        <BreakMenu 
+          breaks={breaks}
+          remainingBreakDuration={remainingBreakDuration}
+          addBreak={addBreak}
+          isMobileViewport={isMobileViewport}/>
+
+        <div className='toolsLink' onClick={e => navigate('/tools')}>
+          <FontAwesomeIcon icon={faScrewdriverWrench} style={{color:''}}/>&nbsp; 
+          Tools
+        </div>
 
       </div>
 
@@ -416,7 +403,7 @@ function App() {
                 Welcome to 13th Understanding, a Destiny 2 raid race assistant.
               </div>
               <div className='welcomePaneContent'>
-                <ul>
+                <ul style={{paddingLeft: '25px'}}>
                   <li>
                     Click the top timer to cycle through visibile timers
                   </li>
@@ -430,31 +417,36 @@ function App() {
                     Add your fireteam members in Tools for easy role assignment in encounters
                   </li>
                 </ul>
+                <div className='welcomeQuote' style={{paddingBottom: '4px', fontStyle: 'italic'}}>
+                  "To rend one's enemies is to see them not as equals, but objects—hollow of spirit and meaning."—13th Understanding, 7th Book of Sorrow
+                </div>
+
                 <div style={{textAlign: 'center', fontSize: 'small'}}>
                   Click anywhere to close this tooltip  
                 </div>
-                
               </div>
             </div>
           </div>}
 
-          <Outlet context={[raidStateKF,handleRaidStateUpdate, handleEncounterCompletion]}/>
+          <Outlet context={[raidStateKF,handleRaidStateUpdate, handleEncounterCompletion, handleToggleBlindMode]}/>
 
 
-        {/* <div className='shitGoesHere'>
 
-        </div> */}
-        <div className='toolBox'>
-          Expand Toolbox (not implemented yet)
 
-          {/* <button onClick={e => handleDarkModeToggle(e)}>
-            Darkmode Toggle
-          </button> */}
-          <div className='blindModeContainer'>
+          <div className='blindModeContainer' style={{display: 'none'}}>
             <button onClick={e=> handleToggleBlindMode(e)}>
               Disable Blind Run Mode
             </button>
           </div>
+          <div className='fireteamMenuContainer' style={{display: 'none'}}>
+            Set Fireteam 
+            <FontAwesomeIcon icon={faPeopleGroup} style={{color:''}}/>
+          </div>
+
+
+          {/* <button onClick={e => handleDarkModeToggle(e)}>
+            Darkmode Toggle
+          </button> */}
           {/*
           <button onClick={e => handleRaidStateUpdate(e, 'kf', 'e2', 'completed', true)}>Test handleRaidStateUpdate completion</button>
           <button onClick={e => handleRaidStateUpdate(e, 'kf', 'e2', 'attempts', (raidStateKF.e2.attempts+1))}>Test handleRaidStateUpdate attemps</button>
@@ -475,23 +467,7 @@ function App() {
           </button>
           <button onClick={e => console.log( breaks,' & ', remainingBreakDuration)}>state check</button> */}
 
-          <div className='fireteamMenuContainer'>
-            Set Fireteam 
-          <FontAwesomeIcon icon={faPeopleGroup} style={{color:''}}/>
-          </div>
-          
 
-        </div>
-
-        {/* <div className='backgroundTitle'>
-          XIII
-        </div> */}
-
-        {/* {isMobileViewport && <BreakMenu 
-          breaks={breaks}
-          remainingBreakDuration={remainingBreakDuration}
-          addBreak={addBreak}/>}
-         */}
 
 
       </div>
