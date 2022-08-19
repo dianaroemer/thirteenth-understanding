@@ -520,6 +520,9 @@ function App() {
               <div className='welcomePaneContent'>
                 <ul style={{paddingLeft: '25px'}}>
                   <li>
+                    On mobile, Portrait is recommended for the best experience
+                  </li>
+                  <li>
                     Click the top timer to cycle through visibile timers
                   </li>
                   <li>
