@@ -57,6 +57,98 @@ function E5() {
 
     const [selectedRoles, setSelectedRoles] = useState([6, 6, 6, 6, 6, 6])
 
+    const [showEncounterCompleteSlider, toggleShowEncounterCompleteSlider] = useState(false);
+
+    function encounterClearedToReadableString(completionTime) {
+        let now = new Date.getTime();
+        let remainingTime = now - completionTime;
+        let hours = 0;
+        let minutes = 0;
+        let seconds = 0;
+
+        while(remainingTime > 3600000){
+            hours = hours + 1;
+            remainingTime = remainingTime - 3600000;
+        }
+        while(remainingTime > 60000){
+            minutes = minutes + 1;
+            remainingTime = remainingTime - 60000;
+        }
+        while(remainingTime > 1000){
+            seconds = seconds + 1;
+            remainingTime = remainingTime - 1000;
+        }
+        let timeString = ``;
+
+        if(minutes < 10){
+            minutes = `0`+minutes
+        }
+        if(seconds < 10){
+            seconds = `0`+seconds
+        }
+
+        timeString = (`${hours ? `${hours}:` : ''}${minutes ? `${minutes}:` : `00:`}${seconds ? `${seconds}` : `00`}`);
+        return timeString;
+    }
+
+
+
+
+
+    const [encounterClearedSliderValue, setEncounterClearedSliderValue] = useState(0);
+    const [encounterClearedSliderLock, toggleEncounterClearedSliderLock] = useState(!blindMode);
+
+    function handleBlindModeSliderChange(e) {
+      e.preventDefault();
+      let newValue = Number(e.target.value);
+      setEncounterClearedSliderValue(()=> newValue);
+    }
+
+    useEffect( () => {
+      if(encounterClearedSliderLock){
+        setEncounterClearedSliderValue(() => 50)
+        return;
+      }
+      let timeOut;
+      if( encounterClearedSliderValue > 48){
+        // Success, you've done the thing, now do the thing here
+        handleEncounterCompletion(thisRaid, thisEncounter);
+        setTimeout(()=>{navigate('/kf/e6');}, 5000)
+        
+        // XXXUPDATEXXX
+        toggleEncounterClearedSliderLock(true);
+        setEncounterClearedSliderValue(() => 50);
+      } else {
+        timeOut = setTimeout(() => {
+          setEncounterClearedSliderValue(() => 0);
+        }, 
+        1500)
+      }
+      return ( ()=> {
+          if(encounterClearedSliderValue < 48 && encounterClearedSliderLock){
+            clearTimeout(timeOut)
+            console.log('locked ************************')
+          }
+        }
+      )
+    }, [encounterClearedSliderValue]);
+
+
+    useEffect( ()=> {
+      if(!blindMode) {
+        setEncounterClearedSliderValue(()=> 50)
+      }
+    }, [blindMode])
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -64,23 +156,61 @@ function E5() {
         <div className='encounterContentContainer e5'>
             <div className={encounterToolsClass}>
                 {/* I am encounter toolbox */}
-                <div className='pinEncounterToolsContainer'                         onClick={e=> handleToggleStickTools(e)}>
+                {!raidStateKF[thisEncounter].completed && 
+                    <div className='pinEncounterToolsContainer'                         onClick={e=> handleToggleStickTools(e)}>
                     <FontAwesomeIcon icon={faThumbTack} 
                         className='pinEncounterTools'/>
-                </div>
+                    </div>
+                }
+                
 
-                <div className='encounterClearedButtonContainer'>
+                {/* <div className='encounterClearedButtonContainer'>
                     <button onClick={( e=> {
-                        handleEncounterCompletion(e, thisRaid, thisEncounter);
+                        e.preventDefault()
+                        handleEncounterCompletion(thisRaid, thisEncounter);
                         navigate('/kf/e6');
-                    })}> Encounter Cleared! </button>
+                    })}> Encounter Cleared Test Button </button>
+                </div>  */}
+
+                <div className='encounterClearedContainer'>
+                    {raidStateKF[thisEncounter].completed ? 
+                    <div className='encounterClearedContent cleared'>
+                        Congratulations! 
+                        <div>Encounter Completed in {/*raidStateKF[thisEncounter].startTime.getTime()*/}</div>
+                        <div>
+                            {raidStateKF[thisEncounter].attempts} Attempts!
+                        </div>
+                    </div> :
+                    <div className='encounterClearedContent'>
+                        {!showEncounterCompleteSlider && 
+                            <button onClick={(e=> {
+                                e.preventDefault();
+                                toggleShowEncounterCompleteSlider(true);
+                            })}> Encounter Completed </button>
+                        }
+                        {showEncounterCompleteSlider && 
+                        <div className='encounterClearedSliderContainer'>
+                            
+                            <div className='encounterClearedSlider'> 
+                            <input type='range'
+                                id='encounterClearedSlider' 
+                                min={0} max={50} 
+                                value={encounterClearedSliderValue}
+                                onChange={e=> handleBlindModeSliderChange(e)}></input> 
+                                <label htmlFor='blindModeSlider'>Complete</label>
+                            </div>
+                        </div>}
+                    </div>}
+
                 </div>
 
+                {/* If the encounter hasn't been completed, show the attempts increment */}
+                {!raidStateKF[thisEncounter].completed &&
                 <div className='encounterAttemptsContainer'>
                     <div onClick={e => handleToggleAttemptVisibility(e)}>
                         <FontAwesomeIcon icon={attemptVisibility ? faEyeSlash : faEye}/>&nbsp;
-                         { attemptVisibility ? `Attempt # ${raidStateKF[thisEncounter].attempts}` : 'Show Attempts' }&nbsp;
-                         <FontAwesomeIcon icon={attemptVisibility ? faEyeSlash : faEye}/>
+                        { attemptVisibility ? `Attempt # ${raidStateKF[thisEncounter].attempts}` : 'Show Attempts' }&nbsp;
+                        <FontAwesomeIcon icon={attemptVisibility ? faEyeSlash : faEye}/>
                     </div>
                     <button onClick={e=> handleRaidStateUpdate(e, thisRaid, thisEncounter, 'attempts', (raidStateKF[thisEncounter].attempts+1))}>
                         + Add Attempt +
@@ -88,8 +218,9 @@ function E5() {
 
                     <div className='encounterAttemptsVisibility'>
                     </div>
-
                 </div>
+                }
+                
                 
             </div>
             <div className={encounterContentClass}>

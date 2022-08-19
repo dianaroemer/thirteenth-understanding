@@ -86,6 +86,7 @@
 .appContent {
    padding-top: 102px;
    transition: padding-top ease .3s;
+   padding-bottom: 2.5rem;
    z-index: 1;
    /* width: 100vh; */
 }

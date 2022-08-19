@@ -30,6 +30,18 @@
     background: #24282A;
 }
 
+.encounterClearedContent {
+    text-align: center;
+}
+
+.encounterClearedContent.cleared {
+    background: green;
+    padding: 5px 50px;
+    border-radius: 3px;
+    border: 2px solid black
+    
+}
+
 .encounterAttemptsContainer{
     padding: 5px;
     display: flex;

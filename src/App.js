@@ -220,8 +220,8 @@ function App() {
 
       // console.log(raidStateKF)
   }
-  function handleEncounterCompletion(e, raid, encounter) {
-    e.preventDefault()
+  function handleEncounterCompletion(raid, encounter) {
+    // e.preventDefault()
     // console.log(raidStateKF.e2, raidStateKF.e3)
 
     if(raid === 'kf'){
