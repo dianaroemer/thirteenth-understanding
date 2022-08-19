@@ -72,12 +72,13 @@ function Tools(props) {
 
             <div className='blindModeContainer'>
               {blindModeSliderLock ? 
-              <div>
+    
+              <div className='toolsHeader'>
                 Blind-Run mode is disabled <FontAwesomeIcon icon={faPowerOff} style={{color: 'red'}} />
 
                 </div> :
                 <div className='blindModeContainer'>
-                  <div>
+                  <div className='toolsHeader'>
                     Disable Blind-Run mode?
                   </div>
                   <div className='blindModeButtonContainer'>
