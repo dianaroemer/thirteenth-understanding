@@ -9,4 +9,13 @@
 .blindModeContainer {
     padding: 3px;
     padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.blindModeButtonContainer {
+    display: flex;
+    padding: 5px;
+    justify-content: center;
 }

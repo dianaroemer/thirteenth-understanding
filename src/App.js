@@ -73,7 +73,7 @@ function App() {
   })
   function handleToggleBlindMode(e) {
     // e.preventDefault();
-    console.log('here')
+    // console.log('here')
     toggleBlindMode(false)
     // console.log(seenEncounters)
     setSeenEncounters({

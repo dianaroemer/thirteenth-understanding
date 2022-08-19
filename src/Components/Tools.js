@@ -16,11 +16,6 @@ function Tools(props) {
 
     function handleBlindModeSliderChange(e) {
       e.preventDefault();
-      // if(blindModeSliderLock){
-      //   console.log('here')
-      //   setBlindModeSliderValue(()=> 50);
-      //   return;
-      // }
       let newValue = Number(e.target.value);
       setBlindModeSliderValue(()=> newValue);
     }
@@ -31,33 +26,17 @@ function Tools(props) {
         return;
       }
       let timeOut;
-      console.log('sliderVal', blindModeSliderValue)
-
-      // if(blindModeSliderValue < 48 && blindModeSliderValue >= 0){
-      //   timeOut = setTimeout(() => {
-      //     setBlindModeSliderValue(() => 0);
-      //     // iterateBlindModeSliderDown();
-      //   }, 
-      //   1500)
-      //   console.log('timeout', timeOut)
-      // } else {
-      //   console.log('lock slider-----------------------')
-      //   toggleBlindModeSliderLock(true);
-      //   setBlindModeSliderValue(() => 50);
-      // }
-
+      // console.log('sliderVal', blindModeSliderValue)
       if( blindModeSliderValue > 48){
-        console.log('lock slider-----------------------')
+        // Success, you've done the thing, now do the thing here
         handleToggleBlindMode();
         toggleBlindModeSliderLock(true);
         setBlindModeSliderValue(() => 50);
       } else {
         timeOut = setTimeout(() => {
           setBlindModeSliderValue(() => 0);
-          // iterateBlindModeSliderDown();
         }, 
         1500)
-        // console.log('timeout', timeOut)
       }
       return ( ()=> {
           if(blindModeSliderValue < 48 && blindModeSliderLock){
@@ -67,24 +46,24 @@ function Tools(props) {
         }
       )
     }, [blindModeSliderValue]);
-    // Trying to create a smooth function that can iterate down the slider range value without jumping straight to 0;
-    function iterateBlindModeSliderDown() {
-      let timerID;
-      console.log('here');
+    // Test function for getting the slider to slowly iterate down instead of jumping straight to zero. Unable to get it to work with async state updates
+    // function iterateBlindModeSliderDown() {
+    //   let timerID;
+    //   console.log('here');
 
-      timerID = setInterval( ()=> {
-        if(blindModeSliderValue > 0){
-          setBlindModeSliderValue(() => blindModeSliderValue - 1);
-        }
-      }, 50)
-      clearInterval(timerID);
-    }
+    //   timerID = setInterval( ()=> {
+    //     if(blindModeSliderValue > 0){
+    //       setBlindModeSliderValue(() => blindModeSliderValue - 1);
+    //     }
+    //   }, 50)
+    //   clearInterval(timerID);
+    // }
 
     useEffect( ()=> {
       if(!blindMode) {
         setBlindModeSliderValue(()=> 50)
       }
-      console.log(blindModeSliderValue, blindModeSliderLock)
+      // console.log(blindModeSliderValue, blindModeSliderLock)
     }, [blindMode])
 
     return(
@@ -97,14 +76,20 @@ function Tools(props) {
                 Blind-Run mode is disabled <FontAwesomeIcon icon={faPowerOff} style={{color: 'red'}} />
 
                 </div> :
-                <div>
-                  <button onClick={e=> {
-                   e.preventDefault();
-                   toggleShowBlindModeSlider(true);
-                  }}>Disable Blind-Run mode</button>         
-                  <FontAwesomeIcon icon={faPowerOff} style={blindModeSliderValue > 48 ? 
-                  {color: 'red'} :
-                  {color: 'green'} } />
+                <div className='blindModeContainer'>
+                  <div>
+                    Disable Blind-Run mode?
+                  </div>
+                  <div className='blindModeButtonContainer'>
+                        
+                    <button onClick={e=> {
+                    e.preventDefault();
+                    toggleShowBlindModeSlider(true);
+                    }}>Disable</button>&nbsp;     
+                    <FontAwesomeIcon icon={faPowerOff} style={blindModeSliderValue > 48 ? 
+                    {color: 'red'} :
+                    {color: 'green'} } />
+                  </div>
                   {showBlindModeSlider && <div className='blindModeSlider'>
                   <div style={{textAlign: 'center'}}>
                     Are you sure?

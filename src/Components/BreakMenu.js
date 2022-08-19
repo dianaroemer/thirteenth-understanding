@@ -44,7 +44,7 @@ function BreakMenu(props) {
         // }
         // setReadbleRemainingBreakDuration(`${hours ? `${hours}:` : ''}${minutes ? `${minutes}:` : `00:`}${seconds ? `${seconds}` : `00`}`)
         setReadbleRemainingBreakDuration(generateReadableTimeString(props.remainingBreakDuration))
-    }, [[props.remainingBreakDuration]])
+    }, [props.remainingBreakDuration])
 
     function generateReadableTimeString(duration) {
         let remTime = duration;
