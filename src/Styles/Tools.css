@@ -20,6 +20,17 @@
     justify-content: center;
 }
 
+.blindModeSliderContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blindModeSlider {
+    display: block;
+    padding: 5px;
+}
+
 .toolsHeader{
     font-size: larger;
     text-align: center;

@@ -8,7 +8,13 @@ import '../Styles/Tools.css';
 
 function Tools(props) {
 
-    const [raidStateKF,handleRaidStateUpdate,handleEncounterCompletion,handleToggleBlindMode, blindMode, fireteam, fireteamFunctionContainer] = useOutletContext();
+    const [raidStateKF,
+      handleRaidStateUpdate,
+      handleEncounterCompletion,
+      handleToggleBlindMode, 
+      blindMode, 
+      fireteam, 
+      fireteamFunctionContainer] = useOutletContext();
 
     const [showBlindModeSlider, toggleShowBlindModeSlider] = useState(false);
     const [blindModeSliderValue, setBlindModeSliderValue] = useState(0);
@@ -91,16 +97,18 @@ function Tools(props) {
                     {color: 'red'} :
                     {color: 'green'} } />
                   </div>
-                  {showBlindModeSlider && <div className='blindModeSlider'>
-                  <div style={{textAlign: 'center'}}>
+                  {showBlindModeSlider && <div className='blindModeSliderContainer'>
+                  <div>
                     Are you sure?
-                    </div>
-                  <input type='range' 
+                  </div>
+                  <div className='blindModeSlider'> 
+                  <input type='range'
+                    id='blindModeSlider' 
                     min={0} max={50} 
                     value={blindModeSliderValue}
                     onChange={e=> handleBlindModeSliderChange(e)}></input> 
-                    Yes
-
+                    <label htmlFor='blindModeSlider'>Yes</label>
+                    </div>
                 </div>}
                   </div>}
             </div>
