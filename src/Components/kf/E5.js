@@ -11,7 +11,13 @@ function E5() {
     const thisRaid = 'kf';
     const thisEncounter = 'e5'
 
-    const [raidStateKF, handleRaidStateUpdate, handleEncounterCompletion] = useOutletContext();
+    const [raidStateKF,
+        handleRaidStateUpdate,
+        handleEncounterCompletion,
+        handleToggleBlindMode, 
+        blindMode, 
+        fireteam, 
+        fireteamFunctionContainer] = useOutletContext();
 
     const [attemptVisibility, toggleAttemptVisibility] = useState(false)
     function handleToggleAttemptVisibility(e) {
@@ -22,7 +28,7 @@ function E5() {
     const [stickTools, toggleStickTools] = useState(true)
     function handleToggleStickTools(e) {
         e.preventDefault();
-        console.log(e)
+        // console.log(e)
         // e.stopPropagation();
         toggleStickTools(!stickTools);
         if(stickTools){
@@ -31,15 +37,24 @@ function E5() {
         } else {
             setEncounterToolsClass('encounterTools')
             setEncounterContentClass('encounterContent')
-
         }
-        // console.log('here')
-        // console.log(stickTools)
-        // console.log(encounterToolsClass)
     }
 
     const [encounterToolsClass, setEncounterToolsClass] = useState('encounterTools');
     const [encounterContentClass, setEncounterContentClass] = useState('encounterContent')
+
+    function handleRoleUpdate(e,roleNumber, targetRole) {
+        e.preventDefault();
+        console.log(e.target.value)
+        let newArray = [...selectedRoles]
+        newArray[roleNumber] = Number(e.target.value);
+        setSelectedRoles(() => newArray);
+        console.log(newArray)
+        console.log(newArray.indexOf(1))
+    }
+
+    const [selectedRoles, setSelectedRoles] = useState([6, 6, 6, 6, 6, 6])
+
 
 
 
@@ -50,16 +65,13 @@ function E5() {
                 <div className='pinEncounterToolsContainer'                         onClick={e=> handleToggleStickTools(e)}>
                     <FontAwesomeIcon icon={faThumbTack} 
                         className='pinEncounterTools'/>
-
                 </div>
 
                 <div className='encounterClearedButtonContainer'>
-
                     <button onClick={( e=> {
                         handleEncounterCompletion(e, thisRaid, thisEncounter);
                         navigate('/kf/e6');
                     })}> Encounter Cleared! </button>
-
                 </div>
 
                 <div className='encounterAttemptsContainer'>
@@ -72,9 +84,7 @@ function E5() {
                         + Add Attempt +
                     </button>
 
-
                     <div className='encounterAttemptsVisibility'>
-
                     </div>
 
                 </div>
@@ -82,6 +92,207 @@ function E5() {
             </div>
             <div className={encounterContentClass}>
                 I am E5
+                <div className='encounterSection'>
+                    <div className='encounterHeader'>
+                        Roles
+                    </div>
+                    <div className='encounterRoleSelector'>
+                        Role 1: 
+                        <select id='role1' onChange={e=>handleRoleUpdate(e, 0)}>
+                            <option value={9}>
+
+                            </option>
+
+                            {(selectedRoles.indexOf(7) === -1 || selectedRoles[0] === 7) &&
+                            <option value={7}>
+                                {fireteam[0].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(1) === -1 || selectedRoles[0] === 1) &&<option value={1}>
+                                {fireteam[1].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(2) === -1 || selectedRoles[0] === 2) &&<option value={2}>
+                                {fireteam[2].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(3) === -1 || selectedRoles[0] === 3) &&<option value={3}>
+                                {fireteam[3].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(4) === -1 || selectedRoles[0] === 4) &&<option value={4}>
+                                {fireteam[4].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(5) === -1 || selectedRoles[0] === 5) &&<option value={5}>
+                                {fireteam[5].name}
+                            </option>}
+                        </select>
+                    </div>
+                    <div className='encounterRoleSelector'>
+                        Role 2: 
+                        <select id='role2' onChange={e=>handleRoleUpdate(e, 1)}>
+                            <option value={9}>
+
+                            </option>
+
+                            {(selectedRoles.indexOf(7) === -1 || selectedRoles[1] === 7) &&<option value={7}>
+                                {fireteam[0].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(1) === -1 || selectedRoles[1] === 1) &&<option value={1}>
+                                {fireteam[1].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(2) === -1 || selectedRoles[1] === 2) &&<option value={2}>
+                                {fireteam[2].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(3) === -1 || selectedRoles[1] === 3) &&<option value={3}>
+                                {fireteam[3].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(4) === -1 || selectedRoles[1] === 4) &&<option value={4}>
+                                {fireteam[4].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(5) === -1 || selectedRoles[1] === 5) &&<option value={5}>
+                                {fireteam[5].name}
+                            </option>}
+                        </select>
+                    </div>
+                    <div className='encounterRoleSelector'>
+                        Role 3: 
+                        <select id='role3' onChange={e=>handleRoleUpdate(e, 2)}>
+                            <option value={9}>
+
+                            </option>
+
+                            {(selectedRoles.indexOf(7) === -1 || selectedRoles[2] === 7) &&<option value={7}>
+                                {fireteam[0].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(1) === -1 || selectedRoles[2] === 1) &&<option value={1}>
+                                {fireteam[1].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(2) === -1 || selectedRoles[2] === 2) &&<option value={2}>
+                                {fireteam[2].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(3) === -1 || selectedRoles[2] === 3) &&<option value={3}>
+                                {fireteam[3].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(4) === -1 || selectedRoles[2] === 4) &&<option value={4}>
+                                {fireteam[4].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(5) === -1 || selectedRoles[2] === 5) &&<option value={5}>
+                                {fireteam[5].name}
+                            </option>}
+                        </select>
+                    </div>
+
+
+                    <div className='encounterRoleSelector'>
+                        Role 4: 
+                        <select id='role3' onChange={e=>handleRoleUpdate(e, 3)}>
+                            <option value={9}>
+
+                            </option>
+
+                            {(selectedRoles.indexOf(7) === -1 || selectedRoles[3] === 7) &&<option value={7}>
+                                {fireteam[0].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(1) === -1 || selectedRoles[3] === 1) &&<option value={1}>
+                                {fireteam[1].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(2) === -1 || selectedRoles[3] === 2) &&<option value={2}>
+                                {fireteam[2].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(3) === -1 || selectedRoles[3] === 3) &&<option value={3}>
+                                {fireteam[3].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(4) === -1 || selectedRoles[3] === 4) &&<option value={4}>
+                                {fireteam[4].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(5) === -1 || selectedRoles[3] === 5) &&<option value={5}>
+                                {fireteam[5].name}
+                            </option>}
+                        </select>
+                    </div>
+                    <div className='encounterRoleSelector'>
+                        Role 5: 
+                        <select id='role3' onChange={e=>handleRoleUpdate(e, 4)}>
+                            <option value={9}>
+
+                            </option>
+
+                            {(selectedRoles.indexOf(7) === -1 || selectedRoles[4] === 7) &&<option value={7}>
+                                {fireteam[0].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(1) === -1 || selectedRoles[4] === 1) &&<option value={1}>
+                                {fireteam[1].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(2) === -1 || selectedRoles[4] === 2) &&<option value={2}>
+                                {fireteam[2].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(3) === -1 || selectedRoles[4] === 3) &&<option value={3}>
+                                {fireteam[3].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(4) === -1 || selectedRoles[4] === 4) &&<option value={4}>
+                                {fireteam[4].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(5) === -1 || selectedRoles[4] === 5) &&<option value={5}>
+                                {fireteam[5].name}
+                            </option>}
+                        </select>
+                    </div>
+                    <div className='encounterRoleSelector'>
+                        Role 6: 
+                        <select id='role3' onChange={e=>handleRoleUpdate(e, 5)}>
+                            <option value={9}>
+
+                            </option>
+
+                            {(selectedRoles.indexOf(7) === -1 || selectedRoles[5] === 7) &&<option value={7}>
+                                {fireteam[0].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(1) === -1 || selectedRoles[5] === 1) &&<option value={1}>
+                                {fireteam[1].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(2) === -1 || selectedRoles[5] === 2) &&<option value={2}>
+                                {fireteam[2].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(3) === -1 || selectedRoles[5] === 3) &&<option value={3}>
+                                {fireteam[3].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(4) === -1 || selectedRoles[5] === 4) &&<option value={4}>
+                                {fireteam[4].name}
+                            </option>}
+
+                            {(selectedRoles.indexOf(5) === -1 || selectedRoles[5] === 5) &&<option value={5}>
+                                {fireteam[5].name}
+                            </option>}
+                        </select>
+                    </div>
+
+                </div>
             </div>
             
 

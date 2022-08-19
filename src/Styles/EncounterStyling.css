@@ -1,6 +1,7 @@
 .encounterContentContainer {
     /* margin: 10px; */
     /* background: grey; */
+    padding: 5px;
 }
 
 .encounterTools {
@@ -47,8 +48,24 @@
 
 }
 
+.encounterHeader{
+    font-size: larger;
+    text-align: center;
+    padding: 8px 50px;
+    background-color: #24282a;
+    border: solid 1px black;
+    border-radius: 4px;
+    margin-bottom: 3px;
+    margin-top: 10px;
+    width: fit-content;
+}
+
 .encounterContent{
     padding-top: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .encounterContent.pinned {
