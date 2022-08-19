@@ -1,14 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import { useOutletContext } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPeopleGroup, faPowerOff } from '@fortawesome/free-solid-svg-icons';
+import { faPeopleGroup, faPowerOff, faCheck, faX, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 
 import '../Styles/Tools.css';
 
 
 function Tools(props) {
 
-    const [raidStateKF,handleRaidStateUpdate,handleEncounterCompletion,handleToggleBlindMode, blindMode] = useOutletContext();
+    const [raidStateKF,handleRaidStateUpdate,handleEncounterCompletion,handleToggleBlindMode, blindMode, fireteam, fireteamFunctionContainer] = useOutletContext();
 
     const [showBlindModeSlider, toggleShowBlindModeSlider] = useState(false);
     const [blindModeSliderValue, setBlindModeSliderValue] = useState(0);
@@ -103,13 +103,43 @@ function Tools(props) {
                 </div>}
                   </div>}
             </div>
-{/* 
-            <button onClick={e=> {e.preventDefault(); testContainer.handleTest()}}>
-                test {test1}
-            </button>
-            <button onClick={e=> {e.preventDefault(); testContainer.handleBlarp()}}>
-                test updateTest1
-            </button> */}
+
+            <div className='toolsFireteamContainer'>
+              <div className='toolsHeader'>
+              Set Fireteam&nbsp;&nbsp;
+                <FontAwesomeIcon icon={faPeopleGroup} style={{color:''}}/>
+              </div>
+                
+                {/* <div className='toolsFireteamTable'>
+
+                </div> */}
+                {fireteam[0].edit ? 
+                <div className='tooslFireteamGuardianInput'>
+                  1. <input type='text' 
+                    value={fireteam[0].name}
+                    onChange={e=> fireteamFunctionContainer.handleUpdateGuardianName(e, 0)}></input>
+                    &nbsp; <FontAwesomeIcon onClick={e=> fireteamFunctionContainer.handleToggleGuardianEdit(e, 0)} icon={faCheck} style={{color:''}}/> 
+                    <div></div>
+                    Has Dinivity: {
+                      fireteam[0].hasDiv ? 
+                        <FontAwesomeIcon icon={faCheck} style={{color: 'green'}} onClick={e=> fireteamFunctionContainer.handleToggleGuardianDiv(e, 0)}/> :
+                        <FontAwesomeIcon icon={faX} style={{color: 'red'}} onClick={e=> fireteamFunctionContainer.handleToggleGuardianDiv(e, 0)}/>
+                      }
+                </div> :
+                <div className='toolsFireteamGuardianPane' onClick={e=> fireteamFunctionContainer.handleToggleGuardianEdit(e, 0)}> 
+                  1. {fireteam[0].name} &nbsp; <FontAwesomeIcon icon={faPenToSquare} style={{color:''}}/>&nbsp;&nbsp;&nbsp;
+                      <div></div>
+                  Has Divinity: {
+                      fireteam[0].hasDiv ? 
+                        <FontAwesomeIcon icon={faCheck} style={{color: 'green'}} onClick={e=> fireteamFunctionContainer.handleToggleGuardianDiv(e, 0)}/> :
+                        <FontAwesomeIcon icon={faX} style={{color: 'red'}} onClick={e=> fireteamFunctionContainer.handleToggleGuardianDiv(e, 0)}/>
+                      }
+                </div>}
+                
+                
+              </div>
+
+
 
           <div className='fireteamMenuContainer'>
             Set Fireteam 

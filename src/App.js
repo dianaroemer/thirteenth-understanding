@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Outlet, useNavigate} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPeopleGroup, faScrewdriverWrench  } from '@fortawesome/free-solid-svg-icons';
+import { faPeopleGroup, faScrewdriverWrench, faPenToSquare, faCheck, faX  } from '@fortawesome/free-solid-svg-icons';
 
 import './App.css';
 import './Styles/EncounterStyling.css';
@@ -363,6 +363,62 @@ function App() {
   }, [test1])
   // XXXUPDATEXXX REMOVE ABOVE BEFORE PRODUCTION XXXUPDATEXXX
 
+  const [fireteam, setFireteam] = useState([{
+    name: 'Guardian 1',
+    edit: true,
+    hasDiv: true}, 
+    {name: 'Guardian 2',
+    edit: false,
+      hasDiv: false} ,
+    {name: 'Guardian 3',
+    edit: false,
+    hasDiv: false} ,
+    {name: 'Guardian 4',
+    edit: false,
+    hasDiv: false} ,
+    {name: 'Guardian 5',
+    edit: false,
+    hasDiv: false} ,
+    {name: 'Guardian 6',
+    edit: false,
+    hasDiv: false} ,
+  ])
+  function handleUpdateGuardianName(e, guardian) {
+    e.preventDefault();
+    let newGuardian = {...fireteam[guardian], name: e.target.value}
+    let newFireteam = [...fireteam];
+    newFireteam[guardian] = newGuardian;
+    setFireteam(() => newFireteam);
+  }
+  function handleToggleGuardianDiv(e, guardian) {
+    e.stopPropagation();
+    let newGuardian = {...fireteam[guardian], hasDiv: !fireteam[guardian].hasDiv}
+    let newFireteam = [...fireteam]
+    newFireteam[guardian] = newGuardian
+    setFireteam(() => newFireteam);
+  }
+  function handleToggleGuardianEdit(e, guardian) {
+    e.preventDefault();
+    let newGuardian = {...fireteam[guardian], edit: !fireteam[guardian].edit}
+    let newFireteam = [...fireteam];
+    newFireteam[guardian] = newGuardian;
+    setFireteam(() => newFireteam);
+  }
+  const [fireteamFunctionContainer, setFireteamFunctionContainer] = useState({
+    handleUpdateGuardianName: handleUpdateGuardianName,
+    handleToggleGuardianDiv: handleToggleGuardianDiv,
+    handleToggleGuardianEdit: handleToggleGuardianEdit,
+  });
+  // This useEffect should prevent the function references from going stale, whenever fireteam updates
+  useEffect(()=> {
+    setFireteamFunctionContainer(()=> {return {
+      handleUpdateGuardianName: handleUpdateGuardianName,
+      handleToggleGuardianDiv: handleToggleGuardianDiv,
+      handleToggleGuardianEdit: handleToggleGuardianEdit,
+    }})
+
+  }, [fireteam])
+
   return (
     <div className="App"
       style={darkMode ? {backgroundColor: '#33373a', color: '#fff'} : {}}>
@@ -424,10 +480,38 @@ function App() {
       </div>
 
 
+          {/* handleUpdateGuardianDiv(e, 0) */}
 
 
       <div className={appContentClassString}>
         {/* If this is the user's first time coming to this website, show them welcome pane with tips. */}
+
+
+        {/* <div className='toolsFireteamContainer'>
+          Set Fireteam
+          {fireteam[0].edit ? 
+          <div className='tooslFireteamGuardianInput'>
+            1. <input type='text' 
+              value={fireteam[0].name}
+              onChange={e=> handleUpdateGuardianName(e, 0)}></input>
+              &nbsp; <FontAwesomeIcon onClick={e=> handleToggleGuardianEdit(e, 0)} icon={faCheck} style={{color:''}}/> Div: {
+                fireteam[0].hasDiv ? 
+                  <FontAwesomeIcon icon={faCheck} style={{color: 'green'}} onClick={e=> handleToggleGuardianDiv(e, 0)}/> :
+                  <FontAwesomeIcon icon={faX} style={{color: 'red'}} onClick={e=> handleToggleGuardianDiv(e, 0)}/>
+                }
+          </div> :
+          <div className='toolsFireteamGuardianPane' onClick={e=> handleToggleGuardianEdit(e, 0)}> 
+            1. {fireteam[0].name} &nbsp; <FontAwesomeIcon icon={faPenToSquare} style={{color:''}}/>&nbsp;&nbsp;&nbsp;
+
+            Div: {
+                fireteam[0].hasDiv ? 
+                  <FontAwesomeIcon icon={faCheck} style={{color: 'green'}} onClick={e=> handleToggleGuardianDiv(e, 0)}/> :
+                  <FontAwesomeIcon icon={faX} style={{color: 'red'}} onClick={e=> handleToggleGuardianDiv(e, 0)}/>
+                }
+          </div>}
+        </div> */}
+
+        
         {welcomePane && <div className='welcomePaneContainer' onClick={e=> toggleWelcomePane(false)}>
             <div className='welcomePane'>
               <div className='welcomePaneHeader'> 
@@ -459,7 +543,13 @@ function App() {
             </div>
           </div>}
 
-          <Outlet context={[raidStateKF,handleRaidStateUpdate, handleEncounterCompletion, handleToggleBlindMode, blindMode]}/>
+          <Outlet context={[raidStateKF,
+            handleRaidStateUpdate, 
+            handleEncounterCompletion, 
+            handleToggleBlindMode, 
+            blindMode, 
+            fireteam, 
+            fireteamFunctionContainer]}/>
 
 
 
