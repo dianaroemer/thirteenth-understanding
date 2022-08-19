@@ -10,6 +10,8 @@ function E5() {
 
     const thisRaid = 'kf';
     const thisEncounter = 'e5'
+    const roles = ['Runner', 'Plate 1', 'Plate 2',
+        'Plate 3', 'Plate 4', 'Floater']
 
     const [raidStateKF,
         handleRaidStateUpdate,
@@ -92,12 +94,12 @@ function E5() {
             </div>
             <div className={encounterContentClass}>
                 I am E5
-                <div className='encounterSection'>
+                <div className='encounterSection roles'>
                     <div className='encounterHeader'>
                         Roles
                     </div>
                     <div className='encounterRoleSelector'>
-                        Role 1: 
+                        {roles[0]}: &nbsp;
                         <select id='role1' onChange={e=>handleRoleUpdate(e, 0)}>
                             <option value={9}>
 
@@ -130,7 +132,7 @@ function E5() {
                         </select>
                     </div>
                     <div className='encounterRoleSelector'>
-                        Role 2: 
+                        {roles[1]}: &nbsp;
                         <select id='role2' onChange={e=>handleRoleUpdate(e, 1)}>
                             <option value={9}>
 
@@ -162,7 +164,7 @@ function E5() {
                         </select>
                     </div>
                     <div className='encounterRoleSelector'>
-                        Role 3: 
+                        {roles[2]}: &nbsp;
                         <select id='role3' onChange={e=>handleRoleUpdate(e, 2)}>
                             <option value={9}>
 
@@ -196,8 +198,8 @@ function E5() {
 
 
                     <div className='encounterRoleSelector'>
-                        Role 4: 
-                        <select id='role3' onChange={e=>handleRoleUpdate(e, 3)}>
+                        {roles[3]}: &nbsp;
+                        <select id='role4' onChange={e=>handleRoleUpdate(e, 3)}>
                             <option value={9}>
 
                             </option>
@@ -228,8 +230,8 @@ function E5() {
                         </select>
                     </div>
                     <div className='encounterRoleSelector'>
-                        Role 5: 
-                        <select id='role3' onChange={e=>handleRoleUpdate(e, 4)}>
+                        {roles[4]}: &nbsp;
+                        <select id='role5' onChange={e=>handleRoleUpdate(e, 4)}>
                             <option value={9}>
 
                             </option>
@@ -260,8 +262,8 @@ function E5() {
                         </select>
                     </div>
                     <div className='encounterRoleSelector'>
-                        Role 6: 
-                        <select id='role3' onChange={e=>handleRoleUpdate(e, 5)}>
+                        {roles[5]}: &nbsp;
+                        <select id='role6' onChange={e=>handleRoleUpdate(e, 5)}>
                             <option value={9}>
 
                             </option>
@@ -292,6 +294,45 @@ function E5() {
                         </select>
                     </div>
 
+                    <div className='encounterDivinitySelector'>
+                        Divinity: 
+                        <select id='divSelector'>
+                            <option value={9}>
+
+                            </option>
+                            {fireteam[0].hasDiv && 
+                                <option value={1}>
+                                    {fireteam[0].name}
+                                </option>
+                            }
+                            {fireteam[1].hasDiv && 
+                                <option value={1}>
+                                    {fireteam[1].name}
+                                </option>
+                            }
+                            {fireteam[2].hasDiv && 
+                                <option value={1}>
+                                    {fireteam[2].name}
+                                </option>
+                            }
+                            {fireteam[3].hasDiv && 
+                                <option value={1}>
+                                    {fireteam[3].name}
+                                </option>
+                            }
+                            {fireteam[4].hasDiv && 
+                                <option value={1}>
+                                    {fireteam[4].name}
+                                </option>
+                            }
+                            {fireteam[5].hasDiv && 
+                                <option value={1}>
+                                    {fireteam[5].name}
+                                </option>
+                            }
+                        </select>
+                    </div>
+                            
                 </div>
             </div>
             
