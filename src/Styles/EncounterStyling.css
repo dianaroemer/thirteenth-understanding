@@ -8,15 +8,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    transform: translateY(-2px);
+    /* transform: translateY(-5px); */
+    /* translate: -5px; */
+    padding: 0;
     padding-top: 5px;
+    padding-bottom: 6px;
     width: 100%;
+    margin-left: -5px;
+    margin-top: -6px;
 }
 
 .encounterTools.pinned {
     position: fixed;
     height: 75px;
-    width: 100%;
+    /* width: 100%; */
     
     border-bottom: 2px solid black;
     background: #24282A;
