@@ -1,23 +1,3 @@
-// import React, {useState, useEffect} from 'react';
-// // import '../../Styles/EncounterStyling.css';
-
-
-// function E1() {
-
-//     return(
-//         <div className='encounterContentContainer e1'>
-//             I am E1, we did it, I'm displaying!
-           
-//         </div>
-//     )
-
-// }
-
-// export default E1;
-
-
-
-
 import React, {useState, useEffect} from 'react';
 import { useOutletContext, NavLink, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -34,8 +14,7 @@ function E1() {
 
     const thisRaid = 'kf';
     const thisEncounter = 'e1'
-    const roles = ['Runner Left', 'Runner Right', 'Escort Left',
-        'Escort Right', 'Floater Left', 'Floater Right']
+    const roles = ['Runner Left', 'Escort Left', 'Floater Left', 'Runner Right', 'Escort Right', 'Floater Right']
 
     const [raidStateKF,
         handleRaidStateUpdate,
