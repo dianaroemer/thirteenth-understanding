@@ -99,16 +99,50 @@
     margin-top: 10px;
 }
 
-.encounterSection.roles {
+.encounterContent.pinned {
+    padding-top: 80px;
+}
+
+.encounterSection {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.encounterContent.pinned {
-    padding-top: 80px;
+.encounterBulletPoint {
+    padding-top: 5px;
 }
+
+.encounterSubBulletPoint {
+    margin-left: 20px;
+    padding-left: 10px;
+    padding-top: 3px;
+    display: list-item;
+    list-style-type: circle;
+}
+
+.emphasizedEnemy {
+    font-weight: 700;
+}
+
+.arcEnemy {
+    padding-right: 25px;
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/DestinyDamageTypeDefinition_092d066688b879c807c3b460afdd61e6.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+
+}
+
+.arcElement{
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/DestinyDamageTypeDefinition_092d066688b879c807c3b460afdd61e6.png");
+    height: 1rem;
+    width: 1rem;
+}
+
+
 
 @media only screen and (min-width: 769px) {
 

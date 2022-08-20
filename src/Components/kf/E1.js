@@ -454,6 +454,89 @@ function E1() {
 
                     </div>
                 </div>
+
+                <div className='encounterSection enemies'>
+                    <div className='encounterHeader'> 
+                        Enemies
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Minors</th>
+                                {/* <th>Majors</th> */}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            Hive Acolyte
+                                        </li>
+                                        <li>
+                                            Taken Thrall
+                                        </li>
+                                        <li>
+                                            Taken Acolyte
+                                            <ol className='encounterSubBulletPoint'>
+                                                Acolyte's Eye
+                                            </ol>
+                                        </li>
+                                        <li className='arcEnemy'>
+                                            {/* <span>Taken Centurion</span> */}
+                                            Taken Centurion
+                                            
+                                        </li>
+                                        <li className='emphasizedEnemy'>
+                                            <u>
+                                            Taken Phalanx
+                                            </u>
+                                        </li>
+                                    </ul>
+                                </td>
+                                {/* <td>
+                                    <ul>
+                                        <li>
+                                            Blah
+                                        </li>
+                                    </ul>
+                                </td> */}
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <div className='encounterSection tips'>
+                    <div className='encounterHeader'> 
+                        Tips
+                    </div>
+                    <ul style={{paddingLeft: '20px'}}>
+                        <li className='encounterBulletPoint'>
+                            Pick up both the left and right relics at the same time. 
+                            <ol className='encounterSubBulletPoint'>
+                                When either relic is picked up, Taken spawn on both sides of the map!
+                            </ol>
+                        </li>
+                        <li className='encounterBulletPoint'>
+                            Remember: Runners are completely defenseless with the relic. No running, double jumping, or abilities of any kind!
+                        </li>
+                        <li className='encounterBulletPoint'>
+                            Left and Right escorts should either kill Phalanxes first OR the walls first, so Runners reach the middle at the same time.
+                        </li>
+                        <li className='encounterBulletPoint'>
+                            Don't jump while dunking!
+                        </li>
+                    </ul>
+                </div>
+
+                <div className='encounterSection recommended'>
+                    <div className='encounterHeader'> 
+                        Recommended Weapons and Builds
+                    </div>
+
+                </div>
             </div>
             
 

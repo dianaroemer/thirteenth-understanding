@@ -37,7 +37,7 @@ function Menu(props) {
                                 // text-decoration: 'none'
                             };
                         }}
-                        to={props.inChallengeMode ? "/kf/e1c" : "/kf/e1"}>{(!props.blindMode || props.seenEncounters.e1) ? 'The Court of Oryx' : '? ? ? ? ? ? ? ? ? ?'}</NavLink>
+                        to={props.inChallengeMode ? "/kf/e1c" : "/kf/e1"}>{(!props.blindMode || props.seenEncounters.e1) ? 'The Hall of Souls' : '? ? ? ? ? ? ? ? ? ?'}</NavLink>
                 </div>
                 <div className='navMenuEncounterCheck'>
                     <FontAwesomeIcon icon={props.raidStateKF.e1.completed ?faCheck : faXmark} style={props.raidStateKF.e1.completed ? {color:'green'} : {color:'red'}}/>&nbsp;
