@@ -521,6 +521,8 @@ function E1C() {
                     <div className='encounterHeader'> 
                         Tips
                     </div>
+
+                    <div className='encounterSubSection'>
                     <ul style={{paddingLeft: '20px'}}>
                         <li className='encounterBulletPoint'>
                             Pick up both the left and right relics at the same time. 
@@ -542,6 +544,9 @@ function E1C() {
                         </li>
 
                     </ul>
+                    </div>
+                
+                    
                 </div>
 
                 <div className='encounterSection recommended'>
@@ -658,6 +663,8 @@ function E1C() {
                     <div className='encounterHeader'> 
                         Expected Changes in Destiny 2
                     </div>
+
+                    <div className='encounterSubSection'>
                     <ul style={{paddingLeft: '20px'}}>
                         <li className='encounterBulletPoint'>
                             Increased enemy density
@@ -675,6 +682,9 @@ function E1C() {
                             </ol>
                         </li>
                     </ul>
+                    </div>
+
+                    
                 </div>
 
                 <div className='encounterSection walkthrough'>

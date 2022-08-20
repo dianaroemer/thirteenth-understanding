@@ -503,7 +503,10 @@ function E2() {
                             </tr>
                         </tbody>
                     </table>
+                    <div className='encounterSubSection'>
                     * On death, Adepts enrage nearby Acolytes to use an Ogre's Eye beam. Either prioritze Acolytes, or destroy the whole pack at once
+                    </div>
+                    
 
                 </div>
 
@@ -511,33 +514,38 @@ function E2() {
                     <div className='encounterHeader'> 
                         Tips
                     </div>
-                    <ul style={{paddingLeft: '20px'}}>
-                        <li className='encounterBulletPoint'>
-                            When jumping, aim for the front of the swinging pillars and the front third of the Tomb Ship. Aiming for the middle can make slide off
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            ASOP - Always Stand On Plates. If you're first to an empty plate, you are now on plate duty. Show off them dance moves
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            Watch out for any titans or sword users who might harbor fratricidal intentions...
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            3rd person with a sword allows you to see around your character model, but can change how you perceive your movement. Pick one POV in the beginning and stick to it
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            In earlier raids, secret chests had a despawn timer after they've been opened. Wait for your whole fireteam to arrive before cracking open a cold one, lest someone who's struggling with the jumping puzzle miss out (sorry Phoenix)
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            Consider not opening the secret chest if you plan on also going for a Challenge Mode clear after a regular clear. Your second run will give the chest a larger pool of unlocked loot to pick from
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            Pick up both the left and right relics at the same time. 
-                            <ol className='encounterSubBulletPoint'>
-                                When either relic is picked up, Taken spawn on both sides of the map!
-                            </ol>
-                        </li>
+                    <div className='encounterSubSection'>
 
-                    </ul>
+                        <ul style={{paddingLeft: '20px'}}>
+                            <li className='encounterBulletPoint'>
+                                When jumping, aim for the front of the swinging pillars and the front third of the Tomb Ship. Aiming for the middle can make slide off
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                ASOP - Always Stand On Plates. If you're first to an empty plate, you are now on plate duty. Show off them dance moves
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                Watch out for any titans or sword users who might harbor fratricidal intentions...
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                3rd person with a sword allows you to see around your character model, but can change how you perceive your movement. Pick one POV in the beginning and stick to it
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                In earlier raids, secret chests had a despawn timer after they've been opened. Wait for your whole fireteam to arrive before cracking open a cold one, lest someone who's struggling with the jumping puzzle miss out 
+                                <ol className='encounterSubBulletPoint'>
+                                (Sorry Phoenix)
+                                </ol>
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                Consider not opening the secret chest if you plan on also going for a Challenge Mode clear after a regular clear. Your second run will give the chest a larger pool of unlocked loot to pick from. 
+                                <ol className='encounterSubBulletPoint'>
+                                Worst case scenario, you can return to the raid after Day 1 but before reset, to defeat any encounters you missed
+                                </ol>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    
                 </div>
 
                 <div className='encounterSection recommended'>
@@ -654,23 +662,25 @@ function E2() {
                     <div className='encounterHeader'> 
                         Expected Changes in Destiny 2
                     </div>
-                    <ul style={{paddingLeft: '20px'}}>
-                        <li className='encounterBulletPoint'>
-                            Increased enemy density
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            Unlikely to see champions in normal difficulty, similar to how Vault of Glass uses Overload Minotaurs in it's opening on Master difficulty
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            Centurions may become Major enemies, with more health. Destiny 1 only had minors and majors, whereas Destiny 2 introduced Ultras. Expect full use of the larger range of enemy difficulties to appear in King's Fall.
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            Lucent Hive. This would likely spawn in the Hall of Souls with the Acolytes or the Centurions. 
-                            <ol className='encounterSubBulletPoint'>
-                                While narratively tied to Savathun, Lucent Hive are too excellent an enemy type for a designer to ignore in a Hive (and Taken) based raid.
-                            </ol>
-                        </li>
-                    </ul>
+                    <div className='encounterSubSection'>
+                        <ul style={{paddingLeft: '20px'}}>
+                            <li className='encounterBulletPoint'>
+                                Increased enemy density
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                Unlikely to see champions in normal difficulty, similar to how Vault of Glass uses Overload Minotaurs in it's opening on Master difficulty
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                Centurions may become Major enemies, with more health. Destiny 1 only had minors and majors, whereas Destiny 2 introduced Ultras. Expect full use of the larger range of enemy difficulties to appear in King's Fall.
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                Lucent Hive. This would likely spawn in the Hall of Souls with the Acolytes or the Centurions. 
+                                <ol className='encounterSubBulletPoint'>
+                                    While narratively tied to Savathun, Lucent Hive are too excellent an enemy type for a designer to ignore in a Hive (and Taken) based raid.
+                                </ol>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div className='encounterSection walkthrough'>

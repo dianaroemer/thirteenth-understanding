@@ -655,27 +655,32 @@ function E1() {
 
                 </div>
 
-                <div className='encounterSection reprisedChanges'>
+                <div className='encounterSection expectedChanges'>
                     <div className='encounterHeader'> 
                         Expected Changes in Destiny 2
                     </div>
-                    <ul style={{paddingLeft: '20px'}}>
-                        <li className='encounterBulletPoint'>
-                            Increased enemy density
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            Unlikely to see champions in normal difficulty, similar to how Vault of Glass uses Overload Minotaurs in it's opening on Master difficulty
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            Centurions may become Major enemies, with more health. Destiny 1 only had minors and majors, whereas Destiny 2 introduced Ultras. Expect full use of the larger range of enemy difficulties to appear in King's Fall.
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            Lucent Hive. This would likely spawn in the Hall of Souls with the Acolytes or the Centurions. 
-                            <ol className='encounterSubBulletPoint'>
-                                While narratively tied to Savathun, Lucent Hive are too excellent an enemy type for a designer to ignore in a Hive (and Taken) based raid.
-                            </ol>
-                        </li>
-                    </ul>
+
+                    <div className='encounterSubSection'>
+                        <ul style={{paddingLeft: '20px'}}>
+                            <li className='encounterBulletPoint'>
+                                Increased enemy density
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                Unlikely to see champions in normal difficulty, similar to how Vault of Glass uses Overload Minotaurs in its opening on Master difficulty
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                Lucent Hive. These would likely spawn in the Hall of Souls with the Acolytes or the Centurions
+                                <ol className='encounterSubBulletPoint'>
+                                    While narratively tied to Savathun, Lucent Hive are too excellent an enemy type for a designer to ignore in a Hive (and Taken) based raid
+                                </ol>
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                Centurions may become Major enemies, with more health. Destiny 1 only had minors and majors, whereas Destiny 2 introduced Ultras. Expect full use of the larger range of enemy difficulties to appear in King's Fall
+                            </li>
+                        </ul>
+                    </div>
+
+
                 </div>
 
                 <div className='encounterSection walkthrough'>
