@@ -538,6 +538,75 @@ function E1() {
                     <div className='encounterHeader'> 
                         Recommended Weapons and Builds
                     </div>
+                    <div className='buildSlotsContainer'>
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon riskrunner'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                Arc damage resist, add-clear, and Arc 3.0. Easy win
+                            </div>
+                        </div>
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon witherhoard'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                Kill Phalanxes as they spawn
+                            </div>
+                        </div>
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon wishender'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                Increased damage against taken and anti-barrier for phalanxes. Finaly viable?
+                            </div>
+                        </div>
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon thunderlord'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                Add-clear everything with a pulse, effective against tougher Taken Centurions as well
+                            </div>
+                        </div>
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon gjallarhorn'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                Kill.
+                                <div>Literally.</div>
+                                <div>Everything.</div>
+                            </div>
+                        </div>
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon anarchy'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                See Witherhoard, but a heavy weapon
+                            </div>
+                        </div>
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon forbearance'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                Wave Frame GL's are powerful against Phalanxes (shoot the ground in front of them!)
+                            </div>
+                        </div>
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon blinding'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails cantdont'><div>Any Blinding GL.</div>
+                                Enemies can't kill you if they don't see you</div>
+                        </div>
+                    </div>
+                    
+
 
                 </div>
 

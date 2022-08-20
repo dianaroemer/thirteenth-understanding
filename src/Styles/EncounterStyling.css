@@ -130,15 +130,6 @@
     font-weight: 700;
 }
 
-.arcEnemy {
-    padding-right: 25px;
-    background-image: url("https://www.bungie.net/common/destiny2_content/icons/DestinyDamageTypeDefinition_092d066688b879c807c3b460afdd61e6.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: right bottom;
-
-}
-
 .shieldedEnemy {
     padding-right: 25px;
     background-size: contain;
@@ -162,6 +153,78 @@
     background-image: url("https://www.bungie.net/common/destiny2_content/icons/DestinyDamageTypeDefinition_530c4c3e7981dc2aefd24fd3293482bf.png");
 }
 
+.encounterSection.recommended {
+    width: 100%;
+}
+
+.buildSlotsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.buildSlot {
+    height: 70px;
+    width: 250px;
+    display: flex;
+    padding-bottom: 5px;
+}
+
+.buildSlotIcon {
+    height: 70px;
+    width: 70px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+.buildSlotDetails {
+    /* padding: 0 5px; */
+    padding-left: 5px;
+
+    width: 200px;
+    /* height: fit-content */
+}
+
+.buildSlotIcon.riskrunner {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/d8fc70e24fd1ddae0546c21ff1cf86d4.jpg");
+}
+
+.buildSlotIcon.witherhoard {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/e805ada80a07dccb6db9db71199ab273.jpg");
+}
+
+.buildSlotIcon.wishender {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/2f43461f378a905db1ba3e3dbcbfed83.jpg");
+}
+
+.buildSlotIcon.thunderlord {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/ddfe8daa6f2093efae32bd6f70ef36c5.jpg");
+}
+
+.buildSlotIcon.gjallarhorn {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/e6c6190dc297e8e09c1a32b2dab9aae4.jpg");
+}
+
+.buildSlotIcon.anarchy {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/140b9a1877eb689ff0e9c18f95f53029.jpg");
+}
+
+.buildSlotIcon.forbearance {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/70036e994bd7b8d41b40969330c15b38.jpg");
+}
+
+.buildSlotIcon.blinding {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/c0dde588e1a32760621859e496d2e657.png");
+}
+
+.buildSlotDetails.cantdont{
+    background-image: url("https://i.kym-cdn.com/entries/icons/mobile/000/022/138/highresrollsafe.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 
 
 

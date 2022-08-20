@@ -98,10 +98,10 @@ function BreakMenu(props) {
 
                 <div className='breakMenuButtonContainer'>
 
-                <button onClick={e=> props.addBreak(e, 3)} className='breakMenuButton'>
+                <button onClick={e=> props.addBreak(e, 60)} className='breakMenuButton'>
                         {(props.remainingBreakDuration > 0) ? 
-                        '+3 sec':
-                        '3 sec'}
+                        '+1 min':
+                        '1 min'}
                     </button>
 
                     <button onClick={e=> props.addBreak(e, 300)} className='breakMenuButton'>
