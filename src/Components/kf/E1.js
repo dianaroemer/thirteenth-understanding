@@ -529,8 +529,12 @@ function E1() {
                             Left and Right escorts should either kill Phalanxes first OR the walls first, so Runners reach the middle at the same time.
                         </li>
                         <li className='encounterBulletPoint'>
+                            Dunk on three! One, two...
+                        </li>
+                        <li className='encounterBulletPoint'>
                             Don't jump while dunking!
                         </li>
+
                     </ul>
                 </div>
 
@@ -608,11 +612,35 @@ function E1() {
                             </div>
                         </div>
                         <div className='buildSlot'>
+                            <div className='buildSlotIcon glaiveArc'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                Glaive block stops knock back. Try not to Architect yourself on melees
+                            </div>
+                        </div>
+
+                        <div className='buildSlot'>
                             <div className='buildSlotIcon blinding'>
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails cantdont'><div>Any Blinding GL.</div>
                                 Enemies can't kill you if they don't see you</div>
+                        </div>
+
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon arcResist'>
+                                {/* Icon */}
+                                <div className='buildSlotIcon arcResist colors'>
+                                {/* subIcon */}
+                                </div>
+                            </div>
+
+
+
+                            <div className='buildSlotDetails'>
+                                Arc resist will be MVP in King's Fall. Most Taken enemies deal arc damage
+                            </div>
                         </div>
                     </div>
                     
@@ -625,21 +653,88 @@ function E1() {
                         Walkthrough
                     </div>
 
-                    <p>
+                    <div className='encounterWalkthroughContainer'>
+
+                        <p className='encounterWalkthroughParagraph image'>
+                            Welcome, Guardians, to King's Fall. The first encounter of the raid is The Hall of Souls. To complete this encounter, you will open and travel through the gate in the Court of Oryx, however the gate must be powered by the 6 statues in the Hall of Souls (see image, statues are on the sides of the fireteam).
+                        </p>
+
+                        <div className='walkthroughImageContainer'>
+                            <a className='imgLink' 
+                            rel="noreferrer"
+                            href='https://obj-kr.thewiki.kr/data/65787465726e616c2f7777772e656e7465727461696e6d656e746275646468612e636f6d2f64657374696e792d74616b656e2d6b696e672d636f7572742d6f662d6f7279782e6a7067.jpg'
+                            target='_blank'>
+                                <img 
+                                    className='walkthroughImage'
+                                    src="https://obj-kr.thewiki.kr/data/65787465726e616c2f7777772e656e7465727461696e6d656e746275646468612e636f6d2f64657374696e792d74616b656e2d6b696e672d636f7572742d6f662d6f7279782e6a7067.jpg" alt="Six Guardians in the Hall of Souls" /> 
+                            </a>
+                                A fireteam enters the Hall of Souls. The front left statue is powered. Image courtesy of beta.thewiki.kr
+                        </div>
+
+                        <p className='encounterWalkthroughParagraph'>
+                            Initially, the six statues in the Hall of Souls are de-powered, with one single statue glowing, demonstrating that it is ready to become powered. Statues become powered whenever two guardians bank a relic (two relics per statue) in the statue at roughly the same time. If the next statue hasn't been powered within a short amount of time, whichever statue that was most recently powered becomes de-powered. For example, if you power three statues, and fail to power a fourth in time, the third will de-power, leaving only two powered statues.
+                        </p>
+
+                        <p className='encounterWalkthroughParagraph image'>
+                            The Hall of Souls is not a Darkness Zone, so you cannot wipe. Instead, you can die as many times as you need to in order to complete the encounter. Your primary obstacles to powering all six statues will be spawning waves of Taken enemies, barriers, and distance. For every additional statue that is powered, the next relics to power the next statue will spawn farther away from the Hall of Souls on the left and right sections of the Dreadnought. Simply put, the further away the relic, the more time it takes to find, pick up, and return the relic to its statue.
+
+                            
+                        </p>
+
+                        <div className='walkthroughImageContainer'>
+                            <a className='imgLink' 
+                            rel="noreferrer"
+                            href='https://i.imgur.com/1zyMFbJ.png'
+                            target='_blank'>
+                                <img 
+                                    className='walkthroughImage'
+                                    src="https://i.imgur.com/1zyMFbJ.png" alt="A top down map of the Hall of Souls" /> 
+                            </a>
+                                A top down map of the Hall of Souls. Guardians spawn at the bottom, with the portal opening at the top of the image. Courtesy of Terminalfury
+                        </div>
+
+                        <p className='encounterWalkthroughParagraph'>
+                            Returning each relic is further complicated by the enemies and barriers that spawn whenever a relic is picked up. At the start of the encounter, and when any relic(left or right) is picked up from then on, Taken enemies and glowing green barriers will spawn that will try to impede your progress. The barrier doesn't have a visible healthbar, but dies in a few shots from a special weapon - snipers and shotguns were effective in Destiny 1 for their burst damage. Fusion Rifles and Grenade Launchers will likely be just as effective in Destiny 2.             
+                        </p>
+
+                        <p className='encounterWalkthroughParagraph'>
+                        The enemies will range from Taken thrall in the hallways, to Taken Centurions at the statues, Taken Acolytes in the Hall of Souls where the guardians first spawn, and lastly, Taken Phalanxes. The Taken Phalanxes are the largest threat to the fireteam, as your relic carriers will be completely defenseless while carrying the relic. Unable to use their weapons, abilities, sprint, or even double jump, relic carriers are completely defenseless against a Phalanx boop off the edge. Each relic runner requires at least one escort by default, as, when they pick up a relic, green barriers will prevent them from returning to the Hall of Souls. 
+                        </p>
+
+                        <p className='encounterWalkthroughParagraph'>
+                            In Destiny 1, there were two primary methods of completing this encounter. The first assigned a runner and two escorts to each side, with both of the escorts assisting in killing enemies and clearing the barriers for the runner. The upside of this strategy meant that each runner could make it to back to the statues to bank relatively quickly, but the downside was that every time a relic squad would return, they would have to deal with a fresh wave of enemies in the Hall of Souls and the Statue Hallway.
+                        </p>
+
+                        <p className='encounterWalkthroughParagraph'>
+                            The alternative method, which became more popular as the average light level rose and the raid became easier, involved one runner and one escort per side, with two guardians staying in the Hall of Souls to clear adds. As soon as the relic runners picked up a relic, the middle guardians could immediately clear the enemies that spawned, clearing the way for the runners to bank unmolested by adds. The downside, however, was that each escort had to handle five phalanxes AND break the runner's barriers single-handedly, something that became much easier as guardians became strong. In contest mode, this will probably be the most time-efficient strategy, but will probably be riskier than the double escort strategy.
+                        </p>
+
+                        <p className='encounterWalkthroughParagraph wide'>
+                            Your primary enemy in this encounter is time. Your loadout and supers should be able to handle add clear, with the occasional larger enemies (Taken Centurions at the statues), with no bosses to worry about, so use your supers and heavy freely. High Resilience, like all difficult content in Destiny 2, is a must, and Arc Resist mods combined with Concussive Dampener should make surviving easier. Even then, Devour on Void subclasses is easy to maintain with the volume of enemies, and Restoration is freely available to all classes in Solar 3.0. 
+                        </p>
+
+                        <div className='walkthroughImageContainer'>
+                            <a className='imgLink' 
+                            rel="noreferrer"
+                            href='https://i.ytimg.com/vi/NHgS0sA39Jk/maxresdefault.jpg'
+                            target='_blank'>
+                                <img 
+                                    className='walkthroughImage'
+                                    src="https://i.ytimg.com/vi/NHgS0sA39Jk/maxresdefault.jpg" alt="The Court of Oryx with it's gate activated. Courtesy of Datto" /> 
+                            </a>
+                                The Court of Oryx's gate, when activated by the six statues. Image courtesy of Datto
+                        </div>
+
+                        <p className='encounterWalkthroughParagraph'>
+                            When all six statues in the Hall of Souls are powered, the portal in the Court of Oryx will activate. A number of enemies will come through, among then, a Hive Knight and a Hive Wizard. You do not need to defeat these enemies to pass through the portal. Instead, you can wait 'behind' the portal, for it's animation to finish, where you can pass through. Alternatively, keep dancing in and out of it until it teleports you. If all else fails, the Hall of Souls is not a Darkness Zone, so if you die on the way in, you can simply respawn and run back towards it. If the enemies prevent you, take whatever time you need to kill them safely before traveling through, and on to the next encounter.
+                        </p>
+
+                    {/* <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas viverra risus enim. Phasellus at turpis diam. Donec in blandit tellus, vitae faucibus libero. Sed posuere iaculis bibendum. Suspendisse massa libero, venenatis in ex nec, eleifend lobortis eros. Pellentesque a viverra augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec fringilla ipsum vitae ornare pellentesque. Aenean efficitur felis sit amet nunc rhoncus vestibulum. Duis pharetra venenatis volutpat. Curabitur in arcu urna. Aliquam rutrum venenatis massa, vel consequat risus sagittis vitae. Cras ac nunc blandit, hendrerit velit id, maximus libero. Duis sodales orci et blandit posuere.
-            </p>
-            <p>
-Aliquam convallis tellus vitae nisi dictum egestas. Integer vitae massa purus. Suspendisse eleifend faucibus tortor, facilisis pharetra ex volutpat pulvinar. Phasellus facilisis odio in libero convallis sollicitudin. Sed vitae blandit quam, vel fringilla libero. Ut quis sodales turpis. Nulla sit amet est non tortor aliquet volutpat non sed elit. Etiam pulvinar lacinia tortor, ut euismod lacus cursus faucibus. Phasellus et pellentesque ligula, in maximus est.
-            </p>
-            <p>
-Mauris placerat condimentum ultrices. Fusce eget vehicula ipsum. Maecenas massa lectus, pretium eu sollicitudin nec, sollicitudin at nisl. Nulla ultrices eu dui et sagittis. Phasellus eleifend augue sed urna pulvinar molestie. Donec iaculis ullamcorper arcu malesuada convallis. Pellentesque eleifend lectus at orci cursus porttitor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla tempus, odio euismod vulputate imperdiet, lorem nunc fringilla magna, at efficitur nibh velit non mauris. Etiam sagittis fringilla nulla quis bibendum. Quisque vel leo vitae elit lobortis posuere quis vitae quam. Curabitur sollicitudin feugiat enim et vulputate.
-            </p>
-            <p>
-Integer eget rhoncus elit. Ut cursus quis ante quis maximus. Donec sodales sapien in nunc fringilla dictum. Nulla a pretium enim. Maecenas convallis finibus sem. Pellentesque id commodo leo, eu sollicitudin elit. Curabitur at malesuada ante. Aliquam eu commodo lectus, a volutpat tortor. Quisque ut tellus enim. In imperdiet magna a massa rutrum consequat. Ut nec diam quis lectus posuere maximus. Sed fermentum, metus ut sagittis tempus, ante leo pellentesque orci, elementum fermentum lacus nunc sit amet risus. Vivamus pharetra pulvinar augue, ut tristique est lobortis porta. Aliquam eget risus luctus, pulvinar lorem sit amet, tempor sem. Vestibulum pretium massa sit amet dolor interdum consectetur. Aenean sit amet enim vel urna egestas ultricies.
-            </p>
-            <p>
-Nullam quis aliquam lorem. Duis ornare, mauris sed imperdiet efficitur, nisl quam pretium magna, quis feugiat nulla turpis vel elit. Donec non fringilla tellus, in blandit augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam eget massa vitae ipsum facilisis dapibus. Morbi mauris elit, consequat fringilla tempor sed, lobortis vel sem. Mauris semper varius odio at mollis. In quis sollicitudin nulla. Pellentesque libero arcu, bibendum at lorem nec, feugiat pulvinar eros.
-            </p>
+                    </p> */}
+
+                    </div>
+
 
                 </div>
 
@@ -650,7 +745,7 @@ Nullam quis aliquam lorem. Duis ornare, mauris sed imperdiet efficitur, nisl qua
                     <div>
                         Point of Failure Checklist
                     </div>
-                    <a className='dimLink' href='https://www.destinyitemmanager.com/'>
+                    <a className='dimLink' href='https://www.destinyitemmanager.com/' target='_blank'>
                         <div className='dimIcon'>
                             Destiny Item Manager
                         </div>
