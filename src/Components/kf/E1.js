@@ -724,13 +724,13 @@ function E1() {
                         <div className='walkthroughImageContainer'>
                             <a className='imgLink' 
                             rel="noreferrer"
-                            href='https://i.imgur.com/1zyMFbJ.png'
+                            href='https://i.imgur.com/dtYmodh.png'
                             target='_blank'>
                                 <img 
                                     className='walkthroughImage'
-                                    src="https://i.imgur.com/1zyMFbJ.png" alt="A top down map of the Hall of Souls" /> 
+                                    src="https://i.imgur.com/dtYmodh.png" alt="A top down map of the Hall of Souls showing the potential relic spawn locations" /> 
                             </a>
-                                A top down map of the Hall of Souls. Guardians spawn at the bottom, with the portal opening at the top of the image. Courtesy of Terminalfury
+                                A top down map of the Hall of Souls. Guardians spawn at the bottom, with the portal opening in the middle of the top half of the image. Courtesy of u/FluxDipole
                         </div>
 
                         <p className='encounterWalkthroughParagraph'>
@@ -746,7 +746,7 @@ function E1() {
                         </p>
 
                         <p className='encounterWalkthroughParagraph'>
-                            The alternative method, which became more popular as the average light level rose and the raid became easier, involved one runner and one escort per side, with two guardians staying in the Hall of Souls to clear adds. As soon as the relic runners picked up a relic, the middle guardians could immediately clear the enemies that spawned, clearing the way for the runners to bank unmolested by adds. The downside, however, was that each escort had to handle five phalanxes AND break the runner's barriers single-handedly, something that became much easier as guardians became strong. In contest mode, this will probably be the most time-efficient strategy, but will probably be riskier than the double escort strategy.
+                            The alternative method, which became more popular as the average light level rose and the raid became easier, involved one runner and one escort per side, with two guardians staying in the Hall of Souls to clear adds. As soon as the relic runners picked up a relic, the middle guardians could immediately clear the enemies that spawned, clearing the way for the runners to bank unmolested by adds. The downside, however, was that each escort had to handle five phalanxes AND break the runner's barriers single-handedly, something that became much easier as guardians became strong. In contest mode, this will probably be the most time-efficient strategy, but will be riskier than the double escort strategy.
                         </p>
 
                         <p className='encounterWalkthroughParagraph wide'>

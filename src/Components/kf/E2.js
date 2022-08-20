@@ -603,10 +603,13 @@ function E2() {
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Fly like an eagle
+                                {/* Fly like an eagle
                                 <div>to the sea</div>
                                 Fly like an eagle,
-                                <div>let my spirit carry me</div>
+                                <div>let my spirit carry me</div> */}
+                                Time keeps on slippin',
+                                <div>into the future</div>
+                                I wanna fly like an eagle...
                             </div>
                         </div>
 
@@ -646,15 +649,7 @@ function E2() {
                                 Look, I'm not going to tell you against Eager Edge, but just... Why do you have to be like this?
                             </div>
                         </div>
-
-
-
-
-
                     </div>
-                    
-
-
                 </div>
 
                 <div className='encounterSection reprisedChanges'>

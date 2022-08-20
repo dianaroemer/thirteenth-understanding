@@ -723,13 +723,13 @@ function E1C() {
                         <div className='walkthroughImageContainer'>
                             <a className='imgLink' 
                             rel="noreferrer"
-                            href='https://i.imgur.com/1zyMFbJ.png'
+                            href='https://i.imgur.com/dtYmodh.png'
                             target='_blank'>
                                 <img 
                                     className='walkthroughImage'
-                                    src="https://i.imgur.com/1zyMFbJ.png" alt="A top down map of the Hall of Souls" /> 
+                                    src="https://i.imgur.com/dtYmodh.png" alt="A top down map of the Hall of Souls showing the potential relic spawn locations" /> 
                             </a>
-                                A top down map of the Hall of Souls. Guardians spawn at the bottom, with the portal opening at the top of the image. Courtesy of Terminalfury
+                                A top down map of the Hall of Souls. Guardians spawn at the bottom, with the portal opening in the middle of the top half of the image. Courtesy of u/FluxDipole
                         </div>
 
                         <p className='encounterWalkthroughParagraph'>
