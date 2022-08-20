@@ -169,9 +169,12 @@ function E1() {
                 {!raidStateKF[thisEncounter].completed &&
                 <div className='encounterAttemptsContainer'>
                     <div onClick={e => handleToggleAttemptVisibility(e)}>
-                        <FontAwesomeIcon icon={attemptVisibility ? faEyeSlash : faEye}/>&nbsp;
-                        { attemptVisibility ? `Attempt # ${raidStateKF[thisEncounter].attempts}` : 'Show Attempts' }&nbsp;
-                        <FontAwesomeIcon icon={attemptVisibility ? faEyeSlash : faEye}/>
+                        {/* <FontAwesomeIcon icon={attemptVisibility ? faEye : faEyeSlash}/>&nbsp; */}
+                        { attemptVisibility ? 
+                        'Show Attempts' :
+                        `Attempt # ${raidStateKF[thisEncounter].attempts}` 
+                        }&nbsp;
+                        <FontAwesomeIcon icon={attemptVisibility ? faEye : faEyeSlash}/>
                     </div>
                     <button onClick={e=> handleRaidStateUpdate(e, thisRaid, thisEncounter, 'attempts', (raidStateKF[thisEncounter].attempts+1))}>
                         + Add Attempt +
@@ -505,13 +508,13 @@ function E1() {
                             Remember: Runners are completely defenseless with the relic. No running, double jumping, or abilities of any kind!
                         </li>
                         <li className='encounterBulletPoint'>
-                            Left and Right escorts should either kill Phalanxes first OR the walls first, so Runners reach the middle at the same time.
+                            Both the Left and Right escorts should kill either the Phalanxes or the walls first, so Runners reach the middle at the same time.
                         </li>
                         <li className='encounterBulletPoint'>
                             Dunk on three! One, two...
                         </li>
                         <li className='encounterBulletPoint'>
-                            Don't jump while dunking!
+                            Don't jump while dunking! Or do. I'm not the boss of you.
                         </li>
 
                     </ul>
@@ -651,7 +654,7 @@ function E1() {
                         </div>
 
                         <p className='encounterWalkthroughParagraph'>
-                            Initially, the six statues in the Hall of Souls are de-powered, with one single statue glowing, demonstrating that it is ready to become powered. Statues become powered whenever two guardians bank a relic (two relics per statue) in the statue at roughly the same time. If the next statue hasn't been powered within a short amount of time, whichever statue that was most recently powered becomes de-powered. For example, if you power three statues, and fail to power a fourth in time, the third will de-power, leaving only two powered statues.
+                            Initially, the six statues in the Hall of Souls are de-powered, with one single statue glowing, demonstrating that it is ready to become powered. Statues become powered whenever two guardians bank a relic (two relics per statue) in the statue at roughly the same time. If the next statue hasn't been powered within a short amount of time, whichever statue that was most recently powered becomes de-powered. For example, if you power three statues and fail to power a fourth in time, the third will de-power, leaving only two powered statues.
                         </p>
 
                         <p className='encounterWalkthroughParagraph image'>
@@ -705,7 +708,7 @@ function E1() {
                         </div>
 
                         <p className='encounterWalkthroughParagraph'>
-                            When all six statues in the Hall of Souls are powered, the portal in the Court of Oryx will activate. A number of enemies will come through, among then, a Hive Knight and a Hive Wizard. You do not need to defeat these enemies to pass through the portal. Instead, you can wait 'behind' the portal, for it's animation to finish, where you can pass through. Alternatively, keep dancing in and out of it until it teleports you. If all else fails, the Hall of Souls is not a Darkness Zone, so if you die on the way in, you can simply respawn and run back towards it. If the enemies prevent you, take whatever time you need to kill them safely before traveling through, and on to the next encounter.
+                            When all six statues in the Hall of Souls are powered, the portal in the Court of Oryx will activate. A number of enemies will come through, among then, a Hive Knight and a Hive Wizard. You do not need to defeat these enemies to pass through the portal. Instead, you can wait 'behind' the portal for it's animation to finish, when you can pass through. Alternatively, keep dancing in and out of it until it teleports you. If all else fails, the Hall of Souls is not a Darkness Zone, so if you die on the way in, you can simply respawn and run back towards it. If the enemies prevent you, take whatever time you need to kill them safely before traveling through, and on to the next encounter.
                         </p>
 
                     {/* <p>
