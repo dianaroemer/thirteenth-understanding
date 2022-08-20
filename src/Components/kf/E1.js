@@ -58,13 +58,14 @@ function E1() {
         console.log(newArray.indexOf(1))
     }
 
+    // The initial state of each guardian is set to 6, whereas the potential values are 1,2,3,4,5,7. This is due to my realization that indexOf returning -1 evaluates as TRUE in a boolean context, so rather than rewrite the role selection functionality, I tested the default value of 7 to replace guardian 1's initial 0 value (which evaluated as false), rather than set the initial state of the selected roles to [7,7,7, 7,7,7]. This can and should be an initial value of [7,7,7,7,7,7] with role 1 in the selector evaluating as 1, and each of the other role selectors respectively evaluating at 2, 3, 4, 5, and lastly 6. Would require combing through the roleSelector code and pruning, but I ain't got time for that, so for now, it stays, until I have time to fix it.
     const [selectedRoles, setSelectedRoles] = useState([6, 6, 6, 6, 6, 6])
 
 
 
     const [showEncounterCompleteSlider, toggleShowEncounterCompleteSlider] = useState(false);
     const [encounterClearedSliderValue, setEncounterClearedSliderValue] = useState(0);
-    const [encounterClearedSliderLock, toggleEncounterClearedSliderLock] = useState(!blindMode);
+    const [encounterClearedSliderLock, toggleEncounterClearedSliderLock] = useState(false);
 
     function handleEncounterClearedSliderChange(e) {
       e.preventDefault();
@@ -87,8 +88,8 @@ function E1() {
             origin: { y: .95 }
           });
         setTimeout(()=>{navigate('/kf/e2');}, 5000)
-        
-        // XXXUPDATEXXX
+        // XXXUPDATEXXX On new Encounters
+
         toggleEncounterClearedSliderLock(true);
         setEncounterClearedSliderValue(() => 50);
       } else {
@@ -107,11 +108,11 @@ function E1() {
     }, [encounterClearedSliderValue]);
 
 
-    useEffect( ()=> {
-      if(!blindMode) {
-        setEncounterClearedSliderValue(()=> 50)
-      }
-    }, [blindMode])
+    // useEffect( ()=> {
+    //   if(encounterClearedSliderLock) {
+    //     setEncounterClearedSliderValue(()=> 50)
+    //   }
+    // }, [encounterClearedSliderLock])
 
     return(
         <div className='encounterContentContainer e1'>
@@ -158,7 +159,7 @@ function E1() {
                                 min={0} max={50} 
                                 value={encounterClearedSliderValue}
                                 onChange={e=> handleEncounterClearedSliderChange(e)}></input> 
-                                <label htmlFor='blindModeSlider'>Complete</label>
+                                <label htmlFor='encounterClearedSlider'>Complete</label>
                             </div>
                         </div>}
                     </div>}
@@ -173,7 +174,7 @@ function E1() {
                         { attemptVisibility ? 
                         'Show Attempts' :
                         `Attempt # ${raidStateKF[thisEncounter].attempts}` 
-                        }&nbsp;
+                        }&nbsp;&nbsp;
                         <FontAwesomeIcon icon={attemptVisibility ? faEye : faEyeSlash}/>
                     </div>
                     <button onClick={e=> handleRaidStateUpdate(e, thisRaid, thisEncounter, 'attempts', (raidStateKF[thisEncounter].attempts+1))}>
@@ -195,7 +196,31 @@ function E1() {
             <div className={encounterContentClass}>
                 {/* I am E1 */}
 
-
+                {/* <div className='encounterSection challengeMode'>
+                    <div className='encounterHeader challengeMode'> 
+                        Possible Challenge Mode Changes
+                    </div>
+                    <ul style={{paddingLeft: '20px'}}>
+                        <li className='encounterBulletPoint'>
+                            Likely no changes, similar to Vault of Glass' introduction encounter. But just in case...
+                        </li>
+                        <li className='encounterBulletPoint'>
+                            No guardian can dunk more than two orbs (every guardian has to dunk exactly twice)
+                        </li>
+                        <li className='encounterBulletPoint'>
+                            Taken Phalanxes have to be killed before the barriers
+                        </li>
+                        <li className='encounterBulletPoint'>
+                            Barriers have to be killed before the Taken Phalanxes
+                        </li>
+                        <li className='encounterBulletPoint'>
+                            Timer to dunk orbs is shortened
+                        </li>
+                        <li className='encounterBulletPoint'>
+                            XXXUPDATEXXX
+                        </li>
+                    </ul>
+                </div> */}
 
                 <div className='encounterSection roles'>
                     <div className='encounterHeader'>
@@ -628,6 +653,29 @@ function E1() {
                     
 
 
+                </div>
+
+                <div className='encounterSection reprisedChanges'>
+                    <div className='encounterHeader'> 
+                        Expected Changes in Destiny 2
+                    </div>
+                    <ul style={{paddingLeft: '20px'}}>
+                        <li className='encounterBulletPoint'>
+                            Increased enemy density
+                        </li>
+                        <li className='encounterBulletPoint'>
+                            Unlikely to see champions in normal difficulty, similar to how Vault of Glass uses Overload Minotaurs in it's opening on Master difficulty
+                        </li>
+                        <li className='encounterBulletPoint'>
+                            Centurions may become Major enemies, with more health. Destiny 1 only had minors and majors, whereas Destiny 2 introduced Ultras. Expect full use of the larger range of enemy difficulties to appear in King's Fall.
+                        </li>
+                        <li className='encounterBulletPoint'>
+                            Lucent Hive. This would likely spawn in the Hall of Souls with the Acolytes or the Centurions. 
+                            <ol className='encounterSubBulletPoint'>
+                                While narratively tied to Savathun, Lucent Hive are too excellent an enemy type for a designer to ignore in a Hive (and Taken) based raid.
+                            </ol>
+                        </li>
+                    </ul>
                 </div>
 
                 <div className='encounterSection walkthrough'>
