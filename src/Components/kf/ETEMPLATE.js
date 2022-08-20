@@ -1,23 +1,3 @@
-// import React, {useState, useEffect} from 'react';
-// // import '../../Styles/EncounterStyling.css';
-
-
-// function E1() {
-
-//     return(
-//         <div className='encounterContentContainer e1'>
-//             I am E1, we did it, I'm displaying!
-           
-//         </div>
-//     )
-
-// }
-
-// export default E1;
-
-
-
-
 import React, {useState, useEffect} from 'react';
 import { useOutletContext, NavLink, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -25,14 +5,14 @@ import { faEye, faEyeSlash, faThumbTack } from '@fortawesome/free-solid-svg-icon
 import confetti from 'canvas-confetti';
 
 
-function E1() {
+function ETEMPLATE() {
 
     const navigate = useNavigate();
 
     const thisRaid = 'kf';
-    const thisEncounter = 'e1'
-    const roles = ['Runner Left', 'Runner Right', 'Escort Left',
-        'Escort Right', 'Floater Left', 'Floater Right']
+    const thisEncounter = 'eTEMPLATE'
+    const roles = ['Runner', 'Plate 1', 'Plate 2',
+        'Plate 3', 'Plate 4', 'Floater']
 
     const [raidStateKF,
         handleRaidStateUpdate,
@@ -78,7 +58,37 @@ function E1() {
 
     const [selectedRoles, setSelectedRoles] = useState([6, 6, 6, 6, 6, 6])
 
+    // function encounterClearedToReadableString(completionTime) {
+    //     let now = new Date.getTime();
+    //     let remainingTime = now - completionTime;
+    //     let hours = 0;
+    //     let minutes = 0;
+    //     let seconds = 0;
 
+    //     while(remainingTime > 3600000){
+    //         hours = hours + 1;
+    //         remainingTime = remainingTime - 3600000;
+    //     }
+    //     while(remainingTime > 60000){
+    //         minutes = minutes + 1;
+    //         remainingTime = remainingTime - 60000;
+    //     }
+    //     while(remainingTime > 1000){
+    //         seconds = seconds + 1;
+    //         remainingTime = remainingTime - 1000;
+    //     }
+    //     let timeString = ``;
+
+    //     if(minutes < 10){
+    //         minutes = `0`+minutes
+    //     }
+    //     if(seconds < 10){
+    //         seconds = `0`+seconds
+    //     }
+
+    //     timeString = (`${hours ? `${hours}:` : ''}${minutes ? `${minutes}:` : `00:`}${seconds ? `${seconds}` : `00`}`);
+    //     return timeString;
+    // }
 
     const [showEncounterCompleteSlider, toggleShowEncounterCompleteSlider] = useState(false);
     const [encounterClearedSliderValue, setEncounterClearedSliderValue] = useState(0);
@@ -89,6 +99,7 @@ function E1() {
       let newValue = Number(e.target.value);
       setEncounterClearedSliderValue(()=> newValue);
     }
+
     useEffect( () => {
       if(encounterClearedSliderLock){
         setEncounterClearedSliderValue(() => 50)
@@ -104,7 +115,7 @@ function E1() {
             startVelocity: 60,
             origin: { y: .95 }
           });
-        setTimeout(()=>{navigate('/kf/e2');}, 5000)
+        setTimeout(()=>{navigate('/kf/ETEMPLATE');}, 5000)
         
         // XXXUPDATEXXX
         toggleEncounterClearedSliderLock(true);
@@ -132,7 +143,7 @@ function E1() {
     }, [blindMode])
 
     return(
-        <div className='encounterContentContainer e1'>
+        <div className='encounterContentContainer e5'>
             <div className={encounterToolsClass}>
                 {/* I am encounter toolbox */}
                 {!raidStateKF[thisEncounter].completed && 
@@ -203,7 +214,7 @@ function E1() {
                 
             </div>
             <div className={encounterContentClass}>
-                I am E1
+                I am ETEMPLATE
                 <div className='encounterSection roles'>
                     <div className='encounterHeader'>
                         Roles
@@ -469,4 +480,4 @@ Nullam quis aliquam lorem. Duis ornare, mauris sed imperdiet efficitur, nisl qua
 
 }
 
-export default E1;
+export default ETEMPLATE;

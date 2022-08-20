@@ -276,6 +276,9 @@ function Tools(props) {
             About
               <div>
                 Link to my Github
+                {/* Confetti from - 
+                https://www.npmjs.com/package/canvas-confetti
+                 */}
               </div>
           </div>
           <div>
@@ -288,7 +291,10 @@ function Tools(props) {
             Recommended Weapons, Armor, and Builds
           </div>
           <div>
-            Don't Store localStorage on my machine
+            Google Analytics
+          </div>
+          <div>
+            Don't Store localStorage on my machine - (currently not using localStorage)
           </div>
           <div>
             Reset All Data to default
@@ -367,8 +373,6 @@ function Tools(props) {
                 Reddit/r/RaidSecrets - A Destiny 2 Reddit Community dedicated to finding and sharing secrets! SPOILERS OFTEN PRESENT
                 {/* https://www.reddit.com/r/raidsecrets/ */}
               </li>
-
-
 
 
             </ul>

@@ -16,7 +16,7 @@ import BreakMenu from './Components/BreakMenu';
 
 function App() {
 
-  const [coffeesImbibed, setCoffeesImbibed] = useState(5);
+  const [coffeesImbibed, setCoffeesImbibed] = useState(6);
 
   const navigate = useNavigate();
 
