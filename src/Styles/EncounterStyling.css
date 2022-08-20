@@ -169,6 +169,8 @@
     width: 250px;
     display: flex;
     padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 .buildSlotIcon {
@@ -199,6 +201,10 @@
     background-image: url("https://www.bungie.net/common/destiny2_content/icons/2f43461f378a905db1ba3e3dbcbfed83.jpg");
 }
 
+.buildSlotIcon.agers {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/a8fce2ba7ff621877cb718a84cc70930.jpg");
+}
+
 .buildSlotIcon.thunderlord {
     background-image: url("https://www.bungie.net/common/destiny2_content/icons/ddfe8daa6f2093efae32bd6f70ef36c5.jpg");
 }
@@ -227,6 +233,22 @@
 }
 
 
+
+
+.dimIcon {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("https://app.destinyitemmanager.com/apple-touch-icon-6-2018.png");
+    padding-left: 1.5rem;
+}
+
+.dimLink:link {
+    color: aquamarine;
+}
+
+.dimLink:visited {
+    color:rgb(184, 0, 0);
+}
 
 @media only screen and (min-width: 769px) {
 

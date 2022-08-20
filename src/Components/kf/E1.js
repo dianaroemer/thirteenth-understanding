@@ -564,11 +564,21 @@ function E1() {
                             </div>
                         </div>
                         <div className='buildSlot'>
+                            <div className='buildSlotIcon agers'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                Kill one enemy, kill the whole pack
+                            </div>
+                        </div>
+
+
+                        <div className='buildSlot'>
                             <div className='buildSlotIcon thunderlord'>
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Add-clear everything with a pulse, effective against tougher Taken Centurions as well
+                                Add-clear every red bar enemy, effective against tougher Taken Centurions
                             </div>
                         </div>
                         <div className='buildSlot'>
@@ -594,7 +604,7 @@ function E1() {
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Wave Frame GL's are powerful against Phalanxes (shoot the ground in front of them!)
+                                Wave Frame GL's (shoot the ground in front of Phalanxes)
                             </div>
                         </div>
                         <div className='buildSlot'>
@@ -630,6 +640,22 @@ Integer eget rhoncus elit. Ut cursus quis ante quis maximus. Donec sodales sapie
             <p>
 Nullam quis aliquam lorem. Duis ornare, mauris sed imperdiet efficitur, nisl quam pretium magna, quis feugiat nulla turpis vel elit. Donec non fringilla tellus, in blandit augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam eget massa vitae ipsum facilisis dapibus. Morbi mauris elit, consequat fringilla tempor sed, lobortis vel sem. Mauris semper varius odio at mollis. In quis sollicitudin nulla. Pellentesque libero arcu, bibendum at lorem nec, feugiat pulvinar eros.
             </p>
+
+                </div>
+
+                <div className='encounterSection resources'>
+                    <div className='encounterHeader'> 
+                        Additional Resources
+                    </div>
+                    <div>
+                        Point of Failure Checklist
+                    </div>
+                    <a className='dimLink' href='https://www.destinyitemmanager.com/'>
+                        <div className='dimIcon'>
+                            Destiny Item Manager
+                        </div>
+                    </a>
+                    
 
                 </div>
             </div>
