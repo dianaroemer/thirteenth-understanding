@@ -206,7 +206,7 @@ function E1() {
                 
             </div>
 
-            <div className='encounterTitle'>
+            <div className={stickTools ? 'encounterTitle' : 'encounterTitle stickTools'}>
                     Hall of Souls
                 </div>
 
