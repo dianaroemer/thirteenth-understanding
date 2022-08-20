@@ -113,8 +113,10 @@ function Tools(props) {
                   </div>}
             </div>
 
+
             <div className='toolsFireteamContainer'>
-              <div className='toolsHeader'>
+
+            <div className='toolsHeader'>
               Set Fireteam&nbsp;&nbsp;
                 <FontAwesomeIcon icon={faPeopleGroup} style={{color:''}}/>
               </div>
@@ -272,6 +274,9 @@ function Tools(props) {
           <div>
             Demo Mode
           </div> 
+          <div>
+            Hooking up links to actual links
+          </div>
           <div>
             About
               <div>

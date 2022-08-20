@@ -46,11 +46,21 @@
     font-size: medium;
     /* background: green; */
     text-align: center;
+    padding: 5px;
 
 }
 
 .toolsFireteamGuardianPane {
     font-size: medium;
     text-align: center;
+    padding: 5px;
 
+}
+
+@media only screen and (min-width: 769px) {
+
+    .toolsContainer{
+        /* width: 80% */
+
+    }
 }

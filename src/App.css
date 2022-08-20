@@ -191,6 +191,7 @@
   .appContent{
     margin-left: 260px;
     padding-top: 0;
+    width: 100%;
   }
 
   .appContent.expand{
