@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { useOutletContext, NavLink, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash, faThumbTack } from '@fortawesome/free-solid-svg-icons';
+import confetti from 'canvas-confetti';
 
 
 function E5() {
@@ -98,7 +99,7 @@ function E5() {
     const [encounterClearedSliderValue, setEncounterClearedSliderValue] = useState(0);
     const [encounterClearedSliderLock, toggleEncounterClearedSliderLock] = useState(!blindMode);
 
-    function handleBlindModeSliderChange(e) {
+    function handleEncounterClearedSliderChange(e) {
       e.preventDefault();
       let newValue = Number(e.target.value);
       setEncounterClearedSliderValue(()=> newValue);
@@ -113,6 +114,12 @@ function E5() {
       if( encounterClearedSliderValue > 48){
         // Success, you've done the thing, now do the thing here
         handleEncounterCompletion(thisRaid, thisEncounter);
+        confetti({
+            particleCount: 150,
+            spread: 80,
+            startVelocity: 60,
+            origin: { y: .95 }
+          });
         setTimeout(()=>{navigate('/kf/e6');}, 5000)
         
         // XXXUPDATEXXX
@@ -196,7 +203,7 @@ function E5() {
                                 id='encounterClearedSlider' 
                                 min={0} max={50} 
                                 value={encounterClearedSliderValue}
-                                onChange={e=> handleBlindModeSliderChange(e)}></input> 
+                                onChange={e=> handleEncounterClearedSliderChange(e)}></input> 
                                 <label htmlFor='blindModeSlider'>Complete</label>
                             </div>
                         </div>}
