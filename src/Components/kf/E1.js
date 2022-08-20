@@ -522,27 +522,32 @@ function E1() {
                     <div className='encounterHeader'> 
                         Tips
                     </div>
-                    <ul style={{paddingLeft: '20px'}}>
-                        <li className='encounterBulletPoint'>
-                            Pick up both the left and right relics at the same time. 
-                            <ol className='encounterSubBulletPoint'>
-                                When either relic is picked up, Taken spawn on both sides of the map!
-                            </ol>
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            Remember: Runners are completely defenseless with the relic. No running, double jumping, or abilities of any kind!
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            Both the Left and Right escorts should kill either the Phalanxes or the walls first, so Runners reach the middle at the same time.
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            Dunk on three! One, two...
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            Don't jump while dunking! Or do. I'm not the boss of you.
-                        </li>
 
-                    </ul>
+                    <div className='encounterSubSection'>
+                        <ul style={{paddingLeft: '20px'}}>
+                            <li className='encounterBulletPoint'>
+                                Pick up both the left and right relics at the same time. 
+                                <ol className='encounterSubBulletPoint'>
+                                    When either relic is picked up, Taken spawn on both sides of the map!
+                                </ol>
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                Remember: Runners are completely defenseless with the relic. No running, double jumping, or abilities of any kind!
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                Both the Left and Right escorts should kill either the Phalanxes or the walls first, so Runners reach the middle at the same time.
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                Dunk on three! One, two...
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                Don't jump while dunking! Or do. I'm not the boss of you.
+                            </li>
+
+                        </ul>
+                    </div>
+
+
                 </div>
 
                 <div className='encounterSection recommended'>
