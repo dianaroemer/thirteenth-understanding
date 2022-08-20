@@ -205,12 +205,15 @@ function E1() {
                 
                 
             </div>
+
+            <div className='encounterTitle'>
+                    Hall of Souls
+                </div>
+
             <div className={encounterContentClass}>
                 {/* I am E1 */}
 
-                <div className='encounterTitle'>
-                    Hall of Souls
-                </div>
+
 
                 <div className='encounterSection roles'>
                     <div className='encounterHeader'>
@@ -457,7 +460,7 @@ function E1() {
 
                 <div className='encounterSection enemies'>
                     <div className='encounterHeader'> 
-                        Enemies
+                        Expected Enemies
                     </div>
                     <table>
                         <thead>
@@ -483,7 +486,7 @@ function E1() {
                                                 Acolyte's Eye
                                             </ol>
                                         </li>
-                                        <li className='arcEnemy'>
+                                        <li className='shieldedEnemy arc'>
                                             {/* <span>Taken Centurion</span> */}
                                             Taken Centurion
                                             
@@ -537,10 +540,13 @@ function E1() {
                     </div>
 
                 </div>
-            </div>
-            
 
-            <p>
+                <div className='encounterSection walkthrough'>
+                    <div className='encounterHeader'> 
+                        Walkthrough
+                    </div>
+
+                    <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas viverra risus enim. Phasellus at turpis diam. Donec in blandit tellus, vitae faucibus libero. Sed posuere iaculis bibendum. Suspendisse massa libero, venenatis in ex nec, eleifend lobortis eros. Pellentesque a viverra augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec fringilla ipsum vitae ornare pellentesque. Aenean efficitur felis sit amet nunc rhoncus vestibulum. Duis pharetra venenatis volutpat. Curabitur in arcu urna. Aliquam rutrum venenatis massa, vel consequat risus sagittis vitae. Cras ac nunc blandit, hendrerit velit id, maximus libero. Duis sodales orci et blandit posuere.
             </p>
             <p>
@@ -555,6 +561,12 @@ Integer eget rhoncus elit. Ut cursus quis ante quis maximus. Donec sodales sapie
             <p>
 Nullam quis aliquam lorem. Duis ornare, mauris sed imperdiet efficitur, nisl quam pretium magna, quis feugiat nulla turpis vel elit. Donec non fringilla tellus, in blandit augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam eget massa vitae ipsum facilisis dapibus. Morbi mauris elit, consequat fringilla tempor sed, lobortis vel sem. Mauris semper varius odio at mollis. In quis sollicitudin nulla. Pellentesque libero arcu, bibendum at lorem nec, feugiat pulvinar eros.
             </p>
+
+                </div>
+            </div>
+            
+
+           
         </div>
     )
 
