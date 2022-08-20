@@ -518,7 +518,10 @@ function E2() {
 
                         <ul style={{paddingLeft: '20px'}}>
                             <li className='encounterBulletPoint'>
-                                When jumping, aim for the front of the swinging pillars and the front third of the Tomb Ship. Aiming for the middle can make slide off
+                                If you hold jump, you jump higher. If you tap jump, you jump lower. True story
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                When jumping, aim for the front of the swinging pillars and the front third of the Tomb Ship. Aiming for the middle can make you slide off
                             </li>
                             <li className='encounterBulletPoint'>
                                 ASOP - Always Stand On Plates. If you're first to an empty plate, you are now on plate duty. Show off them dance moves
@@ -554,104 +557,100 @@ function E2() {
                     </div>
                     <div className='buildSlotsContainer'>
                         <div className='buildSlot'>
-                            <div className='buildSlotIcon riskrunner'>
+                            <div className='buildSlotIcon stompees'>
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Arc damage resist, add-clear, and Arc 3.0. Easy win
+                                Better hops, easier platforming
                             </div>
                         </div>
                         <div className='buildSlot'>
-                            <div className='buildSlotIcon witherhoard'>
+                            <div className='buildSlotIcon transversive'>
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Kill Phalanxes as they spawn
+                                Only improves sprint speed, but gives you momentum before you yeet
                             </div>
                         </div>
                         <div className='buildSlot'>
-                            <div className='buildSlotIcon wishender'>
+                            <div className='buildSlotIcon wingsSacredDawn'>
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Increased damage against taken and anti-barrier for phalanxes. Finaly viable?
+                                Where we're going, we don't need roads. Or Tomb Ships.
                             </div>
                         </div>
                         <div className='buildSlot'>
-                            <div className='buildSlotIcon agers'>
+                            <div className='buildSlotIcon lionRampant'>
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Kill one enemy, kill the whole pack
-                            </div>
-                        </div>
-
-
-                        <div className='buildSlot'>
-                            <div className='buildSlotIcon thunderlord'>
-                                {/* Icon */}
-                            </div>
-                            <div className='buildSlotDetails'>
-                                Add-clear every red bar enemy, effective against tougher Taken Centurions
-                            </div>
-                        </div>
-                        <div className='buildSlot'>
-                            <div className='buildSlotIcon gjallarhorn'>
-                                {/* Icon */}
-                            </div>
-                            <div className='buildSlotDetails'>
-                                Kill.
-                                <div>Literally.</div>
-                                <div>Everything.</div>
-                            </div>
-                        </div>
-                        <div className='buildSlot'>
-                            <div className='buildSlotIcon anarchy'>
-                                {/* Icon */}
-                            </div>
-                            <div className='buildSlotDetails'>
-                                See Witherhoard, but a heavy weapon
-                            </div>
-                        </div>
-                        <div className='buildSlot'>
-                            <div className='buildSlotIcon forbearance'>
-                                {/* Icon */}
-                            </div>
-                            <div className='buildSlotDetails'>
-                                Wave Frame GL's (shoot the ground in front of Phalanxes)
-                            </div>
-                        </div>
-                        <div className='buildSlot'>
-                            <div className='buildSlotIcon glaiveArc'>
-                                {/* Icon */}
-                            </div>
-                            <div className='buildSlotDetails'>
-                                Glaive block stops knock back. Try not to Architect yourself on melees
+                                Titan has hops. Eternal flight when paired with swords
                             </div>
                         </div>
 
                         <div className='buildSlot'>
-                            <div className='buildSlotIcon blinding'>
+                            <div className='buildSlotIcon mobility'>
                                 {/* Icon */}
                             </div>
-                            <div className='buildSlotDetails cantdont'><div>Any Blinding GL.</div>
-                                Enemies can't kill you if they don't see you</div>
+                            <div className='buildSlotDetails'>
+                                More mobility, more jump height
+                            </div>
                         </div>
 
                         <div className='buildSlot'>
-                            <div className='buildSlotIcon arcResist'>
+                            <div className='buildSlotIcon daybreak'>
                                 {/* Icon */}
-                                <div className='buildSlotIcon arcResist colors'>
-                                {/* subIcon */}
-                                </div>
                             </div>
-
-
-
                             <div className='buildSlotDetails'>
-                                Arc resist will be MVP in King's Fall. Most Taken enemies deal arc damage
+                                Fly like an eagle
+                                <div>to the sea</div>
+                                Fly like an eagle,
+                                <div>let my spirit carry me</div>
                             </div>
                         </div>
+
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon tripleJump'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                * Slaps Triple Jump *
+                                <div>This bad boy can hold so many hops</div>
+                            </div>
+                        </div>
+
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon sword'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                3rd person POV and a little extra oomph to reach those far ledges
+                            </div>
+                        </div>
+
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon astrocyte'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                Hey everyone, look at me! Look how cool I am! I'm nearly ther-woops I fell
+                            </div>
+                        </div>
+
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon eagerEdge'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                Look, I'm not going to tell you against Eager Edge, but just... Why do you have to be like this?
+                            </div>
+                        </div>
+
+
+
+
+
                     </div>
                     
 
@@ -663,23 +662,7 @@ function E2() {
                         Expected Changes in Destiny 2
                     </div>
                     <div className='encounterSubSection'>
-                        <ul style={{paddingLeft: '20px'}}>
-                            <li className='encounterBulletPoint'>
-                                Increased enemy density
-                            </li>
-                            <li className='encounterBulletPoint'>
-                                Unlikely to see champions in normal difficulty, similar to how Vault of Glass uses Overload Minotaurs in it's opening on Master difficulty
-                            </li>
-                            <li className='encounterBulletPoint'>
-                                Centurions may become Major enemies, with more health. Destiny 1 only had minors and majors, whereas Destiny 2 introduced Ultras. Expect full use of the larger range of enemy difficulties to appear in King's Fall.
-                            </li>
-                            <li className='encounterBulletPoint'>
-                                Lucent Hive. This would likely spawn in the Hall of Souls with the Acolytes or the Centurions. 
-                                <ol className='encounterSubBulletPoint'>
-                                    While narratively tied to Savathun, Lucent Hive are too excellent an enemy type for a designer to ignore in a Hive (and Taken) based raid.
-                                </ol>
-                            </li>
-                        </ul>
+                        None
                     </div>
                 </div>
 

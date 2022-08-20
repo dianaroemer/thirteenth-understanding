@@ -331,6 +331,49 @@
     background-position: center;
 }
 
+.buildSlotIcon.stompees {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/8c7681f1e93ee996a724e55554e079e9.jpg");
+}
+
+.buildSlotIcon.transversive {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/78874c268891725a68bdcc35432fec9e.jpg");
+}
+
+.buildSlotIcon.wingsSacredDawn {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/eb1c6215d4997aaba5c0c10114ff65b6.jpg");
+}
+
+.buildSlotIcon.lionRampant {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/bd9977d2267655736adc7c72a8fb4659.jpg");
+}
+
+.buildSlotIcon.mobility {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/e26e0e93a9daf4fdd21bf64eb9246340.png");
+}
+
+.buildSlotIcon.daybreak {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/ce006cb360a96d8f054e49499d924603.png");
+}
+
+.buildSlotIcon.tripleJump {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/3dd6331f5a1c066e845ad7d607f44988.jpg");
+}
+
+.buildSlotIcon.sword {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/ddb15379c4cb8c9e05758a108b8eb20d.jpg");
+}
+
+.buildSlotIcon.astrocyte {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/96fdb1cd590b2212006d128dd0bc32a4.jpg");
+}
+
+.buildSlotIcon.eagerEdge {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/4716d462aad8d5913c22a34ee8eac494.png");
+}
+
+
+
+
 
 
 
