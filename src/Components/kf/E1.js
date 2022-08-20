@@ -24,6 +24,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash, faThumbTack } from '@fortawesome/free-solid-svg-icons';
 import confetti from 'canvas-confetti';
 
+import '../../Styles/EncounterStyling.css';
+
+
 
 function E1() {
 
@@ -203,7 +206,12 @@ function E1() {
                 
             </div>
             <div className={encounterContentClass}>
-                I am E1
+                {/* I am E1 */}
+
+                <div className='encounterTitle'>
+                    Hall of Souls
+                </div>
+
                 <div className='encounterSection roles'>
                     <div className='encounterHeader'>
                         Roles

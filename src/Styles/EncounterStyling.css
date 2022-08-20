@@ -65,6 +65,14 @@
     width: 25px;
     height: 25px;
     margin:10px;
+}
+
+.encounterTitle {
+    font-size: x-large;
+    padding: 5px 25%;
+    background-color: rgb(128, 0, 0);
+    border-radius: 3px;
+    border: solid 2px black
 
 }
 
@@ -103,6 +111,10 @@
 }
 
 @media only screen and (min-width: 769px) {
+
+    .encounterContentContainer{
+        width: calc(100% - 15px);
+    }
 
     .encounterTools{
 
