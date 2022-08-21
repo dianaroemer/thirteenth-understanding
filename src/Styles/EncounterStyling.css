@@ -263,15 +263,12 @@
 }
 
 .walkthroughImage {
-    /* height: 180px; */
+    height: 180px;
     /* width: 90%; */
     max-height: 200px;
     max-width: 90%;
     border: solid 1px black
-    
 }
-
-
 
 .buildSlotIcon.riskrunner {
     background-image: url("https://www.bungie.net/common/destiny2_content/icons/d8fc70e24fd1ddae0546c21ff1cf86d4.jpg");
@@ -365,6 +362,10 @@
 
 .buildSlotIcon.astrocyte {
     background-image: url("https://www.bungie.net/common/destiny2_content/icons/96fdb1cd590b2212006d128dd0bc32a4.jpg");
+}
+
+.buildSlotIcon.acrius {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/1ed0827344c3855218be3bca8afb12af.jpg");
 }
 
 .buildSlotIcon.eagerEdge {

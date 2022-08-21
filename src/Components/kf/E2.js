@@ -642,6 +642,15 @@ function E2() {
                         </div>
 
                         <div className='buildSlot'>
+                            <div className='buildSlotIcon acrius'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                Unequip Acrius! It reduces your jump height even when stowed
+                            </div>
+                        </div>
+
+                        <div className='buildSlot'>
                             <div className='buildSlotIcon eagerEdge'>
                                 {/* Icon */}
                             </div>
@@ -668,84 +677,86 @@ function E2() {
 
                     <div className='encounterWalkthroughContainer'>
 
-                        <p className='encounterWalkthroughParagraph image'>
-                            Welcome, Guardians, to King's Fall. The first encounter of the raid is The Hall of Souls. To complete this encounter, you will open and travel through the gate in the Court of Oryx, however the gate must be powered by the 6 statues in the Hall of Souls (see image, statues are on the sides of the fireteam).
-                        </p>
+                    <p className='encounterWalkthroughParagraph image'>
+                            The second encounter of King's Fall is a transitionary encounter split into three sections. The first two are relatively simple jumping puzzles with a token force enemies that are easily dispatched without concern.  The third involves a simple plate mechanic that will repeat throughout the raid in later encounters, something which King's Fall has become quite notorious for - standing on a plate.
+                        </p>    
 
                         <div className='walkthroughImageContainer'>
                             <a className='imgLink' 
                             rel="noreferrer"
-                            href='https://obj-kr.thewiki.kr/data/65787465726e616c2f7777772e656e7465727461696e6d656e746275646468612e636f6d2f64657374696e792d74616b656e2d6b696e672d636f7572742d6f662d6f7279782e6a7067.jpg'
+                            href='https://static.wikia.nocookie.net/destinypedia/images/a/a2/KingsFallHeader.jpg'
                             target='_blank'>
                                 <img 
                                     className='walkthroughImage'
-                                    src="https://obj-kr.thewiki.kr/data/65787465726e616c2f7777772e656e7465727461696e6d656e746275646468612e636f6d2f64657374696e792d74616b656e2d6b696e672d636f7572742d6f662d6f7279782e6a7067.jpg" alt="Six Guardians in the Hall of Souls" /> 
+                                    src="https://static.wikia.nocookie.net/destinypedia/images/a/a2/KingsFallHeader.jpg" alt="The first jumping puzzle of King's Fall - the swinging pillars" /> 
                             </a>
-                                A fireteam enters the Hall of Souls. The front left statue is powered. Image courtesy of beta.thewiki.kr
+                                The first jumping puzzle of King's Fall - the swinging pillars. Image courtesy of destiny.fandom.com
                         </div>
 
                         <p className='encounterWalkthroughParagraph'>
-                            Initially, the six statues in the Hall of Souls are de-powered, with one single statue glowing, demonstrating that it is ready to become powered. Statues become powered whenever two guardians bank a relic (two relics per statue) in the statue at roughly the same time. If the next statue hasn't been powered within a short amount of time, whichever statue that was most recently powered becomes de-powered. For example, if you power three statues and fail to power a fourth in time, the third will de-power, leaving only two powered statues.
-                        </p>
+                            After stepping through the gate in the Court of Oryx, you can collect your loot from the present chest, and proceed forward. You'll find an enormous chasm separating you from the next hallway, the gap punctuated by a number of swinging pillars. In this first section of the second encounter, you simply need to cross the gap to the door on the other side. 
+                        </p>    
+
+                        <p className='encounterWalkthroughParagraph'>
+                            Like the Hall of Souls, the entirety of the second encounter is not a Darkness zone, so you can die as much as you need to in order to platform your way across. The path is relatively straightforward, but jumping across the pillars comes with its own complications. When jumping from one pillar to the next, it helps to jump 'earlier' than you would think that you need to. The difficulty in this section comes from the speed variance between the pillars - jumping early helps to try and mitigate that. Because the pillars create a large speed differential when swinging past each other, it is easy to jump from one pillar to the next and slide off, or even get Architected on landing. Predictively jumping from pillar to pillar, instead of reactively jumping, will let you fly through this encounter in no time.
+                        </p>  
+
+                        <p className='encounterWalkthroughParagraph'>
+                            Upon clearing the pillar section, you will travel forward to the second section of the jumping puzzle. The path to the second section will split to the left and right, with both leading to the same destination - the Tomb Ships. This is where you'll find your first Hive Adept, a Major Acolyte that, upon its death, frenzies nearby Acolytes (Adepts not included) into using an Ogre Eye Beam attack. Simply kill the Acolytes first to avoid this surprising damage, and prepare for the Tomb Ships.
+                        </p>  
 
                         <p className='encounterWalkthroughParagraph image'>
-                            The Hall of Souls is not a Darkness Zone, so you cannot wipe. Instead, you can die as many times as you need to in order to complete the encounter. Your primary obstacles to powering all six statues will be spawning waves of Taken enemies, barriers, and distance. For every additional statue that is powered, the next relics to power the next statue will spawn farther away from the Hall of Souls on the left and right sections of the Dreadnought. Simply put, the further away the relic, the more time it takes to find, pick up, and return the relic to its statue.
-
-                            
-                        </p>
+                            The first thing you'll notice when entering this room is another chasm from the entrance to the exit, but instead of using swinging pillars to cross the distance, you will be jumping on top of Tomb Ships, like the Agents on the highway in The Matrix Reloaded. Each Tomb Ship spawns in a set location based on a rotation, like clockwork. They will fly in a set path, for a set duration, and then they will despawn. Crossing this chasm is simply a matter of learning which ships take you to your destination.
+                        </p>  
 
                         <div className='walkthroughImageContainer'>
                             <a className='imgLink' 
                             rel="noreferrer"
-                            href='https://i.imgur.com/1zyMFbJ.png'
+                            href='https://i.imgur.com/kZF9IHA.png'
                             target='_blank'>
                                 <img 
                                     className='walkthroughImage'
-                                    src="https://i.imgur.com/1zyMFbJ.png" alt="A top down map of the Hall of Souls" /> 
+                                    src="https://i.imgur.com/kZF9IHA.png" alt="A map of the Tomb Ship jumping puzzle, showing which direction to jump and how long to wait on each Tomb Ship" /> 
                             </a>
-                                A top down map of the Hall of Souls. Guardians spawn at the bottom, with the portal opening at the top of the image. Courtesy of Terminalfury
+                            A map of the Tomb Ship jumping puzzle, showing which direction to jump and how long to wait on each Tomb Ship. The dotted arrows show roughly which direction to jump, while the numbers show the rough duration to wait before jumping to the next ship. Image courtesy of u/FireBumToo
                         </div>
 
                         <p className='encounterWalkthroughParagraph'>
-                            Returning each relic is further complicated by the enemies and barriers that spawn whenever a relic is picked up. At the start of the encounter, and when any relic(left or right) is picked up from then on, Taken enemies and glowing green barriers will spawn that will try to impede your progress. The barrier doesn't have a visible healthbar, but dies in a few shots from a special weapon - snipers and shotguns were effective in Destiny 1 for their burst damage. Fusion Rifles and Grenade Launchers will likely be just as effective in Destiny 2.             
-                        </p>
+                            Due to the quick, timed nature of this jumping puzzle, I will spare you the difficulty of parsing a text description of what to do. Instead, consult the image of the map. The numbers on each ship show the rough amount of time you should expect to be on the Tomb Ship before jumping to the next one, whereas the colored arrow shows which direction the Tomb Ship should be travelling. Finally, the dotted arrows show which direction you should be jumping to reach your next Tomb Ship.
+                        </p>  
 
                         <p className='encounterWalkthroughParagraph'>
-                        The enemies will range from Taken thrall in the hallways, to Taken Centurions at the statues, Taken Acolytes in the Hall of Souls where the guardians first spawn, and lastly, Taken Phalanxes. The Taken Phalanxes are the largest threat to the fireteam, as your relic carriers will be completely defenseless while carrying the relic. Unable to use their weapons, abilities, sprint, or even double jump, relic carriers are completely defenseless against a Phalanx boop off the edge. Each relic runner requires at least one escort by default, as, when they pick up a relic, green barriers will prevent them from returning to the Hall of Souls. 
-                        </p>
-
-                        <p className='encounterWalkthroughParagraph'>
-                            In Destiny 1, there were two primary methods of completing this encounter. The first assigned a runner and two escorts to each side, with both of the escorts assisting in killing enemies and clearing the barriers for the runner. The upside of this strategy meant that each runner could make it to back to the statues to bank relatively quickly, but the downside was that every time a relic squad would return, they would have to deal with a fresh wave of enemies in the Hall of Souls and the Statue Hallway.
-                        </p>
-
-                        <p className='encounterWalkthroughParagraph'>
-                            The alternative method, which became more popular as the average light level rose and the raid became easier, involved one runner and one escort per side, with two guardians staying in the Hall of Souls to clear adds. As soon as the relic runners picked up a relic, the middle guardians could immediately clear the enemies that spawned, clearing the way for the runners to bank unmolested by adds. The downside, however, was that each escort had to handle five phalanxes AND break the runner's barriers single-handedly, something that became much easier as guardians became strong. In contest mode, this will probably be the most time-efficient strategy, but will probably be riskier than the double escort strategy.
-                        </p>
+                            That aside, this section of Encounter Two is fairly straightforward, though there are two exceptions of note. The first is the safe ledge roughly a third of the way through the puzzle (in the map, it is the blue block labeled platform, with a wait time of 3 seconds). This ledge is the only checkpoint in this section of the encounter - if you make it to the ledge, and further deaths will respawn you at this platform.
+                        </p>  
 
                         <p className='encounterWalkthroughParagraph wide'>
-                            Your primary enemy in this encounter is time. Your loadout and supers should be able to handle add clear, with the occasional larger enemies (Taken Centurions at the statues), with no bosses to worry about, so use your supers and heavy freely. High Resilience, like all difficult content in Destiny 2, is a must, and Arc Resist mods combined with Concussive Dampener should make surviving easier. Even then, Devour on Void subclasses is easy to maintain with the volume of enemies, and Restoration is freely available to all classes in Solar 3.0. 
-                        </p>
+                            The second exception is the Red rectangle on the second Tomb Ship after the checkpoint - this Tomb Ship is a distraction and a ruse. Simply put, after jumping onto the purple Tomb Ship(labeled 21), you will see a Tomb Ship spawn in front of you, to the left. This Tomb Ship will cross directly atop your current ride, trying to knock you off or bait you into jumping into it - you should do neither of those things! The map tells you to sit down (BE HUMBLE) and crouch under the offending Tomb Ship. After it passes, an additional Tomb Ship will spawn ahead of you on the right (the green ship labeled 6, on the map). Because your current ship (21) is tilted, it is easier to jump to your next ship (6) if you stand on the raised up, left side of your ship. A final piece of advice, courtesy of Reddit user /u/DrobUWP, in that when jumping from (Orange 8) to (Purple 25), you should stand on the back half of (Orange 8). Orange 8 is tilted downwards, so standing on the back half gives a little more height to make the jump.
+                        </p>  
 
-                        <div className='walkthroughImageContainer'>
-                            <a className='imgLink' 
-                            rel="noreferrer"
-                            href='https://i.ytimg.com/vi/NHgS0sA39Jk/maxresdefault.jpg'
-                            target='_blank'>
-                                <img 
-                                    className='walkthroughImage'
-                                    src="https://i.ytimg.com/vi/NHgS0sA39Jk/maxresdefault.jpg" alt="The Court of Oryx with it's gate activated. Courtesy of Datto" /> 
-                            </a>
-                                The Court of Oryx's gate, when activated by the six statues. Image courtesy of Datto
+                        <iframe width="460" height="250" src="https://www.youtube.com/embed/p4JVg9Hpc8k?start=540" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                        <p className='encounterWalkthroughParagraph '>
+                            Take your time in this jumping puzzle, you do not need to rush from one jump to the next. The worst part of this encounter is the time it takes for a Tomb Ship cycle to reset, so an early death in second half can leave you waiting for a minute or more for the cycle to restart. Included here is a link to TheLegendHimself's excellent guide to King's Fall in Destiny 1, from which most of this guide is derived. His video section on the Tomb Ship clearly shows which jumps to take and when - I recommend playing the video around the same time your own Tomb Ship starts moving to keep the video synchronized. The first Tomb Ship starts to move at about 9:06 in the video.
+                        </p>  
+
+                        <p className='encounterWalkthroughParagraph '>
+                            When you finally complete the Tomb Ship jumping puzzle, you'll shortly find yourself at another Tomb Ship docking bay. Just like in the previous section, standing on top of the Tomb Ship will cause it to start moving forward. This section, however, requires at least 3 people to progress, as a large barrier prevents any guardians from riding the Tomb Ship to its destination. Instead, on the left and the right of the Tomb Ship's initial berth, you will find two Hive Plates (first plates of the raid!). When a guardian is standing on both plates, the barrier goes down, and any Guardians riding the Tomb Ship can travel through.
+                        </p>  
+
+                        <p className='encounterWalkthroughParagraph '>
+                            At the destination bay of Tomb Ship, there will be two more Hive Plates that operate identically to the first two - allowing any Guardians who pass through to ferry the remaining members of the fireteam across. The principle is simple - stand on the plates to allow two guardians to pass through, then those two guardians will stand on their destination plates to allow the rest of the fireteam to pass through. When all six guardians are on the other side, you can proceed to the next encounter.
+                        </p>  
+
+                        <div className='encounterHeader'>
+                            Secret Chest
                         </div>
 
-                        <p className='encounterWalkthroughParagraph'>
-                            When all six statues in the Hall of Souls are powered, the portal in the Court of Oryx will activate. A number of enemies will come through, among then, a Hive Knight and a Hive Wizard. You do not need to defeat these enemies to pass through the portal. Instead, you can wait 'behind' the portal for it's animation to finish, when you can pass through. Alternatively, keep dancing in and out of it until it teleports you. If all else fails, the Hall of Souls is not a Darkness Zone, so if you die on the way in, you can simply respawn and run back towards it. If the enemies prevent you, take whatever time you need to kill them safely before traveling through, and on to the next encounter.
-                        </p>
+                        <p className='encounterWalkthroughParagraph '>
+                            There is a secret chest present in this encounter! After completing the first two sections, when you first encounter the plates, you can jump off the left of the Tomb Ship instead of riding it through to the end. Jumping on a small ledge will allow you to carefully scale the ascending ridge of the wall to a door. This door operates on the same principle as the barrier blocking the Tomb Ship - if two guardians stand on this section's starting plates, the door will open, revealing the chest. Once four fireteam members are through, they can open the chest and jump down to the destination plates, allowing the first two guardians on the initial plates to navigate their way to the secret chest and claim it for themselves.
+                        </p>  
 
-                    {/* <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas viverra risus enim. Phasellus at turpis diam. Donec in blandit tellus, vitae faucibus libero. Sed posuere iaculis bibendum. Suspendisse massa libero, venenatis in ex nec, eleifend lobortis eros. Pellentesque a viverra augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec fringilla ipsum vitae ornare pellentesque. Aenean efficitur felis sit amet nunc rhoncus vestibulum. Duis pharetra venenatis volutpat. Curabitur in arcu urna. Aliquam rutrum venenatis massa, vel consequat risus sagittis vitae. Cras ac nunc blandit, hendrerit velit id, maximus libero. Duis sodales orci et blandit posuere.
-                    </p> */}
-
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/p4JVg9Hpc8k?start=760" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        
                     </div>
 
 
