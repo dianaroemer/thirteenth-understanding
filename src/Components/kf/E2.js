@@ -198,28 +198,9 @@ function E2() {
 
                 {/* <div className='encounterSection challengeMode'>
                     <div className='encounterHeader challengeMode'> 
-                        Possible Challenge Mode Changes
+                        Possible Challenge Mode
                     </div>
-                    <ul style={{paddingLeft: '20px'}}>
-                        <li className='encounterBulletPoint'>
-                            Likely no changes, similar to Vault of Glass' introduction encounter. But just in case...
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            No guardian can dunk more than two orbs (every guardian has to dunk exactly twice)
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            Taken Phalanxes have to be killed before the barriers
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            Barriers have to be killed before the Taken Phalanxes
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            Timer to dunk orbs is shortened
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            XXXUPDATEXXX
-                        </li>
-                    </ul>
+                        None
                 </div> */}
 
                 <div className='encounterSection roles'>

@@ -18,6 +18,8 @@ import E8 from './Components/kf/E8';
 import E9 from './Components/kf/E9';
 
 import E1C from './Components/kf/E1C';
+import E2C from './Components/kf/E2C';
+
 
 import Tools from './Components/Tools';
 
@@ -43,6 +45,8 @@ root.render(
         <Route path="kf/e9" element={<E9 />} />
 
         <Route path="kf/e1c" element={<E1C />} />
+        <Route path="kf/e2c" element={<E2C />} />
+
 
         <Route path="tools" element={<Tools />} />
 
