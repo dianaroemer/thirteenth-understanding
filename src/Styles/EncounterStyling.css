@@ -144,6 +144,11 @@
     list-style-type: circle;
 }
 
+.encounterRoleSelector{
+    display: flex;
+    justify-content: space-between;
+}
+
 .emphasizedEnemy {
     font-weight: 700;
 }

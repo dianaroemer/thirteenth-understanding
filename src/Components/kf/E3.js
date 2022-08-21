@@ -14,7 +14,7 @@ function E3() {
 
     const thisRaid = 'kf';
     const thisEncounter = 'e2'
-    const roles = ['Runner Left', 'Escort Left', 'Floater Left', 'Runner Right', 'Escort Right', 'Floater Right']
+    const roles = ['Red Pickup', 'Red Defender', 'Red Adds', 'Blue Pickup', 'Blue Defender', 'Blue Adds ']
 
     const [raidStateKF,
         handleRaidStateUpdate,
@@ -208,7 +208,7 @@ function E3() {
                         Roles
                     </div>
                     <div className='encounterRoleSelectorContainer'>
-                        None
+                        {/* None */}
                         <div className='encounterRoleSelector'>
                             {roles[0]}: &nbsp;
                             <select id='role1' onChange={e=>handleRoleUpdate(e, 0)}>
@@ -466,15 +466,24 @@ function E3() {
                                         <li>
                                             Hive Acolyte
                                         </li>
+                                        <li className='emphasizedEnemy'>
+                                            Hive Boomer Knight*
+                                        </li>
                                         <li>
-                                            Hive Knight
+                                            Hive Thrall
+                                        </li>
+                                        <li className='shieldedEnemy solar'>
+                                            Hive Wizard
+                                        </li>
+                                        <li>
+                                            Hive Sword Knight
                                         </li>
                                     </ul>
                                 </td>
                                 <td>
                                     <ul>
                                         <li>
-                                            Adept*
+                                            Adept**
                                             <ol className='encounterSubBulletPoint'>
                                                 Major Hive Acolyte 
                                             </ol>
@@ -485,7 +494,13 @@ function E3() {
                         </tbody>
                     </table>
                     <div className='encounterSubSection'>
-                    * On death, Adepts enrage nearby Acolytes to use an Ogre's Eye beam. Either prioritze Acolytes, or destroy the whole pack at once
+                    <div>
+                    * Boomer Knights are the biggest threat in this encounter. They should be killed on spawn every time. Arc Damage Resist + Concussive Dampeners        
+                    </div>
+                        <div>
+                        ** On death, Adepts enrage nearby Acolytes to use an Ogre's Eye beam. Either prioritze Acolytes, or destroy the whole pack at once        
+                        </div>
+                    
                     </div>
                     
 
@@ -498,34 +513,25 @@ function E3() {
                     <div className='encounterSubSection'>
 
                         <ul style={{paddingLeft: '20px'}}>
-                            <li className='encounterBulletPoint'>
-                                If you hold jump, you jump higher. If you tap jump, you jump lower. True story
-                            </li>
-                            <li className='encounterBulletPoint'>
-                                When jumping, aim for the front of the swinging pillars and the front third of the Tomb Ship. Aiming for the middle can make you slide off
-                            </li>
-                            <li className='encounterBulletPoint'>
-                                ASOP - Always Stand On Plates. If you're first to an empty plate, you are now on plate duty. Show off them dance moves
-                            </li>
-                            <li className='encounterBulletPoint'>
-                                Watch out for any titans or sword users who might harbor fratricidal intentions...
-                            </li>
-                            <li className='encounterBulletPoint'>
-                                3rd person with a sword allows you to see around your character model, but can change how you perceive your movement. Pick one POV in the beginning and stick to it
-                            </li>
-                            <li className='encounterBulletPoint'>
-                                In earlier raids, secret chests had a despawn timer after they've been opened. Wait for your whole fireteam to arrive before cracking open a cold one, lest someone who's struggling with the jumping puzzle miss out 
-                                <ol className='encounterSubBulletPoint'>
-                                (Sorry Phoenix)
-                                </ol>
-                            </li>
-                            <li className='encounterBulletPoint'>
-                                Consider not opening the secret chest if you plan on also going for a Challenge Mode clear after a regular clear. Your second run will give the chest a larger pool of unlocked loot to pick from. 
-                                <ol className='encounterSubBulletPoint'>
-                                Worst case scenario, you can return to the raid after Day 1 but before reset, to defeat any encounters you missed
-                                </ol>
-                            </li>
 
+                            <li className='encounterBulletPoint'>
+                                If you have ANY stacks of Deathsinger's Power, you cannot receive a Brand (Weaver or Unraveler)
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                You can restore a dropped Brand if someone dies, drops it, or no one picks it up
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                If no one receives your Brand at the end of its timer, STAY UNDER YOUR TOTEM until someone comes and redeems you
+                                <ol className='encounterSubBulletPoint'>
+                                    It is always better for a single guardian to die under a totem, allowing for a recovery attempt and extending the encounter for everyone, than it is to wipe the whole fireteam by trying bank their Deathsinger's Power
+                                </ol>
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                ASOP - Always Stay On the Plates. The only exception is if you have Deathsinger's Power
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                Wait until you pass the brand to an ally BEFORE leaving your plate. Don't start running early
+                            </li>
                         </ul>
                     </div>
 
@@ -651,7 +657,7 @@ function E3() {
                     </div>
                 </div>
 
-                <div className='encounterSection walkthrough'>
+                {/* <div className='encounterSection walkthrough'>
                     <div className='encounterHeader'> 
                         Walkthrough
                     </div>
@@ -741,7 +747,7 @@ function E3() {
                     </div>
 
 
-                </div>
+                </div> */}
 
                 <div className='encounterSection resources'>
                     <div className='encounterHeader'> 
