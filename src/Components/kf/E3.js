@@ -514,6 +514,12 @@ function E3() {
 
                         <ul style={{paddingLeft: '20px'}}>
 
+                        <li className='encounterBulletPoint'>
+                                Watch for Boomers! Always kill them on spawn
+                                <ol className='encounterSubBulletPoint'>
+                                    If you have to rotate away before killing a boomer, let your teammates know that it's still alive!
+                                </ol>
+                            </li>
                             <li className='encounterBulletPoint'>
                                 If you have ANY stacks of Deathsinger's Power, you cannot receive a Brand (Weaver or Unraveler)
                             </li>
@@ -544,107 +550,115 @@ function E3() {
                     </div>
                     <div className='buildSlotsContainer'>
                         <div className='buildSlot'>
-                            <div className='buildSlotIcon stompees'>
+                            <div className='buildSlotIcon arcResist'>
+                            <div className='buildSlotIcon arcResist colors'>
+                                {/* subIcon */}
+                                </div>
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Better hops, easier platforming
+                                Most enemies here deal Arc damage. Also use Concussive Dampener
                             </div>
                         </div>
                         <div className='buildSlot'>
-                            <div className='buildSlotIcon transversive'>
+                            <div className='buildSlotIcon riskrunner'>
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Only improves sprint speed, but gives you momentum before you yeet
+                                Arc Resist AND Add Clear
                             </div>
                         </div>
                         <div className='buildSlot'>
-                            <div className='buildSlotIcon wingsSacredDawn'>
+                            <div className='buildSlotIcon witherhoard'>
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Where we're going, we don't need roads. Or Tomb Ships.
+                                Add clear. Kill enemies as they spawn and zone control
                             </div>
                         </div>
                         <div className='buildSlot'>
-                            <div className='buildSlotIcon lionRampant'>
+                            <div className='buildSlotIcon anarchy'>
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Titan has hops. Eternal flight when paired with swords
+                                Heavy Witherhoard. Kill enemies as they spawn
                             </div>
                         </div>
 
                         <div className='buildSlot'>
-                            <div className='buildSlotIcon mobility'>
+                            <div className='buildSlotIcon sniper'>
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                More mobility, more jump height
+                                Snipe those Boomers immediately! Don't spare them a moment of life
                             </div>
                         </div>
 
                         <div className='buildSlot'>
-                            <div className='buildSlotIcon daybreak'>
+                            <div className='buildSlotIcon thunderlord'>
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                {/* Fly like an eagle
-                                <div>to the sea</div>
-                                Fly like an eagle,
-                                <div>let my spirit carry me</div> */}
-                                Time keeps on slippin',
-                                <div>into the future</div>
-                                I wanna fly like an eagle...
+                                So much add clear and so much ammo
                             </div>
                         </div>
 
                         <div className='buildSlot'>
-                            <div className='buildSlotIcon tripleJump'>
+                            <div className='buildSlotIcon agers'>
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                * Slaps Triple Jump *
-                                <div>This bad boy can hold so many hops</div>
+                                Make Crow/Uldren cry by using his gun for add clear
                             </div>
                         </div>
 
                         <div className='buildSlot'>
-                            <div className='buildSlotIcon sword'>
+                            <div className='buildSlotIcon osteo'>
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                3rd person POV and a little extra oomph to reach those far ledges
+                                Effective against minors. Struggles with Knights and Wizards
                             </div>
                         </div>
 
                         <div className='buildSlot'>
-                            <div className='buildSlotIcon astrocyte'>
+                            <div className='buildSlotIcon gjallarhorn'>
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Hey everyone, look at me! Look how cool I am! I'm nearly ther-woops I fell
+                                Kill.
+                                <div>Them.</div>
+                                All.
                             </div>
                         </div>
 
                         <div className='buildSlot'>
-                            <div className='buildSlotIcon acrius'>
+                            <div className='buildSlotIcon healingGrenade'>
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Unequip Acrius! It reduces your jump height, even when stowed
+                                Healing Grenade and Restoration counter-act the poison Totem rooms
                             </div>
                         </div>
 
                         <div className='buildSlot'>
-                            <div className='buildSlotIcon eagerEdge'>
+                            <div className='buildSlotIcon stasis'>
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Look, I'm not going to tell you against Eager Edge, but just... Why do you have to be like this?
+                                Stasis for add clear. Do you wanna build a SnowThrall?
                             </div>
                         </div>
+
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon blinding'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails cantdont'><div>Any Blinding GL.</div>
+                                Enemies can't kill you if they don't see you</div>
+                        </div>
+
+
                     </div>
                 </div>
 
@@ -653,11 +667,30 @@ function E3() {
                         Expected Changes in Destiny 2
                     </div>
                     <div className='encounterSubSection'>
-                        None
+                    <ul style={{paddingLeft: '20px'}}>
+                            <li className='encounterBulletPoint'>
+                                Increased enemy density
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                Unlikely to see champions in normal difficulty. The immediate translation is that Boomer Knights become Barrier Boomer Knights, but that seems like a Master Difficulty change
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                Lucent Hive. A Lucent Hive Knight could easily replace the Sword Knights that spawn later in the fight
+                                <ol className='encounterSubBulletPoint'>
+                                    Their death would force the uncomfortable position of "Do I risk leaving my totem to finish the Knight, or stay and watch it resurrect because I killed it too early?"
+                                </ol>
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                Some enemy types may be upgraded to majors to increase the difficulty jumping from Destiny 1 to Destiny 2
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                Expect similar plate and bank mechanics. Maybe the poison in the red or blue room prevents *all* forms of healing unless you're under a Brand's protection?
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
-                {/* <div className='encounterSection walkthrough'>
+                <div className='encounterSection walkthrough'>
                     <div className='encounterHeader'> 
                         Walkthrough
                     </div>
@@ -720,7 +753,7 @@ function E3() {
                             The second exception is the Red rectangle on the second Tomb Ship after the checkpoint - this Tomb Ship is a distraction and a ruse. Simply put, after jumping onto the purple Tomb Ship(labeled 21), you will see a Tomb Ship spawn in front of you, to the left. This Tomb Ship will cross directly atop your current ride, trying to knock you off or bait you into jumping into it - you should do neither of those things! The map tells you to sit down (BE HUMBLE) and crouch under the offending Tomb Ship. After it passes, an additional Tomb Ship will spawn ahead of you on the right (the green ship labeled 6, on the map). Because your current ship (21) is tilted, it is easier to jump to your next ship (6) if you stand on the raised up, left side of your ship. A final piece of advice, courtesy of Reddit user /u/DrobUWP, in that when jumping from (Orange 8) to (Purple 25), you should stand on the back half of (Orange 8). Orange 8 is tilted downwards, so standing on the back half gives a little more height to make the jump.
                         </p>  
 
-                        <iframe width="460" height="250" src="https://www.youtube.com/embed/p4JVg9Hpc8k?start=540" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/p4JVg9Hpc8k?start=540" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" className='youtubeEmbed' allowfullscreen></iframe>
 
                         <p className='encounterWalkthroughParagraph '>
                             Take your time in this jumping puzzle, you do not need to rush from one jump to the next. The worst part of this encounter is the time it takes for a Tomb Ship cycle to reset, so an early death in second half can leave you waiting for a minute or more for the cycle to restart. Included here is a link to TheLegendHimself's excellent guide to King's Fall in Destiny 1, from which most of this guide is derived. His video section on the Tomb Ship clearly shows which jumps to take and when - I recommend playing the video around the same time your own Tomb Ship starts moving to keep the video synchronized. The first Tomb Ship starts to move at about 9:06 in the video.
@@ -742,12 +775,12 @@ function E3() {
                             There is a secret chest present in this encounter! After completing the first two sections, when you first encounter the plates, you can jump off the left of the Tomb Ship instead of riding it through to the end. Jumping on a small ledge will allow you to carefully scale the ascending ridge of the wall to a door. This door operates on the same principle as the barrier blocking the Tomb Ship - if two guardians stand on this section's starting plates, the door will open, revealing the chest. Once four fireteam members are through, they can open the chest and jump down to the destination plates, allowing the first two guardians on the initial plates to navigate their way to the secret chest and claim it for themselves.
                         </p>  
 
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/p4JVg9Hpc8k?start=760" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/p4JVg9Hpc8k?start=760" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" className='youtubeEmbed' allowfullscreen></iframe>
                         
                     </div>
 
 
-                </div> */}
+                </div>
 
                 <div className='encounterSection resources'>
                     <div className='encounterHeader'> 

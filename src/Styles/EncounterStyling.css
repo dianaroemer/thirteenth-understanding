@@ -377,6 +377,21 @@
     background-image: url("https://www.bungie.net/common/destiny2_content/icons/4716d462aad8d5913c22a34ee8eac494.png");
 }
 
+.buildSlotIcon.sniper {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/e750dcacb3a69df328ca735b7b6b5fc7.jpg");
+}
+
+.buildSlotIcon.osteo {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/6bf0aad944dd9265ee5df2f14c7f9da3.jpg");
+}
+
+.buildSlotIcon.healingGrenade {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/35824c115235240b6889fe523448fb10.jpg");
+}
+
+.buildSlotIcon.stasis {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/3c0dc830b83a9f3e9a52b7bea4494f64.png");
+}
 
 
 
