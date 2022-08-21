@@ -376,7 +376,10 @@
 
 
 
-
+.youtubeEmbed{
+    height: 180px;
+    width: 315px;
+}
 
 .dimIcon {
     background-size: contain;
@@ -413,6 +416,7 @@
         text-align: center;
         padding: 5px 30%;
         margin-left: 15%;
+        /* margin-right: 15%; */
         width: fit-content;
         /* width: calc(70% - 260px) */
     }
@@ -431,6 +435,11 @@
         margin: 20px;
         line-height: 1.5;
         font-size: large;
+    }
+
+    .youtubeEmbed{
+        height: 250px;
+        width: 445px;
     }
 
 }
