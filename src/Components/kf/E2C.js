@@ -627,7 +627,7 @@ function E2C() {
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Unequip Acrius! It reduces your jump height even when stowed
+                                Unequip Acrius! It reduces your jump height, even when stowed
                             </div>
                         </div>
 
@@ -699,7 +699,7 @@ function E2C() {
                                     className='walkthroughImage'
                                     src="https://i.imgur.com/kZF9IHA.png" alt="A map of the Tomb Ship jumping puzzle, showing which direction to jump and how long to wait on each Tomb Ship" /> 
                             </a>
-                            A map of the Tomb Ship jumping puzzle, showing which direction to jump and how long to wait on each Tomb Ship. The dotted arrows show roughly which direction to jump, while the numbers show the rough duration to wait before jumping to the next ship. Image courtesy of u/FireBumToo
+                            A map of the Tomb Ship jumping puzzle, showing which direction to jump and how long to wait on each Tomb Ship. The dotted arrows show roughly which direction to jump, while the numbers show the approximate duration to wait before jumping to the next ship. Image courtesy of u/FireBumToo
                         </div>
 
                         <p className='encounterWalkthroughParagraph'>
