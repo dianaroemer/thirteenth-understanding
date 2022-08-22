@@ -575,13 +575,13 @@ function E5() {
                 </div>
 
                 <div className='encounterSection walkthrough'>
-                    <div className='encounterHeader'> 
+                    <div className='encounterHeader encounterWalkthroughParagraph'> 
                         Walkthrough
                     </div>
 
                     <div className='encounterWalkthroughContainer'>
 
-                        <div className='encounterWalkthroughParagraph image'>
+                        <div className='encounterWalkthroughParagraph wide'>
                             After your successful defeat of the Warpriest, you will find yourself entering Golgoroth's Cellar, an enormous maze in the underbelly of the Dreadnought. The route, from the starting location, is quite easy - Right when available, then Left, Left, Right, and Straight to the end. Again, that's 
                             <div>
                                 <ol style={{padding: '10px'}}>

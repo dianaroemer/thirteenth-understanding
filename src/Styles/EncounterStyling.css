@@ -331,6 +331,14 @@
     background-image: url("https://www.bungie.net/common/destiny2_content/icons/6c9c49d0f718f1499c8ced1ecf7c51fb.png");
 }
 
+.buildSlotIcon.voidResist {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/5a3cc0bd1709b28147ec5fbc497360f8.png");
+}
+
+.buildSlotIcon.voidResist.colors{
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/32a1a3e44cbbe2b484b9c926d9dc1f08.png");
+}
+
 
 .buildSlotIcon.blinding {
     /* margin-top: 10px; */
@@ -435,6 +443,14 @@
 
 .buildSlotIcon.sundering {
     background-image: url("https://d2.destinygamewiki.com/mediawiki/images/b/bc/Sundering_Glare_Icon.png");
+}
+
+.buildSlotIcon.ragnhild {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/90f63be3eb246360c07a11d73d2254a0.jpg");
+}
+
+.buildSlotIcon.malfeasance {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/0c2816822b0a1787157f1e90d3bd057c.jpg");
 }
 
 

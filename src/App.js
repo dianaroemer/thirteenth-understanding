@@ -296,7 +296,7 @@ function App() {
   const [welcomePane, toggleWelcomePane] = useState(true);
 
   const [breaks, setBreaks] = useState([
-    { breakStart: new Date(1661115919000), 
+    { breakStart: new Date(1661199545000), 
     duration: 0, }
   ])
   const [remainingBreakDuration, setRemainingBreakDuration] = useState(0);
