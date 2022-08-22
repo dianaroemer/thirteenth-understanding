@@ -476,48 +476,85 @@ function E4() {
                         <thead>
                             <tr>
                                 <th>Minors</th>
-                                {/* <th>Majors</th> */}
+                                <th>Majors</th>
+                                <th>Boss</th>
                             </tr>
                         </thead>
                         <tbody>
                             
                             <tr>
                                 <td>
-                                    <ul>
+                                    <ul style={{paddingRight: '5px'}}>
+                                        <li>
+                                            Hive Thrall
+                                        </li>
                                         <li>
                                             Hive Acolyte
                                         </li>
                                         <li>
-                                            Taken Thrall
+                                            Hive Sword Knight
                                         </li>
                                         <li>
-                                            Taken Acolyte
-                                            <ol className='encounterSubBulletPoint'>
-                                                Acolyte's Eye
-                                            </ol>
+                                            Taken Thrall ***
                                         </li>
-                                        <li className='shieldedEnemy arc'>
-                                            {/* <span>Taken Centurion</span> */}
-                                            Taken Centurion
-                                            
+                                        <li>
+                                            Taken Psions ***
                                         </li>
-                                        <li className='emphasizedEnemy'>
-                                            <u>
-                                            Taken Phalanx
-                                            </u>
+                                        <li>
+                                            Taken Knight ***
                                         </li>
+
                                     </ul>
                                 </td>
-                                {/* <td>
-                                    <ul>
+                                <td>
+                                    <ul style={{paddingLeft: '15px'}}>
                                         <li>
-                                            Blah
+                                            Adept *
                                         </li>
+                                        <li>
+                                            Hallowed Thrall
+                                            <ol className='encounterSubBulletPoint'>
+                                                Major Cursed Thrall
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            Hallowed Knight **
+                                            <ol className='encounterSubBulletPoint'>
+                                                Major Hive Sword Knight
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            Tortured Knight ***
+                                            <ol className='encounterSubBulletPoint'>
+                                                Major Taken Boomer Knight
+                                            </ol>
+                                        </li>
+
                                     </ul>
-                                </td> */}
+                                </td>
+                                <td>
+                                    <ul style={{paddingLeft: '10px'}}>
+                                        <li>
+                                            Warpriest
+                                        </li>
+                                        
+                                    </ul>
+                                </td>
                             </tr>
                         </tbody>
+                        
                     </table>
+                    <div className='encounterSubSection'>
+                    <div>
+                        * On death, Adepts enrage nearby Acolytes to use an Ogre's Eye beam. Either prioritze Acolytes, or destroy the whole pack at once        
+                    </div>
+                    <div>
+                        ** Killing Hallowed Knights ends the Add Phase and starts the glyph sequence        
+                    </div>
+                    <div>
+                        *** After Warpriest gets below 40% health, he will no longer spawn Hive enemies, and instead spawn Taken enemies        
+                    </div>
+                    </div>
 
                 </div>
 
@@ -528,25 +565,41 @@ function E4() {
 
                     <div className='encounterSubSection'>
                         <ul style={{paddingLeft: '20px'}}>
-                            <li className='encounterBulletPoint'>
-                                Pick up both the left and right relics at the same time. 
+                             <li className='encounterBulletPoint'>
+                                The Add Phase is close to finishing when the Hive Knight Scream audio cue plays. Just after, three Hallowed Knights spawn 
+                                
                                 <ol className='encounterSubBulletPoint'>
-                                    When either relic is picked up, Taken spawn on both sides of the map!
+                                When all three Hallowed Knights are dead, the glyph sequence starts. They might be finishable with Aeon's for heavy ammo?
+                                </ol>
+                                
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                If the Brand of the Initiate Timer ever hits zero, no matter how many stacks, you die
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                Jumping onto the High Plate (aka Left Plate) protects your fireteam from flinch caused by adds during DPS
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                You no longer need a spotter after the second damage phase
+                                <ol className='encounterSubBulletPoint'>
+                                You can infer which glyphs need to be activated in what order based on which of the remaining monoliths are or aren't glowing
                                 </ol>
                             </li>
                             <li className='encounterBulletPoint'>
-                                Remember: Runners are completely defenseless with the relic. No running, double jumping, or abilities of any kind!
+                                Tortured Knights spawn on the glyph plates! Don't be surprised during the Taken phases when you get slapped by a Knight spawning behind you
                             </li>
                             <li className='encounterBulletPoint'>
-                                Both the Left and Right escorts should kill either the Phalanxes or the walls first, so Runners reach the middle at the same time.
+                                Know where your fireteam is going to dps BEFORE your Brand Carrier steps on the final glyph
                             </li>
+                            <ol className='encounterSubBulletPoint'>
+                                Ideally, your fireteam should call it out before EVERY dps phase, just in case you decide to switch positions based on the remaining monoliths
+                                </ol>
                             <li className='encounterBulletPoint'>
-                                Dunk on three! One, two...
+                              Expect this fight to be a DPS check, like Caretaker in Vow of the Disciple
                             </li>
-                            <li className='encounterBulletPoint'>
-                                Don't jump while dunking! Or do. I'm not the boss of you.
-                            </li>
+                            
 
+                         
                         </ul>
                     </div>
 
@@ -559,90 +612,75 @@ function E4() {
                     </div>
                     <div className='buildSlotsContainer'>
                         <div className='buildSlot'>
-                            <div className='buildSlotIcon riskrunner'>
+                            <div className='buildSlotIcon sleeper'>
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Arc damage resist, add-clear, and Arc 3.0. Easy win
+                                Single target, high damage, crit multiplier. All around consistent
                             </div>
                         </div>
                         <div className='buildSlot'>
-                            <div className='buildSlotIcon witherhoard'>
+                            <div className='buildSlotIcon whisper'>
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Kill Phalanxes as they spawn
+                                Whisper's back, baby. Whispered Breathing all day, all night
                             </div>
                         </div>
                         <div className='buildSlot'>
-                            <div className='buildSlotIcon wishender'>
+                            <div className='buildSlotIcon cataclysmic'>
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Increased damage against taken and anti-barrier for phalanxes. Finaly viable?
+                                Legendary Sleeper, huge damage, ammo generation
                             </div>
                         </div>
                         <div className='buildSlot'>
-                            <div className='buildSlotIcon agers'>
+                            <div className='buildSlotIcon stormchaser'>
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Kill one enemy, kill the whole pack
+                                See Cataclysmic. Slightly more prone to missing damage from flinch
                             </div>
                         </div>
 
-
                         <div className='buildSlot'>
-                            <div className='buildSlotIcon thunderlord'>
+                            <div className='buildSlotIcon outbreak'>
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Add-clear every red bar enemy, effective against tougher Taken Centurions
+                                Oops, only nanites
+                                <div>AKA</div>
+                                "I'm out of Heavy"
                             </div>
                         </div>
+
                         <div className='buildSlot'>
                             <div className='buildSlotIcon gjallarhorn'>
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Kill.
-                                <div>Literally.</div>
-                                <div>Everything.</div>
-                            </div>
-                        </div>
-                        <div className='buildSlot'>
-                            <div className='buildSlotIcon anarchy'>
-                                {/* Icon */}
-                            </div>
-                            <div className='buildSlotDetails'>
-                                See Witherhoard, but a heavy weapon
-                            </div>
-                        </div>
-                        <div className='buildSlot'>
-                            <div className='buildSlotIcon forbearance'>
-                                {/* Icon */}
-                            </div>
-                            <div className='buildSlotDetails'>
-                                Wave Frame GL's (shoot the ground in front of Phalanxes)
-                            </div>
-                        </div>
-                        <div className='buildSlot'>
-                            <div className='buildSlotIcon glaiveArc'>
-                                {/* Icon */}
-                            </div>
-                            <div className='buildSlotDetails'>
-                                Glaive block stops knock back. Try not to Architect yourself on melees
+                                Rockets don't get a crit multiplier from Div. Great burst damage, though
                             </div>
                         </div>
 
                         <div className='buildSlot'>
-                            <div className='buildSlotIcon blinding'>
+                            <div className='buildSlotIcon orpheus'>
                                 {/* Icon */}
                             </div>
-                            <div className='buildSlotDetails cantdont'><div>Any Blinding GL.</div>
-                                Enemies can't kill you if they don't see you</div>
+                            <div className='buildSlotDetails'>
+                                Big damage with Orpheus or Quick Damage with Nighthawk
+                            </div>
                         </div>
 
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon wellRadiance'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                Free Damage for Everybody! Hey, is Warpriest shooting me?
+                            </div>
+                        </div>
                         <div className='buildSlot'>
                             <div className='buildSlotIcon arcResist'>
                                 {/* Icon */}
@@ -650,17 +688,13 @@ function E4() {
                                 {/* subIcon */}
                                 </div>
                             </div>
-
-
-
                             <div className='buildSlotDetails'>
-                                Arc resist will be MVP in King's Fall. Most Taken enemies deal arc damage
+                                Warpriest, like many Hive, deals Arc damage
                             </div>
                         </div>
+
                     </div>
                     
-
-
                 </div>
 
                 <div className='encounterSection expectedChanges'>
@@ -674,16 +708,10 @@ function E4() {
                                 Increased enemy density
                             </li>
                             <li className='encounterBulletPoint'>
-                                Unlikely to see champions in normal difficulty, similar to how Vault of Glass uses Overload Minotaurs in its opening on Master difficulty
+                                Unlikely to see champions in normal difficulty. Hive have Barrier Knight and Unstoppable Ogre, which doesn't mesh with this encounter, and Taken have Overload Hobgoblins and Unstoppable Phalanxes, which also don't align with this encounter
                             </li>
                             <li className='encounterBulletPoint'>
-                                Lucent Hive. These would likely spawn in the Hall of Souls with the Acolytes or the Centurions
-                                <ol className='encounterSubBulletPoint'>
-                                    While narratively tied to Savathun, Lucent Hive are too excellent an enemy type for a designer to ignore in a Hive (and Taken) based raid
-                                </ol>
-                            </li>
-                            <li className='encounterBulletPoint'>
-                                Centurions may become Major enemies, with more health. Destiny 1 only had minors and majors, whereas Destiny 2 introduced Ultras. Expect full use of the larger range of enemy difficulties to appear in King's Fall
+                                Lucent Hive. With champions unlikey, it is easy to see the Hive Knights or Hallowed Knights be replaced by Lucent Hive Knights
                             </li>
                         </ul>
                     </div>
@@ -691,7 +719,7 @@ function E4() {
 
                 </div>
 
-                {/* <div className='encounterSection walkthrough'>
+                 <div className='encounterSection walkthrough'>
                     <div className='encounterHeader'> 
                         Walkthrough
                     </div>
@@ -773,7 +801,7 @@ function E4() {
                         </p>
 
                     </div> 
-                </div>  */}
+                </div>  
 
 
 

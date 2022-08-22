@@ -164,9 +164,9 @@
 
 .shieldedEnemy {
     padding-right: 25px;
-    background-size: contain;
+    background-size: 1rem;
     background-repeat: no-repeat;
-    background-position: right bottom;
+    background-position: right center;
 }
 
 .shieldedEnemy.arc {
@@ -400,6 +400,34 @@
 
 .buildSlotIcon.stasis {
     background-image: url("https://www.bungie.net/common/destiny2_content/icons/3c0dc830b83a9f3e9a52b7bea4494f64.png");
+}
+
+.buildSlotIcon.sleeper {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/06c339b02b1a3b0b5c1322751b177557.jpg");
+}
+
+.buildSlotIcon.whisper {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/7955c1254752ed790fb0f5fa1b483c13.jpg");
+}
+
+.buildSlotIcon.cataclysmic {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/f9a8c5944406fe57f6cd3c8daf623be4.jpg");
+}
+
+.buildSlotIcon.stormchaser {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/8c9170b2446b3d5c690456cffa91bd59.jpg");
+}
+
+.buildSlotIcon.outbreak {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/b71a0a8c2dbfda6ac33cde56983fe078.jpg");
+}
+
+.buildSlotIcon.orpheus {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/0d6ae4296f1435209070142cf26dfd37.jpg");
+}
+
+.buildSlotIcon.wellRadiance {
+    background-image: url("https://www.bungie.net/common/destiny2_content/icons/5dbb9a2f285df3ee20fe37d073350a37.png");
 }
 
 
