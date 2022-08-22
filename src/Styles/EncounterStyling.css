@@ -154,7 +154,10 @@
     justify-content: space-between;
     border: solid 2px black;
     background: rgb(104, 75, 2);
+    margin-left: -4px;
+    margin-right: -4px;
     padding: 2px;
+    /* padding-bottom: 2px; */
     border-radius: 3px;
 }
 
@@ -430,6 +433,10 @@
     background-image: url("https://www.bungie.net/common/destiny2_content/icons/5dbb9a2f285df3ee20fe37d073350a37.png");
 }
 
+.buildSlotIcon.sundering {
+    background-image: url("https://d2.destinygamewiki.com/mediawiki/images/b/bc/Sundering_Glare_Icon.png");
+}
+
 
 
 
@@ -442,6 +449,13 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-image: url("https://app.destinyitemmanager.com/apple-touch-icon-6-2018.png");
+    padding-left: 1.5rem;
+}
+
+.googleSheetsIcon {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("https://fonts.gstatic.com/s/i/productlogos/sheets_2020q4/v8/192px.svg");
     padding-left: 1.5rem;
 }
 

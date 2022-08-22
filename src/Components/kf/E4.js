@@ -14,7 +14,7 @@ function E4() {
 
     const thisRaid = 'kf';
     const thisEncounter = 'e4'
-    const roles = ['Spotter', 'Low Plate', 'Middle Plate', 'High Plate', 'Plate Defender', 'Plate Defender']
+    const roles = ['Spotter', 'Low Plate', 'Middle Plate', 'High Plate', 'Brand Holder', 'Plate Defender']
 
     const [raidStateKF,
         handleRaidStateUpdate,
@@ -577,6 +577,9 @@ function E4() {
                                 If the Brand of the Initiate Timer ever hits zero, no matter how many stacks, you die
                             </li>
                             <li className='encounterBulletPoint'>
+                                Divinity and Brand Holder should always be two separate guardians
+                            </li>
+                            <li className='encounterBulletPoint'>
                                 Jumping onto the High Plate (aka Left Plate) protects your fireteam from flinch caused by adds during DPS
                             </li>
                             <li className='encounterBulletPoint'>
@@ -590,10 +593,13 @@ function E4() {
                             </li>
                             <li className='encounterBulletPoint'>
                                 Know where your fireteam is going to dps BEFORE your Brand Carrier steps on the final glyph
-                            </li>
-                            <ol className='encounterSubBulletPoint'>
+                                <ol className='encounterSubBulletPoint'>
                                 Ideally, your fireteam should call it out before EVERY dps phase, just in case you decide to switch positions based on the remaining monoliths
                                 </ol>
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                Brand Holders should stop DPS at 5 seconds of each stack and find their next Acolyte - it could take a moment to swap weapons and prepare. Always reload when resetting your Brand timer!
+                            </li>
                             <li className='encounterBulletPoint'>
                               Expect this fight to be a DPS check, like Caretaker in Vow of the Disciple
                             </li>
@@ -649,7 +655,7 @@ function E4() {
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Oops, only nanites
+                                "Oops, Only Nanites"
                                 <div>AKA</div>
                                 "I'm out of Heavy"
                             </div>
@@ -681,6 +687,17 @@ function E4() {
                                 Free Damage for Everybody! Hey, is Warpriest shooting me?
                             </div>
                         </div>
+
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon sundering'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                It stacks with Divinity, Warpriest is far away - Someone should use it
+                            </div>
+                        </div>
+
+
                         <div className='buildSlot'>
                             <div className='buildSlotIcon arcResist'>
                                 {/* Icon */}
@@ -726,79 +743,93 @@ function E4() {
 
                     <div className='encounterWalkthroughContainer'>
 
+                        <p className='encounterWalkthroughParagraph'>
+                            After all of the preamble of the first three encounters, you and your fireteam have finally arrived at the first true boss of King's Fall - the Warpriest. You obejctive in this fight is simple - defeat the Warpriest by bringing his health down to zero. This is made more complicated in that your fireteam can only damage the Warpriest while within the aura of the Brand of the Initiate, among other obstacles.
+                        </p>
                         <p className='encounterWalkthroughParagraph image'>
-                            Welcome, Guardians, to King's Fall. The first encounter of the raid is The Hall of Souls. To complete this encounter, you will open and travel through the gate in the Court of Oryx, however the gate must be powered by the 6 statues in the Hall of Souls (see image, statues are on the sides of the fireteam).
+                            The arena for the Warpriest encounter is fairly straightforward. On a raised stage in the back of the room, is the Warpriest himself (the large black circle in the map). Before him are three Monoliths covered in Hive runes (the three black lines near the center). Those Monoliths are in front of three glyph plates, with the Left Glyph Plate being on a high platform, the Right Glyph Plate being on a medium height platform, and lastly, the Middle Glyph Plate, at ground level.
                         </p>
 
                         <div className='walkthroughImageContainer'>
                             <a className='imgLink' 
                             rel="noreferrer"
-                            href='https://obj-kr.thewiki.kr/data/65787465726e616c2f7777772e656e7465727461696e6d656e746275646468612e636f6d2f64657374696e792d74616b656e2d6b696e672d636f7572742d6f662d6f7279782e6a7067.jpg'
+                            href='https://i.imgur.com/XBLFg8b.png'
                             target='_blank'>
                                 <img 
                                     className='walkthroughImage'
-                                    src="https://obj-kr.thewiki.kr/data/65787465726e616c2f7777772e656e7465727461696e6d656e746275646468612e636f6d2f64657374696e792d74616b656e2d6b696e672d636f7572742d6f662d6f7279782e6a7067.jpg" alt="Six Guardians in the Hall of Souls" /> 
+                                    src="https://i.imgur.com/XBLFg8b.png" alt="A top down view of Warpriest arena" /> 
                             </a>
-                                A fireteam enters the Hall of Souls. The front left statue is powered. Image courtesy of beta.thewiki.kr
+                            A top down view of Warpriest arena. Warpriest is the large black circle, Monoliths are the three black rectangles, and the Glyph Plates are the three white circles. Image courtesy of u/terminalfury46
                         </div>
 
                         <p className='encounterWalkthroughParagraph'>
-                            Initially, the six statues in the Hall of Souls are de-powered, with one single statue glowing, demonstrating that it is ready to become powered. Statues become powered whenever two guardians bank a relic (two relics per statue) in the statue at roughly the same time. If the next statue hasn't been powered within a short amount of time, whichever statue that was most recently powered becomes de-powered. For example, if you power three statues and fail to power a fourth in time, the third will de-power, leaving only two powered statues.
+                            The Warpriest fight has three primary mechanics - the Glyph Sequence, the Brand of the Initiate, and the Monoliths. The Glyph Sequence will happen shortly after every Add Phase. When the three Hallowed Knights are defeated, a Glyph Sequence will start. One of the three Monolith's will start glowing on the Warpriest's side of the arena. This is to indicate which Glyph needs to be stepped on first. After it has been activated, a second Monolith will light up, corresponding to the second plate, and finally, the third will light up, corresponding to the third plate. For the first half of the fight, a Spotter will need to go behind the monoliths to spot which of the Monoliths are glowing, during this phase. After two Monoliths have been defeated, the fireteam will be able to infer which Glyphs to step on, as the air where the destroyed Monoliths used to be will glow to indicate the order. When the third Monolith has correctly been stepped on in order, the last guardian to step on their respective plate will gain the Brand of the Initiate.
                         </p>
 
-                        <p className='encounterWalkthroughParagraph image'>
-                            The Hall of Souls is not a Darkness Zone, so you cannot wipe. Instead, you can die as many times as you need to in order to complete the encounter. Your primary obstacles to powering all six statues will be spawning waves of Taken enemies, barriers, and distance. For every additional statue that is powered, the next relics to power the next statue will spawn farther away from the Hall of Souls on the left and right sections of the Dreadnought. Simply put, the further away the relic, the more time it takes to find, pick up, and return the relic to its statue.
-
-                            
-                        </p>
-
-                        <div className='walkthroughImageContainer'>
-                            <a className='imgLink' 
-                            rel="noreferrer"
-                            href='https://i.imgur.com/dtYmodh.png'
-                            target='_blank'>
-                                <img 
-                                    className='walkthroughImage'
-                                    src="https://i.imgur.com/dtYmodh.png" alt="A top down map of the Hall of Souls showing the potential relic spawn locations" /> 
-                            </a>
-                                A top down map of the Hall of Souls. Guardians spawn at the bottom, with the portal opening in the middle of the top half of the image. Courtesy of u/FluxDipole
-                        </div>
-
-                        <p className='encounterWalkthroughParagraph'>
-                            Returning each relic is further complicated by the enemies and barriers that spawn whenever a relic is picked up. At the start of the encounter, and when any relic(left or right) is picked up from then on, Taken enemies and glowing green barriers will spawn that will try to impede your progress. The barrier doesn't have a visible healthbar, but dies in a few shots from a special weapon - snipers and shotguns were effective in Destiny 1 for their burst damage. Fusion Rifles and Grenade Launchers will likely be just as effective in Destiny 2.             
-                        </p>
-
-                        <p className='encounterWalkthroughParagraph'>
-                        The enemies will range from Taken thrall in the hallways, to Taken Centurions at the statues, Taken Acolytes in the Hall of Souls where the guardians first spawn, and lastly, Taken Phalanxes. The Taken Phalanxes are the largest threat to the fireteam, as your relic carriers will be completely defenseless while carrying the relic. Unable to use their weapons, abilities, sprint, or even double jump, relic carriers are completely defenseless against a Phalanx boop off the edge. Each relic runner requires at least one escort by default, as, when they pick up a relic, green barriers will prevent them from returning to the Hall of Souls. 
-                        </p>
-
-                        <p className='encounterWalkthroughParagraph'>
-                            In Destiny 1, there were two primary methods of completing this encounter. The first assigned a runner and two escorts to each side, with both of the escorts assisting in killing enemies and clearing the barriers for the runner. The upside of this strategy meant that each runner could make it to back to the statues to bank relatively quickly, but the downside was that every time a relic squad would return, they would have to deal with a fresh wave of enemies in the Hall of Souls and the Statue Hallway.
-                        </p>
-
-                        <p className='encounterWalkthroughParagraph'>
-                            The alternative method, which became more popular as the average light level rose and the raid became easier, involved one runner and one escort per side, with two guardians staying in the Hall of Souls to clear adds. As soon as the relic runners picked up a relic, the middle guardians could immediately clear the enemies that spawned, clearing the way for the runners to bank unmolested by adds. The downside, however, was that each escort had to handle five phalanxes AND break the runner's barriers single-handedly, something that became much easier as guardians became strong. In contest mode, this will probably be the most time-efficient strategy, but will be riskier than the double escort strategy.
-                        </p>
-
+ 
                         <p className='encounterWalkthroughParagraph wide'>
-                            Your primary enemy in this encounter is time. Your loadout and supers should be able to handle add clear, with the occasional larger enemies (Taken Centurions at the statues), with no bosses to worry about, so use your supers and heavy freely. High Resilience, like all difficult content in Destiny 2, is a must, and Arc Resist mods combined with Concussive Dampener should make surviving easier. Even then, Devour on Void subclasses is easy to maintain with the volume of enemies, and Restoration is freely available to all classes in Solar 3.0. 
+                            The Brand of the Initiate operates similary to the Brand of Weaving and the Brand of Unraveling from the Annihilator Totems encounter, but with different effect. Instead of providing protection from damage, anyone within the aura of the Brand of the Initiate, including the Brand holder themselves, will be able to damage the Warpriest. The Brand will start off with five stacks, and count down to zero. When the Brand hits zero, the Brand Holder will die. To offset this, the Brand Holder can kill any add in the Warpriest's arena to reset the timer of the Brand of the Initiate and lose one stack. This process repeats, until all stacks of the Brand of the Initiate have been dispelled, and the damage phase ends.
                         </p>
 
                         <div className='walkthroughImageContainer'>
                             <a className='imgLink' 
                             rel="noreferrer"
-                            href='https://i.ytimg.com/vi/NHgS0sA39Jk/maxresdefault.jpg'
+                            href='https://cdnb.artstation.com/p/assets/images/images/001/354/553/medium/mike-stavrides-ttk-024.jpg'
                             target='_blank'>
                                 <img 
                                     className='walkthroughImage'
-                                    src="https://i.ytimg.com/vi/NHgS0sA39Jk/maxresdefault.jpg" alt="The Court of Oryx with it's gate activated. Courtesy of Datto" /> 
+                                    src="https://cdnb.artstation.com/p/assets/images/images/001/354/553/medium/mike-stavrides-ttk-024.jpg" alt="The Oculus activating, highlighting the safe zones in shadow" /> 
                             </a>
-                                The Court of Oryx's gate, when activated by the six statues. Image courtesy of Datto
+                            The Oculus activating, highlighting the safe zones behind the Monoliths in shadow. Image courtesy of Mike Stavrides, Staff (Principal) VFX Artist at Bungie
                         </div>
 
                         <p className='encounterWalkthroughParagraph'>
-                            When all six statues in the Hall of Souls are powered, the portal in the Court of Oryx will activate. A number of enemies will come through, among then, a Hive Knight and a Hive Wizard. You do not need to defeat these enemies to pass through the portal. Instead, you can wait 'behind' the portal for it's animation to finish, when you can pass through. Alternatively, keep dancing in and out of it until it teleports you. If all else fails, the Hall of Souls is not a Darkness Zone, so if you die on the way in, you can simply respawn and run back towards it. If the enemies prevent you, take whatever time you need to kill them safely before traveling through, and on to the next encounter.
+                            The final mechanic of this encounter presents itself immediately after a DPS phase ends. When the final Brand of the Initiate stack has been dispelled, the Warpriest will summon an Oculus, an enormous ball of painful light in the center of the arena. If you are caught in light of the Oculus, you will be killed! Luckily, the three Monoliths provide excellent shelter from the Oculus, allowing you to avoid its effects, but unfortunately, any time a Monolith shields a guardian from the Oculus, it is destroyed. As a result, this fight has a hard enrage cap at four DPS phases, as after three DPS phases, there will be no Monoliths to hide behind, and the Oculus will wipe the fireteam. Therefore, after DPS, your entire fireteam should hide behind the same Monolith as everyone else, every time. Be sure to communicate which Monolith you'll be hiding behind towards the end of every DPS phase.
                         </p>
+
+                        <p className='encounterWalkthroughParagraph'>
+                            The order of the fight is fairly simple. The phases rotates from Add-Clear, to Glyph Sequence, to DPS, then Oculus, and repeat. The only major change is when Warpriest drops below 30%~40% health, when the adds that spawn will change from Hive to Taken. The mechanics will remain unchanged. 
+                        </p>
+
+                        <p className='encounterWalkthroughParagraph image'>
+                            The fight will begin in earnest when three guardians step on the three Glyph Plates. An Add phase will start the encounter, with the Middle plate handling Thrall and Knights, while the Left and Right kill Acolyte's and Adepts. During these Add phases, the Warpriest will fire on any visible guardians with his Arc Boomer. After the adds have been cleared, three Hallowed Knights will spawn. On their death, the Glyph Sequence phase will begin.
+                        </p>
+
+                        <div className='walkthroughImageContainer'>
+                            <a className='imgLink' 
+                            rel="noreferrer"
+                            href='https://i.imgur.com/onQVEQW.png'
+                            target='_blank'>
+                                <img 
+                                    className='walkthroughImage'
+                                    src="https://i.imgur.com/onQVEQW.png" alt="The back of the Monoliths, one of which is glowing" /> 
+                            </a>
+                            The back of the Monoliths, one of which is glowing. 
+                            <a className='imgLink'
+                            rel="noreferrer"
+                            href='https://www.youtube.com/watch?v=ox8VfGPMCTM&ab_channel=evanf1997'
+                            target='_blank'>
+                             Image courtesy of evanf1997 on Youtube
+                             </a>
+                        </div>
+
+                        <p className='encounterWalkthroughParagraph '>
+                            When the Glyph Sequence has been correctly input, the last guardian to activate a Glyph Plate (hereafter called the Brand Holder) will recieve the Brand of the Initiate(x5). The rest of the fireteam will quickly group up with the Brand Holder, and, while standing within the Aura the Brand Holder provides, damage the Warpriest. The Brand Holder will use the first few seconds of every timer refresh to supplement damage on Warpriest, but should priorize always having an Acolyte to kill, to extend the timer. If the timer is not successfully reset, not only does the Brand Holder die, but anywhere from 10 to 50 seconds worth of DPS are wasted. In a fight with a best case scenario of 200 seconds of dps time, any loss is disastrous.
+                        </p>
+
+                        <p className='encounterWalkthroughParagraph '>
+                            When the final stack of the Brand of the Initiate has been dispelled by the Brand Holder, the Warpriest will summon the Oculus, bathing the arena in deadly light. The fireteam will group up and hide behind the same Monolith for safety. After a few seconds, the Oculus will fade, and the Monolith that guarded the fireteam will be destroyed. Finally, the encounter will return to another Add phase. Depending on the Warpriest's remaining health he will summon either Hive or Taken enemies, and repeat the phases. 
+                        </p>
+
+                        <p className='encounterWalkthroughParagraph'>
+                            What will make this encounter challenging is the Brand of the Initiate mechanic. It should only take a few attempts for the fireteam to learn how to read the Glyph Sequence and hide from the Oculus, but the Brand of the Initiate provides the most complication by far. A lot of time can be saved in every DPS phase by having all players who aren't standing on a Glyph Plate pre-emptively head towards where DPS will happen. They might run straight to the Brand Holder, or run to a specific, pre-chosen location. As a Brand Holder, you should not move, and should stand your ground as much as you can, to provide the easiest DPS aura for your allies. Well of Radiance, Healing Wells, and Healing Grenades may all be quite helpful in keeping you alive should you find yourself dying to Warpriest or Acolytes.
+                        </p>
+
+                        <p className='encounterWalkthroughParagraph'>
+                            When the mechanics have been largely solved, and your fireteam is reliably hitting the enrage, your next concern will be doing enough damage. This is the first of three damage checks in King's Fall, so prioritize long term DPS. While Wolf-Pack Rockets and Izanagi quick swapping provide high burst damage, rockets don't get a crit multiplier, and the amount of damage you can deal per heavy brick is highly in favor Linear Fusions and Sniper Rifles. Other crazy DPS options might include stacking the whole fireteam on Warpriest's feet with Well of Radiance, and everyone using triple Shotguns or Acrius with Trench Barrel, which the Brand Holder peaks over the high ground to refresh the timer.
+                        </p>
+
+
 
                     </div> 
                 </div>  
@@ -817,6 +848,19 @@ function E4() {
                             Destiny Item Manager
                         </div>
                     </a>
+
+                    <a className='dimLink' href='https://docs.google.com/spreadsheets/d/1i1KUwgVkd8qhwYj481gkV9sZNJQCE-C3Q-dpQutPCi4/edit#gid=242217075' target='_blank'>
+                        <div className='googleSheetsIcon'>
+                            Destiny Buff and Debuff Stacking Guide
+                        </div>
+                    </a>
+
+                    <a className='dimLink' href='https://docs.google.com/spreadsheets/d/12vF7ckMzN4hex-Tse4HPiVs_d9huFOKlvUoq5V41nxU/edit#gid=2085890105' target='_blank'>
+                        <div className='googleSheetsIcon'>
+                            Damage Chart Madness (PvE, Raid) DPS Charts
+                        </div>
+                    </a>
+
                     
 
                 </div>
