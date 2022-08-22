@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { useOutletContext, NavLink, useNavigate } from 'react-router-dom';
+import { useOutletContext, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash, faThumbTack } from '@fortawesome/free-solid-svg-icons';
 import confetti from 'canvas-confetti';
@@ -840,19 +840,19 @@ function E4C() {
                     <div>
                         Point of Failure Checklist
                     </div>
-                    <a className='dimLink' href='https://www.destinyitemmanager.com/' target='_blank'>
+                    <a className='dimLink' href='https://www.destinyitemmanager.com/' target='_blank' rel='noreferrer'>
                         <div className='dimIcon'>
                             Destiny Item Manager
                         </div>
                     </a>
 
-                    <a className='dimLink' href='https://docs.google.com/spreadsheets/d/1i1KUwgVkd8qhwYj481gkV9sZNJQCE-C3Q-dpQutPCi4/edit#gid=242217075' target='_blank'>
+                    <a className='dimLink' href='https://docs.google.com/spreadsheets/d/1i1KUwgVkd8qhwYj481gkV9sZNJQCE-C3Q-dpQutPCi4/edit#gid=242217075' target='_blank' rel='noreferrer'>
                         <div className='googleSheetsIcon'>
                             Destiny Buff and Debuff Stacking Guide
                         </div>
                     </a>
 
-                    <a className='dimLink' href='https://docs.google.com/spreadsheets/d/12vF7ckMzN4hex-Tse4HPiVs_d9huFOKlvUoq5V41nxU/edit#gid=2085890105' target='_blank'>
+                    <a className='dimLink' href='https://docs.google.com/spreadsheets/d/12vF7ckMzN4hex-Tse4HPiVs_d9huFOKlvUoq5V41nxU/edit#gid=2085890105' target='_blank' rel='noreferrer'>
                         <div className='googleSheetsIcon'>
                             Damage Chart Madness (PvE, Raid) DPS Charts
                         </div>

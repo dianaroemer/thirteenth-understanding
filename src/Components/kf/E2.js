@@ -753,7 +753,7 @@ function E2() {
                     <div>
                         Point of Failure Checklist
                     </div>
-                    <a className='dimLink' href='https://www.destinyitemmanager.com/' target='_blank'>
+                    <a className='dimLink' href='https://www.destinyitemmanager.com/' target='_blank' rel='noreferrer'>
                         <div className='dimIcon'>
                             Destiny Item Manager
                         </div>
