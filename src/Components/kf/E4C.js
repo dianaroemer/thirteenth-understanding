@@ -8,12 +8,12 @@ import '../../Styles/EncounterStyling.css';
 
 
 
-function E4() {
+function E4C() {
 
     const navigate = useNavigate();
 
     const thisRaid = 'kf';
-    const thisEncounter = 'e4'
+    const thisEncounter = 'e4c'
     const roles = ['Spotter', 'Low Plate', 'Middle Plate', 'High Plate', 'Brand Holder', 'Plate Defender']
 
     const [raidStateKF,
@@ -89,7 +89,7 @@ function E4() {
             origin: { y: .95 }
           });
           setTimeout(()=>{
-            navigate('/kf/e5');
+            navigate('/kf/e5c');
             handleClickNavEncounter(null, 'e5');
         }, 5000)        // XXXUPDATEXXX On new Encounters
 
@@ -197,9 +197,9 @@ function E4() {
                 </div>
 
             <div className={encounterContentClass}>
-                {/* I am E4 */}
+                {/* I am E4C */}
 
-                {/* <div className='encounterSection challengeMode'>
+                <div className='encounterSection challengeMode'>
                     <div className='encounterHeader challengeMode'> 
                         Possible Challenge Mode Changes
                     </div>
@@ -220,7 +220,7 @@ function E4() {
                             Adepts are not allowed to frenzy ANY acolytes
                         </li>
                     </ul>
-                </div>  */}
+                </div>  
 
                 <div className='encounterSection roles'>
                     <div className='encounterHeader'>
@@ -870,4 +870,4 @@ function E4() {
 
 }
 
-export default E4;
+export default E4C;
