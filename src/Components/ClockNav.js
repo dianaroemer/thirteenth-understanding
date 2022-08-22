@@ -152,8 +152,7 @@ function ClockNav(props) {
 
     useEffect( () => {
         let encounterTimer = currentDate - (props.mostRecentEncounterCompletion.getTime());
-        // let breakTimer = currentDate - (timeSinceBreak);
-        let breakTimer = currentDate - props.breaks[(props.breaks).length-1].breakStart.getTime()
+        let breakTimer = ((currentDate - props.breaks[(props.breaks).length-1].duration*1000)) - props.breaks[(props.breaks).length-1].breakStart.getTime() 
         // console.log(props.breaks[props.breaks.length-1])
 
         let encounterHours = 0;
@@ -209,9 +208,15 @@ function ClockNav(props) {
             breakSeconds = `0`+breakSeconds
         }
         
-        let breakString = `${breakHours ? `${breakHours}:` : ''}${breakMinutes ? `${breakMinutes}:` : ''}${breakSeconds ? `${breakSeconds}` : '00'} since break`;
+        let breakString = `${breakHours ? `${breakHours}:` : ''}${breakMinutes ? `${breakMinutes}:` : ''}${breakSeconds ? `${breakSeconds}` : '00'} since break`
+        // console.log(breakString);
+        if (breakString === '00:00:00 since break'){
+            setTimeBreakString(`Currently on Break`);    
+        } else {
+            setTimeBreakString(breakString);
+        }
 
-        setTimeBreakString(breakString);
+        
     }, [props.mostRecentEncounterCompletion, props.breaks, currentDate])
 
 
