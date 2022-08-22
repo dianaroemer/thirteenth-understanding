@@ -436,8 +436,8 @@
         text-align: center;
         padding: 5px 30%;
         margin-left: 15%;
-        /* margin-right: 15%; */
-        width: fit-content;
+        margin-right: 15%;
+        width: auto;
         /* width: calc(70% - 260px) */
     }
 

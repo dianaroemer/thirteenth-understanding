@@ -8,12 +8,12 @@ import '../../Styles/EncounterStyling.css';
 
 
 
-function E3() {
+function E3C() {
 
     const navigate = useNavigate();
 
     const thisRaid = 'kf';
-    const thisEncounter = 'e3'
+    const thisEncounter = 'e3c'
     const roles = ['Red Pickup', 'Red Defender', 'Red Adds', 'Blue Pickup', 'Blue Defender', 'Blue Adds ']
 
     const [raidStateKF,
@@ -87,7 +87,7 @@ function E3() {
             startVelocity: 60,
             origin: { y: .95 }
           });
-        setTimeout(()=>{navigate('/kf/e4');}, 5000)
+        setTimeout(()=>{navigate('/kf/e4c');}, 5000)
         // XXXUPDATEXXX On new Encounters
 
         toggleEncounterClearedSliderLock(true);
@@ -194,9 +194,9 @@ function E3() {
                 </div>
 
             <div className={encounterContentClass}>
-                {/* I am E3 */}
+                {/* I am E3C */}
 
-                {/* <div className='encounterSection challengeMode'>
+                <div className='encounterSection challengeMode'>
                     <div className='encounterHeader challengeMode'> 
                         Possible Challenge Mode
                     </div>
@@ -220,7 +220,7 @@ function E3() {
                                 Don't kill any wizards
                             </li>
                         </ul>
-                </div> */}
+                </div>
 
                 <div className='encounterSection roles'>
                     <div className='encounterHeader'>
@@ -828,4 +828,4 @@ function E3() {
 
 }
 
-export default E3;
+export default E3C;
