@@ -149,6 +149,15 @@
     justify-content: space-between;
 }
 
+.encounterDivinitySelector{
+    display: flex;
+    justify-content: space-between;
+    border: solid 2px black;
+    background: rgb(104, 75, 2);
+    padding: 2px;
+    border-radius: 3px;
+}
+
 .emphasizedEnemy {
     font-weight: 700;
 }

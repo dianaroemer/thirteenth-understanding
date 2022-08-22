@@ -208,7 +208,8 @@
   .welcomePane {
     display: block;
     position: fixed;
-    width: 550px;
+    width: 465px;
+    /* max-width: 550px; */
     left: calc(35% - 250px);
     right: 0;
     top: 30%;

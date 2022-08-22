@@ -677,7 +677,8 @@ function E3() {
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Block on plate, haters gon' hate
+                                Block on plate
+                                <div>Haters gon hate</div>
                             </div>
                         </div>
 
