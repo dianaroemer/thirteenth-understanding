@@ -22,7 +22,8 @@ function E2C() {
         handleToggleBlindMode, 
         blindMode, 
         fireteam, 
-        fireteamFunctionContainer] = useOutletContext();
+        fireteamFunctionContainer,
+        handleClickNavEncounter] = useOutletContext();
 
     const [attemptVisibility, toggleAttemptVisibility] = useState(false)
     function handleToggleAttemptVisibility(e) {
@@ -87,8 +88,10 @@ function E2C() {
             startVelocity: 60,
             origin: { y: .95 }
           });
-        setTimeout(()=>{navigate('/kf/e3c');}, 5000)
-        // XXXUPDATEXXX On new Encounters
+          setTimeout(()=>{
+            navigate('/kf/e3c');
+            handleClickNavEncounter(null, 'e3');
+        }, 5000)        // XXXUPDATEXXX On new Encounters
 
         toggleEncounterClearedSliderLock(true);
         setEncounterClearedSliderValue(() => 50);
@@ -736,7 +739,7 @@ function E2C() {
                             There is a secret chest present in this encounter! After completing the first two sections, when you first encounter the plates, you can jump off the left of the Tomb Ship instead of riding it through to the end. Jumping on a small ledge will allow you to carefully scale the ascending ridge of the wall to a door. This door operates on the same principle as the barrier blocking the Tomb Ship - if two guardians stand on this section's starting plates, the door will open, revealing the chest. Once four fireteam members are through, they can open the chest and jump down to the destination plates, allowing the first two guardians on the initial plates to navigate their way to the secret chest and claim it for themselves.
                         </p>  
 
-                        <iframe src="https://www.youtube.com/embed/p4JVg9Hpc8k?start=760" title="YouTube video player" frameBorde="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" className='youtubeEmbed' allowFullScreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/p4JVg9Hpc8k?start=760" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" className='youtubeEmbed' allowFullScreen></iframe>
                         
                     </div>
 

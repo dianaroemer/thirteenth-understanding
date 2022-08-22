@@ -22,7 +22,8 @@ function E3C() {
         handleToggleBlindMode, 
         blindMode, 
         fireteam, 
-        fireteamFunctionContainer] = useOutletContext();
+        fireteamFunctionContainer,
+        handleClickNavEncounter] = useOutletContext();
 
     const [attemptVisibility, toggleAttemptVisibility] = useState(false)
     function handleToggleAttemptVisibility(e) {
@@ -87,7 +88,10 @@ function E3C() {
             startVelocity: 60,
             origin: { y: .95 }
           });
-        setTimeout(()=>{navigate('/kf/e4c');}, 5000)
+          setTimeout(()=>{
+            navigate('/kf/e4c');
+            handleClickNavEncounter(null, 'e4');
+        }, 5000)
         // XXXUPDATEXXX On new Encounters
 
         toggleEncounterClearedSliderLock(true);

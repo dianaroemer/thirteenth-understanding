@@ -22,7 +22,8 @@ function E2() {
         handleToggleBlindMode, 
         blindMode, 
         fireteam, 
-        fireteamFunctionContainer] = useOutletContext();
+        fireteamFunctionContainer,
+        handleClickNavEncounter] = useOutletContext();
 
     const [attemptVisibility, toggleAttemptVisibility] = useState(false)
     function handleToggleAttemptVisibility(e) {
@@ -87,8 +88,10 @@ function E2() {
             startVelocity: 60,
             origin: { y: .95 }
           });
-        setTimeout(()=>{navigate('/kf/e3');}, 5000)
-        // XXXUPDATEXXX On new Encounters
+          setTimeout(()=>{
+            navigate('/kf/e3');
+            handleClickNavEncounter(null, 'e3');
+        }, 5000)        // XXXUPDATEXXX On new Encounters
 
         toggleEncounterClearedSliderLock(true);
         setEncounterClearedSliderValue(() => 50);

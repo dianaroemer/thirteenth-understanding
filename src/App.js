@@ -90,12 +90,10 @@ function App() {
     })
   }
   function handleClickNavEncounter(e, targetEncounter){
-    console.log('I am in handleClickNavEncounter')
-
-
-    e.preventDefault();
-    toggleMenuCheck(!menuCheck);
-    console.log(menuCheck)
+    // e.preventDefault();
+    if(menuCheck){
+      toggleMenuCheck(!menuCheck);
+    }
     setSeenEncounters({
       ...seenEncounters,
       [targetEncounter]: true,
@@ -229,6 +227,7 @@ function App() {
     // e.preventDefault()
     // console.log(raidStateKF.e2, raidStateKF.e3)
 
+    // If this raid is King's Fall, go here
     if(raid === 'kf'){
       if(raidStateKF[encounter].completed) {
         return; // If this encounter is already completed, do nothing.
@@ -557,7 +556,8 @@ function App() {
             handleToggleBlindMode, 
             blindMode, 
             fireteam, 
-            fireteamFunctionContainer]}/>
+            fireteamFunctionContainer,
+            handleClickNavEncounter]}/>
 
 
 
