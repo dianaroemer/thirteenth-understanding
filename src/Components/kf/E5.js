@@ -4,15 +4,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash, faThumbTack } from '@fortawesome/free-solid-svg-icons';
 import confetti from 'canvas-confetti';
 
+import '../../Styles/EncounterStyling.css';
+
+
 
 function E5() {
 
     const navigate = useNavigate();
 
     const thisRaid = 'kf';
-    const thisEncounter = 'e5'
-    const roles = ['Runner', 'Plate 1', 'Plate 2',
-        'Plate 3', 'Plate 4', 'Floater']
+    const thisEncounter = 'e1c'
+    const roles = ['First Plate', 'Second Plate', 'Third Plate', 'Fourth Plate', 'null', 'null']
 
     const [raidStateKF,
         handleRaidStateUpdate,
@@ -20,7 +22,8 @@ function E5() {
         handleToggleBlindMode, 
         blindMode, 
         fireteam, 
-        fireteamFunctionContainer] = useOutletContext();
+        fireteamFunctionContainer,
+        handleClickNavEncounter] = useOutletContext();
 
     const [attemptVisibility, toggleAttemptVisibility] = useState(false)
     function handleToggleAttemptVisibility(e) {
@@ -48,26 +51,27 @@ function E5() {
 
     function handleRoleUpdate(e,roleNumber, targetRole) {
         e.preventDefault();
-        console.log(e.target.value)
+        // console.log(e.target.value)
         let newArray = [...selectedRoles]
         newArray[roleNumber] = Number(e.target.value);
         setSelectedRoles(() => newArray);
-        console.log(newArray)
-        console.log(newArray.indexOf(1))
+        // console.log(newArray)
+        // console.log(newArray.indexOf(1))
     }
 
     const [selectedRoles, setSelectedRoles] = useState([6, 6, 6, 6, 6, 6])
 
+
+
     const [showEncounterCompleteSlider, toggleShowEncounterCompleteSlider] = useState(false);
     const [encounterClearedSliderValue, setEncounterClearedSliderValue] = useState(0);
-    const [encounterClearedSliderLock, toggleEncounterClearedSliderLock] = useState(!blindMode);
+    const [encounterClearedSliderLock, toggleEncounterClearedSliderLock] = useState(false);
 
     function handleEncounterClearedSliderChange(e) {
       e.preventDefault();
       let newValue = Number(e.target.value);
       setEncounterClearedSliderValue(()=> newValue);
     }
-
     useEffect( () => {
       if(encounterClearedSliderLock){
         setEncounterClearedSliderValue(() => 50)
@@ -83,9 +87,11 @@ function E5() {
             startVelocity: 60,
             origin: { y: .95 }
           });
-        setTimeout(()=>{navigate('/kf/e6');}, 5000)
-        
-        // XXXUPDATEXXX
+          setTimeout(()=>{
+            navigate('/kf/e6');
+            handleClickNavEncounter(null, 'e6');
+        }, 5000)        // XXXUPDATEXXX On new Encounters
+
         toggleEncounterClearedSliderLock(true);
         setEncounterClearedSliderValue(() => 50);
       } else {
@@ -104,14 +110,14 @@ function E5() {
     }, [encounterClearedSliderValue]);
 
 
-    useEffect( ()=> {
-      if(!blindMode) {
-        setEncounterClearedSliderValue(()=> 50)
-      }
-    }, [blindMode])
+    // useEffect( ()=> {
+    //   if(encounterClearedSliderLock) {
+    //     setEncounterClearedSliderValue(()=> 50)
+    //   }
+    // }, [encounterClearedSliderLock])
 
     return(
-        <div className='encounterContentContainer e5'>
+        <div className='encounterContentContainer e1'>
             <div className={encounterToolsClass}>
                 {/* I am encounter toolbox */}
                 {!raidStateKF[thisEncounter].completed && 
@@ -155,7 +161,7 @@ function E5() {
                                 min={0} max={50} 
                                 value={encounterClearedSliderValue}
                                 onChange={e=> handleEncounterClearedSliderChange(e)}></input> 
-                                <label htmlFor='blindModeSlider'>Complete</label>
+                                <label htmlFor='encounterClearedSlider'>Complete</label>
                             </div>
                         </div>}
                     </div>}
@@ -166,9 +172,12 @@ function E5() {
                 {!raidStateKF[thisEncounter].completed &&
                 <div className='encounterAttemptsContainer'>
                     <div onClick={e => handleToggleAttemptVisibility(e)}>
-                        <FontAwesomeIcon icon={attemptVisibility ? faEyeSlash : faEye}/>&nbsp;
-                        { attemptVisibility ? `Attempt # ${raidStateKF[thisEncounter].attempts}` : 'Show Attempts' }&nbsp;
-                        <FontAwesomeIcon icon={attemptVisibility ? faEyeSlash : faEye}/>
+                        {/* <FontAwesomeIcon icon={attemptVisibility ? faEye : faEyeSlash}/>&nbsp; */}
+                        { attemptVisibility ? 
+                        'Show Attempts' :
+                        `Attempt # ${raidStateKF[thisEncounter].attempts}` 
+                        }&nbsp;&nbsp;
+                        <FontAwesomeIcon icon={attemptVisibility ? faEye : faEyeSlash}/>
                     </div>
                     <button onClick={e=> handleRaidStateUpdate(e, thisRaid, thisEncounter, 'attempts', (raidStateKF[thisEncounter].attempts+1))}>
                         + Add Attempt +
@@ -181,12 +190,28 @@ function E5() {
                 
                 
             </div>
+
+            <div className={stickTools ? 'encounterTitle' : 'encounterTitle stickTools'}>
+                    Golgoroth's Cellar
+                </div>
+
             <div className={encounterContentClass}>
-                I am E5
+                {/* I am E5 */}
+
+                {/* <div className='encounterSection challengeMode'>
+                    <div className='encounterHeader challengeMode'> 
+                        Possible Challenge Mode Changes
+                    </div>
+                    None
+                </div> */}
+
                 <div className='encounterSection roles'>
                     <div className='encounterHeader'>
                         Roles
                     </div>
+
+                    
+
                     <div className='encounterRoleSelectorContainer'>
                         <div className='encounterRoleSelector'>
                             {roles[0]}: &nbsp;
@@ -317,7 +342,7 @@ function E5() {
                                 </option>}
                             </select>
                         </div>
-                        <div className='encounterRoleSelector'>
+                        {/* <div className='encounterRoleSelector'>
                             {roles[4]}: &nbsp;
                             <select id='role5' onChange={e=>handleRoleUpdate(e, 4)}>
                                 <option value={9}>
@@ -382,7 +407,7 @@ function E5() {
                             </select>
                         </div>
 
-                    {/* 
+                    
                     <div className='encounterDivinitySelector'>
                         Divinity: 
                         <select id='divSelector'>
@@ -420,29 +445,223 @@ function E5() {
                                 </option>
                             }
                         </select>
-                    </div> 
-                    */}
+                    </div>  */}
+                    
 
                     </div>
+                </div>
+
+                <div className='encounterSection enemies'>
+                    <div className='encounterHeader'> 
+                        Expected Enemies
+                    </div>
+                    None
+                    {/* <table>
+                        <thead>
+                            <tr>
+                                <th>Minors</th>
+                                <th>Majors</th> 
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            Hive Acolyte
+                                        </li>
+                                        <li>
+                                            Taken Thrall
+                                        </li>
+                                        <li>
+                                            Taken Acolyte
+                                            <ol className='encounterSubBulletPoint'>
+                                                Acolyte's Eye
+                                            </ol>
+                                        </li>
+                                        <li className='shieldedEnemy arc'>
+                                            Taken Centurion
+                                            
+                                        </li>
+                                        <li className='emphasizedEnemy'>
+                                            <u>
+                                            Taken Phalanx
+                                            </u>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            Blah
+                                        </li>
+                                    </ul>
+                                </td> 
+                            </tr>
+                        </tbody>
+                    </table> */}
+
+                </div>
+
+                <div className='encounterSection tips'>
+                    <div className='encounterHeader'> 
+                        Tips
+                    </div>
+
+                    <div className='encounterSubSection'>
+                        <ul style={{paddingLeft: '20px'}}>
+
+                            <li className='encounterBulletPoint'>
+                                First guardian to fall in a hole gets the cone of shame
+                                <ol className='encounterSubBulletPoint'>
+                                    RIP Flawless...
+                                </ol>
+                            </li>
+
+                            {/* <li className='encounterBulletPoint'>
+                                Pick up both the left and right relics at the same time. 
+                                <ol className='encounterSubBulletPoint'>
+                                    When either relic is picked up, Taken spawn on both sides of the map!
+                                </ol>
+                            </li>
+                            */}
+                        </ul>
+                    </div>
+                </div>
+
+                <div className='encounterSection recommended'>
+                    <div className='encounterHeader'> 
+                        Recommended Weapons and Builds
+                    </div>
+
+                    <div className='buildSlot'>
+                            <div className='buildSlotIcon eagerEdge'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                Last one out is a rotten Ahamkara egg
+                            </div>
+                        </div>
+
+                </div>
+
+                <div className='encounterSection reprisedChanges'>
+                    <div className='encounterHeader'> 
+                        Expected Changes in Destiny 2
+                    </div>
+                            None
+                    {/* <div className='encounterSubSection'>
+                    <ul style={{paddingLeft: '20px'}}>
+                        <li className='encounterBulletPoint'>
+                            Increased enemy density
+                        </li>
+                        <li className='encounterBulletPoint'>
+                            Unlikely to see champions in normal difficulty, similar to how Vault of Glass uses Overload Minotaurs in it's opening on Master difficulty
+                        </li>
+                        <li className='encounterBulletPoint'>
+                            Centurions may become Major enemies, with more health. Destiny 1 only had minors and majors, whereas Destiny 2 introduced Ultras. Expect full use of the larger range of enemy difficulties to appear in King's Fall.
+                        </li>
+                        <li className='encounterBulletPoint'>
+                            Lucent Hive. This would likely spawn in the Hall of Souls with the Acolytes or the Centurions. 
+                            <ol className='encounterSubBulletPoint'>
+                                While narratively tied to Savathun, Lucent Hive are too excellent an enemy type for a designer to ignore in a Hive (and Taken) based raid.
+                            </ol>
+                        </li>
+                    </ul>
+                    </div> */}
+
+                    
+                </div>
+
+                <div className='encounterSection walkthrough'>
+                    <div className='encounterHeader'> 
+                        Walkthrough
+                    </div>
+
+                    <div className='encounterWalkthroughContainer'>
+
+                        <div className='encounterWalkthroughParagraph image'>
+                            After your successful defeat of the Warpriest, you will find yourself entering Golgoroth's Cellar, an enormous maze in the underbelly of the Dreadnought. The route, from the starting location, is quite easy - Right when available, then Left, Left, Right, and Straight to the end. Again, that's 
+                            <div>
+                                <ol style={{padding: '10px'}}>
+                                    <li>
+                                        Right
+                                    </li>
+                                    <li>
+                                        Left
+                                    </li>
+                                    <li>
+                                        Left
+                                    </li>
+                                    <li>
+                                        Right
+                                    </li>
+                                    <li>
+                                        Straight till sunrise
+                                    </li>
+                                </ol>
+                            </div>
+                            The following map will show you the way more quickly than I could by text.
+
+                        </div>
+                        
+
+                        <div className='walkthroughImageContainer'>
+                            <a className='imgLink' 
+                            rel="noreferrer"
+                            href='https://i.imgur.com/7syzQcC.png'
+                            target='_blank'>
+                                <img 
+                                    className='walkthroughImage'
+                                    src="https://i.imgur.com/7syzQcC.png" alt="A map of Golgoroth's Cellar" /> 
+                            </a>
+                                A map of Golgoroth's Cellar. Image courtesy of u/Taux
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+
+                <div className='encounterSection secretChest'>
+                    <div className='encounterHeader'>
+                            Secret Chest
+                    </div>
+                    <p className='encounterWalkthroughParagraph'>
+                        Golgoroth's Cellar is home to the second secret chest available in King's Fall. Similarly to the first secret chest in the Tomb Ships, this chest must be unlocked by standing on plates. The map above shows the location of the four plates that must be stood on in the correct order. When the fourth plate is correctly activated, a chest will spawn in the middle of the maze. Plate 1(one) is hidden behind a door, halfway through the maze. Above the door is a narrow tunnel that leads through the wall and into the chamber with the plate. Patient platforming, and bringing out your ghost (in Destiny 1, at least) temporarily highlighted to environment, allowing you to see where to jump in order to make it to the plate. Plate 4(four) is tucked away in the corner behind some boxes. 
+                    </p>
+
+                    <p className='encounterWalkthroughParagraph'>
+                        The video linked below shows all four plate locations from Destiny 1. Use the timestamps to navigate according to the map present in the upper right of the video, which differs from the map provided earlier in the walkthrough.
+                    </p>
+
+                    <iframe className='youtubeEmbed' src="https://www.youtube.com/embed/p4JVg9Hpc8k?start=1741" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+
+                </div>
+
+
+                <div className='encounterSection resources'>
+                    <div className='encounterHeader'> 
+                        Additional Resources
+                    </div>
+                    <div>
+                        Point of Failure Checklist
+                    </div>
+                    <a className='dimLink' href='https://www.destinyitemmanager.com/' target='_blank' rel='noreferrer'>
+                        <div className='dimIcon'>
+                            Destiny Item Manager
+                        </div>
+                    </a>
+                    
+
                 </div>
             </div>
             
 
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas viverra risus enim. Phasellus at turpis diam. Donec in blandit tellus, vitae faucibus libero. Sed posuere iaculis bibendum. Suspendisse massa libero, venenatis in ex nec, eleifend lobortis eros. Pellentesque a viverra augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec fringilla ipsum vitae ornare pellentesque. Aenean efficitur felis sit amet nunc rhoncus vestibulum. Duis pharetra venenatis volutpat. Curabitur in arcu urna. Aliquam rutrum venenatis massa, vel consequat risus sagittis vitae. Cras ac nunc blandit, hendrerit velit id, maximus libero. Duis sodales orci et blandit posuere.
-            </p>
-            <p>
-Aliquam convallis tellus vitae nisi dictum egestas. Integer vitae massa purus. Suspendisse eleifend faucibus tortor, facilisis pharetra ex volutpat pulvinar. Phasellus facilisis odio in libero convallis sollicitudin. Sed vitae blandit quam, vel fringilla libero. Ut quis sodales turpis. Nulla sit amet est non tortor aliquet volutpat non sed elit. Etiam pulvinar lacinia tortor, ut euismod lacus cursus faucibus. Phasellus et pellentesque ligula, in maximus est.
-            </p>
-            <p>
-Mauris placerat condimentum ultrices. Fusce eget vehicula ipsum. Maecenas massa lectus, pretium eu sollicitudin nec, sollicitudin at nisl. Nulla ultrices eu dui et sagittis. Phasellus eleifend augue sed urna pulvinar molestie. Donec iaculis ullamcorper arcu malesuada convallis. Pellentesque eleifend lectus at orci cursus porttitor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla tempus, odio euismod vulputate imperdiet, lorem nunc fringilla magna, at efficitur nibh velit non mauris. Etiam sagittis fringilla nulla quis bibendum. Quisque vel leo vitae elit lobortis posuere quis vitae quam. Curabitur sollicitudin feugiat enim et vulputate.
-            </p>
-            <p>
-Integer eget rhoncus elit. Ut cursus quis ante quis maximus. Donec sodales sapien in nunc fringilla dictum. Nulla a pretium enim. Maecenas convallis finibus sem. Pellentesque id commodo leo, eu sollicitudin elit. Curabitur at malesuada ante. Aliquam eu commodo lectus, a volutpat tortor. Quisque ut tellus enim. In imperdiet magna a massa rutrum consequat. Ut nec diam quis lectus posuere maximus. Sed fermentum, metus ut sagittis tempus, ante leo pellentesque orci, elementum fermentum lacus nunc sit amet risus. Vivamus pharetra pulvinar augue, ut tristique est lobortis porta. Aliquam eget risus luctus, pulvinar lorem sit amet, tempor sem. Vestibulum pretium massa sit amet dolor interdum consectetur. Aenean sit amet enim vel urna egestas ultricies.
-            </p>
-            <p>
-Nullam quis aliquam lorem. Duis ornare, mauris sed imperdiet efficitur, nisl quam pretium magna, quis feugiat nulla turpis vel elit. Donec non fringilla tellus, in blandit augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam eget massa vitae ipsum facilisis dapibus. Morbi mauris elit, consequat fringilla tempor sed, lobortis vel sem. Mauris semper varius odio at mollis. In quis sollicitudin nulla. Pellentesque libero arcu, bibendum at lorem nec, feugiat pulvinar eros.
-            </p>
+           
         </div>
     )
 

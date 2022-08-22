@@ -51,12 +51,12 @@ function E4C() {
 
     function handleRoleUpdate(e,roleNumber, targetRole) {
         e.preventDefault();
-        console.log(e.target.value)
+        // console.log(e.target.value)
         let newArray = [...selectedRoles]
         newArray[roleNumber] = Number(e.target.value);
         setSelectedRoles(() => newArray);
-        console.log(newArray)
-        console.log(newArray.indexOf(1))
+        // console.log(newArray)
+        // console.log(newArray.indexOf(1))
     }
 
     // The initial state of each guardian is set to 6, whereas the potential values are 1,2,3,4,5,7. This is due to my realization that indexOf returning -1 evaluates as TRUE in a boolean context, so rather than rewrite the role selection functionality, I tested the default value of 7 to replace guardian 1's initial 0 value (which evaluated as false), rather than set the initial state of the selected roles to [7,7,7, 7,7,7]. This can and should be an initial value of [7,7,7,7,7,7] with role 1 in the selector evaluating as 1, and each of the other role selectors respectively evaluating at 2, 3, 4, 5, and lastly 6. Would require combing through the roleSelector code and pruning, but I ain't got time for that, so for now, it stays, until I have time to fix it.

@@ -51,12 +51,12 @@ function E1C() {
 
     function handleRoleUpdate(e,roleNumber, targetRole) {
         e.preventDefault();
-        console.log(e.target.value)
+        // console.log(e.target.value)
         let newArray = [...selectedRoles]
         newArray[roleNumber] = Number(e.target.value);
         setSelectedRoles(() => newArray);
-        console.log(newArray)
-        console.log(newArray.indexOf(1))
+        // console.log(newArray)
+        // console.log(newArray.indexOf(1))
     }
 
     const [selectedRoles, setSelectedRoles] = useState([6, 6, 6, 6, 6, 6])
