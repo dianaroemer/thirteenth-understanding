@@ -30,12 +30,6 @@ function Menu(props) {
             <div className='navMenuSlot' onClick={e => props.handleClickNavEncounter(e, 'e1')}>
                 <div className='navMenuEncounterTitle'>
                     <NavLink
-                        isActive={(match, location) => {
-                            // if(!match) {
-                                console.log('tests?');
-                            // }
-                            
-                        }}
                         className='navMenuEncounterLink'
                         style={({isActive}) => {
                             return {
@@ -44,7 +38,6 @@ function Menu(props) {
                             };
                         }}
                         to={props.inChallengeMode ? "/kf/e1c" : "/kf/e1"}>
-                        {/* // to={"/kf/e1"}> */}
                             {(!props.blindMode || props.seenEncounters.e1) ? 'The Hall of Souls' : '? ? ? ? ? ? ? ? ? ?'}</NavLink>
                 </div>
                 <div className='navMenuEncounterCheck'>

@@ -220,7 +220,7 @@ function ClockNav(props) {
         // toggleMenuCheck(!menuCheck);
     // }
 
-    let { menuCheck, handleToggleMenuCheck } = props;
+    // let { menuCheck, handleToggleMenuCheck } = props;
 
     return (
         <div className={props.expandClocks ? 'clockNav-expanded' : 'clockNav'}
@@ -244,7 +244,10 @@ function ClockNav(props) {
                 }
                 {props.isMobileViewport && 
                     <div className='mobileMenuIconContainer'>
-                        <input type="checkbox" id="menuInput" checked={menuCheck} onChange={e => handleToggleMenuCheck(e)}/>
+                        <input type="checkbox" id="menuInput" checked={props.menuCheck} onChange={e => {
+                            props.handleToggleMenuCheck(e);
+                            // console.log('clicking')
+                            }}/>
                         <label className="menuIcon" htmlFor='menuInput'>
                             <div className="subMenu"></div>
                         </label>

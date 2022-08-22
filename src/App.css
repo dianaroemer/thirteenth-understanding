@@ -48,11 +48,13 @@
   /* position:sticky; */
   height: 0px;
   overflow: hidden;
-  visibility: hidden;
+  /* visibility: hidden; */
   opacity: 0;
   background: #24282a;
   /* position: fixed; */
   z-index: 100;
+  /* padding: 5px; */
+  /* padding-bottom: -0; */
 
   transform: translateY(-30px);
 

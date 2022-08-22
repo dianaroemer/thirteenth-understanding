@@ -50,9 +50,12 @@ function App() {
   }
   const [navClassesString, setNavClassesString] = useState('navMenu')
   useEffect( () => {
+    console.log('updating navClassesString')
+    console.log('menuCheck = ', menuCheck)
     if(menuCheck) {
       setNavClassesString('navMenu open')
     } else {
+      console.log('setting false')
       setNavClassesString('navMenu')
     }
   }, [menuCheck])
@@ -90,7 +93,12 @@ function App() {
     })
   }
   function handleClickNavEncounter(e, targetEncounter){
+    console.log('I am in handleClickNavEncounter')
+
+
     e.preventDefault();
+    toggleMenuCheck(!menuCheck);
+    console.log(menuCheck)
     setSeenEncounters({
       ...seenEncounters,
       [targetEncounter]: true,
