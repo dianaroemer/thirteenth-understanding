@@ -21,7 +21,7 @@ import E1C from './Components/kf/E1C';
 import E2C from './Components/kf/E2C';
 import E3C from './Components/kf/E3C';
 import E4C from './Components/kf/E4C';
-// import E5C from './Components/kf/E5C';
+import E5C from './Components/kf/E5C';
 // import E6C from './Components/kf/E6C';
 // import E7C from './Components/kf/E7C';
 // import E8C from './Components/kf/E8C';
@@ -56,8 +56,8 @@ root.render(
         <Route path="kf/e2c" element={<E2C />} />
         <Route path="kf/e3c" element={<E3C />} />
         <Route path="kf/e4c" element={<E4C />} />
-        {/* <Route path="kf/e5c" element={<E5C />} />
-        <Route path="kf/e6c" element={<E6C />} />
+        <Route path="kf/e5c" element={<E5C />} />
+        {/* <Route path="kf/e6c" element={<E6C />} />
         <Route path="kf/e7c" element={<E7C />} />
         <Route path="kf/e8c" element={<E8C />} />
         <Route path="kf/e9c" element={<E9C />} /> */}

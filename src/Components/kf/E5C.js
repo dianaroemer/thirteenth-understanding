@@ -8,12 +8,12 @@ import '../../Styles/EncounterStyling.css';
 
 
 
-function E5() {
+function E5C() {
 
     const navigate = useNavigate();
 
     const thisRaid = 'kf';
-    const thisEncounter = 'e5'
+    const thisEncounter = 'e5c'
     const roles = ['First Plate', 'Second Plate', 'Third Plate', 'Fourth Plate', 'null', 'null']
 
     const [raidStateKF,
@@ -88,7 +88,7 @@ function E5() {
             origin: { y: .95 }
           });
           setTimeout(()=>{
-            navigate('/kf/e6');
+            navigate('/kf/e6c');
             handleClickNavEncounter(null, 'e6');
         }, 5000)        // XXXUPDATEXXX On new Encounters
 
@@ -117,7 +117,7 @@ function E5() {
     // }, [encounterClearedSliderLock])
 
     return(
-        <div className='encounterContentContainer e5'>
+        <div className='encounterContentContainer e5c'>
             <div className={encounterToolsClass}>
                 {/* I am encounter toolbox */}
                 {!raidStateKF[thisEncounter].completed && 
@@ -196,14 +196,14 @@ function E5() {
                 </div>
 
             <div className={encounterContentClass}>
-                {/* I am E5 */}
+                {/* I am E5C */}
 
-                {/* <div className='encounterSection challengeMode'>
+                <div className='encounterSection challengeMode'>
                     <div className='encounterHeader challengeMode'> 
                         Possible Challenge Mode Changes
                     </div>
                     None
-                </div> */}
+                </div>
 
                 <div className='encounterSection roles'>
                     <div className='encounterHeader'>
@@ -667,4 +667,4 @@ function E5() {
 
 }
 
-export default E5;
+export default E5C;
