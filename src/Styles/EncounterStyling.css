@@ -104,6 +104,11 @@
     border: 2px solid black;
 }
 
+.encounterHeader.secretChest {
+    background-color: rgb(104, 75, 2);
+    border: 2px solid black;
+}
+
 .encounterContent{
     padding-top: 3px;
     display: flex;
@@ -197,6 +202,7 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 
 .buildSlotsContainer {
     display: flex;
