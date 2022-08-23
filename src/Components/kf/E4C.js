@@ -858,6 +858,16 @@ function E4C() {
                         </div>
                     </a>
 
+
+                    <div className='encounterSection videoContainer'>
+                        <iframe src="https://www.youtube.com/embed/p4JVg9Hpc8k?start=1316" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className='youtubeEmbed'></iframe>
+                            The Legend Himself's guide to Warpriest
+                    </div>
+
+                    <div className='encounterSection videoContainer'>
+                        <iframe src="https://www.youtube.com/embed/TSMv3rDBgB4" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className='youtubeEmbed'></iframe>
+                            Datto's guide to Warpriest
+                    </div>
                     
 
                 </div>
