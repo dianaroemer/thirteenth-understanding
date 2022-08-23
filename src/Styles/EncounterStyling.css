@@ -203,6 +203,17 @@
     flex-wrap: wrap;
 }
 
+.encounterSection.videos {
+    margin-left: 0;
+    margin-right: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.encounterSection.videoContainer {
+    margin-left: 0px;
+    margin-right: 0px;
+}
 
 .buildSlotsContainer {
     display: flex;
@@ -522,6 +533,11 @@
 
     .encounterSection {
         margin: 10px 30px;
+    }
+
+    .encounterSection.videoContainer {
+        margin-left: 25px;
+        margin-right: 25px;
     }
 
     .encounterWalkthroughParagraph {

@@ -832,7 +832,32 @@ function E6C() {
                         </div>
                     </a>
 
+                    <div className='encounterSection videos'>
+
+                    <div className='encounterSection videoContainer'>
+                        <iframe src="https://www.youtube.com/embed/p4JVg9Hpc8k?start=2005" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className='youtubeEmbed'></iframe>
+                            The Legend Himself's guide to Golgoroth
+                    </div>
+
+
+                    <div className='encounterSection videoContainer'>
+                        <iframe src="https://www.youtube.com/embed/3U1OnA77ktU" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className='youtubeEmbed'></iframe>
+                            Datto's first guide to Golgoroth
+                    </div>
+
+                    <div className='encounterSection videoContainer'>
+                        <iframe src="https://www.youtube.com/embed/ulj0AU_JGx4" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className='youtubeEmbed'></iframe>
+                            Datto's second, more in-depth guide to Golgoroth
+                    </div>
                     
+                    <div className='encounterSection videoContainer'>
+                        <iframe src="https://www.youtube.com/embed/CCh31wFPKjA" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className='youtubeEmbed'></iframe>
+                            Datto's Challenge Mode (from Destiny 1) guide to Golgoroth
+                    </div>
+
+                    </div>
+
+                   
 
                 </div>
             </div>
