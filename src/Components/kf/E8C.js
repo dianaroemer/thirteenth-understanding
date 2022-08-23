@@ -8,12 +8,12 @@ import '../../Styles/EncounterStyling.css';
 
 
 
-function E8() {
+function E8C() {
 
     const navigate = useNavigate();
 
     const thisRaid = 'kf';
-    const thisEncounter = 'e8'
+    const thisEncounter = 'e8c'
     const roles = ['Plate 1', 'Plate 2', 'Plate 3', 'Plate 4', 'Add Clear', 'Floater']
 
     const [raidStateKF,
@@ -89,7 +89,7 @@ function E8() {
             origin: { y: .95 }
           });
           setTimeout(()=>{
-            navigate('/kf/e9');
+            navigate('/kf/e9c');
             handleClickNavEncounter(null, 'e9');
         }, 5000)        // XXXUPDATEXXX On new Encounters
 
@@ -118,7 +118,7 @@ function E8() {
     // }, [encounterClearedSliderLock])
 
     return(
-        <div className='encounterContentContainer e8'>
+        <div className='encounterContentContainer e8c'>
             <div className={encounterToolsClass}>
                 {/* I am encounter toolbox */}
                 {!raidStateKF[thisEncounter].completed && 
@@ -197,9 +197,9 @@ function E8() {
                 </div>
 
             <div className={encounterContentClass}>
-                {/* I am E8 */}
+                {/* I am E8C */}
 
-                {/* <div className='encounterSection challengeMode'>
+                <div className='encounterSection challengeMode'>
                     <div className='encounterHeader challengeMode'> 
                         Possible Challenge Mode Changes
                     </div>
@@ -220,7 +220,7 @@ function E8() {
                             No one can take damage from a Daughter of Oryx (like Shuro Chi)
                         </li>
                     </ul>
-                </div>  */}
+                </div>  
 
                 <div className='encounterSection roles'>
                     <div className='encounterHeader'>
@@ -707,7 +707,7 @@ function E8() {
 
                 </div>
 
-                 <div className='encounterSection walkthrough'>
+                <div className='encounterSection walkthrough'>
                     <div className='encounterHeader'> 
                         Walkthrough
                     </div>
@@ -905,8 +905,6 @@ function E8() {
 
 
                 </div>
-
-                
             </div>
             
 
@@ -916,4 +914,4 @@ function E8() {
 
 }
 
-export default E8;
+export default E8C;
