@@ -730,8 +730,14 @@ function E2C() {
                         <p className='encounterWalkthroughParagraph '>
                             At the destination bay of Tomb Ship, there will be two more Hive Plates that operate identically to the first two - allowing any Guardians who pass through to ferry the remaining members of the fireteam across. The principle is simple - stand on the plates to allow two guardians to pass through, then those two guardians will stand on their destination plates to allow the rest of the fireteam to pass through. When all six guardians are on the other side, you can proceed to the next encounter.
                         </p>  
+                            
+                    </div>
 
-                        <div className='encounterHeader'>
+
+                </div>
+
+                <div className='encounterSection secretChest'>
+                    <div className='encounterHeader secretChest'>
                             Secret Chest
                         </div>
 
@@ -740,10 +746,6 @@ function E2C() {
                         </p>  
 
                         <iframe src="https://www.youtube.com/embed/p4JVg9Hpc8k?start=760" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" className='youtubeEmbed' allowFullScreen></iframe>
-                        
-                    </div>
-
-
                 </div>
 
                 <div className='encounterSection resources'>

@@ -8,13 +8,13 @@ import '../../Styles/EncounterStyling.css';
 
 
 
-function E5C() {
+function E7C() {
 
     const navigate = useNavigate();
 
     const thisRaid = 'kf';
-    const thisEncounter = 'e5c'
-    const roles = ['First Plate', 'Second Plate', 'Third Plate', 'Fourth Plate', 'null', 'null']
+    const thisEncounter = 'e7c'
+    const roles = ['Runner Left', 'Escort Left', 'Floater Left', 'Runner Right', 'Escort Right', 'Floater Right']
 
     const [raidStateKF,
         handleRaidStateUpdate,
@@ -59,6 +59,7 @@ function E5C() {
         // console.log(newArray.indexOf(1))
     }
 
+    // The initial state of each guardian is set to 6, whereas the potential values are 1,2,3,4,5,7. This is due to my realization that indexOf returning -1 evaluates as TRUE in a boolean context, so rather than rewrite the role selection functionality, I tested the default value of 7 to replace guardian 1's initial 0 value (which evaluated as false), rather than set the initial state of the selected roles to [7,7,7, 7,7,7]. This can and should be an initial value of [7,7,7,7,7,7] with role 1 in the selector evaluating as 1, and each of the other role selectors respectively evaluating at 2, 3, 4, 5, and lastly 6. Would require combing through the roleSelector code and pruning, but I ain't got time for that, so for now, it stays, until I have time to fix it.
     const [selectedRoles, setSelectedRoles] = useState([6, 6, 6, 6, 6, 6])
 
 
@@ -88,8 +89,8 @@ function E5C() {
             origin: { y: .95 }
           });
           setTimeout(()=>{
-            navigate('/kf/e6c');
-            handleClickNavEncounter(null, 'e6');
+            navigate('/kf/e8c');
+            handleClickNavEncounter(null, 'e8');
         }, 5000)        // XXXUPDATEXXX On new Encounters
 
         toggleEncounterClearedSliderLock(true);
@@ -117,7 +118,7 @@ function E5C() {
     // }, [encounterClearedSliderLock])
 
     return(
-        <div className='encounterContentContainer e5c'>
+        <div className='encounterContentContainer e7'>
             <div className={encounterToolsClass}>
                 {/* I am encounter toolbox */}
                 {!raidStateKF[thisEncounter].completed && 
@@ -192,28 +193,26 @@ function E5C() {
             </div>
 
             <div className={stickTools ? 'encounterTitle' : 'encounterTitle stickTools'}>
-                    Golgoroth's Cellar
+                    Piston Jumping Puzzle
                 </div>
 
             <div className={encounterContentClass}>
-                {/* I am E5C */}
+                {/* I am E7C */}
 
                 <div className='encounterSection challengeMode'>
                     <div className='encounterHeader challengeMode'> 
-                        Possible Challenge Mode Changes
+                        Possible Challenge Mode
                     </div>
-                    None
+                        None
                 </div>
 
                 <div className='encounterSection roles'>
                     <div className='encounterHeader'>
                         Roles
                     </div>
-
-                    
-
                     <div className='encounterRoleSelectorContainer'>
-                        <div className='encounterRoleSelector'>
+                        None
+                        {/* <div className='encounterRoleSelector'>
                             {roles[0]}: &nbsp;
                             <select id='role1' onChange={e=>handleRoleUpdate(e, 0)}>
                                 <option value={9}>
@@ -342,7 +341,7 @@ function E5C() {
                                 </option>}
                             </select>
                         </div>
-                        {/* <div className='encounterRoleSelector'>
+                        <div className='encounterRoleSelector'>
                             {roles[4]}: &nbsp;
                             <select id='role5' onChange={e=>handleRoleUpdate(e, 4)}>
                                 <option value={9}>
@@ -405,9 +404,9 @@ function E5C() {
                                     {fireteam[5].name}
                                 </option>}
                             </select>
-                        </div>
+                        </div> */}
 
-                    
+                    {/* 
                     <div className='encounterDivinitySelector'>
                         Divinity: 
                         <select id='divSelector'>
@@ -445,8 +444,8 @@ function E5C() {
                                 </option>
                             }
                         </select>
-                    </div>  */}
-                    
+                    </div> 
+                    */}
 
                     </div>
                 </div>
@@ -460,7 +459,7 @@ function E5C() {
                         <thead>
                             <tr>
                                 <th>Minors</th>
-                                <th>Majors</th> 
+                                <th>Majors</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -472,35 +471,27 @@ function E5C() {
                                             Hive Acolyte
                                         </li>
                                         <li>
-                                            Taken Thrall
-                                        </li>
-                                        <li>
-                                            Taken Acolyte
-                                            <ol className='encounterSubBulletPoint'>
-                                                Acolyte's Eye
-                                            </ol>
-                                        </li>
-                                        <li className='shieldedEnemy arc'>
-                                            Taken Centurion
-                                            
-                                        </li>
-                                        <li className='emphasizedEnemy'>
-                                            <u>
-                                            Taken Phalanx
-                                            </u>
+                                            Hive Knight
                                         </li>
                                     </ul>
                                 </td>
                                 <td>
                                     <ul>
                                         <li>
-                                            Blah
+                                            Adept*
+                                            <ol className='encounterSubBulletPoint'>
+                                                Major Hive Acolyte 
+                                            </ol>
                                         </li>
                                     </ul>
-                                </td> 
+                                </td>
                             </tr>
                         </tbody>
-                    </table> */}
+                    </table>
+                    <div className='encounterSubSection'>
+                    * On death, Adepts enrage nearby Acolytes to use an Ogre's Eye beam. Either prioritze Acolytes, or destroy the whole pack at once
+                    </div> */}
+                    
 
                 </div>
 
@@ -508,70 +499,161 @@ function E5C() {
                     <div className='encounterHeader'> 
                         Tips
                     </div>
-
                     <div className='encounterSubSection'>
+
                         <ul style={{paddingLeft: '20px'}}>
-
                             <li className='encounterBulletPoint'>
-                                First guardian to fall in a hole gets the cone of shame
+                                If you hold jump, you jump higher. If you tap jump, you jump lower. True story
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                When navigating invisible platforms, you can pull out your ghost to ping nearby invisible objects and see where to go
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                ASOP - Always Stand On Plates. If you're first to an empty plate, you are now on plate duty. Show off them dance moves
                                 <ol className='encounterSubBulletPoint'>
-                                    RIP Flawless...
+                                    On the first Plate, you can crouch on the edge of the plate to avoid being hit by the piston while keeping the plate active
                                 </ol>
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                Break out your swords and Eager Edge to victory
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                If guardians stand on all three plates at once, the platforms activate and lock, staying active for everyone else
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                In earlier raids, secret chests had a despawn timer after they've been opened. Wait for your whole fireteam to arrive before cracking it open 
+                            </li>
+                            <li className='encounterBulletPoint'>
+                                Consider not opening the secret chest if you plan on also going for a Challenge Mode clear after a regular clear. Your second run will give the chest a larger pool of unlocked loot to pick from. 
                             </li>
 
-                            {/* <li className='encounterBulletPoint'>
-                                Pick up both the left and right relics at the same time. 
-                                <ol className='encounterSubBulletPoint'>
-                                    When either relic is picked up, Taken spawn on both sides of the map!
-                                </ol>
-                            </li>
-                            */}
                         </ul>
                     </div>
+
+                    
                 </div>
 
                 <div className='encounterSection recommended'>
                     <div className='encounterHeader'> 
                         Recommended Weapons and Builds
                     </div>
+                    <div className='buildSlotsContainer'>
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon stompees'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                Better hops, easier platforming
+                            </div>
+                        </div>
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon transversive'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                Only improves sprint speed, but gives you momentum before you yeet
+                            </div>
+                        </div>
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon wingsSacredDawn'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                Where we're going, we don't need roads. Or Tomb Ships.
+                            </div>
+                        </div>
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon lionRampant'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                Titan has hops. Eternal flight when paired with swords
+                            </div>
+                        </div>
 
-                    <div className='buildSlot'>
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon mobility'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                More mobility, more jump height
+                            </div>
+                        </div>
+
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon daybreak'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                {/* Fly like an eagle
+                                <div>to the sea</div>
+                                Fly like an eagle,
+                                <div>let my spirit carry me</div> */}
+                                Time keeps on slippin',
+                                <div>into the future</div>
+                                I wanna fly like an eagle...
+                            </div>
+                        </div>
+
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon tripleJump'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                * Slaps Triple Jump *
+                                <div>This bad boy can hold so many hops</div>
+                            </div>
+                        </div>
+
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon sword'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                Can we still sword climb up the wall to skip the puzzle? Let's find out
+                            </div>
+                        </div>
+
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon astrocyte'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                Hey everyone, look at me! Look how cool I am! I'm nearly ther-woops I fell
+                            </div>
+                        </div>
+
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon acrius'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                Unequip Acrius! It reduces your jump height, even when stowed
+                            </div>
+                        </div>
+
+                        <div className='buildSlot'>
                             <div className='buildSlotIcon eagerEdge'>
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Last one out is a rotten Ahamkara egg
+                                Most DPS to bosses? Nonono, only most Allied guardian kills matter
                             </div>
                         </div>
-
+                    </div>
                 </div>
 
                 <div className='encounterSection reprisedChanges'>
                     <div className='encounterHeader'> 
                         Expected Changes in Destiny 2
                     </div>
-                            None
-                    {/* <div className='encounterSubSection'>
-                    <ul style={{paddingLeft: '20px'}}>
-                        <li className='encounterBulletPoint'>
-                            Increased enemy density
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            Unlikely to see champions in normal difficulty, similar to how Vault of Glass uses Overload Minotaurs in it's opening on Master difficulty
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            Centurions may become Major enemies, with more health. Destiny 1 only had minors and majors, whereas Destiny 2 introduced Ultras. Expect full use of the larger range of enemy difficulties to appear in King's Fall.
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            Lucent Hive. This would likely spawn in the Hall of Souls with the Acolytes or the Centurions. 
-                            <ol className='encounterSubBulletPoint'>
-                                While narratively tied to Savathun, Lucent Hive are too excellent an enemy type for a designer to ignore in a Hive (and Taken) based raid.
-                            </ol>
-                        </li>
-                    </ul>
-                    </div> */}
-
-                    
+                    <div className='encounterSubSection'>
+                        <ul>
+                            <li className='encoutnerBulletPoint'>
+                                Update to the (Basketball) Court of Oryx
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div className='encounterSection walkthrough'>
@@ -581,75 +663,68 @@ function E5C() {
 
                     <div className='encounterWalkthroughContainer'>
 
-                        <div className='encounterWalkthroughParagraph image'>
-                            After your successful defeat of the Warpriest, you will find yourself entering Golgoroth's Cellar, an enormous maze in the underbelly of the Dreadnought. The route, from the starting location, is quite easy - Right when available, then Left, Left, Right, and Straight to the end. Again, that's 
-                            <div>
-                                <ol style={{padding: '10px'}}>
-                                    <li>
-                                        Right
-                                    </li>
-                                    <li>
-                                        Left
-                                    </li>
-                                    <li>
-                                        Left
-                                    </li>
-                                    <li>
-                                        Right
-                                    </li>
-                                    <li>
-                                        Straight till sunrise
-                                    </li>
-                                </ol>
-                            </div>
-                            The following map will show you the way more quickly than I could by text.
+                       <p className='encounterWalkthroughParagraph'>
+                            After the pressure of Golgoroth, your fireteam will get one final chance to relax and blow off some steam in the final jumping puzzle of the raid - the Pistons. Set on the side of the wall in a bottomless chasm, you must navigate across the perilous ledges and hostile pistons to reach the exit. This is the final non-Darkness zone, so take your time and die as much as you need to in order to get it out of your system before the final encounters. 
+                       </p>    
 
-                        </div>
-                        
+                       <p className='encounterWalkthroughParagraph image'>
+                            The route to the end is simple. From your start in the chasm, navigate down and to your left, avoiding pistons whenever possible. You'll arrive at the first plate of the puzzle. Standing on the plate will make a number of ledges appear in the air to cross the chasm, leading to a second plate with an identical mechanic. Standing on the second plate will see you navigate along the far side of the chasm wall, while the third plate will bring your fireteam back onto the initial wall for the final section. 
+                        </p>    
 
                         <div className='walkthroughImageContainer'>
                             <a className='imgLink' 
                             rel="noreferrer"
-                            href='https://i.imgur.com/7syzQcC.png'
+                            href='https://i.ytimg.com/vi/wYQ0GB3kWF0/maxresdefault.jpg'
                             target='_blank'>
                                 <img 
                                     className='walkthroughImage'
-                                    src="https://i.imgur.com/7syzQcC.png" alt="A map of Golgoroth's Cellar" /> 
+                                    src="https://i.ytimg.com/vi/wYQ0GB3kWF0/maxresdefault.jpg" alt="Two guardians standing on the first plate, revealing the path to the second" /> 
                             </a>
-                                A map of Golgoroth's Cellar. Image courtesy of u/Taux
+                            Two guardians standing on the first plate, revealing the path to the second. Image courtesy of GameSkinny.com
+                        </div>
+
+                        <p className='encounterWalkthroughParagraph'>
+                            The final section will require you to backtrack towards where you first entered the jumping puzzle, avoiding pistons while climbing ascending platforms. Unlike the Tomb Ships, this puzzle just requires a bit of patience and navigation to make it to the door at the end of the puzzle. If you ever find yourself unable to make a jump, no matter how hard you try, it's often because you're missing another ledge somewhere else that will make the jump easier - take the time to look around and find the easiest route to your destination, rather than stretching your jump.
+                        </p>   
+
+                        <div className='walkthroughImageContainer'>
+                            <a className='imgLink' 
+                            rel="noreferrer"
+                            href='https://i.ytimg.com/vi/HokR8x60YVQ/maxresdefault.jpg'
+                            target='_blank'>
+                                <img 
+                                    className='walkthroughImage'
+                                    src="https://i.ytimg.com/vi/HokR8x60YVQ/maxresdefault.jpg" alt="A fireteam navigating the final stretch of the Piston Jumping Puzzle" /> 
+                            </a>
+                            A fireteam navigating the final stretch of the Piston Jumping Puzzle. Image courtesy of Mark Anderson on Youtube
                         </div>
 
 
 
-                    </div>
 
 
                 </div>
 
                 <div className='encounterSection secretChest'>
-                    <div className='encounterHeader secretChest'>
-                            Secret Chest
+                    <div className='encounterHeader secretChest'> 
+                        Secret Chest
                     </div>
-                    <p className='encounterWalkthroughParagraph'>
-                        Golgoroth's Cellar is home to the second secret chest available in King's Fall. Similarly to the first secret chest in the Tomb Ships, this chest must be unlocked by standing on plates. The map above shows the location of the four plates that must be stood on in the correct order. When the fourth plate is correctly activated, a chest will spawn in the middle of the maze. Plate 1(one) is hidden behind a door, halfway through the maze. Above the door is a narrow tunnel that leads through the wall and into the chamber with the plate. Patient platforming, and bringing out your ghost (in Destiny 1, at least) temporarily highlighted to environment, allowing you to see where to jump in order to make it to the plate. Plate 4(four) is tucked away in the corner behind some boxes. 
-                    </p>
+                    
+                    <p className='encounterWalkthroughParagraph '>
+                        The final secret chest of King's Fall is in this encounter! After arriving at the first Plate, instead of jumping to the left, jump across the chasm to a support beam on the right with a small ledge running around it. Navigating the rest of the pathway up the next ledge requires using your ghost to highlight the invisible platforms. From the second ledge on the support pillar, jump up to the high ledge hugging the wall below the ceiling on that side of the chasm. Using your ghost to ping a final time will show you invisible platforms below the doorway to the secret chest. If you're confident in your Eager Edge movement or changing direction in midair with Icarus Dash, you can skip the final invisible ledge and jump straight up to the doorway. In the back of the room is the final secret chest of the raid! The video guide below is courtesy of The Legend Himself on Youtube.
+                    </p>  
 
-                    <p className='encounterWalkthroughParagraph'>
-                        The video linked below shows all four plate locations from Destiny 1. Use the timestamps to navigate according to the map present in the upper right of the video, which differs from the map provided earlier in the walkthrough.
-                    </p>
-
-                    <iframe className='youtubeEmbed' src="https://www.youtube.com/embed/p4JVg9Hpc8k?start=1741" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/p4JVg9Hpc8k?start=2529" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" className='youtubeEmbed' allowFullScreen></iframe>
+                        
+                    </div>
 
                 </div>
-
 
                 <div className='encounterSection resources'>
                     <div className='encounterHeader'> 
                         Additional Resources
                     </div>
-                    <div>
-                        Point of Failure Checklist
-                    </div>
+
                     <a className='dimLink' href='https://www.destinyitemmanager.com/' target='_blank' rel='noreferrer'>
                         <div className='dimIcon'>
                             Destiny Item Manager
@@ -667,4 +742,4 @@ function E5C() {
 
 }
 
-export default E5C;
+export default E7C;

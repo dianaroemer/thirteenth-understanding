@@ -627,7 +627,7 @@ function E5() {
                 </div>
 
                 <div className='encounterSection secretChest'>
-                    <div className='encounterHeader'>
+                    <div className='encounterHeader secretChest'>
                             Secret Chest
                     </div>
                     <p className='encounterWalkthroughParagraph'>
