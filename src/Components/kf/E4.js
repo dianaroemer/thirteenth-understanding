@@ -562,6 +562,25 @@ function E4() {
 
                     <div className='encounterSubSection'>
                         <ul style={{paddingLeft: '20px'}}>
+                            <li className='encounterBulletPoint'>
+                                Though Divinity offers a large crit spot, one guardian using Sundering Glare can result in a  net increase in DPS 
+                                <ol className='encounterSubBulletPoint'>
+                                Note that Sundering Glare and Divinity DO NOT STACK - Pick one or the other
+                                </ol>
+                                <ol className='encounterSubBulletPoint'>
+                                Sample Math where each guardian does 100 points worth of damage:
+                                <div>
+                                    6 Guardian DPS: 600
+                                </div>
+                                <div>
+                                    5 Guardian, 1 Div: (500 * 1.3) + (Div dmg) = 650 + (Div dmg)
+                                </div>
+                                <div>
+                                    6 Guardians, 1 Sundering: 600 * 1.2 = 720
+                                </div>
+                                </ol>
+                               
+                            </li>
                              <li className='encounterBulletPoint'>
                                 The Add Phase is close to finishing when the Hive Knight Scream audio cue plays. Just after, three Hallowed Knights spawn 
                                 
@@ -690,7 +709,7 @@ function E4() {
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                It stacks with Divinity, Warpriest is far away - Someone should use it
+                                Warpriest is far away. No longer stacks with Divinity
                             </div>
                         </div>
 
