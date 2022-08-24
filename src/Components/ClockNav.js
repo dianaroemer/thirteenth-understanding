@@ -13,7 +13,7 @@ const msInSeconds = 1000;
 // const clockContestEnd = 1661619600000;
 
 // Temp values for development mode
-const clockContestStart = 1661199545000;
+const clockContestStart = 1661383510000;
 const clockContestEnd = 1660856261000;
 
 const encounterBegan = new Date(1660381229000)
