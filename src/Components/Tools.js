@@ -269,7 +269,7 @@ function Tools(props) {
 
 
           <div>
-            Show Welcome tooltips
+            Show Welcome Tooltips Again
           </div>
           <div>
             Demo Mode
@@ -299,10 +299,13 @@ function Tools(props) {
             Google Analytics
           </div>
           <div>
-            Don't Store localStorage on my machine - (currently not using localStorage)
+            Local Storage. If you close the app or your phone locks and stops the webpage, you lose all local data
           </div>
           <div>
-            Reset All Data to default
+            Don't Store localStorage on my machine Option
+          </div>
+          <div>
+            Reset localStorage data to default
           </div>
           <div>
             {/* Dark Mode Toggle  */}
