@@ -540,7 +540,7 @@ function App() {
                     Click the top timer to cycle through visibile timers
                   </li>
                   <li>
-                    Disable Blind-Run mode from Tools. This cannot be undone
+                    Disable Blind-Run mode from Tools (on the bottom left). This cannot be undone
                   </li>
                   <li>
                     Access Challenge Mode by disabling Blind-Run mode or completing the final normal encounter

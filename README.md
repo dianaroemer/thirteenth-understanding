@@ -2,6 +2,46 @@ Live page available at:
 
 # https://dominicroemer.github.io/thirteenth-understanding/
 
+Coffees murdered during the making of this website: 8.
+
+Reddit post managing the sharing of Thirteenth Understanding:
+
+# https://www.reddit.com/r/DestinyTheGame/comments/wxnpop/i_made_a_day_1_raid_race_assistant_website_with/
+
+Made by one highly caffeinated, incredibly sleep deprived developer. Hire me at 
+
+# https://github.com/dominicroemer
+
+What does it do:
+ - Blind Run mode - want to go through spoiler free, but still have a guide (that won't spoil you) handy for when you get stuck? 
+ - Works on Desktop and Mobile browsers
+ - Completely front-end: it won't be using any important bandwidth while you're raiding (unless you click links to other websites)
+ - Celebratory Confetti whenever you clear an encounter
+ - Expected Enemies, enemy types, and enemy shields in each encounter
+ - Helpful tips if you just need a reminder
+ - Possible challenges for Challenge Mode
+ - Effective Loadout recommendations for every encounter
+ - In depth walkthrough of every encounter (plus links to the community's best walkthroughs)
+ - A Break Tracker, which monitors how long it's been since you've taken a break, how many you've taken in total, and how much total time you've spent in a break
+ - Encounter Tracking, to show which encounters you've cleared and how many attempts you've made on each encounter before clearing it
+ - Role Assigner, which can be customized with your fireteam, allows you to assign your guardians to specific roles for each encounter (based on popular Destiny 1 roles and strategies)
+
+Why does this exist:
+I've spent the past year in lockdown teaching myself web development after leaving my previous industry. Two and a half weeks ago, I finished my course on React (at The Odin Project), and instead of making a Shopping Cart or something basic, I decided to make something I'd actually use - and thus the Thirteenth Understanding came into being. I've spent about 60 hours over the past two weeks throwing this together (and cursing at CSS transitions) and researching the raid to make it as easy to use as possible.
+
+How does it work:
+The website is hosted at the link provided above on Github Pages (who have a free monthly bandwidth of nearly 100Gbs of traffic, which is crazy!). It's built with React on a create-react-app foundation, and the different page handling is done with React Router. It is completely free, doesn't require you to sign in, and has a total data payload of around 200 KB (excluding images, which are sourced from other hosts, and any embedded Youtube links). The page is free to look at, and I've got the repository over at (https://github.com/dominicroemer/thirteenth-understanding). If you find any bugs, please let me know here or at the Github by creating an issue, and I'll see if I can fix it before the raid tomorrow, at which point I'll be competing and definitely NOT debugging my website!
+
+Who are you?
+I'm an amateur web developer who wanted to make a tool to help the community with the Day 1 Raid Race! You may recognize me from my old work as a Shoutcaster for League of Legends, or my wild and crazy Dungeons and Dragons games on Twitch. Or perhaps we've raided together, farming for Collective Obligation and Eyes of Tomorrow?
+
+# Remaining Tasks
+Implement localStorage to preserve user data on webpage refresh (to save mobile users from background process culling whenever a mobile user tabs away or locks their phone)
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
