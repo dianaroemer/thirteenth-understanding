@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/thirteenth-understanding/static/css/main.b61646bf.css",
-    "main.js": "/thirteenth-understanding/static/js/main.45d44886.js",
+    "main.js": "/thirteenth-understanding/static/js/main.eab22063.js",
     "index.html": "/thirteenth-understanding/index.html",
     "main.b61646bf.css.map": "/thirteenth-understanding/static/css/main.b61646bf.css.map",
-    "main.45d44886.js.map": "/thirteenth-understanding/static/js/main.45d44886.js.map"
+    "main.eab22063.js.map": "/thirteenth-understanding/static/js/main.eab22063.js.map"
   },
   "entrypoints": [
     "static/css/main.b61646bf.css",
-    "static/js/main.45d44886.js"
+    "static/js/main.eab22063.js"
   ]
 }
