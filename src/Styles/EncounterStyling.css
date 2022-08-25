@@ -501,6 +501,14 @@
     padding-left: 1.5rem;
 }
 
+.scottFineIcon {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("https://images.squarespace-cdn.com/content/v1/5570fe14e4b0a0d418a2bf32/1434073147194-RQBPXDZ4Q33EWGC5SZEY/favicon.ico");
+    padding-left: 1.5rem;
+}
+
+
 .googleSheetsIcon {
     background-size: contain;
     background-repeat: no-repeat;

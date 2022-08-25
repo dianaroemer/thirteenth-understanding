@@ -287,7 +287,10 @@ function App() {
 
   const [challengeMode, toggleChallengeMode] = useState(false)
   function handleChallengeModeToggle(e){
-    e.preventDefault();
+    console.log(challengeMode)
+    if(e){
+      e.preventDefault();
+    }
     if( !blindMode || raidStateKF.e9.completed)
     toggleChallengeMode(!challengeMode)
   }
@@ -341,30 +344,30 @@ function App() {
     // For Example:
       // <Outlet content={[functionContainer, state1, state2, etc.]}
       // The functions in functionContainer can target and modify state1 and state2 in their parent container, which then propogates down towards <Outlet>.
-  const [test1, setTest1] = useState(1);
-  const [test2, setTest2] = useState(2);
-  const [test3, setTest3] = useState(3);
-  const [test4, setTest4] = useState(4);
-  function handleTest() {
-    console.log('blek');
-    console.log(test1);
-  }
-  function handleBlarp() {
-    console.log('blarg')
-    setTest1(()=>'woops');
-  }
-  const [testContainer, setTestContainer] = useState({
-    test1: test1,
-    test2: test2,
-    test3: test3,
-    test4: test4,
-    handleTest: handleTest,
-    handleBlarp: handleBlarp,
-  })
-  useEffect( ()=> {
-    setTestContainer( {...testContainer,
-      [test1] : 4})
-  }, [test1])
+  // const [test1, setTest1] = useState(1);
+  // const [test2, setTest2] = useState(2);
+  // const [test3, setTest3] = useState(3);
+  // const [test4, setTest4] = useState(4);
+  // function handleTest() {
+  //   console.log('blek');
+  //   console.log(test1);
+  // }
+  // function handleBlarp() {
+  //   console.log('blarg')
+  //   setTest1(()=>'woops');
+  // }
+  // const [testContainer, setTestContainer] = useState({
+  //   test1: test1,
+  //   test2: test2,
+  //   test3: test3,
+  //   test4: test4,
+  //   handleTest: handleTest,
+  //   handleBlarp: handleBlarp,
+  // })
+  // useEffect( ()=> {
+  //   setTestContainer( {...testContainer,
+  //     [test1] : 4})
+  // }, [test1])
   // XXXUPDATEXXX REMOVE ABOVE BEFORE PRODUCTION XXXUPDATEXXX
 
   const [fireteam, setFireteam] = useState([{
@@ -557,7 +560,8 @@ function App() {
             blindMode, 
             fireteam, 
             fireteamFunctionContainer,
-            handleClickNavEncounter]}/>
+            handleClickNavEncounter,
+            handleChallengeModeToggle]}/>
 
 
 

@@ -201,7 +201,7 @@ function E8C() {
 
                 <div className='encounterSection challengeMode'>
                     <div className='encounterHeader challengeMode'> 
-                        Possible Challenge Mode Changes
+                        Challenge Mode - Under Construction
                     </div>
                     <ul style={{paddingLeft: '20px'}}>
                         <li className='encounterBulletPoint'>

@@ -201,7 +201,7 @@ function E7C() {
 
                 <div className='encounterSection challengeMode'>
                     <div className='encounterHeader challengeMode'> 
-                        Possible Challenge Mode
+                        Challenge Mode
                     </div>
                         None
                 </div>

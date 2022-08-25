@@ -23,7 +23,8 @@ function E9() {
         blindMode, 
         fireteam, 
         fireteamFunctionContainer,
-        handleClickNavEncounter] = useOutletContext();
+        handleClickNavEncounter,
+        handleChallengeModeToggle] = useOutletContext();
 
     const [attemptVisibility, toggleAttemptVisibility] = useState(false)
     function handleToggleAttemptVisibility(e) {
@@ -88,6 +89,7 @@ function E9() {
             startVelocity: 60,
             origin: { y: .95 }
           });
+          handleChallengeModeToggle();
           setTimeout(()=>{
             navigate('/kf/e1c');
             // handleClickNavEncounter(null, 'e9');
@@ -895,133 +897,214 @@ function E9() {
 
                     <div className='encounterWalkthroughContainer'>
 
-                        <p className='encounterWalkthroughParagraph'>
-                            The Daughter's of Oryx (aka the Deathsingers Encounter) is, in my unprofessional opinion, the easiest boss encounter of King's Fall. There are three threats to guardians in this encounter - Taken Vandals that harass Plate holders, a minimal Add presence that can be handled without difficulty, and lastly an execution based slip-up, in which your Platformer misses a jump or a Plate holder accidentally steps off their Plate prematurely. The mechanics are straightforward, the enemies are only a threat while your fireteam doesn't have a Brand or Aura - by all accounts this should be an easy encounter, in theory. Having said that, I now fully expect to have jinxed my raid team for this encounter on day 1...
+                            <p className='encounterWalkthroughParagraph'>
+                                It is time, Guardian. You've killed his son, eliminated his Light tithing structure, and infiltrated his Throne World to put yourselves before the greatest threat the solar system has seen since the First Collapse. It is time for to face off against The Taker of Will, The Destroyer of Light, The First Navigator - Oryx, the Taken King.
                             </p>
 
-
-                        <p className='encounterWalkthroughParagraph image'>
-                            The Daughter's encounter takes place in a large open courtyard, split in the middle by two enormous pillars on the left and right, and then those halves are split again by the four smaller pillars, which each house a Plate. The two bosses of the encounter, Ir Anuk and Ir Halak both sit atop the larger two pillars in the center of the arena, facing each other. There is sparse cover on the ground level of the arena, as the courtyard is punctuated by a number of smaller pillars and keystones. Towards the far end of the arena from the entrance yawns the vast emptiness of space above Jupiter.
-                            </p>
-
-                            <div className='walkthroughImageContainer'>
-                            <a className='imgLink' 
-                            rel="noreferrer"
-                            href='https://i.imgur.com/AUZgPHQ.png'
-                            target='_blank'>
-                                <img 
-                                    className='walkthroughImage'
-                                    src="https://i.imgur.com/AUZgPHQ.png" alt="A top down view of the Daughers of Oryx's arena" /> 
-                            </a>
-                            A top down view of the Daughers of Oryx's arena. Image courtesy of u/Taux (this person's maps are **chef's kiss**)
-                        </div>
-
-                        <p className='encounterWalkthroughParagraph'>
-                            In short, one of the two sisters will begin each rotation of the encounter by casting a Hymn to kill everything. The Runner's job is to climb a series of escalating platforms, powered by your fireteam standing on correctly ordered plates, so that they can get a temporary buff which will allow them to steal a protection aura from the non-channeling sister.
-                            </p>
-
-
-                        <p className='encounterWalkthroughParagraph'>
-                            There are two mechanics in this encounter, one of which alternates interchangably in name, but not in function. The first is the Plate and Platform mechanic. When your fireteam arrives in the Deathsingers encounter, one member of your fireteam will be Torn Between Dimensions. Their screen and perspective will be shifted to a vaporous Taken effect. That player must then claim a Brand of the Claimer, a Taken orb floating in the air above one of the plates. The only way to reach said Brand is to ascend a series of escalating platforms that spawn for the Torn player (hereafter called the Runner) around the arena. The plates have a minor mechanic in and of themselves that will repeat itself in the next encounter.
-                            </p>
-
-                        <p className='encounterWalkthroughParagraph wide'>
-                            When a guardian steps on any plate, it will spawn a number of platforms at a escalating height level. The first Plate stepped on will spawn low height plates, the second Plate will spawn medium Plates, the third spawns High plates, and the Fourth and last plate spawns the Zenith of height, equal to the height of the floating Brand of the Claimer. The order of the plates, in Destiny 1, was the same in both this encounter and the next encounter - from the top down, starting counter-clockwise once from the Plate with the Brand above it, step on Plates in consecutive counter-clockwise order to create a linearly escalating series of platforms up to the Brand. This image should help.
+                            <p className='encounterWalkthroughParagraph'>
+                                The Oryx fight is a long and thorough affair primarily focused around the execution of several mechanics, Minor, Major, and Ultra add clear, a white-knuckle DPS check, and a one-on-one duel against a sword wielding nightmare, before a final Last Stand that introduced the mechanic to the Destiny franchise. Let's get into the details.
                             </p>
 
                             <div className='walkthroughImageContainer'>
-                            <a className='imgLink' 
-                            rel="noreferrer"
-                            href='https://i.imgur.com/k4PaEUs.png'
-                            target='_blank'>
-                                <img 
-                                    className='walkthroughImage'
-                                    src="https://i.imgur.com/k4PaEUs.png" alt="A top down view of which a potential orientation for the Daughters encounter to get the Brand of the Claimer" /> 
-                            </a>
-                            A top down view of which a potential orientation for the Daughters encounter to get the Brand of the Claimer. Image courtesy of u/gamedeveloper.com 
-                            {/* https://www.gamedeveloper.com/design/in-depth-look-at---objective-defeat-the-daughters-of-oryx */}
-                        </div>
+                                <a className='imgLink' 
+                                rel="noreferrer"
+                                href='https://i.imgur.com/3KUEolS.png'
+                                target='_blank'>
+                                    <img 
+                                        className='walkthroughImage'
+                                        src="https://i.imgur.com/3KUEolS.png" alt="A view of initial state of the Oryx encounter" /> 
+                                </a>
+                                A view of initial state of the Oryx encounter. Note the ordering and naming convention of the plates. Image courtesy of u/Taux 
+                            </div>
 
 
-                         
+                            <p className='encounterWalkthroughParagraph'>
+                                The Oryx fight takes place in the same arena as the Daughters of Oryx encounter, with only a single modification made to the arena later on in the Shade of Oryx Phase. For roles, assign four guardians to Plates, just as in the Daughters encounter, along with a dedicated Runner (you get to choose who platforms for the relic in this encounter!), and finally a Floater. Though everyone's job is important, the Floater has the highest barrier to entry, as they have to know every role intimately to assist and replace fallen Guardians on the fly, at any time during the encounter. This is only of particular importance during the Runner phase, but is still relevant later on throughout the fight.
+                            </p>
+
+                            <p className='encounterWalkthroughParagraph'>
+                                The fight is split into a number of phases that follow a predictable order. First, as a prologue, there will be a token add wave of enemies. Once cleared, Oryx will enter the Runner Phase, followed by the DPS-Check phase. After completing a DPS-Check, Oryx will enter either the Artillery Phase or the Shade of Oryx Phase depending on his remaining health. Upon completion of the Shade of Oryx or an Artillery Phase, Oryx will return to another Runner Phase. Upon bringing Oryx's health down to zero, he'll return to the front of the arena, where he first appeared, for a final DPS-Check and Last Stand mechanic. If you can stagger him a final time, it's game over for the Taken King, and you'll either have completed your first kill or you'll be claiming your Day 1 Emblem.
+                            </p>
+
+                            <p className='encounterWalkthroughParagraph wide'>
+                                For the purpose of this guide, I will be referencing the images provided. They will precede each respective section.
+                            </p>
+
+                            <div className='walkthroughImageContainer'>
+                                <a className='imgLink' 
+                                rel="noreferrer"
+                                href='https://i.imgur.com/1YagBup.png'
+                                target='_blank'>
+                                    <img 
+                                        className='walkthroughImage'
+                                        src="https://i.imgur.com/1YagBup.png" alt="Phase 1 of the Oryx encounter, the add clearing prologue" /> 
+                                </a>
+                                Phase 1 of the Oryx encounter, the add clearing prologue. Image courtesy of u/Taux 
+                            </div>
+
+
+                            <p className='encounterWalkthroughParagraph'>
+                                The fight begins when a guardian approaches the Taken Orb at the edge of the arena after defeating the Daughters of Oryx. Oryx will emerge from below the terrain, a gigantic, 100 foot tall monstrosity. That said, Oryx will not immediately enter the fight. Instead, a number of Taken Thrall appear in the corners and two Taken Knights will spawn on plates 3 and 4. On the death of the Taken Knights, Oryx will enter the next phase of the fight - the Runner Phase, so make sure the Thrall are dead before turning towards the Knights. It should be fairly easy, as they spawn from the same location every time.
+                            </p>
+
+                            <div className='walkthroughImageContainer'>
+                                <a className='imgLink' 
+                                rel="noreferrer"
+                                href='https://i.imgur.com/U5VYRdJ.png'
+                                target='_blank'>
+                                    <img 
+                                        className='walkthroughImage'
+                                        src="https://i.imgur.com/U5VYRdJ.png" alt="The Runner/DPS Phase, showing where each enemy spawns in the arena" /> 
+                                </a>
+                                The Runner/DPS Phase, showing where each enemy spawns in the arena. Image courtesy of u/Taux 
+                            </div>
+
+                                
+
+                            <p className='encounterWalkthroughParagraph image'>
+                                The Runner Phase will begin with Oryx rotating around the edges of the arena before coming to a stop at a plate. Raising a fist, he will slam the plate, killing any guardians on it - make sure you stand clear, as the AoE is a bit overzealous. On raising his fist, Oryx will leave a small Taken orb. The first guardian to touch the Orb will become Torn Between Dimensions - identical to the Daughters of Oryx encounter. Oryx will then fire his face laser (yes that's a real thing) at the player who is Torn, hereafter called the Runner. The Runner must climb an ascending series of platforms, identical in shape, height, and order to the Daughter's Encounter. Upon reaching the end of their jumping platforms the Runner will recieve a Brand of the Claimer, identical to the Daughters encounter, and be returned to the physical realm.
+                            </p>
+
+                            <p className='encounterWalkthroughParagraph'>
+                                In order for the Runner to ascend, the rest of the fireteam will need to step on the four(4) plates in the Arena in a counter-clockwise order, identical to the Daughters encounter. The same rules apply - if any Guardian steps off the plate, ALL of the other platforms will despawn, forcing the platforms, and the Runner, to start over from the beginning. This time, instead of Taken Vandals spawning outside of the arena, a Major (or Ultra) Light Eater Ogre will spawn out of the ground next to each plate whenever it is stepped on. The Ogres will always spawn at the same time, and should be killed on spawn every time. If you need help, the other Plate Holder on your side can assist you, and upon killing your Ogre, you should help your ally with killing their Ogre. A number of token Thrall, Acolytes and one Taken Centurion will also spawn on each side, which should be dealt with while the Runner retrieves the Brand of the Claimer.
+                            </p>
+
+                            <p className='encounterWalkthroughParagraph'>
+                                As a brief aside - we do not know yet if the Oryx encounter will include the Light Eater Knights present in Destiny 1's hard mode. Just in case, here's how to handle them. Every time an Ogre dies, a Light Eater Knight will spawn on the opposite side of that side of the arena. Using the image above as reference, when the Ogre just above Plate 1 dies, a minor Light Eater Knight will spawn in the corner of the arena below 2, where the Taken Thrall image is shown. These Knights will run without stopping to their corresponding Corrupted Light, and if they reach it, will detonate the Corrupted Light, often wiping the fireteam, if not upsetting your total damage against Oryx. These should ALWAYS be killed after an Ogre dies - there is always one Knight per Ogre.
+                            </p>
+
+                            <p className='encounterWalkthroughParagraph'>
+                                At this point, the Plate-holders will have noticed that killing an Ogre drops a swirling black sphere at their place of death. These are Orbs of Corrupted Light. Standing next to one for a few seconds will cause it to detonate, showing "Player has detonated Corrupted Light" in the in-game feed. When the Corrupted Light detonates, it kills nearly everything in the arena, and has the potential to deal significant damgage to Oryx - if he's able to taken damage.
+                            </p>
+
+                            <p className='encounterWalkthroughParagraph'>
+                                The Orb of Corrupted Light can only be survived one way. When the Runner retrieves their Brand of the Claimer, a Hive Tomb Ship will spawn at the top end of the arena, where the Oryx encounter was first started. A Major Vessel of Oryx will drop out of it, with a Brand of Immortality, similar to the Daughters of Oryx's Brand of Weaving and Brand of Unraveling. Any guardian standing in the Aura provided by this Brand will have complete damage immunity - even from self damage like Rockets, Tommy's Matchgun, or [redacted] from Destiny 1, though they can be flinched by incoming fire. 
+                            </p>
+
+                            <p className='encounterWalkthroughParagraph'>
+                                When the Runner claims the Brand of Immortality from the Vessel of Oryx, it should be immediately destroyed by the rest of the fireteam, as the Vessel of Oryx will operate similary to the Light Eater Knights, running to and detonating any Orbs of Corrupted Light that it can get its hands on. 
+                            </p>
+
+                            <p className='encounterWalkthroughParagraph'>
+                                The Runner should then reposition into the center of the arena, in between the two tall pillars where the Daughters were position in the previous encounter. Shortly after the Runner gets their Brand of the Claimer (and then the Brand of Immortality), Oryx will raise his fist and slam the same platform that he's been standing behind during the Runner phase (your Plate-holder 'did' evacuate that plate, right?). Immediately after, Oryx will begin to cast Doxology, a wipe mechanic that will occur several times over the course of the fight. When casting, Oryx's chest will open up and begin to glow white - the fireteam should immediately begin to damage his chest as soon as it starts to glow. If the guardians deal enough damage, Oryx will stagger, stopping the cast. If the guardians don't deal enough damage, Oryx will not stagger, complete the cast, and wipe the fireteam, killing everyone and resetting any progress in the encounter.
+                            </p>
                             
-                        <p className='encounterWalkthroughParagraph image'>
-                            Using the image as an example, assuming you name your plates Front Left and Right, and Back Left and Right (FL, FR, BL, BR). If the Brand appears above FL, the next plate, going counter-clockwise, is FR, which should be stepped on first. The second Plate would be BR, with the third at BL, and finally the last plate being the one under the Brand in the air, FL.
+                            <p className='encounterWalkthroughParagraph image'>
+                                This cast of Doxology is the mini-phase called the DPS-Check. It happens as soon the runner claims the Brand of Immortality from the Vessel of Oryx. As soon as the Runner has the brand, the fireteam should kill the Knight, and, regardless of the remaining enemies in the arena (excluding Light Eater Ogres and Light Eater Knights, which should already be dead), group up next to the Runner, in the safety of the Brand of Immortality. All players should immediately followup and damage Oryx to stagger him the moment his chest opens up. If successfully staggered, the players will have a chance to deal 'actual' damage to Oryx utilizing the Orbs of Corrupted Light.
+                                </p>
+
+
+                                <div className='walkthroughImageContainer'>
+                                <a className='imgLink' 
+                                rel="noreferrer"
+                                href='https://images.squarespace-cdn.com/content/v1/5570fe14e4b0a0d418a2bf32/1445848540346-1BXJSMJFL0HB2WGXPV8U/image-asset.png'
+                                target='_blank'>
+                                    <img 
+                                        className='walkthroughImage'
+                                        src="https://images.squarespace-cdn.com/content/v1/5570fe14e4b0a0d418a2bf32/1445848540346-1BXJSMJFL0HB2WGXPV8U/image-asset.png" alt="Oryx casting Doxology, with his chest open" /> 
+                                </a>
+                                Oryx casting Doxology, with his chest open. Image courtesy of scottfinegamedesign.com 
+                                {/* https://scottfinegamedesign.com/design-blog/tag/King%27s+Fall */}
+                            </div>
+
+                            
+
+                                <p className='encounterWalkthroughParagraph'>
+                                After casting Doxology, Oryx's chest will open, and, as long as he continues to take damage to his chest, stay open. The Runner and the Floater should remain *inside* the Aura of Immortality continuing to damage Oryx with Primary weapons (keeping his chest open), while the four Plate-holders will then separate from the Aura, returning to their Plates, and activating the Orbs of Corrupted Light. This is usually done after a short count-down ("Three, Two, One, Go"), so their detonations can be synced. After the Plate-holder sees their name in the in-game feed, they will turn and run back to the Aura of Immortality to survive the detonation of the Corrupted Light. If one player detonates too soon, it can result in their Corruped Light detonating early, before the other players have made it back to the Aura of Immortality, killing them. If an Orb is detonated too late, it will still detonate with the others, however the offending player will likely die running back to the Aura for safety. In the event that one of the Plate-Holders has died, the Floater can activate their Orb of Corrupted Light. If two Plate-holders died, the Brand of Immortality can activate one Orb, while the Floater covers the other, however the Brand of Immortality should IMMEDIATELY return to the center of the arena - if they don't protect the rest of the fireteam with their Aura, EVERYONE dies.
                             </p>
 
-                            {/* XXXUPDATEXXX Add Plates order widget here */}
-                        
-                        <p className='encounterWalkthroughParagraph image'>
-                            As the Runner, you will see the ascending platforms around the arena - if the order is correct, each platform will have a small Taken orb on it, like Toland in the Dreaming City's Shattered Realm and on the Moon. If you fall, ask your Plate Holders to stay on their Plate while you get up and try again - you have plenty of time before the wipe mechanic. When you finally reach the last Platform, you'll stand next to the Brand, and should pick it up, giving you the Brand of the Claimer. From there, you will see the two Deathsingers below you - one of the two will be channeling a wipe mechanic.
+                            <p className='encounterWalkthroughParagraph'>
+                                If done correctly, the four Orbs of Corrupted Light will detonate while Oryx's chest remained open. Each Orb's detonation deals roughly 6% of Oryx's total health, with four dealing exactly 25%, and 16 Orbs killing Oryx completely. As the orbs don't go anywhere or do anything without being deliberately detonated by guardians, Light Eater Knights, or a Vessel of Oryx, it is possible to stack them. That, in fact, was the Challenge for Oryx in Destiny 1's version of King's Fall - detonate all 16 Orbs of Corrupted Light at once to take Oryx from 100% health down to 0, in a single huge burst.
                             </p>
 
-                            <div className='walkthroughImageContainer'>
-                            <a className='imgLink' 
-                            rel="noreferrer"
-                            href='https://i.imgur.com/R52Oz46.png'
-                            target='_blank'>
-                                <img 
-                                    className='walkthroughImage'
-                                    src="https://i.imgur.com/R52Oz46.png" alt="A view from the perspective of the Runner, jumping towards the Brand of the Claimer" /> 
-                            </a>
-                            A view from the perspective of the Runner, jumping towards the Brand of the Claimer. Image courtesy of u/gamedeveloper.com 
-                            {/* https://www.gamedeveloper.com/design/in-depth-look-at---objective-defeat-the-daughters-of-oryx */}
-                        </div>
-
-                        <p className='encounterWalkthroughParagraph'>
-                            The wipe mechanic will be called either the Hymn of Weaving or the Dirge of Unraveling, and have a debuff timer on the side of your screen corresponding to its detonation. The actual name of the buff doesn't matter, but what does matter is that the Runner claims the correct Brand and Aura from the OPPOSITE Sister - that is, you always take the Brand from the Daughter that isn't channeling. Think of it this way, if Ir Anuk is channeling a Kill Everything ability, Ir Halak would use some sort of protection to keep herself safe from Ir Anuk's Kill Everything ability - as the Runner, it's your job to steal that protection and use it for your fireteam. From here on out, I'll be referring to the Hymn and Dirge collectively as the Hymn, and the Brand of Unraveling and the Brand of Weaving as the Brand (distinct and separate from the Brand of the Claimer - you should only have Claimer Brand for as long as it takes to steal protection).
-                            </p>
-
-                        <p className='encounterWalkthroughParagraph wide'>
-                            To reiterate - one of the two sisters will begin each rotation of the encounter by casting a Hymn to kill everything. The Runner's job is to climb a series of escalating platforms, powered by your fireteam standing on correctly ordered plates, so that they can get a temporary buff which will allow them to steal a protection aura from the non-channeling sister.
-                            </p>
-
-                            <div className='walkthroughImageContainer'>
-                            <a className='imgLink' 
-                            rel="noreferrer"
-                            href='https://i.imgur.com/naMV1OU.png'
-                            target='_blank'>
-                                <img 
-                                    className='walkthroughImage'
-                                    src="https://i.imgur.com/naMV1OU.png" alt="A view of the Brand and the Platforms from a plate" /> 
-                            </a>
-                            A view of the Brand and the Platforms from a plate. Image courtesy of u/gamedeveloper.com 
-                            {/* https://www.gamedeveloper.com/design/in-depth-look-at---objective-defeat-the-daughters-of-oryx */}
-                        </div>
-
-                        <p className='encounterWalkthroughParagraph image'>
-                            In practice, this has a number of smaller complications. Adds will spawn around ground floor of the arena, which can be easily dispatched by a dedicated Add Clear role. On each rotation, four guardians must stand on plates, and one must be a Runner. An easy method of role distribution to handle the random assignment of the Runner is to assign a Floater who will hang out in the center of the arena. Whenever another guardian becomes Torn Between Dimensions, they will call it out, and the Floater will replace their position.
-                            </p>
-
-                        <p className='encounterWalkthroughParagraph'>
-                            Plate holders have the incredibly important job of standing on plates, without fail or mistake, for upwards of 20 seconds. This can be incredibly difficult for some guardians. It may help to take your hand off the keyboard in these situations (move your thumbs off the joysticks and jump button). You are under minimal threat from adds on the ground during this time. Your biggest threat comes in the form of a Taken Vandal that spawns at 00:45s remaining of each Hymn. This Vandal is perfectly positioned in the air above each plate, outside of the arena, so as to be as inconspicuous as possible while it kills you. ALWAYS kill vandals on spawn, their spawn is consistent and predictable. It is a good habit for someone to call out Vandal spawns on every rotation of the fight, to remind everyone (including the Floater). 
-                            </p>
-
-                        <p className='encounterWalkthroughParagraph image'>
-                            Before you begin the encounter, you should communicate with your fireteam to decide where to DPS the Daughters from. A popular position is one of the plates on the vulnerable sister's side of the map, or at the entrance to arena, away from any remaining adds that might still be alive from the Plate phase of the fight. When the Runner has claimed their Brand, all of the fireteam should run to their location and get set up - Well of Radiance, Divinity, Sundering Glare, and unleash as much damage as they can muster on the Daughter of Oryx whose Brand was stolen. When the Hymn finishes its timer, the fireteam can continue to damage the vulnerable Daughter until she takes her Brand back and begins singing her next Hymn, restarting the rotation of the encounter. Make sure everyone in the fireteam stays inside the Aura provided by the Brand until the screen fades back to normal. Stepping out too soon can cause an unnecessary death.
+                            <p className='encounterWalkthroughParagraph image'>
+                                With that done, you will have completed first, and most important, phase of the fight. After every Runner/DPS-Check phase, Oryx will follow it up with an Artillery Phase, if his health is above 50%, or a Shade of Oryx Phase, if his health is at or below 50%. In a perfect fight, the order will be as follows: Prologue, Runner/DPS, Artillery, Runner/DPS, Shade of Oryx, Runner/DPS, Shade of Oryx, Runner/DPS, Last Stand. 
                             </p>
 
                             <div className='walkthroughImageContainer'>
-                            <a className='imgLink' 
-                            rel="noreferrer"
-                            href='https://i.imgur.com/ZX4GoRi.png'
-                            target='_blank'>
-                                <img 
-                                    className='walkthroughImage'
-                                    src="https://i.imgur.com/ZX4GoRi.png" alt="One of the Daughter's of Oryx without her protective Brand" /> 
-                            </a>
-                            One of the Daughter's of Oryx without her protective Brand. Image courtesy of u/gamedeveloper.com 
-                            {/* https://www.gamedeveloper.com/design/in-depth-look-at---objective-defeat-the-daughters-of-oryx */}
-                        </div>
+                                <a className='imgLink' 
+                                rel="noreferrer"
+                                href='https://i.imgur.com/DR2zxmJ.png'
+                                target='_blank'>
+                                    <img 
+                                        className='walkthroughImage'
+                                        src="https://i.imgur.com/DR2zxmJ.png" alt="The Artillery Phase, and different routes to avoid Oryx's attacks" /> 
+                                </a>
+                                The Artillery Phase, and different routes to avoid Oryx's attacks. Image courtesy of u/Taux 
+                            </div>
+                          
 
+                            <p className='encounterWalkthroughParagraph'>
+                                Upon your first completion of a Runner/DPS phase to Oryx, he will stagger out of the Arena and drift away from the Dreadnaught. Four Major Taken Boomer Knights will spawn, one on each plate, though they can safely be ignored. Oryx, out in space, will begin firing enormous artillery blasts, notified by a growing marker on the ground by each guardian. These artillery blasts can easily by outrun by sprinting, outpacing the blast radius. Visible in the above image are dotted lines show potential safe routes that each guardian can take in order to avoid getting hit by the artillery blast, while simultaneously avoiding any overlap with any other guardian's path, preventing overlap and accidental fratricide. 
+                            </p>
 
-                        <p className='encounterWalkthroughParagraph'>
-                            A final piece of advice - whenever you kill a Daughter of Oryx, you must be sure that you can ALWAYS kill the next Daughter on the next rotation of the fight. Remember, you are only safe from the Daughter's wipe mechanic when using the opposite Daughter's Brand - by killing one of the Daughters, you eliminate that Brand from the fight. The Runner gets their Brand of the Claimer, as normal, but then steals the protective Brand from the channeling sister, making her vulnerable to damage from the fireteam. If you are unable to kill her in time, she will finish her Hymn and wipe the fireteam, resetting any progress made. Best practices usually involve getting one of the sisters down to about 10% health (a guaranteed kill) and stopping DPS entirely, even if there is extra time before the Hymn goes off. That ensures that when next Daughter dies, the first can always be finished off on the next rotation.
-                        </p>
+                            <p className='encounterWalkthroughParagraph wide'>
+                                After a moderate duration (around 45 seconds), Oryx will stop firing his artillery blasts and return back to the arena, ready to resume with a new Runner/DPS phase. Any remaining Taken Boomer Knights on the plate will die automatically as the phase ends, and players prepare for another round of Platforms, Light Eater Ogres, and Orbs of Corrupted Light.
+                            </p>
 
-                        <p className='encounterWalkthroughParagraph'>
-                            With any luck, you'll find the Daughters falling in just a few attempts, and, fully the Plate mechanics and how they work, will progress on to the final encounter of King's Fall...
-                        </p>
+                            <div className='walkthroughImageContainer'>
+                                <a className='imgLink' 
+                                rel="noreferrer"
+                                href='https://i.imgur.com/BNDeKEh.png'
+                                target='_blank'>
+                                    <img 
+                                        className='walkthroughImage'
+                                        src="https://i.imgur.com/BNDeKEh.png" alt="The Shade of Oryx phase, and the spawn location of Taken enemies in it" /> 
+                                </a>
+                                The Shade of Oryx phase, and the spawn location of Taken enemies in it. Image courtesy of u/Taux 
+                            </div>
+
+                            <p className='encounterWalkthroughParagraph image'>
+                                When Oryx reaches 50% health and lower, or after eight(8) Orbs of Corrupted Light detonations, Oryx will follow up the Runner/DPS phase with a Shade of Oryx phase. Returning to the front of the arena, Oryx will summon a Taken Blight, creating a pocket realm. One by one, players will be teleported inside the realm. Once all 6 players are inside, Oryx will begin to cast Doxology, wiping the fireteam without any ability for them to stop him (clever girl...).
+                            </p>
+
+                            <p className='encounterWalkthroughParagraph'>
+                                In addition, there will be a number of additional enemy distractions, consisting of Taken Thrall (spawning in the corner of the arena near plates 3 and 4), and two Minor Taken Boomer Knights (spawning on plates 3 and 4). These enemies will run towards the Taken Blight, and if they are allowed to reach it, they will be teleported inside the Blight to the arena with the rest of the guardians. If you are outside of the arena, split your fireteam and kill any enemies as they spawn to protect the guardians inside. 
+                            </p>
+
+                            <p className='encounterWalkthroughParagraph image'>
+                                While inside the arena, guardians will be unable to recover health. They will have to contend with a Shade of Oryx, a 10-foot tall sword wielding projection of Oryx's will that can likely one-shot players (Melee Damage Resist + 10 resilience PLEASE BE ENOUGH). This Shade of Oryx acts as a miniboss to the full Oryx fight. The Shade will patrol outside of the edges of the arena, using the mist to obscure itself from vision. It can use teleportation to maneuver around the arena to avoid detection, though each time it teleports, it leaves a small after-effect indicating which direction it teleported in, which should be called out so that the fireteam can track its movements. When the Shade pulses with white energy, it will raise its sword and enter into the arena, looking to drift around and smash a player. Its movements are erratic and are to be avoided at all times. Keep as much distance as possible.
+                            </p>
+
+                            <div className='walkthroughImageContainer'>
+                                <a className='imgLink' 
+                                rel="noreferrer"
+                                href='https://i.ytimg.com/vi/r2Aftt3dyNk/maxresdefault.jpg'
+                                target='_blank'>
+                                    <img 
+                                        className='walkthroughImage'
+                                        src="https://i.ytimg.com/vi/r2Aftt3dyNk/maxresdefault.jpg" alt="The Shade of Oryx pursuing a player" /> 
+                                </a>
+                                The Shade of Oryx pursuing a player. Image courtesy of HakkezZ 
+                            </div>
+
+                            <p className='encounterWalkthroughParagraph wide'>
+                                If the Shade of Oryx is defeated, the fireteam will be ejected from the Blight and back into the arena, which will automatically stagger Oryx if he was casting Doxology, preventing a wipe. Simply put, if you get teleported into the Arena with the Shade of Oryx, kill it as quickly as possible. If you don't kill it fast enough, you wipe. While other guardians are being teleported into the arena, any remaining guardians should be killing adds that seek to teleport into the arena and make killing the Shade more difficult. You do not need to worry about staggering Oryx out of his Doxology cast upong returning to the normal battle arena, and should prepare for another Runner/DPS phase.
+                            </p>
+
+                            <div className='walkthroughImageContainer'>
+                                <a className='imgLink' 
+                                rel="noreferrer"
+                                href='https://assets.vg247.com/current//2015/12/Oryx-is-finally-dead-Copy.jpg'
+                                target='_blank'>
+                                    <img 
+                                        className='walkthroughImage'
+                                        src="https://assets.vg247.com/current//2015/12/Oryx-is-finally-dead-Copy.jpg" alt="Oryx's Last Stand" /> 
+                                </a>
+                                Oryx's final cast of Doxology. Image courtesy of VG247 
+                            </div>
+                                
+
+                            <p className='encounterWalkthroughParagraph image'>
+                                Those are all of the mechanics to the Oryx encounter! Easy peasy, right? If successfully executed, Oryx should see his health drop to zero with the successful completion of fourth Runner/DPS phase. After Oryx's health drops to 'zero', he will return to the front of the arena for one final cast of Doxology - a successful stagger here will stop Oryx once and for all, as the fireteam will be rewarded with, not only loot, but the priceless image of Oryx drifting out into the dead space of Jupiter, forever defeated (until King's Fall was reprised...).
+                                </p>
+                            <p className='encounterWalkthroughParagraph'>
+                                There are two primary strategies to this fight that have become popular. The first is as described, detonating Orbs of Corrupted Light any time they are availabled to be used against Oryx. This is technically the 'safer' strategy in the long run, as this method sends four guardians out after every Doxology, preventing any Orbs of Corrupted Light from being detonated by any wayward Vessels of Oryx or Light Eater Knights. That said, every time the fireteam has to leave the Aura of Immortality has express risks if the adds nearby haven't been dealt with. Taking a few moments to kill some nearby adds BEFORE leaving the Aura and detonating your Orbs can reduce the risk significantly, which can be further mitigated with the use of a Hunter's invisibility Smoke Bomb giving a precious few seconds of invis. 
+                            </p>
+                            <p className='encounterWalkthroughParagraph'>
+                                The other strategy was forced by necessity of the Challenge in Destiny 1, is to leave the Orbs of Corrupted Light after each Runner/DPS phase, and instead only detonate them after 16 have been created. This is safer in that the Plate-holders only have to leave the Brand of Immortality once, but riskier, in that there is much greater room for error if a Vessel of Oryx, Light Eater Knight, or wayward guardian accidentally activates any of the orbs, requiring even more rotations of the fight (which in and of themselves increase the risk for mistakes and inevitable distaster). Both strategies for Oryx are largely dependant on defeating him in four rotations of the fight.
+                            </p>
+
                     </div> 
                 </div>  
 
@@ -1032,9 +1115,9 @@ function E9() {
                         Additional Resources
                     </div>
 
-                    <a className='dimLink' href='https://www.gamedeveloper.com/design/in-depth-look-at---objective-defeat-the-daughters-of-oryx' target='_blank' rel='noreferrer'>
-                        <div className='gamedeveloperIcon'>
-                            A very impressive guide to Daughters of Oryx from gamedeveloper.com
+                    <a className='dimLink' href='https://scottfinegamedesign.com/design-blog/tag/King%27s+Fall' target='_blank' rel='noreferrer'>
+                        <div className='scottFineIcon'>
+                            A comprehensive impressive guide to Oryx from scottfinegamedesign.com
                         </div>
                     </a>
 
@@ -1059,29 +1142,23 @@ function E9() {
                     </a>
 
                     <div className='encounterSection videoContainer'>
-                        <iframe src="https://www.youtube.com/embed/p4JVg9Hpc8k?start=2783" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className='youtubeEmbed'></iframe>
-                            The Legend Himself's first guide to the Daughters of Oryx
+                        <iframe src="https://www.youtube.com/embed/p4JVg9Hpc8k?start=3112" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className='youtubeEmbed'></iframe>
+                            The Legend Himself's guide to Oryx
                     </div>
 
                     <div className='encounterSection videoContainer'>
-                        <iframe src="https://www.youtube.com/embed/ZMwUgwiWN88" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className='youtubeEmbed'></iframe>
-                            Datto's guide to the Daughters of Oryx
-                    </div>
-
-{/* 
-                    <div className='encounterSection videoContainer'>
-                        <iframe src="https://www.youtube.com/embed/3U1OnA77ktU" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className='youtubeEmbed'></iframe>
-                            Datto's first guide to Golgoroth
+                        <iframe src="https://www.youtube.com/embed/ZMwUgwiWN88?start=403" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className='youtubeEmbed'></iframe>
+                            Datto's first guide to Oryx
                     </div>
 
                     <div className='encounterSection videoContainer'>
-                        <iframe src="https://www.youtube.com/embed/ulj0AU_JGx4" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className='youtubeEmbed'></iframe>
-                            Datto's second, more in-depth guide to Golgoroth
+                        <iframe src="https://www.youtube.com/embed/FWsQpiHKvbM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className='youtubeEmbed'></iframe>
+                            Datto's guide to Challenge Mode Oryx (Destiny 1)
                     </div>
 
-                    <div className='encounterSection videoContainer'>
-                        <iframe src="https://www.youtube.com/embed/CCh31wFPKjA" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className='youtubeEmbed'></iframe>
-                            Datto's Challenge Mode (from Destiny 1) guide to Golgoroth
+                    {/* <div className='encounterSection videoContainer'>
+                        <iframe src="https://www.youtube.com/watch?v=_8c0GYQYE7A" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className='youtubeEmbed'></iframe>
+                            Now that you've killed Oryx, go touch grass. Or maybe...
                     </div> */}
 
 

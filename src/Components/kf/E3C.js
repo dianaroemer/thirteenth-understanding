@@ -202,7 +202,7 @@ function E3C() {
 
                 <div className='encounterSection challengeMode'>
                     <div className='encounterHeader challengeMode'> 
-                        Possible Challenge Mode
+                        Challenge Mode - "The Grass is Always Greener"
                     </div>
                         <ul style={{paddingLeft: '10px', maxWidth: '400px'}}>
                             <li>
@@ -212,16 +212,16 @@ function E3C() {
                                 </ol>
                             </li>
                             <li>
-                                Don't kill any Boomer Knights (shudder)
+                                Don't kill any Boomer Knights (shudder) - Unlikely
                             </li>
                             <li>
-                                Deathsinger's Power can only be banked if two guardians are banking at the same time
+                                Deathsinger's Power can only be banked if two guardians are banking at the same time - Unlikely
                             </li>
                             <li>
-                                A fireteam can never drop a Brand
+                                A fireteam can never drop a Brand - Unlikely
                             </li>
                             <li>
-                                Don't kill any wizards
+                                Don't kill any wizards - Unlikely
                             </li>
                         </ul>
                 </div>

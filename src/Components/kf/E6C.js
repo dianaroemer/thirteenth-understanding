@@ -201,11 +201,11 @@ function E6C() {
 
                 <div className='encounterSection challengeMode'>
                     <div className='encounterHeader challengeMode'> 
-                        Possible Challenge Mode Changes
+                        Challenge Mode - The Gaze Amaze
                     </div>
                     <ul style={{paddingLeft: '20px'}}>
                         <li className='encounterBulletPoint'>
-                            Each Guardian must hold Golgoroth's Gaze at least once
+                            Each Guardian must hold Golgoroth's Gaze at least once - Highly likely, similar to Destiny 1's challenge
                         </li>
                         <li className='encounterBulletPoint'>
                             Each Guardian must hold Golgoroth's Gaze at least once per damage phase
