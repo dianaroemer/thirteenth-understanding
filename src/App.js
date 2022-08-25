@@ -18,7 +18,7 @@ import BreakMenu from './Components/BreakMenu';
 
 function App() {
 
-  const [coffeesImbibed, setCoffeesImbibed] = useState(6);
+  const [coffeesImbibed, setCoffeesImbibed] = useState(7);
 
   const navigate = useNavigate();
 
@@ -427,6 +427,11 @@ function App() {
     }})
 
   }, [fireteam])
+
+  // Beginning of my localStorage update hook
+  // useEffect(()=> {
+  //   console.log(blindMode);
+  // }, [blindMode, raidStateKF, seenEncounters, breaks, fireteam, challengeMode])
 
   return (
     <div className="App"
