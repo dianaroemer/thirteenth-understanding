@@ -483,13 +483,13 @@ function E9() {
                                 <td>
                                     <ul style={{paddingRight: '2px'}}>
                                         <li>
-                                            Hive Thrall
-                                        </li>
-                                        <li>
                                             Taken Thrall
                                         </li>
                                         <li>
                                             Taken Vandals
+                                        </li>
+                                        <li>
+                                            Taken Boomer Knights
                                         </li>
                                         <li>
                                             Taken Acolytes
@@ -500,22 +500,37 @@ function E9() {
                                         <li className='shieldedEnemy arc'>
                                             Taken Centurion
                                         </li>
-                                    </ul>
-                                </td>
-                                <td>
-                                    <ul style={{paddingLeft: '15px'}}>
-                                        <li className='shieldedEnemy arc'>
-                                            Taken Centurion
+                                        <li>
+                                            Light Eater Knight *
                                         </li>
                                     </ul>
                                 </td>
                                 <td>
                                     <ul style={{paddingLeft: '15px'}}>
                                         <li>
-                                            Ir Anuk
+                                            Vessel of Oryx
+                                            <ol className='encounterSubBulletPoint'>
+                                                Major Hive Sword Knight
+                                                </ol>
                                         </li>
                                         <li>
-                                            Ir Halak
+                                            Taken Boomer Knight **
+                                        </li>
+                                        <li>
+                                            Light Eater Ogre ***
+                                            <ol className='encounterSubBulletPoint'>
+                                                Ultra Taken Ogre
+                                                </ol>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul style={{paddingLeft: '15px'}}>
+                                        <li>
+                                            Oryx, the Taken King
+                                        </li>
+                                        <li>
+                                            Shade of Oryx
                                         </li>
                                         
                                     </ul>
@@ -524,6 +539,22 @@ function E9() {
                         </tbody>
                         
                     </table>
+
+                    <div className='encounterSubSection'>
+                        <div>
+                            * Light Eater Knights were Minor Hive Knights present only in Hard Mode of King's Fall. Bungie has stepped away from adding additional mechanics to higher tier Raid difficulties, so it is unknown if King's Fall will be preserved at its Normal Difficulty, without the Light Eater Knights, or Hard Difficulty, with them        
+                        </div>
+                        <p></p>
+                        <div>
+                            ** Major Taken Boomer Knights spawn on each plate during Oryx's Artillery phase. In Destiny 1, they could be ignored completely and automatically died when the phase ended        
+                        </div>
+                        <p></p>
+                        <div>
+                            *** Light Eater Ogre's drop Corrupted Light, used to damage Oryx. They may be Ultras in Destiny 2, and the Floater might be able to use Aeon's Cult Finisher to generate Heavy Ammo for the fireteam to pick up in between phases, provided the Floater can evacuate the Corrupted Light before detonating it after the finisher        
+                        </div>
+
+                    </div>
+
                 </div>
 
                 <div className='encounterSection tips'>
@@ -533,30 +564,131 @@ function E9() {
 
                     <div className='encounterSubSection'>
                         <ul style={{paddingLeft: '20px'}}>
+
                             <li className='encounterBulletPoint'>
-                                Vandals spawn above plates at 00:40s, double check your Vandal killing weapon of choice at 00:45 for ammo
+                                Though Divinity offers a large crit spot against most enemies, Oryx's chest is already enormous. Consider not using Divinity at all, and instead using Sundering Glare exclusively
+                                <ol className='encounterSubBulletPoint'>
+                                    If Sundering Glare applies as expected, use it, otherwise test Divinity and Tether for easiest debuff to apply during damage checks
+                                </ol>
                             </li>
+
+                            <li className='encounterBulletPoint'>
+                                Oryx is an execution based fight with little randomness
+                                <ol className='encounterSubBulletPoint'>
+                                Small mistakes in execution escalate into bigger problems quickly, so teams should communicate effectively when encountering trouble
+                                </ol>
+                                <ol className='encounterSubBulletPoint'>
+                                Floaters will have a lot of responsibility and be familiar with every mechanic to act as a safety
+                                </ol>
+
+                            </li>
+
+                            <li className='encounterBulletPoint'>
+                                Priority adds in higher difficulties are as follows:
+                                <ol className='encounterSubBulletPoint'>
+                                Kill Light Eater Ogres as they spawn, don't let them move
+                                </ol>
+                                <ol className='encounterSubBulletPoint'>
+                                Kill Acolyte's Eyes, as their fast projectile is very threatening
+                                </ol>
+                                <ol className='encounterSubBulletPoint'>
+                                Taken Centurion's, as their Axion Darts while likely do unreasonable damage in Contest mode
+                                </ol>
+                            </li>
+
                             <li className='encounterBulletPoint'>
                                 Stepping off ANY plate at ANY time will cause ALL of the plates to become insubstantial for the Runner
                             </li>
+
                             <li className='encounterBulletPoint'>
                                 You can activate the platforms as quickly as you want, there is no timer or delay necessary
                                 <ol className='encounterSubBulletPoint'>
                                     Try watching for the previous plate's Nameplate through the wall or across the map. When it jumps up and stops at a higher elevation, you're cleared to jump yourself
                                 </ol>
                             </li>
+
                             <li className='encounterBulletPoint'>
-                                Always double check you can kill the second sister on the next phase when killing your first sister
-                                <ol className='encounterSubBulletPoint'>
-                                    Nothing is worse than running out of heavy on the final stretch when you could have just done one more rotation to be safe
-                                </ol>
+                                Plate-holders should be aware that Oryx always slams twice - once to initiate the Runner Phase, and a second time to initiate his DPS Check. Get off your plate after your Runner has the Brand of the Claimer/Immortality!
                             </li>
+
+
                             <li className='encounterBulletPoint'>
-                                Stay inside the Aura until your screen fades back in from the White Hymn/Dirge. Stepping away before the song is fully finished can kill just as quickly as if you were never your safe Aura
+                                Runners should not touch the Tomb Ship that flies through the arena - it will instantly kill you
+                            </li>
+
+
+                            <li className='encounterBulletPoint'>
+                                The entire fireteam should be in position for the DPS Check immediately after Oryx slams his plate the second time - if your screen shakes, stop what you're doing and get ready to stagger Oryx
                             </li>
 
                             <li className='encounterBulletPoint'>
-                                Triple Tap and Fourth Times the Charm weaponry (Sniper or Shotgun) will both be effective due to their free ammo generation
+                                Brand Holders should continue to damage Oryx while the fireteam is detonating their Corrupted Light, otherwise his chest will close and he will take no damage from the Corrupted Light's detonations
+                            </li>
+
+                            <li className='encounterBulletPoint'>
+                                Countdown before everyone steps into the Corrupted Light, don't just sprint to the orb - some orbs are farther than others
+                                <ol className='encounterSubBulletPoint'>
+                                "Orbs in Three, Two,..."
+                                </ol>
+                            </li>
+
+                            <li className='encounterBulletPoint'>
+                                Don't leave your Corrupted Light until you see your name in the in-game feed!
+                            </li>
+
+                            <li className='encounterBulletPoint'>
+                                You don't have to run and detonate your Corrupted Lights immediately after staggering Oryx, you can spend a few seconds clearing threatening adds from the safety of the Brand of Immortality before running to your orb
+                                <ol className='encounterSubBulletPoint'>
+                                If you wait too long, Oryx will reset to an Artillery Phase or a Shade of Oryx Phase, forcing you to detonate the orbs later in the fight
+                                </ol>
+                                <ol className='encounterSubBulletPoint'>
+                                Another powerful option is an Omnioculus Hunter Smoke Bomb for invis - give every 7 extra seconds to run without threat from adds (Omnioculus also provides damage resistant to anyone invisble)
+                                </ol>
+                            </li>
+
+                            <li className='encounterBulletPoint'>
+                                Taken Boomer Knights spawn on the Back two plates when entering a Shade of Oryx phase - make sure they die quickly
+                            </li>
+
+                            <li className='encounterBulletPoint'>
+                                When in the Blight with the Shade of Oryx, you can continue to damage him while he is in the mist - look for and shoot that spooky lad!
+                            </li>
+
+                            <li className='encounterBulletPoint'>
+                                Whenever you get teleported into the Blight with the Shade of Oryx, always move away from the center of the arena as quickly as possible!
+                                <ol className='encounterSubBulletPoint'>
+                                    <a className='dimLink' href='https://youtu.be/ZMwUgwiWN88?t=877' target='_blank' rel='noreferrer'>
+                                    Datto explains why
+                                    </a>
+                                </ol>
+                                
+                            </li>
+
+                            <li className='encounterBulletPoint'>
+                                In Destiny 1, a Shadowshot suppressed the Shade of Oryx - perhaps Suppressing Grenades, Bombadiers, or Blinding Grenades will work in Destiny 2?
+                            </li>
+
+                            <li className='encounterBulletPoint'>
+                                The Shade of Oryx will flash White before he enters the arena to attack players - always call it out so players can avoid his slam (think Rhulk's kick in Vow of the Disciple)
+                            </li>
+
+                            <li className='encounterBulletPoint'>
+                                Whenever the Shade of Oryx teleports, he'll leave behind an after-effect indicating which direction he teleported, always call this out so everyone can track him
+                                <ol className='encounterSubBulletPoint'>
+                                    <a className='dimLink' href='https://youtu.be/ZMwUgwiWN88?t=897' target='_blank' rel='noreferrer'>
+                                    Datto explains again
+                                    </a>
+                                </ol>
+                            </li>
+
+                            <li className='encounterBulletPoint'>
+                                When performing the 16 Orb strategy, you may need to spend extra time to activate all 4 of your orbs. Always make sure every orb detonates, even if it kills you
+                                <ol className='encounterSubBulletPoint'>
+                                    In particular, this is where having a countdown before activating the Orbs is helpful
+                                </ol>
+                                <ol className='encounterSubBulletPoint'>
+                                    Call out to your fireteam if you're dying intentionally to activate the Orbs so they can revive you BEFORE Oryx's Last Stand
+                                </ol>
                             </li>
 
                             <li className='encounterBulletPoint'>
@@ -565,6 +697,11 @@ function E9() {
                                     When you set up for DPS with your fireteam under your Brand or Aura, spare an extra few bullets or grenade for any enemies nearby to make your DPS experience just that little bit easier
                                 </ol>
                             </li>
+
+                            <li className='encounterBulletPoint'>
+                                Triple Tap and Fourth Times the Charm weaponry (Sniper or Shotgun) will both be effective due to their free ammo generation
+                            </li>
+
                         </ul>
                     </div>
 
