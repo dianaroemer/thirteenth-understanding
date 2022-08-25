@@ -559,6 +559,15 @@
         margin: 10px 30px;
     }
 
+    .encounterSection.tips.oryx{
+        width: 900px;
+    }
+
+    .encounterSubSection.oryx {
+        max-width: 900px;
+        /* color: green */
+    }
+
     .encounterSection.videoContainer {
         margin-left: 25px;
         margin-right: 25px;

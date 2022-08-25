@@ -8,12 +8,12 @@ import '../../Styles/EncounterStyling.css';
 
 
 
-function E9() {
+function E9C() {
 
     const navigate = useNavigate();
 
     const thisRaid = 'kf';
-    const thisEncounter = 'e9'
+    const thisEncounter = 'e9c'
     const roles = ['Plate 1', 'Plate 2', 'Plate 3', 'Plate 4', 'Runner', 'Floater']
 
     const [raidStateKF,
@@ -91,7 +91,7 @@ function E9() {
           });
           handleChallengeModeToggle();
           setTimeout(()=>{
-            navigate('/kf/e1c');
+            // navigate('/kf/e1c');
             // handleClickNavEncounter(null, 'e9');
         }, 5000)        // XXXUPDATEXXX On new Encounters
 
@@ -199,30 +199,27 @@ function E9() {
                 </div>
 
             <div className={encounterContentClass}>
-                {/* I am E9 */}
+                {/* I am E9C */}
 
-                {/* <div className='encounterSection challengeMode'>
+                <div className='encounterSection challengeMode'>
                     <div className='encounterHeader challengeMode'> 
-                        Possible Challenge Mode Changes
+                        Challenge Mode - Hand's Off
                     </div>
                     <ul style={{paddingLeft: '20px'}}>
                         <li className='encounterBulletPoint'>
+                            No guardian can be hit by a Shade of Oryx
+                        </li>
+                        <li className='encounterBulletPoint'>
+                            Oryx isn't allow to damage a guardian when smashing a plate
+                        </li>
+                        <li className='encounterBulletPoint'>
+                            Light Eater Knights and Vessels of Oryx cannot touch any Orbs Corrupted Light
+                        </li>
+                        <li className='encounterBulletPoint'>
                             No guardian steps on the same plate twice
                         </li>
-                        <li className='encounterBulletPoint'>
-                            Don't kill the Taken Vandals
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            Vandals must be killed within five seconds of each other
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            Daughters of Oryx must be killed within 30 seconds of each other
-                        </li>
-                        <li className='encounterBulletPoint'>
-                            No one can take damage from a Daughter of Oryx (like Shuro Chi)
-                        </li>
                     </ul>
-                </div>  */}
+                </div> 
 
                 <div className='encounterSection roles'>
                     <div className='encounterHeader'>
@@ -1154,10 +1151,10 @@ function E9() {
                             Datto's guide to Challenge Mode Oryx (Destiny 1)
                     </div>
 
-                    {/* <div className='encounterSection videoContainer'>
+                    <div className='encounterSection videoContainer'>
                         <iframe src="https://www.youtube.com/watch?v=_8c0GYQYE7A" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className='youtubeEmbed'></iframe>
                             Now that you've killed Oryx, go touch grass. Or maybe...
-                    </div> */}
+                    </div>
 
 
                 </div>
@@ -1171,4 +1168,4 @@ function E9() {
 
 }
 
-export default E9;
+export default E9C;

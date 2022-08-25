@@ -25,14 +25,16 @@ import E5C from './Components/kf/E5C';
 import E6C from './Components/kf/E6C';
 import E7C from './Components/kf/E7C';
 import E8C from './Components/kf/E8C';
-// import E9C from './Components/kf/E9C';
-
-
+import E9C from './Components/kf/E9C';
 
 import Tools from './Components/Tools';
 
-
 import '.'
+
+import ReactGA from 'react-ga';
+const TRACKING_ID = "UA-238648834-2"; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
+
 
 // import reportWebVitals from './reportWebVitals';
 
@@ -60,7 +62,7 @@ root.render(
         <Route path="kf/e6c" element={<E6C />} />
         <Route path="kf/e7c" element={<E7C />} />
         <Route path="kf/e8c" element={<E8C />} />
-        {/* <Route path="kf/e9c" element={<E9C />} /> */}
+        <Route path="kf/e9c" element={<E9C />} />
 
 
         <Route path="tools" element={<Tools />} />
