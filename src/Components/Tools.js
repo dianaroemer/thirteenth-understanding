@@ -275,25 +275,25 @@ function Tools(props) {
             Demo Mode
           </div> 
           <div>
-            Hooking up links to actual links
+            {/* Hooking up links to actual links */}
           </div>
           <div>
             About
-              <div>
-                Link to my Github
-                {/* Confetti from - 
+          </div>
+          <div>
+            Link to my Github
+            {/* Confetti from - 
                 https://www.npmjs.com/package/canvas-confetti
                  */}
               </div>
+          <div>
+            {/* Point of Failure Checklist */}
           </div>
           <div>
-            Point of Failure Checklist
+            {/* How to Prepare & How to Prepare IRL */}
           </div>
           <div>
-            How to Prepare & How to Prepare IRL
-          </div>
-          <div>
-            Recommended Weapons, Armor, and Builds
+            {/* Recommended Weapons, Armor, and Builds */}
           </div>
           <div>
             Google Analytics
@@ -305,7 +305,7 @@ function Tools(props) {
             Reset All Data to default
           </div>
           <div>
-            Dark Mode Toggle
+            {/* Dark Mode Toggle  */}
           </div>
           <div>
             Site Map
@@ -316,67 +316,130 @@ function Tools(props) {
           <div>
             <ul >
               <li>
-                Court's Comprehensive Data & Information Spreadsheets (Buff and Debuff Stacking) - 
-                {/* https://docs.google.com/spreadsheets/d/1i1KUwgVkd8qhwYj481gkV9sZNJQCE-C3Q-dpQutPCi4/edit#gid=242217075 */}
+
+                <a className='dimLink' href='https://docs.google.com/spreadsheets/d/1i1KUwgVkd8qhwYj481gkV9sZNJQCE-C3Q-dpQutPCi4/edit#gid=242217075' target='_blank' rel='noreferrer'>
+                        <div className=''>
+                        Court's Comprehensive Data & Information Spreadsheets (Buff and Debuff Stacking)
+                        </div>
+                    </a>
               </li>
               <li>
-                Damage Chart Madness (PvE, Raid) - {/* https://docs.google.com/spreadsheets/d/12vF7ckMzN4hex-Tse4HPiVs_d9huFOKlvUoq5V41nxU/edit#gid=2085890105 */}
+                <a className='dimLink' href='https://docs.google.com/spreadsheets/d/12vF7ckMzN4hex-Tse4HPiVs_d9huFOKlvUoq5V41nxU/edit#gid=2085890105' target='_blank' rel='noreferrer'>
+                        <div className=''>
+                        Damage Chart Madness (PvE, Raid)
+                        </div>
+                    </a>
               </li>
               <li>
-              Destiny 2 Outgoing Damage Scaling Spreadsheet - 
-              {/* https://docs.google.com/spreadsheets/d/1b57Hb8m1L3daFfUckQQqvvN6VOpD03KEssvQLMFpC5I/edit#gid=1386975095 */}
+                <a className='dimLink' href='https://docs.google.com/spreadsheets/d/1b57Hb8m1L3daFfUckQQqvvN6VOpD03KEssvQLMFpC5I/edit#gid=1386975095' target='_blank' rel='noreferrer'>
+                        <div className=''>
+                        Destiny 2 Outgoing Damage Scaling Spreadsheet
+                        </div>
+                    </a>
+           
               </li>
               <li>
-                Destiny Item Manager - 
-                {/* https://destinyitemmanager.com/en/ */}
+              <a className='dimLink' href='https://destinyitemmanager.com/en/' target='_blank' rel='noreferrer'>
+                        <div className='dimIcon'>
+                        Destiny Item Manager
+                        </div>
+                    </a>
               </li>
               <li>
-                Clarity - A DIM Companion App - 
-                {/* https://www.d2clarity.com/ */}
+              <a className='dimLink' href='https://www.d2clarity.com/' target='_blank' rel='noreferrer'>
+                        <div className=''>
+                        Clarity - A DIM Companion App
+                        </div>
+                    </a>
+                 
               </li>
               <li>
-                Destiny 2 Y5 Activity Rotation Schedules (Lost Sectors, Nightfalls, Raid Challenges, etc.) - 
-                {/* https://docs.google.com/spreadsheets/d/1mItOsJnE9n3Duu5xs6nRontkcookxJ2uQyPb-rwoFDk/edit#gid=0 */}
+              <a className='dimLink' href='https://docs.google.com/spreadsheets/d/1mItOsJnE9n3Duu5xs6nRontkcookxJ2uQyPb-rwoFDk/edit#gid=0' target='_blank' rel='noreferrer'>
+                        <div className=''>
+                        Destiny 2 Y5 Activity Rotation Schedules (Lost Sectors, Nightfalls, Raid Challenges, etc.)
+                        </div>
+                    </a>
               </li>
               <li>
-                Today in Destiny (Eververse Calendar) - 
-                {/* https://www.todayindestiny.com/ */}
+
+              <a className='dimLink' href='https://www.todayindestiny.com/' target='_blank' rel='noreferrer'>
+                        <div className=''>
+                        Today in Destiny (Eververse Calendar)
+                        </div>
+                    </a>
               </li>
               <li>
-                Light.gg - a Destiny 2 Database
-                {/* https://www.light.gg */}
+              <a className='dimLink' href='https://www.light.gg' target='_blank' rel='noreferrer'>
+                        <div className=''>
+                        Light.gg - a Destiny 2 Database
+                        </div>
+                    </a>
               </li>
               <li>
-                Blueberries.gg - a Beginner's Guide to Destiny 2
-                {/* https://www.blueberries.gg/ */}
+              <a className='dimLink' href='https://www.blueberries.gg' target='_blank' rel='noreferrer'>
+                        <div className=''>
+                        Blueberries.gg - a Beginner's Guide to Destiny 2
+                        </div>
+                    </a>
               </li>
               <li>
-                D2 PC LFG - a(the) Destiny 2 Discord LFG Server
-                {/* Discord.gg/D2LFG  */}
+              <a className='dimLink' href='Discord.gg/D2LFG' target='_blank' rel='noreferrer'>
+                        <div className=''>
+                        D2 PC LFG - a(the) Destiny 2 Discord LFG Server
+                        </div>
+                    </a>
               </li>
               <li>
-                D2 Sanctuary -a Destiny 2 Discord LFG Server prioritizing a safe environment
-                {/* https://d2sanctuary.com/ */}
+              <a className='dimLink' href='https://d2sanctuary.com/' target='_blank' rel='noreferrer'>
+                        <div className=''>
+                        D2 Sanctuary -a Destiny 2 Discord LFG Server prioritizing a safe environment
+                        </div>
+                    </a>
               </li>
               <li>
-                Bungie.net - Developer website for Destiny 2 (but you knew that already)
-                {/* bungie.net */}
+              <a className='dimLink' href='bungie.net' target='_blank' rel='noreferrer'>
+                        <div className=''>
+                        Bungie.net - Developer website for Destiny 2 (but you knew that already)
+                        </div>
+                    </a>
               </li>
               <li>
-                Raid Report - a Raid Statistics website
-                {/* https://raid.report/ */}
+              <a className='dimLink' href='https://raid.report/' target='_blank' rel='noreferrer'>
+                        <div className=''>
+                        Raid Report - a Raid Statistics website. May be bugged for Day 1
+                        </div>
+                    </a>
               </li>
               <li>
-                Bray.tech - a Destiny 2 Checklist App
-                {/* https://bray.tech/ */}
+              <a className='dimLink' href='https://raid.report/pc/4611686018470817123' target='_blank' rel='noreferrer'>
+                        <div className=''>
+                        My personal Raid Report, aka my street cred
+                        </div>
+                    </a>
               </li>
               <li>
-                Reddit/r/DestinyTheGame - a Large Destiny 2 Community
-                {/* https://www.reddit.com/r/destinythegame/ */}
+              <a className='dimLink' href='https://bray.tech/' target='_blank' rel='noreferrer'>
+                        <div className=''>
+                        Bray.tech - a Destiny 2 Checklist (& more) App
+                        </div>
+                    </a>
               </li>
               <li>
-                Reddit/r/RaidSecrets - A Destiny 2 Reddit Community dedicated to finding and sharing secrets! SPOILERS OFTEN PRESENT
-                {/* https://www.reddit.com/r/raidsecrets/ */}
+              <a className='dimLink' href='https://www.reddit.com/r/destinythegame/' target='_blank' rel='noreferrer'>
+                        <div className=''>
+                        Reddit/r/DestinyTheGame - a Large Destiny 2 Community
+                        </div>
+                    </a>
+              </li>
+              <li>
+              <a className='dimLink' href='https://www.reddit.com/r/raidsecrets/' target='_blank' rel='noreferrer'>
+                        <div className=''>
+                        Reddit/r/RaidSecrets - A Destiny 2 Reddit Community dedicated to finding and sharing secrets! SPOILERS OFTEN PRESENT
+                        </div>
+                    </a>
+
+                
+                {/*  */}
               </li>
 
 
