@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {Outlet, useNavigate} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPeopleGroup, faScrewdriverWrench, faPenToSquare, faCheck, faX  } from '@fortawesome/free-solid-svg-icons';
@@ -13,6 +13,83 @@ import BreakMenu from './Components/BreakMenu';
 
 
 
+
+
+// localStorage functionality goes here
+let useLocalStorage = false;
+
+function storageAvailable(type) {
+  var storage;
+  try {
+      storage = window[type];
+      var x = '__storage_test__';
+      storage.setItem(x, x);
+      storage.removeItem(x);
+      return true;
+  }
+  catch(e) {
+      return e instanceof DOMException && (
+          // everything except Firefox
+          e.code === 22 ||
+          // Firefox
+          e.code === 1014 ||
+          // test name field too, because code might not be present
+          // everything except Firefox
+          e.name === 'QuotaExceededError' ||
+          // Firefox
+          e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+          // acknowledge QuotaExceededError only if there's something already stored
+          (storage && storage.length !== 0);
+  }
+}
+
+if(storageAvailable('localStorage')) {
+  useLocalStorage = true;
+  console.log("localStorage is available and will be used")
+}
+
+
+
+console.log(localStorage.getItem(`fireteam0name`))
+let newGuardian0 = {
+  name: localStorage.getItem('fireteam0name'),
+  edit: (localStorage.getItem('fireteam0edit')=== 'true'),
+  hasDiv: (localStorage.getItem('fireteam0hasDiv')=== 'true'),
+}
+let newGuardian1 = {
+  name: localStorage.getItem('fireteam1name'),
+  edit: (localStorage.getItem('fireteam1edit')=== 'true'),
+  hasDiv: (localStorage.getItem('fireteam1hasDiv')=== 'true'),
+}
+let newGuardian2 = {
+  name: localStorage.getItem('fireteam2name'),
+  edit: (localStorage.getItem('fireteam2edit')=== 'true'),
+  hasDiv: (localStorage.getItem('fireteam2hasDiv')=== 'true'),
+}
+let newGuardian3 = {
+  name: localStorage.getItem('fireteam3name'),
+  edit: (localStorage.getItem('fireteam3edit')=== 'true'),
+  hasDiv: (localStorage.getItem('fireteam3hasDiv')=== 'true'),
+}
+let newGuardian4 = {
+  name: localStorage.getItem('fireteam4name'),
+  edit: (localStorage.getItem('fireteam4edit')) === 'true',
+  hasDiv: (localStorage.getItem('fireteam4hasDiv')=== 'true'),
+}
+let newGuardian5 = {
+  name: localStorage.getItem('fireteam5name'),
+  edit: (localStorage.getItem('fireteam5edit') === 'true'),
+  hasDiv: (localStorage.getItem('fireteam5hasDiv') === 'true'),
+}
+
+console.log(`edit guardian 5`, localStorage.getItem(`fireteam5edit`), typeof(localStorage.getItem(`fireteam5edit`)), !!localStorage.getItem(`fireteam5edit`))
+
+const fromStorageFireteam = [newGuardian0, newGuardian1, newGuardian2, newGuardian3, newGuardian4, newGuardian5]
+console.log(fromStorageFireteam);
+// setFireteam(()=> fireteam);
+
+// console.log(useLocalStorage)
+// console.log(fromStorageFireteam)
 
 
 
@@ -114,7 +191,9 @@ function App() {
     } else {
       setAppContentClassString('appContent')
     }
+
   }, [expandClocks])
+
 
   const [raidStateKF, setRaidStateKF] = useState({
     e1: {
@@ -372,7 +451,13 @@ function App() {
   // }, [test1])
   // XXXUPDATEXXX REMOVE ABOVE BEFORE PRODUCTION XXXUPDATEXXX
 
-  const [fireteam, setFireteam] = useState([{
+
+
+
+
+  const [fireteam, setFireteam] = useState( useLocalStorage ?
+    fromStorageFireteam :
+    [{
     name: 'Guardian 1',
     edit: true,
     hasDiv: true}, 
@@ -394,7 +479,7 @@ function App() {
   ])
   function handleUpdateGuardianName(e, guardian) {
     e.preventDefault();
-    let newGuardian = {...fireteam[guardian], name: e.target.value}
+    let newGuardian = {...fireteam[guardian], name: e.target.value};
     let newFireteam = [...fireteam];
     newFireteam[guardian] = newGuardian;
     setFireteam(() => newFireteam);
@@ -429,9 +514,104 @@ function App() {
   }, [fireteam])
 
   // Beginning of my localStorage update hook
-  // useEffect(()=> {
-  //   console.log(blindMode);
-  // }, [blindMode, raidStateKF, seenEncounters, breaks, fireteam, challengeMode])
+  useEffect(()=> {
+    // console.log(blindMode);
+    if(localStorage){
+      // Build new localStorage array
+      // let localStorageArray = [];
+
+      // set localStorage for raidStateKF
+      localStorage.setItem('blindMode', blindMode)
+      // console.log(Object.entries(raidStateKF))
+
+      // Write raidStateKF to localStorage on update
+      for(const [key, value] of Object.entries(raidStateKF)) {
+        // console.log(`key`, key, typeof(key))
+        // console.log(`value`, value, typeof(value))
+        for(const [encounterKey, encounterValue] of Object.entries(value)){
+          // console.log(`encounterKey`, encounterKey, typeof(encounterKey))
+          // console.log(`encounterValue`, encounterValue, typeof(encounterValue))
+          if(encounterKey === 'startTime'){
+            // console.log('here')
+            localStorage.setItem(`${key}${encounterKey}`, `${encounterValue.getTime()}`)
+          } else {
+            localStorage.setItem(`${key}${encounterKey}`, `${encounterValue}`)
+          }
+        }
+      }
+
+      // write seenEncounters to localStorage on udpate
+      for(const [key, value] of Object.entries(seenEncounters)) {
+        // console.log(`key`, key, typeof(key))
+        // console.log(`value`, value, typeof(value))     
+        localStorage.setItem(`seenEncounters${key}`, `${value}`)
+      }
+
+      // write Breaks to localStorage on update
+      // console.log(breaks)
+      for( let i = 0; i < breaks.length; i++){
+        // console.log(breaks[i]);
+        for(const [key, value] of Object.entries(breaks[i])){
+          // console.log(`key`, key, typeof(key))
+          // console.log(`value`, value, typeof(value))  
+          if(key === 'breakStart'){
+            // console.log(`breaks${i}key`, `${value.getTime()}`)
+            localStorage.setItem(`breaks${i}${key}`, `${value.getTime()}`)  
+          } else {
+            // console.log(`breaks${i}key`, `${value}`)
+            localStorage.setItem(`breaks${i}${key}`, `${value}`)
+          }
+        }
+      }
+
+      // write Fireteam to localStorage on update
+      // console.log(fireteam);
+      for( let i = 0; i < fireteam.length; i++) {
+        // console.log(fireteam[i]);
+        for(const [key, value] of Object.entries(fireteam[i])){
+          // console.log(`key`, key, typeof(key))
+          // console.log(`value`, value, typeof(value))
+          localStorage.setItem(`fireteam${i}${key}`, `${value}`);
+        }
+      }
+
+      // console.log(challengeMode);
+      // localStorage.setItem(`challengeMode`, `${challengeMode}`);
+
+
+    }
+  }, [blindMode, raidStateKF, seenEncounters, breaks, fireteam, challengeMode])
+
+  // This useEffect runs on App's mount and restores localStorage if it exists
+  // useEffect( ()=> {
+    // console.log('I am running on init')
+    // if(useLocalStorage){
+      // console.log(localStorage);
+
+      // console.log(localStorage.getItem(`challengeMode`));
+      // function handleUpdateGuardianName(e, guardian) {
+      //   e.preventDefault();
+      //   let newGuardian = {...fireteam[guardian], name: e.target.value};
+      //   let newFireteam = [...fireteam];
+      //   newFireteam[guardian] = newGuardian;
+      //   setFireteam(() => newFireteam);
+      // }
+      // handleUpdateGuardianName(null, 0)
+
+
+
+    // }
+  // }, [])
+
+
+//     e1: {
+    //   startTime: new Date(1661533200000),
+    //   attempts: 1,
+    //   completed: false,
+    // },
+
+
+ 
 
   return (
     <div className="App"
@@ -499,6 +679,48 @@ function App() {
 
       <div className={appContentClassString}>
         {/* If this is the user's first time coming to this website, show them welcome pane with tips. */}
+
+        {/* THIS SHIT RIGHT HERE ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */}
+          <div>
+            <button onClick={e=> {
+              e.preventDefault();
+              console.log('Getting Local Storage')
+              console.log(localStorage)
+            }}>
+              Read Local Storage
+            </button>
+            <button onClick={e=> {
+              e.preventDefault();
+              console.log('Adding to Local Storage')
+              localStorage.setItem('myCat', 'Rio');
+              console.log(localStorage);
+            }}>
+              Add cat to Local Storage
+            </button>
+            <button onClick={e=> {
+              e.preventDefault();
+              console.log('Adding 2nd Local Storage')
+              localStorage.setItem('myOtherCat', 'Skip');
+              console.log(localStorage);
+            }}>
+              Add 2nd cat to Local Storage
+            </button>
+            <button onClick={e=> {
+              e.preventDefault();
+              console.log('Removing Rio')
+              localStorage.removeItem('myCat');
+              console.log(localStorage);
+            }}>
+              Remove first cat
+            </button>
+            <button onClick={e=> {
+              e.preventDefault();
+              console.log('Clearing Local Storage')
+              localStorage.clear()
+            }}>
+              Clear Local Storage
+            </button>
+          </div>
 
 
         {/* <div className='toolsFireteamContainer'>

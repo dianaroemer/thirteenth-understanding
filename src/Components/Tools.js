@@ -169,7 +169,7 @@ function Tools(props) {
 
                 {fireteam[2].edit ? 
                 <div className='tooslFireteamGuardianInput'>
-                  2. <input type='text' 
+                  3. <input type='text' 
                     value={fireteam[2].name}
                     onChange={e=> fireteamFunctionContainer.handleUpdateGuardianName(e, 2)}></input>
                     &nbsp; <FontAwesomeIcon onClick={e=> fireteamFunctionContainer.handleToggleGuardianEdit(e, 2)} icon={faCheck} style={{color:''}}/> 
@@ -261,6 +261,20 @@ function Tools(props) {
                 
                 
               </div>
+
+                      <div className='toolsHeader'>
+                         Manage local Storage
+
+                      </div>
+                      <p></p>
+                      <button onClick={e => {
+                        e.preventDefault();
+                        localStorage.clear();
+                        }}>
+                          Delete Local Storage
+                        </button>
+                        This wipes any progress you've made from the webpage!
+                        <p></p>
 
 
             <div className='toolsHeader'>
