@@ -718,7 +718,7 @@ function E9() {
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                            It was the G.O.A.T. in D1, and now it's back. Ammo economy is unbeatable
+                            Whispered Breathing and Ammo Economy. Hit that DPS Check
                             </div>
                         </div>
                         <div className='buildSlot'>
@@ -726,7 +726,7 @@ function E9() {
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Higher burst than Whisper, but lower sustained and total dmg 
+                                Higher burst than Whisper, but needs Heavy Bricks to drop 
                             </div>
                         </div>
                         <div className='buildSlot'>
@@ -742,7 +742,7 @@ function E9() {
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                See Cataclysmic. Slightly worse ammo economy than Cataclysmic
+                                See Cataclysmic. Worse ammo economy. Affected by flinch more
                             </div>
                         </div>
 
@@ -760,25 +760,7 @@ function E9() {
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Wolfpack & rockets have higher burst than Linears, but lower total damage
-                            </div>
-                        </div>
-
-                        <div className='buildSlot'>
-                            <div className='buildSlotIcon acrius'>
-                                {/* Icon */}
-                            </div>
-                            <div className='buildSlotDetails'>
-                                Trench Barrel. Punch that Daughter in the shins and go to town
-                            </div>
-                        </div>
-
-                        <div className='buildSlot'>
-                            <div className='buildSlotIcon ragnhild'>
-                                {/* Icon */}
-                            </div>
-                            <div className='buildSlotDetails'>
-                                Only use with Acrius and Well of Radiance
+                                Rockets have huge burst, but Oryx's chest is a free crit spot
                             </div>
                         </div>
 
@@ -787,7 +769,7 @@ function E9() {
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Special weapon of choice in this encounter. Also good for Vandals
+                                Special weapon of choice in this encounter. Good for Ogres and Knights
                             </div>
                         </div>
 
@@ -796,7 +778,16 @@ function E9() {
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Pairs best with snipers and linears. Used to stack with Divinity
+                                Pairs best with snipers and linears. Does not stack with Divinity
+                            </div>
+                        </div>
+
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon witherhoard'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                Put the icky on the enemy spawns. Pairs well with Legendary Linears
                             </div>
                         </div>
 
@@ -808,7 +799,61 @@ function E9() {
                                 </div>
                             </div>
                             <div className='buildSlotDetails'>
-                                Daughters deal Arc damage, but Solar and Void is also present
+                                Acolytes, Eyes, and Ogres deal Arc. Melee Resist for the Shade
+                            </div>
+                        </div>
+
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon voidResist'>
+                                {/* Icon */}
+                                <div className='buildSlotIcon voidResist colors'>
+                                {/* subIcon */}
+                                </div>
+                            </div>
+                            <div className='buildSlotDetails'>
+                                Centurions and Knights deal Void
+                            </div>
+                        </div>
+
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon acrius'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                [softly]
+                                <div>
+                                    "Don't."
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon touchOfMalice'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails thisIsWhere'>
+                                This is where I would put my Touch of Malice... IF I HAD ONE
+                            </div>
+                        </div>
+
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon wishender'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                Something funny
+                            </div>
+                        </div>
+
+                        <div className='buildSlot'>
+                            <div className='buildSlotIcon malfeasance'>
+                                {/* Icon */}
+                            </div>
+                            <div className='buildSlotDetails'>
+                                <a className='dimLink' href='https://wiki.teamfortress.com/w/images/f/f8/Medic_sf13_influx_big02.wav' target='_blank' rel='noreferrer'>
+                                    The Anti-Taken Machine. Only use as full fireteam
+                                </a>
+                                <div style={{fontSize: 'x-small'}}>volume warning</div>
                             </div>
                         </div>
 
@@ -824,19 +869,18 @@ function E9() {
                     <div className='encounterSubSection'>
                         <ul style={{paddingLeft: '20px'}}>
                             <li className='encounterBulletPoint'>
-                                This might actually not see a change to enemy density. The Daughters encounter is more about teaching your fireteam about the Plates and Platform mechanics, I don't think more or tougher enemies is a significant change to this encounter
+                                If Season of Plunder's activities have shown us anything, it's that Bungie has figured out how to absolutely flood the map with enemies. Expect so many Thrall and Acolytes that you have 
                             </li>
                             <li className='encounterBulletPoint'>
-                                Champions would be unlikely in Normal difficulty. Those Vandals will ABSOLUTELY be Overload Hobgoblins in Master difficulty, though. Perhaps the Major Centurion will become an Unstoppable Ogre, or Unstoppable Taken Phalanx?
+                                Champions would be unlikely in Normal difficulty. It's possible the Vessel of Oryx becomes a Barrier Knight, though it contradicts having a Sword with a Champion Knight's Boomer. Maybe the Taken Knights during the Artillery Phase become champions? Oh, could you imagine an Unstoppable Light Eating Ogre, though? If you stunned it too soon before it popped out of the ground and sprinted into the middle of the arena? That would be so crazy, just totally unreasonable...
+                                <p></p>
+                                ...right?
                             </li>
                             <li className='encounterBulletPoint'>
-                                Lucent Hive are also unlikely. Perhaps the Taken Centurion will be a Lucent Hive, demanding that the Add Clear player kill it and chase down its ghost while the remaining players are tied to their plates?
+                                Lucent Hive could make an appearance here. Because there isn't a "Damage Phase", and only a DPS-Check and the execution of mechanics, it wouldn't be beyond the realm of imagination to see Bungie replace a single (or both) of the Taken Centurions during the Runner Phase with a Lucent Hive Wizard, that would be absolutely brutal to deal with in the best possible way. 
                             </li>
                             <li className='encounterBulletPoint'>
-                                Tweaks to the Plates mechanic. Perhaps the plate order will change from the classic Counter-Clockwise every time
-                            </li>
-                            <li className='encounterBulletPoint'>
-                                Perhaps the fireteam will be able to choose who gets Torn Between Dimensions
+                                Tweaks to the Plates mechanic could be possible. Perhaps the plate order will change from the classic's Counter-Clockwise every time
                             </li>
                         </ul>
                     </div>

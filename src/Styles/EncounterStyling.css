@@ -370,6 +370,15 @@
     background-position: center;
 }
 
+.buildSlotDetails.thisIsWhere{
+    /* margin-top: 10px; */
+    text-shadow: 1px 1px 2px black;
+    background-image: url("https://nyc3.digitaloceanspaces.com/memecreator-cdn/media/__processed__/e37/template-fairly-odd-parents-987-0c6db91aec9c.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 -10rem;
+}
+
 .buildSlotIcon.stompees {
     background-image: url("https://www.bungie.net/common/destiny2_content/icons/8c7681f1e93ee996a724e55554e079e9.jpg");
 }
