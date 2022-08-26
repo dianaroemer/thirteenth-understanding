@@ -314,15 +314,6 @@ function Tools(props) {
             Google Analytics
           </div>
           <div>
-            Local Storage. If you close the app or your phone locks and stops the webpage, you lose all local data
-          </div>
-          <div>
-            Don't Store localStorage on my machine Option
-          </div>
-          <div>
-            Reset localStorage data to default
-          </div>
-          <div>
             {/* Dark Mode Toggle  */}
           </div>
           <div>

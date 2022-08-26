@@ -443,7 +443,7 @@ function App() {
     (useLocalStorage && localStorage.getItem(`localStorageActive`)) ?
     fromStorageBreaks :
     [
-      { breakStart: new Date(1661457964000), 
+      { breakStart: new Date(1661533200000), 
     duration: 0, }
   ])
   const [remainingBreakDuration, setRemainingBreakDuration] = useState(0);
