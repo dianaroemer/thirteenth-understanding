@@ -65,7 +65,7 @@ if(useLocalStorage && localStorage.getItem(`localStorageActive`)) {
     }
     fromStorageRaidStateKF[`e${i}`] = fromStorageEncounterObject;
   }
-  for (let i = 1; i < 10; i++){
+  for (let i = 1; i < 9; i++){
     let fromStorageEncounterObject = {
       startTime: new Date(parseInt(localStorage.getItem(`e${i}cstartTime`))),
       attempts: parseInt(localStorage.getItem(`e${i}cattempts`)),
@@ -73,6 +73,14 @@ if(useLocalStorage && localStorage.getItem(`localStorageActive`)) {
     }
     fromStorageRaidStateKF[`e${i}c`] = fromStorageEncounterObject;
   }
+  let e9cObject = {
+    startTime: new Date(parseInt(localStorage.getItem(`e9cstartTime`))),
+    attempts: parseInt(localStorage.getItem(`e9cattempts`)),
+    completed: (localStorage.getItem(`e9ccompleted`)) === 'true',
+    completionTime: new Date(parseInt(localStorage.getItem(`e9ccompletionTime`)))
+  }
+  fromStorageRaidStateKF[`e9c`] = e9cObject;
+
 
 
   // Rebuilding seenEncounters from localStorage
@@ -556,6 +564,8 @@ function App() {
           if(encounterKey === 'startTime'){
             // console.log('here')
             localStorage.setItem(`${key}${encounterKey}`, `${encounterValue.getTime()}`)
+          } else if(encounterKey === 'completionTime' && encounterValue !== null) {
+            localStorage.setItem(`${key}${encounterKey}`, `${encounterValue.getTime()}`)
           } else {
             localStorage.setItem(`${key}${encounterKey}`, `${encounterValue}`)
           }
@@ -674,7 +684,7 @@ function App() {
         {/* If this is the user's first time coming to this website, show them welcome pane with tips. */}
 
         {/* Test dashboard for local storage ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */}
-          {/* <div>
+          <div>
             <button onClick={e=> {
               e.preventDefault();
               console.log('Getting Local Storage')
@@ -720,7 +730,7 @@ function App() {
             }}>
               KF e9c attempts
             </button>
-          </div> */}
+          </div>
 
 
         {/* <div className='toolsFireteamContainer'>
