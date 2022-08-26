@@ -684,7 +684,7 @@ function App() {
         {/* If this is the user's first time coming to this website, show them welcome pane with tips. */}
 
         {/* Test dashboard for local storage ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */}
-          <div>
+          {/* <div>
             <button onClick={e=> {
               e.preventDefault();
               console.log('Getting Local Storage')
@@ -730,7 +730,7 @@ function App() {
             }}>
               KF e9c attempts
             </button>
-          </div>
+          </div> */}
 
 
         {/* <div className='toolsFireteamContainer'>

@@ -266,7 +266,7 @@ function Tools(props) {
                          Manage local Storage
 
                       </div>
-                      <p style={{maxWidth: '600px', textAlign: 'center'}}>Be sure to purge localStorage before the Raid Race begins if you're playing around with the functionality of the website. Hit "Delete Local Storage", and then immediately refresh the webpage.</p>
+                      <p style={{maxWidth: '600px', textAlign: 'center'}}>Be sure to purge localStorage before the Raid Race begins if you're playing around with the functionality of the website. Hit "Delete Local Storage", then immediately refresh the webpage (Without clicking anything else! Any additional clicks will re-write your data to localStorage!).</p>
                       
                       <button onClick={e => {
                         e.preventDefault();
