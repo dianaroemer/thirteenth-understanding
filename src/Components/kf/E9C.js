@@ -166,9 +166,10 @@ function E9C() {
                     {raidStateKF[thisEncounter].completed ? 
                     <div className='encounterClearedContent cleared'>
                         Congratulations! 
-                        <div>Encounter Completed in {/*raidStateKF[thisEncounter].startTime.getTime()*/}</div>
+                        <div>Raid Completed at {raidStateKF[thisEncounter].completionTime.toString()}</div>
                         <div>
-                            {raidStateKF[thisEncounter].attempts} Attempts!
+                           {/* in only {`${raidStateKF[thisEncounter].attempts}`}  */}
+                           in only {raidStateKF[thisEncounter].attempts} Attempts!
                         </div>
                     </div> :
                     <div className='encounterClearedContent'>

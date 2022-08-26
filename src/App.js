@@ -49,47 +49,190 @@ if(storageAvailable('localStorage')) {
 }
 
 
+let fromStorageRaidStateKF;
+let fromStorageSeenEncounters;
+let fromStorageBreaks = [];
+let fromStorageFireteam;
+if(useLocalStorage && localStorage.getItem(`localStorageActive`)) {
 
-console.log(localStorage.getItem(`fireteam0name`))
-let newGuardian0 = {
-  name: localStorage.getItem('fireteam0name'),
-  edit: (localStorage.getItem('fireteam0edit')=== 'true'),
-  hasDiv: (localStorage.getItem('fireteam0hasDiv')=== 'true'),
-}
-let newGuardian1 = {
-  name: localStorage.getItem('fireteam1name'),
-  edit: (localStorage.getItem('fireteam1edit')=== 'true'),
-  hasDiv: (localStorage.getItem('fireteam1hasDiv')=== 'true'),
-}
-let newGuardian2 = {
-  name: localStorage.getItem('fireteam2name'),
-  edit: (localStorage.getItem('fireteam2edit')=== 'true'),
-  hasDiv: (localStorage.getItem('fireteam2hasDiv')=== 'true'),
-}
-let newGuardian3 = {
-  name: localStorage.getItem('fireteam3name'),
-  edit: (localStorage.getItem('fireteam3edit')=== 'true'),
-  hasDiv: (localStorage.getItem('fireteam3hasDiv')=== 'true'),
-}
-let newGuardian4 = {
-  name: localStorage.getItem('fireteam4name'),
-  edit: (localStorage.getItem('fireteam4edit')) === 'true',
-  hasDiv: (localStorage.getItem('fireteam4hasDiv')=== 'true'),
-}
-let newGuardian5 = {
-  name: localStorage.getItem('fireteam5name'),
-  edit: (localStorage.getItem('fireteam5edit') === 'true'),
-  hasDiv: (localStorage.getItem('fireteam5hasDiv') === 'true'),
+  // Rebuilding raidStateKF from localStorage
+  fromStorageRaidStateKF = {};
+  for (let i = 1; i < 10; i++){
+    let fromStorageEncounterObject = {
+      startTime: new Date(parseInt(localStorage.getItem(`e${i}startTime`))),
+      attempts: parseInt(localStorage.getItem(`e${i}attempts`)),
+      completed: (localStorage.getItem(`e${i}completed`)) === 'true'
+    }
+    fromStorageRaidStateKF[`e${i}`] = fromStorageEncounterObject;
+  }
+
+  for (let i = 1; i < 10; i++){
+    let fromStorageEncounterObject = {
+      startTime: new Date(parseInt(localStorage.getItem(`e${i}cstartTime`))),
+      attempts: parseInt(localStorage.getItem(`e${i}cattempts`)),
+      completed: (localStorage.getItem(`e${i}ccompleted`)) === 'true'
+    }
+    fromStorageRaidStateKF[`e${i}c`] = fromStorageEncounterObject;
+  }
+
+  // {
+  //   e1: {
+  //       startTime: new Date(1661533200000),
+  //       attempts: 1,
+  //       completed: false,
+  //   },
+  //   e2: {
+  //       startTime: new Date(),
+  //       attempts: 1,
+  //       completed: false,
+  //   },
+  //   e3: {
+  //       startTime: new Date(),
+  //       attempts: 1,
+  //       completed: false,
+  //   },
+  //   e4: {
+  //       startTime: new Date(),
+  //       attempts: 1,
+  //       completed: false,
+  //   },
+  //   e5: {
+  //       startTime: new Date(),
+  //       attempts: 1,
+  //       completed: false,
+  //   },
+  //   e6: {
+  //       startTime: new Date(),
+  //       attempts: 1,
+  //       completed: false,
+  //   },
+  //   e7: {
+  //       startTime: new Date(),
+  //       attempts: 1,
+  //       completed: false,
+  //   },
+  //   e8: {
+  //       startTime: new Date(),
+  //       attempts: 1,
+  //       completed: false,
+  //   },
+  //   e9: {
+  //       startTime: new Date(),
+  //       attempts: 1,
+  //       completed: false,
+  //   },
+  //   e1c: {
+  //       startTime: new Date(),
+  //       attempts: 1,
+  //       completed: false,
+  //   },
+  //   e2c: {
+  //       startTime: new Date(),
+  //       attempts: 1,
+  //       completed: false,
+  //   },
+  //   e3c: {
+  //       startTime: new Date(),
+  //       attempts: 1,
+  //       completed: false,
+  //   },
+  //   e4c: {
+  //       startTime: new Date(),
+  //       attempts: 1,
+  //       completed: false,
+  //   },
+  //   e5c: {
+  //       startTime: new Date(),
+  //       attempts: 1,
+  //       completed: false,
+  //   },
+  //   e6c: {
+  //       startTime: new Date(),
+  //       attempts: 1,
+  //       completed: false,
+  //   },
+  //   e7c: {
+  //       startTime: new Date(),
+  //       attempts: 1,
+  //       completed: false,
+  //   },
+  //   e8c: {
+  //       startTime: new Date(),
+  //       attempts: 1,
+  //       completed: false,
+  //   },
+  //   e9c: {
+  //       startTime: new Date(),
+  //       attempts: 1,
+  //       completed: false,
+  //       completionTime: null,
+  //   }
+  // }
+
+
+  // Rebuilding seenEncounters from localStorage
+  fromStorageSeenEncounters = {
+    e1: localStorage.getItem(`seenEncounterse1`) === 'true',
+    e2: localStorage.getItem(`seenEncounterse2`) === 'true',
+    e3: localStorage.getItem(`seenEncounterse3`) === 'true',
+    e4: localStorage.getItem(`seenEncounterse4`) === 'true',
+    e5: localStorage.getItem(`seenEncounterse5`) === 'true',
+    e6: localStorage.getItem(`seenEncounterse6`) === 'true',
+    e7: localStorage.getItem(`seenEncounterse7`) === 'true',
+    e8: localStorage.getItem(`seenEncounterse8`) === 'true',
+    e9: localStorage.getItem(`seenEncounterse9`) === 'true',
+    e10: false,
+  }
+
+  // using breaksNumber to rebuild Breaks Object
+  let numberOfBreaksInStorage = parseInt(localStorage.getItem(`breaksNumber`));
+  for(let i = 0; i < numberOfBreaksInStorage; i++){
+    fromStorageBreaks.push({
+      breakStart: new Date(parseInt(localStorage.getItem(`breaks${i}breakStart`))),
+      duration: parseInt(localStorage.getItem(`breaks${i}duration`))
+    })
+  }
+
+  // Rebuilding fireteam object from localStorage
+  let newGuardian0 = {
+    name: localStorage.getItem('fireteam0name'),
+    edit: (localStorage.getItem('fireteam0edit')=== 'true'),
+    hasDiv: (localStorage.getItem('fireteam0hasDiv')=== 'true'),
+  }
+  let newGuardian1 = {
+    name: localStorage.getItem('fireteam1name'),
+    edit: (localStorage.getItem('fireteam1edit')=== 'true'),
+    hasDiv: (localStorage.getItem('fireteam1hasDiv')=== 'true'),
+  }
+  let newGuardian2 = {
+    name: localStorage.getItem('fireteam2name'),
+    edit: (localStorage.getItem('fireteam2edit')=== 'true'),
+    hasDiv: (localStorage.getItem('fireteam2hasDiv')=== 'true'),
+  }
+  let newGuardian3 = {
+    name: localStorage.getItem('fireteam3name'),
+    edit: (localStorage.getItem('fireteam3edit')=== 'true'),
+    hasDiv: (localStorage.getItem('fireteam3hasDiv')=== 'true'),
+  }
+  let newGuardian4 = {
+    name: localStorage.getItem('fireteam4name'),
+    edit: (localStorage.getItem('fireteam4edit')) === 'true',
+    hasDiv: (localStorage.getItem('fireteam4hasDiv')=== 'true'),
+  }
+  let newGuardian5 = {
+    name: localStorage.getItem('fireteam5name'),
+    edit: (localStorage.getItem('fireteam5edit') === 'true'),
+    hasDiv: (localStorage.getItem('fireteam5hasDiv') === 'true'),
+  }
+  
+  fromStorageFireteam = [newGuardian0, newGuardian1, newGuardian2, newGuardian3, newGuardian4, newGuardian5]
+
+
 }
 
-console.log(`edit guardian 5`, localStorage.getItem(`fireteam5edit`), typeof(localStorage.getItem(`fireteam5edit`)), !!localStorage.getItem(`fireteam5edit`))
+// console.log(fromStorageFireteam);
 
-const fromStorageFireteam = [newGuardian0, newGuardian1, newGuardian2, newGuardian3, newGuardian4, newGuardian5]
-console.log(fromStorageFireteam);
-// setFireteam(()=> fireteam);
 
-// console.log(useLocalStorage)
-// console.log(fromStorageFireteam)
 
 
 
@@ -138,7 +281,10 @@ function App() {
 
   // Functionality for managing blind mode - hiding information from users until it's appropriately clicked on or enabled by disabling blind mode
   const [blindMode, toggleBlindMode] = useState(true);
-  const [seenEncounters, setSeenEncounters] = useState({
+  const [seenEncounters, setSeenEncounters] = useState(
+    (useLocalStorage && localStorage.getItem(`localStorageActive`)) ?
+    fromStorageFireteam :
+    {
     e1: false,
     e2: false,
     e3: false,
@@ -195,8 +341,10 @@ function App() {
   }, [expandClocks])
 
 
-  const [raidStateKF, setRaidStateKF] = useState({
-    e1: {
+  const [raidStateKF, setRaidStateKF] = useState(
+    useLocalStorage && localStorage.getItem(`localStorageActive`) ?
+    fromStorageRaidStateKF :
+    {e1: {
         startTime: new Date(1661533200000),
         attempts: 1,
         completed: false,
@@ -329,8 +477,10 @@ function App() {
         setRaidStateKF({
           ...raidStateKF,
           e9c: {
+            ...raidStateKF['e9c'],
             completed: true,
             completionTime: new Date(),
+            // attempts: raidStateKF[`e9c`].attempts
           }
         })
       } else if(encounter.length === 3 ) {
@@ -368,7 +518,7 @@ function App() {
 
   const [challengeMode, toggleChallengeMode] = useState(false)
   function handleChallengeModeToggle(e){
-    console.log(challengeMode)
+    // console.log(challengeMode)
     if(e){
       e.preventDefault();
     }
@@ -379,8 +529,11 @@ function App() {
   // XXXUPDATEXXX ENABLE THIS WHENEVER DEPLOYING XXXUPDATEXXX
   const [welcomePane, toggleWelcomePane] = useState(true);
 
-  const [breaks, setBreaks] = useState([
-    { breakStart: new Date(1661457964000), 
+  const [breaks, setBreaks] = useState(
+    (useLocalStorage && localStorage.getItem(`localStorageActive`)) ?
+    fromStorageBreaks :
+    [
+      { breakStart: new Date(1661457964000), 
     duration: 0, }
   ])
   const [remainingBreakDuration, setRemainingBreakDuration] = useState(0);
@@ -420,42 +573,8 @@ function App() {
   }, [remainingBreakDuration, breaks])
 
 
-  // This testbed is to determine if I can pass a group of states or functions into a single object, which is then passed into component children via Outlet
-    // Lessons learned: I can pass multiple functions (even if they modify the state of an object in App.js) into a container, and pass that container to an Outlet's children. Those children will be able to call those functions and update parent state accordingly. That said, I cannot pass state itself (e.g., test1 or test2) into an object container - those references become stale and DO NOT UPDATE in the child container. Instead, I must pass the state itself into the Outlet's recieving array.
-    // For Example:
-      // <Outlet content={[functionContainer, state1, state2, etc.]}
-      // The functions in functionContainer can target and modify state1 and state2 in their parent container, which then propogates down towards <Outlet>.
-  // const [test1, setTest1] = useState(1);
-  // const [test2, setTest2] = useState(2);
-  // const [test3, setTest3] = useState(3);
-  // const [test4, setTest4] = useState(4);
-  // function handleTest() {
-  //   console.log('blek');
-  //   console.log(test1);
-  // }
-  // function handleBlarp() {
-  //   console.log('blarg')
-  //   setTest1(()=>'woops');
-  // }
-  // const [testContainer, setTestContainer] = useState({
-  //   test1: test1,
-  //   test2: test2,
-  //   test3: test3,
-  //   test4: test4,
-  //   handleTest: handleTest,
-  //   handleBlarp: handleBlarp,
-  // })
-  // useEffect( ()=> {
-  //   setTestContainer( {...testContainer,
-  //     [test1] : 4})
-  // }, [test1])
-  // XXXUPDATEXXX REMOVE ABOVE BEFORE PRODUCTION XXXUPDATEXXX
-
-
-
-
-
-  const [fireteam, setFireteam] = useState( useLocalStorage ?
+  const [fireteam, setFireteam] = useState( 
+    (useLocalStorage && localStorage.getItem(`localStorageActive`)) ?
     fromStorageFireteam :
     [{
     name: 'Guardian 1',
@@ -517,6 +636,7 @@ function App() {
   useEffect(()=> {
     // console.log(blindMode);
     if(localStorage){
+      localStorage.setItem('localStorageActive', 'true')
       // Build new localStorage array
       // let localStorageArray = [];
 
@@ -562,6 +682,7 @@ function App() {
             localStorage.setItem(`breaks${i}${key}`, `${value}`)
           }
         }
+        localStorage.setItem(`breaksNumber`, `${i+1}`)
       }
 
       // write Fireteam to localStorage on update
@@ -582,36 +703,6 @@ function App() {
     }
   }, [blindMode, raidStateKF, seenEncounters, breaks, fireteam, challengeMode])
 
-  // This useEffect runs on App's mount and restores localStorage if it exists
-  // useEffect( ()=> {
-    // console.log('I am running on init')
-    // if(useLocalStorage){
-      // console.log(localStorage);
-
-      // console.log(localStorage.getItem(`challengeMode`));
-      // function handleUpdateGuardianName(e, guardian) {
-      //   e.preventDefault();
-      //   let newGuardian = {...fireteam[guardian], name: e.target.value};
-      //   let newFireteam = [...fireteam];
-      //   newFireteam[guardian] = newGuardian;
-      //   setFireteam(() => newFireteam);
-      // }
-      // handleUpdateGuardianName(null, 0)
-
-
-
-    // }
-  // }, [])
-
-
-//     e1: {
-    //   startTime: new Date(1661533200000),
-    //   attempts: 1,
-    //   completed: false,
-    // },
-
-
- 
 
   return (
     <div className="App"
@@ -719,6 +810,13 @@ function App() {
               localStorage.clear()
             }}>
               Clear Local Storage
+            </button>
+
+            <button onClick={e=> {
+              e.preventDefault();
+              console.log(raidStateKF[`e9c`])
+            }}>
+              KF e9c attempts
             </button>
           </div>
 
