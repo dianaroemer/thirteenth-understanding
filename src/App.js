@@ -65,7 +65,6 @@ if(useLocalStorage && localStorage.getItem(`localStorageActive`)) {
     }
     fromStorageRaidStateKF[`e${i}`] = fromStorageEncounterObject;
   }
-
   for (let i = 1; i < 10; i++){
     let fromStorageEncounterObject = {
       startTime: new Date(parseInt(localStorage.getItem(`e${i}cstartTime`))),
@@ -74,100 +73,6 @@ if(useLocalStorage && localStorage.getItem(`localStorageActive`)) {
     }
     fromStorageRaidStateKF[`e${i}c`] = fromStorageEncounterObject;
   }
-
-  // {
-  //   e1: {
-  //       startTime: new Date(1661533200000),
-  //       attempts: 1,
-  //       completed: false,
-  //   },
-  //   e2: {
-  //       startTime: new Date(),
-  //       attempts: 1,
-  //       completed: false,
-  //   },
-  //   e3: {
-  //       startTime: new Date(),
-  //       attempts: 1,
-  //       completed: false,
-  //   },
-  //   e4: {
-  //       startTime: new Date(),
-  //       attempts: 1,
-  //       completed: false,
-  //   },
-  //   e5: {
-  //       startTime: new Date(),
-  //       attempts: 1,
-  //       completed: false,
-  //   },
-  //   e6: {
-  //       startTime: new Date(),
-  //       attempts: 1,
-  //       completed: false,
-  //   },
-  //   e7: {
-  //       startTime: new Date(),
-  //       attempts: 1,
-  //       completed: false,
-  //   },
-  //   e8: {
-  //       startTime: new Date(),
-  //       attempts: 1,
-  //       completed: false,
-  //   },
-  //   e9: {
-  //       startTime: new Date(),
-  //       attempts: 1,
-  //       completed: false,
-  //   },
-  //   e1c: {
-  //       startTime: new Date(),
-  //       attempts: 1,
-  //       completed: false,
-  //   },
-  //   e2c: {
-  //       startTime: new Date(),
-  //       attempts: 1,
-  //       completed: false,
-  //   },
-  //   e3c: {
-  //       startTime: new Date(),
-  //       attempts: 1,
-  //       completed: false,
-  //   },
-  //   e4c: {
-  //       startTime: new Date(),
-  //       attempts: 1,
-  //       completed: false,
-  //   },
-  //   e5c: {
-  //       startTime: new Date(),
-  //       attempts: 1,
-  //       completed: false,
-  //   },
-  //   e6c: {
-  //       startTime: new Date(),
-  //       attempts: 1,
-  //       completed: false,
-  //   },
-  //   e7c: {
-  //       startTime: new Date(),
-  //       attempts: 1,
-  //       completed: false,
-  //   },
-  //   e8c: {
-  //       startTime: new Date(),
-  //       attempts: 1,
-  //       completed: false,
-  //   },
-  //   e9c: {
-  //       startTime: new Date(),
-  //       attempts: 1,
-  //       completed: false,
-  //       completionTime: null,
-  //   }
-  // }
 
 
   // Rebuilding seenEncounters from localStorage
@@ -229,9 +134,6 @@ if(useLocalStorage && localStorage.getItem(`localStorageActive`)) {
 
 
 }
-
-// console.log(fromStorageFireteam);
-
 
 
 
@@ -771,8 +673,8 @@ function App() {
       <div className={appContentClassString}>
         {/* If this is the user's first time coming to this website, show them welcome pane with tips. */}
 
-        {/* THIS SHIT RIGHT HERE ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */}
-          <div>
+        {/* Test dashboard for local storage ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */}
+          {/* <div>
             <button onClick={e=> {
               e.preventDefault();
               console.log('Getting Local Storage')
@@ -818,7 +720,7 @@ function App() {
             }}>
               KF e9c attempts
             </button>
-          </div>
+          </div> */}
 
 
         {/* <div className='toolsFireteamContainer'>
