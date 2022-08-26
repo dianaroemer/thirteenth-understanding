@@ -9,11 +9,11 @@ const msInHours = 3600000;
 const msInMinutes = 60000;
 const msInSeconds = 1000;
 
-// const clockContestStart = 1661533200000;
+const clockContestStart = 1661533200000;
 // const clockContestEnd = 1661619600000;
 
 // Temp values for development mode
-const clockContestStart = 1661457964000;
+// const clockContestStart = 1661457964000;
 const clockContestEnd = 1660856261000;
 
 const encounterBegan = new Date(1660381229000)
