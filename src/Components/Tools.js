@@ -72,6 +72,14 @@ function Tools(props) {
       // console.log(blindModeSliderValue, blindModeSliderLock)
     }, [blindMode])
 
+    // Taking in two Dates in millisecond ECMA epoch (Date.getTime()) and returns an array [days, hours, minutes, seconds] of the human readable difference between them
+    function calcTimeDifference(time1, time2) {
+      let timeDiff = [];
+
+
+
+    }
+
     return(
         <div className='toolsContainer'>
             {/* I am tools */}
@@ -276,6 +284,35 @@ function Tools(props) {
                         </button>
                         This wipes any progress you've made from the webpage!
                         <p></p>
+
+            <div className='toolsHeader'>
+              Stats button
+            </div>
+            <div style={{textAlign: 'center'}}>
+              Encounter 1:
+              <div>
+              Started: {raidStateKF['e1'].startTime.toString()}  
+              </div>
+              <div>
+              Completed: {raidStateKF['e1'].completed.toString()}  
+              </div>
+              <div>
+              Time to Completion: { raidStateKF['e2'].startTime.getTime() - raidStateKF['e1'].startTime.getTime() }  
+              </div>
+              <div>
+              Attempts: {raidStateKF['e1'].attempts}  
+              </div>
+              <p></p>
+              
+            </div>
+
+            <button onClick={e=> {
+              e.preventDefault();
+              console.log(raidStateKF);
+              }
+            }>
+              Log stats to console
+            </button>
 
 
             <div className='toolsHeader'>
