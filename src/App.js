@@ -766,6 +766,9 @@ function App() {
               <div className='welcomePaneContent'>
                 <ul style={{paddingLeft: '25px'}}>
                   <li>
+                    This application will be updated in the future to display the stats that are currently stored by users from their Day 1 Race experience (Do not clear localStorage in Tools if you wish to keep your data!). In the meantime, please ignore any broken functionality that may arise from using this app outside of the intended 24 hour raid race period.                  
+                  </li>
+                  <li>
                     On mobile, Portrait is recommended for the best experience
                   </li>
                   <li>
@@ -780,6 +783,7 @@ function App() {
                   <li>
                     Add your fireteam members in Tools for easy role assignment in encounters
                   </li>
+                  
                 </ul>
                 <div className='welcomeQuote' style={{paddingBottom: '4px', fontStyle: 'italic'}}>
                   "To rend one's enemies is to see them not as equals, but objects—hollow of spirit and meaning."—13th Understanding, 7th Book of Sorrow
