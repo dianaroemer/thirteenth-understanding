@@ -563,7 +563,7 @@ function E1C() {
                                 {/* Icon */}
                             </div>
                             <div className='buildSlotDetails'>
-                                Increased damage against taken and anti-barrier for phalanxes. Finaly viable?
+                                Increased damage against taken and anti-barrier for phalanxes. Finally viable?
                             </div>
                         </div>
                         <div className='buildSlot'>

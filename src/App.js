@@ -768,7 +768,7 @@ function App() {
               <div className='welcomePaneContent'>
                 <ul style={{paddingLeft: '25px'}}>
                   <li>
-                    This application is in DEMO MODE. The timers are only demonstrate the functionality present during the previous raid race
+                    This application is in DEMO MODE. The timers demonstrate the functionality present during the previous raid race
                   </li>
                   <li> A stats view in Tools is in development (Meanwhile, do not clear localStorage!)</li>
                   <li>
