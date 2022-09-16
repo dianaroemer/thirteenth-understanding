@@ -18,6 +18,8 @@ import BreakMenu from './Components/BreakMenu';
 // localStorage functionality goes here
 let useLocalStorage = false;
 
+// storageAvailable detects whether localStorage is both supported and available. Pulled from  
+// https://github.com/mdn/content/blob/main/files/en-us/web/api/web_storage_api/using_the_web_storage_api/index.md?plain=1
 function storageAvailable(type) {
   var storage;
   try {
@@ -45,7 +47,7 @@ function storageAvailable(type) {
 
 if(storageAvailable('localStorage')) {
   useLocalStorage = true;
-  console.log("localStorage is available and will be used")
+  // console.log("localStorage is available and will be used")
 }
 
 
