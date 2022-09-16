@@ -9,7 +9,8 @@ const msInHours = 3600000;
 const msInMinutes = 60000;
 const msInSeconds = 1000;
 
-const clockContestStart = 1661533200000;
+// This time previously was the epoch time that the raid race started. It now initializes independantly on each new page load to demonstrate how the functionality worked during an active raid race
+const clockContestStart = (new Date()).getTime() + 15000;
 // const clockContestEnd = 1661619600000;
 
 // Temp values for development mode

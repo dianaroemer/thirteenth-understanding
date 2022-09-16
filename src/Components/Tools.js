@@ -274,19 +274,20 @@ function Tools(props) {
                          Manage local Storage
 
                       </div>
-                      <p style={{maxWidth: '600px', textAlign: 'center'}}>Be sure to purge localStorage before the Raid Race begins if you're playing around with the functionality of the website. Hit "Delete Local Storage", then immediately refresh the webpage (Without clicking anything else! Any additional clicks will re-write your data to localStorage!).</p>
+                      <p style={{maxWidth: '600px', textAlign: 'center'}}>Be sure to purge localStorage before the Raid Race begins if you're testing the functionality of the website. Pressing the below button will reload the webpage in a fresh state, wiping any data or changes you may have made!</p>
                       
                       <button onClick={e => {
                         e.preventDefault();
                         localStorage.clear();
+                        window.location.reload();
                         }}>
                           Delete Local Storage
                         </button>
-                        This wipes any progress you've made from the webpage!
+                        This wipes any progress or changes you've made from the webpage!
                         <p></p>
 
             <div className='toolsHeader'>
-              Stats button
+              Stats
             </div>
             <div style={{textAlign: 'center'}}>
               Encounter 1:
