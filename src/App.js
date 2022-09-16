@@ -148,7 +148,7 @@ if(useLocalStorage && localStorage.getItem(`localStorageActive`)) {
 
 function App() {
 
-  const [coffeesImbibed, setCoffeesImbibed] = useState(7);
+  const [coffeesImbibed, setCoffeesImbibed] = useState(9);
 
   const navigate = useNavigate();
 
