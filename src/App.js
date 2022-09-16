@@ -766,9 +766,9 @@ function App() {
               <div className='welcomePaneContent'>
                 <ul style={{paddingLeft: '25px'}}>
                   <li>
-                    This application is in DEMO MODE. The timers are present only demonstrate the functionality present during the previous Raid Race. Other functionality should persist as normal.
+                    This application is in DEMO MODE. The timers are only demonstrate the functionality present during the previous raid race
                   </li>
-                  <li> A stats view is in development, to be viewable in Tools. (Do not clear localStorage in Tools if you wish to keep your data!).</li>
+                  <li> A stats view in Tools is in development (Meanwhile, do not clear localStorage!)</li>
                   <li>
                     On mobile, Portrait is recommended for the best experience
                   </li>
@@ -788,7 +788,6 @@ function App() {
                 <div className='welcomeQuote' style={{paddingBottom: '4px', fontStyle: 'italic'}}>
                   "To rend one's enemies is to see them not as equals, but objects—hollow of spirit and meaning."—13th Understanding, 7th Book of Sorrow
                 </div>
-                <p> </p>
                 <div style={{textAlign: 'center', fontSize: 'small'}}>
                   Click anywhere to close this tooltip  
                 </div>
