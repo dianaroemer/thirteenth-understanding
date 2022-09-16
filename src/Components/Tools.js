@@ -347,209 +347,30 @@ function Tools(props) {
                 <p></p>
               </div>
               
-              { raidStateKF['e1'].completed ? 
+              { raidStateKF['e1'].completed && 
               <div className='encounterStats'>
               Encounter 2
-              {raidStateKF['e2'].completed ?
-              <div>
-
-                <div>
-              Attempts: {raidStateKF['e2'].attempts}
-              </div>
-              </div>  :
               <div>
                 <div>
-                Started: {raidStateKF['e2'].startTime.toString()}
+                  Started: {raidStateKF['e2'].startTime.toString()}
                 </div>
+                <div>
+                  Attempts: {raidStateKF['e2'].attempts}
                 </div>
-            }
+              </div>  
+            {/* OPERATORS */}
             {raidStateKF['e2'].completed ? 
             <div> Completed </div> :
             <div> Incomplete </div> }
-            {raidStateKF['e2'].completed ? 
+            {raidStateKF['e2'].completed && 
               <div>
               Time to Completion: { calcHumanTime(raidStateKF['e3'].startTime.getTime() - raidStateKF['e2'].startTime.getTime())
                }
-              </div> : 
-              null }
+              </div> }
               <p></p>
-            </div> : 
-            null }
+            </div> }
 
-              <div className='encounterStats'>
-                Encounter 3
-                {raidStateKF['e3'].completed ?
-                <div>
-                  <div>
-                  Started: {raidStateKF['e3'].startTime.toString()}
-                  </div>
-                  <div>
-                Attempts: {raidStateKF['e3'].attempts}
-                </div>
-                </div>  :
-                null
-              }
-              {raidStateKF['e3'].completed ? 
-              <div> Completed </div> :
-              <div> Incomplete </div> }
-              {raidStateKF['e3'].completed ? 
-                <div>
-                Time to Completion: { calcHumanTime(raidStateKF['e4'].startTime.getTime() - raidStateKF['e3'].startTime.getTime())
-                 }
-                </div> : 
-                null }
-                <p></p>
-              </div>
-
-              <div className='encounterStats'>
-                Encounter 4
-                {raidStateKF['e4'].completed ?
-                <div>
-                  <div>
-                  Started: {raidStateKF['e4'].startTime.toString()}
-                  </div>
-                  <div>
-                Attempts: {raidStateKF['e4'].attempts}
-                </div>
-                </div>  :
-                null
-              }
-              {raidStateKF['e4'].completed ? 
-              <div> Completed </div> :
-              <div> Incomplete </div> }
-              {raidStateKF['e4'].completed ? 
-                <div>
-                Time to Completion: { calcHumanTime(raidStateKF['e5'].startTime.getTime() - raidStateKF['e4'].startTime.getTime())
-                 }
-                </div> : 
-                null }
-                <p></p>
-              </div>
-        
-              <div className='encounterStats'>
-                Encounter 5
-                {raidStateKF['e5'].completed ?
-                <div>
-                  <div>
-                  Started: {raidStateKF['e5'].startTime.toString()}
-                  </div>
-                  <div>
-                Attempts: {raidStateKF['e5'].attempts}
-                </div>
-                </div>  :
-                null
-              }
-              {raidStateKF['e5'].completed ? 
-              <div> Completed </div> :
-              <div> Incomplete </div> }
-              {raidStateKF['e5'].completed ? 
-                <div>
-                Time to Completion: { calcHumanTime(raidStateKF['e6'].startTime.getTime() - raidStateKF['e5'].startTime.getTime())
-                 }
-                </div> : 
-                null }
-                <p></p>
-              </div>
-
-              <div className='encounterStats'>
-                Encounter 6
-                {raidStateKF['e6'].completed ?
-                <div>
-                  <div>
-                  Started: {raidStateKF['e6'].startTime.toString()}
-                  </div>
-                  <div>
-                Attempts: {raidStateKF['e6'].attempts}
-                </div>
-                </div>  :
-                null
-              }
-              {raidStateKF['e6'].completed ? 
-              <div> Completed </div> :
-              <div> Incomplete </div> }
-              {raidStateKF['e6'].completed ? 
-                <div>
-                Time to Completion: { calcHumanTime(raidStateKF['e7'].startTime.getTime() - raidStateKF['e6'].startTime.getTime())
-                 }
-                </div> : 
-                null }
-                <p></p>
-              </div>
-
-              <div className='encounterStats'>
-                Encounter 7
-                {raidStateKF['e7'].completed ?
-                <div>
-                  <div>
-                  Started: {raidStateKF['e7'].startTime.toString()}
-                  </div>
-                  <div>
-                Attempts: {raidStateKF['e7'].attempts}
-                </div>
-                </div>  :
-                null
-              }
-              {raidStateKF['e7'].completed ? 
-              <div> Completed </div> :
-              <div> Incomplete </div> }
-              {raidStateKF['e7'].completed ? 
-                <div>
-                Time to Completion: { calcHumanTime(raidStateKF['e8'].startTime.getTime() - raidStateKF['e7'].startTime.getTime())
-                 }
-                </div> : 
-                null }
-                <p></p>
-              </div>
-
-              <div className='encounterStats'>
-                Encounter 8
-                {raidStateKF['e8'].completed ?
-                <div>
-                  <div>
-                  Started: {raidStateKF['e8'].startTime.toString()}
-                  </div>
-                  <div>
-                Attempts: {raidStateKF['e8'].attempts}
-                </div>
-                </div>  :
-                null
-              }
-              {raidStateKF['e8'].completed ? 
-              <div> Completed </div> :
-              <div> Incomplete </div> }
-              {raidStateKF['e8'].completed ? 
-                <div>
-                Time to Completion: { calcHumanTime(raidStateKF['e9'].startTime.getTime() - raidStateKF['e8'].startTime.getTime())
-                 }
-                </div> : 
-                null }
-                <p></p>
-              </div>
-
-              <div className='encounterStats'>
-                Encounter 9
-                {raidStateKF['e9'].completed ?
-                <div>
-                  <div>
-                  Started: {raidStateKF['e9'].startTime.toString()}
-                  </div>
-                  <div>
-                Attempts: {raidStateKF['e9'].attempts}
-                </div>
-                </div>  :
-                null
-              }
-              {raidStateKF['e9'].completed ? 
-              <div> Completed </div> :
-              <div> Incomplete </div> }
-              {raidStateKF['e9'].completed ? 
-                <div>
-                Time to Completion: { calcHumanTime(raidStateKF['e1c'].startTime.getTime() - raidStateKF['e9'].startTime.getTime())
-                 }
-                </div> : 
-                null }
-                <p></p>
-              </div>
+             
 
               
             </div>
