@@ -18,6 +18,8 @@ import BreakMenu from './Components/BreakMenu';
 // localStorage functionality goes here
 let useLocalStorage = false;
 
+// storageAvailable detects whether localStorage is both supported and available. Pulled from  
+// https://github.com/mdn/content/blob/main/files/en-us/web/api/web_storage_api/using_the_web_storage_api/index.md?plain=1
 function storageAvailable(type) {
   var storage;
   try {
@@ -45,7 +47,7 @@ function storageAvailable(type) {
 
 if(storageAvailable('localStorage')) {
   useLocalStorage = true;
-  console.log("localStorage is available and will be used")
+  // console.log("localStorage is available and will be used")
 }
 
 
@@ -148,7 +150,7 @@ if(useLocalStorage && localStorage.getItem(`localStorageActive`)) {
 
 function App() {
 
-  const [coffeesImbibed, setCoffeesImbibed] = useState(7);
+  const [coffeesImbibed, setCoffeesImbibed] = useState(9);
 
   const navigate = useNavigate();
 
@@ -443,7 +445,7 @@ function App() {
     (useLocalStorage && localStorage.getItem(`localStorageActive`)) ?
     fromStorageBreaks :
     [
-      { breakStart: new Date(1661533200000), 
+      { breakStart: new Date(), 
     duration: 0, }
   ])
   const [remainingBreakDuration, setRemainingBreakDuration] = useState(0);
@@ -766,8 +768,9 @@ function App() {
               <div className='welcomePaneContent'>
                 <ul style={{paddingLeft: '25px'}}>
                   <li>
-                    This application will be updated in the future to display the stats that are currently stored by users from their Day 1 Race experience (Do not clear localStorage in Tools if you wish to keep your data!). In the meantime, please ignore any broken functionality that may arise from using this app outside of the intended 24 hour raid race period.                  
+                    This application is in DEMO MODE. The timers demonstrate the functionality present during the previous raid race
                   </li>
+                  <li> A stats view in Tools is now available in Tools</li>
                   <li>
                     On mobile, Portrait is recommended for the best experience
                   </li>
@@ -788,7 +791,6 @@ function App() {
                 <div className='welcomeQuote' style={{paddingBottom: '4px', fontStyle: 'italic'}}>
                   "To rend one's enemies is to see them not as equals, but objects—hollow of spirit and meaning."—13th Understanding, 7th Book of Sorrow
                 </div>
-
                 <div style={{textAlign: 'center', fontSize: 'small'}}>
                   Click anywhere to close this tooltip  
                 </div>

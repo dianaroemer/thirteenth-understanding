@@ -2,7 +2,7 @@ Live page available at:
 
 # https://dominicroemer.github.io/thirteenth-understanding/
 
-Coffees murdered during the making of this website: 8.
+Coffees murdered during the making of this website: 9.
 
 Reddit post managing the sharing of Thirteenth Understanding:
 

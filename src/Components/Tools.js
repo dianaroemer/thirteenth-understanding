@@ -71,6 +71,45 @@ function Tools(props) {
       }
       // console.log(blindModeSliderValue, blindModeSliderLock)
     }, [blindMode])
+  
+    const msInHours = 3600000;
+    const msInMinutes = 60000;
+    const msInSeconds = 1000;
+    // Given a number of milliseconds, return a human-readable string of Hours, minutes, seconds (HH:MM:SS) equivalent
+    function calcHumanTime(millis){
+      let remainingMillis = millis;
+      let seconds = 0;
+      let minutes = 0;
+      let hours = 0;
+      let dateString;
+
+      while(remainingMillis > msInHours){
+        hours = hours + 1;
+        remainingMillis = remainingMillis - msInHours;
+      }
+      while(remainingMillis > msInMinutes){
+        minutes = minutes + 1;
+        remainingMillis = remainingMillis - msInMinutes;
+      }
+      while(remainingMillis > msInSeconds){
+        seconds = seconds + 1;
+        remainingMillis = remainingMillis - msInSeconds;
+      }
+
+      if(hours < 10) {
+        hours = `0`+hours
+      }
+      if(minutes < 10) {
+        minutes = `0`+minutes
+      }
+      if(seconds < 10) {
+        seconds = `0`+seconds
+      }
+
+      dateString = `${hours ? `${hours}:` : '00:'}${minutes ? `${minutes}:` : "00:"}${seconds}`;
+
+      return dateString;
+    }
 
     return(
         <div className='toolsContainer'>
@@ -266,16 +305,454 @@ function Tools(props) {
                          Manage local Storage
 
                       </div>
-                      <p style={{maxWidth: '600px', textAlign: 'center'}}>Be sure to purge localStorage before the Raid Race begins if you're playing around with the functionality of the website. Hit "Delete Local Storage", then immediately refresh the webpage (Without clicking anything else! Any additional clicks will re-write your data to localStorage!).</p>
+                      <p style={{maxWidth: '600px', textAlign: 'center'}}>Be sure to purge localStorage before the Raid Race begins if you're testing the functionality of the website. Pressing the below button will reload the webpage in a fresh state, wiping any data or changes you may have made!</p>
                       
                       <button onClick={e => {
                         e.preventDefault();
                         localStorage.clear();
+                        window.location.reload();
                         }}>
                           Delete Local Storage
                         </button>
-                        This wipes any progress you've made from the webpage!
+                        This wipes any progress or changes you've made from the webpage!
                         <p></p>
+
+            <div className='toolsHeader'>
+              Stats
+            </div>
+            <div style={{textAlign: 'center'}}>
+
+            <div className='encounterStats'>
+                <u style={{fontWeight: 'bold'}}>The Hall of Souls</u>
+                {raidStateKF['e1'].completed ?
+                <div>
+                  <div>
+                  Started: {raidStateKF['e1'].startTime.toString()}
+                  </div>
+                  <div>
+                Attempts: {raidStateKF['e1'].attempts}
+                </div>
+                </div>  :
+                null
+              }
+              {raidStateKF['e1'].completed ? 
+              <div> Completed </div> :
+              <div> Incomplete </div> }
+              {raidStateKF['e1'].completed ? 
+                <div>
+                Time to Completion: { calcHumanTime(raidStateKF['e2'].startTime.getTime() - raidStateKF['e1'].startTime.getTime())
+                 }
+                </div> : 
+                null }
+                <p></p>
+              </div>
+              
+              { raidStateKF['e1'].completed && 
+              <div className='encounterStats'>
+              <u>Tomb Ships</u>
+              <div>
+                <div>
+                  Started: {raidStateKF['e2'].startTime.toString()}
+                </div>
+                <div>
+                  Attempts: {raidStateKF['e2'].attempts}
+                </div>
+              </div>  
+            {/* OPERATORS */}
+            {raidStateKF['e2'].completed ? 
+            <div> Completed </div> :
+            <div> Incomplete </div> }
+            {raidStateKF['e2'].completed && 
+              <div>
+              Time to Completion: { calcHumanTime(raidStateKF['e3'].startTime.getTime() - raidStateKF['e2'].startTime.getTime())
+               }
+              </div> }
+              <p></p>
+            </div> }
+
+            { raidStateKF['e2'].completed && 
+              <div className='encounterStats'>
+              <u>Annihilator Totems</u>
+              <div>
+                <div>
+                  Started: {raidStateKF['e3'].startTime.toString()}
+                </div>
+                <div>
+                  Attempts: {raidStateKF['e3'].attempts}
+                </div>
+              </div>  
+            {/* OPERATORS */}
+            {raidStateKF['e3'].completed ? 
+            <div> Completed </div> :
+            <div> Incomplete </div> }
+            {raidStateKF['e3'].completed && 
+              <div>
+              Time to Completion: { calcHumanTime(raidStateKF['e4'].startTime.getTime() - raidStateKF['e3'].startTime.getTime())
+               }
+              </div> }
+              <p></p>
+            </div> }
+
+            { raidStateKF['e3'].completed && 
+              <div className='encounterStats'>
+              <u>Warpriest</u>
+              <div>
+                <div>
+                  Started: {raidStateKF['e4'].startTime.toString()}
+                </div>
+                <div>
+                  Attempts: {raidStateKF['e4'].attempts}
+                </div>
+              </div>  
+            {/* OPERATORS */}
+            {raidStateKF['e4'].completed ? 
+            <div> Completed </div> :
+            <div> Incomplete </div> }
+            {raidStateKF['e4'].completed && 
+              <div>
+              Time to Completion: { calcHumanTime(raidStateKF['e5'].startTime.getTime() - raidStateKF['e4'].startTime.getTime())
+               }
+              </div> }
+              <p></p>
+            </div> }
+
+            { raidStateKF['e4'].completed && 
+              <div className='encounterStats'>
+              <u>Golgoroth's Cellar</u>
+              <div>
+                <div>
+                  Started: {raidStateKF['e5'].startTime.toString()}
+                </div>
+                <div>
+                  Attempts: {raidStateKF['e5'].attempts}
+                </div>
+              </div>  
+            {/* OPERATORS */}
+            {raidStateKF['e5'].completed ? 
+            <div> Completed </div> :
+            <div> Incomplete </div> }
+            {raidStateKF['e5'].completed && 
+              <div>
+              Time to Completion: { calcHumanTime(raidStateKF['e6'].startTime.getTime() - raidStateKF['e5'].startTime.getTime())
+               }
+              </div> }
+              <p></p>
+            </div> }
+
+            { raidStateKF['e5'].completed && 
+              <div className='encounterStats'>
+              <u>Golgoroth</u>
+              <div>
+                <div>
+                  Started: {raidStateKF['e6'].startTime.toString()}
+                </div>
+                <div>
+                  Attempts: {raidStateKF['e6'].attempts}
+                </div>
+              </div>  
+            {/* OPERATORS */}
+            {raidStateKF['e6'].completed ? 
+            <div> Completed </div> :
+            <div> Incomplete </div> }
+            {raidStateKF['e6'].completed && 
+              <div>
+              Time to Completion: { calcHumanTime(raidStateKF['e7'].startTime.getTime() - raidStateKF['e6'].startTime.getTime())
+               }
+              </div> }
+              <p></p>
+            </div> }
+              
+            { raidStateKF['e6'].completed && 
+              <div className='encounterStats'>
+              <u>Piston Jumping Puzzle</u>
+              <div>
+                <div>
+                  Started: {raidStateKF['e7'].startTime.toString()}
+                </div>
+                <div>
+                  Attempts: {raidStateKF['e7'].attempts}
+                </div>
+              </div>  
+            {/* OPERATORS */}
+            {raidStateKF['e7'].completed ? 
+            <div> Completed </div> :
+            <div> Incomplete </div> }
+            {raidStateKF['e7'].completed && 
+              <div>
+              Time to Completion: { calcHumanTime(raidStateKF['e8'].startTime.getTime() - raidStateKF['e7'].startTime.getTime())
+               }
+              </div> }
+              <p></p>
+            </div> }
+
+            { raidStateKF['e7'].completed && 
+              <div className='encounterStats'>
+              <u>Daughters of Oryx</u>
+              <div>
+                <div>
+                  Started: {raidStateKF['e8'].startTime.toString()}
+                </div>
+                <div>
+                  Attempts: {raidStateKF['e8'].attempts}
+                </div>
+              </div>  
+            {/* OPERATORS */}
+            {raidStateKF['e8'].completed ? 
+            <div> Completed </div> :
+            <div> Incomplete </div> }
+            {raidStateKF['e8'].completed && 
+              <div>
+              Time to Completion: { calcHumanTime(raidStateKF['e9'].startTime.getTime() - raidStateKF['e8'].startTime.getTime())
+               }
+              </div> }
+              <p></p>
+            </div> }
+
+            { raidStateKF['e8'].completed && 
+              <div className='encounterStats'>
+              <u>Oryx, the Taken King</u>
+              <div>
+                <div>
+                  Started: {raidStateKF['e9'].startTime.toString()}
+                </div>
+                <div>
+                  Attempts: {raidStateKF['e9'].attempts}
+                </div>
+              </div>  
+            {/* OPERATORS */}
+            {raidStateKF['e9'].completed ? 
+            <div> Completed </div> :
+            <div> Incomplete </div> }
+            {raidStateKF['e9'].completed && 
+              <div>
+              Time to Completion: { calcHumanTime(raidStateKF['e1c'].startTime.getTime() - raidStateKF['e9'].startTime.getTime())
+               }
+              </div> }
+              <p></p>
+            </div> }
+
+            { raidStateKF['e9'].completed && 
+              <div className='encounterStats'>
+              <u>Hall of Souls, Challenge Mode</u>
+              <div>
+                <div>
+                  Started: {raidStateKF['e1c'].startTime.toString()}
+                </div>
+                <div>
+                  Attempts: {raidStateKF['e1c'].attempts}
+                </div>
+              </div>  
+            {/* OPERATORS */}
+            {raidStateKF['e1c'].completed ? 
+            <div> Completed </div> :
+            <div> Incomplete </div> }
+            {raidStateKF['e1c'].completed && 
+              <div>
+              Time to Completion: { calcHumanTime(raidStateKF['e2c'].startTime.getTime() - raidStateKF['e1c'].startTime.getTime())
+               }
+              </div> }
+              <p></p>
+            </div> }
+
+            { raidStateKF['e1c'].completed && 
+              <div className='encounterStats'>
+              <u>Tomb Ships, Challenge Mode</u>
+              <div>
+                <div>
+                  Started: {raidStateKF['e2c'].startTime.toString()}
+                </div>
+                <div>
+                  Attempts: {raidStateKF['e2c'].attempts}
+                </div>
+              </div>  
+            {/* OPERATORS */}
+            {raidStateKF['e2c'].completed ? 
+            <div> Completed </div> :
+            <div> Incomplete </div> }
+            {raidStateKF['e2c'].completed && 
+              <div>
+              Time to Completion: { calcHumanTime(raidStateKF['e3c'].startTime.getTime() - raidStateKF['e2c'].startTime.getTime())
+               }
+              </div> }
+              <p></p>
+            </div> }
+
+            { raidStateKF['e2c'].completed && 
+              <div className='encounterStats'>
+              <u>Annihilator Totems, Challenge Mode</u>
+              <div>
+                <div>
+                  Started: {raidStateKF['e3c'].startTime.toString()}
+                </div>
+                <div>
+                  Attempts: {raidStateKF['e3c'].attempts}
+                </div>
+              </div>  
+            {/* OPERATORS */}
+            {raidStateKF['e3c'].completed ? 
+            <div> Completed </div> :
+            <div> Incomplete </div> }
+            {raidStateKF['e3c'].completed && 
+              <div>
+              Time to Completion: { calcHumanTime(raidStateKF['e4c'].startTime.getTime() - raidStateKF['e3c'].startTime.getTime())
+               }
+              </div> }
+              <p></p>
+            </div> }
+
+            { raidStateKF['e3c'].completed && 
+              <div className='encounterStats'>
+              <u>Warpriest, Challenge Mode</u>
+              <div>
+                <div>
+                  Started: {raidStateKF['e4c'].startTime.toString()}
+                </div>
+                <div>
+                  Attempts: {raidStateKF['e4c'].attempts}
+                </div>
+              </div>  
+            {/* OPERATORS */}
+            {raidStateKF['e4c'].completed ? 
+            <div> Completed </div> :
+            <div> Incomplete </div> }
+            {raidStateKF['e4c'].completed && 
+              <div>
+              Time to Completion: { calcHumanTime(raidStateKF['e5c'].startTime.getTime() - raidStateKF['e4c'].startTime.getTime())
+               }
+              </div> }
+              <p></p>
+            </div> }
+
+            { raidStateKF['e4c'].completed && 
+              <div className='encounterStats'>
+              <u>Golgoroth's Cellar, Challenge Mode</u>
+              <div>
+                <div>
+                  Started: {raidStateKF['e5c'].startTime.toString()}
+                </div>
+                <div>
+                  Attempts: {raidStateKF['e5c'].attempts}
+                </div>
+              </div>  
+            {/* OPERATORS */}
+            {raidStateKF['e5c'].completed ? 
+            <div> Completed </div> :
+            <div> Incomplete </div> }
+            {raidStateKF['e5c'].completed && 
+              <div>
+              Time to Completion: { calcHumanTime(raidStateKF['e6c'].startTime.getTime() - raidStateKF['e5c'].startTime.getTime())
+               }
+              </div> }
+              <p></p>
+            </div> }
+
+            { raidStateKF['e5c'].completed && 
+              <div className='encounterStats'>
+              <u>Golgoroth, Challenge Mode</u>
+              <div>
+                <div>
+                  Started: {raidStateKF['e6c'].startTime.toString()}
+                </div>
+                <div>
+                  Attempts: {raidStateKF['e6c'].attempts}
+                </div>
+              </div>  
+            {/* OPERATORS */}
+            {raidStateKF['e6c'].completed ? 
+            <div> Completed </div> :
+            <div> Incomplete </div> }
+            {raidStateKF['e6c'].completed && 
+              <div>
+              Time to Completion: { calcHumanTime(raidStateKF['e7c'].startTime.getTime() - raidStateKF['e6c'].startTime.getTime())
+               }
+              </div> }
+              <p></p>
+            </div> }
+
+            { raidStateKF['e6c'].completed && 
+              <div className='encounterStats'>
+              <u>Piston Jumping Puzzle, Challenge Mode</u>
+              <div>
+                <div>
+                  Started: {raidStateKF['e7c'].startTime.toString()}
+                </div>
+                <div>
+                  Attempts: {raidStateKF['e7c'].attempts}
+                </div>
+              </div>  
+            {/* OPERATORS */}
+            {raidStateKF['e7c'].completed ? 
+            <div> Completed </div> :
+            <div> Incomplete </div> }
+            {raidStateKF['e7c'].completed && 
+              <div>
+              Time to Completion: { calcHumanTime(raidStateKF['e8c'].startTime.getTime() - raidStateKF['e7c'].startTime.getTime())
+               }
+              </div> }
+              <p></p>
+            </div> }
+
+            { raidStateKF['e7c'].completed && 
+              <div className='encounterStats'>
+              <u>Daughters of Oryx, Challenge Mode</u>
+              <div>
+                <div>
+                  Started: {raidStateKF['e8c'].startTime.toString()}
+                </div>
+                <div>
+                  Attempts: {raidStateKF['e8c'].attempts}
+                </div>
+              </div>  
+            {/* OPERATORS */}
+            {raidStateKF['e8c'].completed ? 
+            <div> Completed </div> :
+            <div> Incomplete </div> }
+            {raidStateKF['e8c'].completed && 
+              <div>
+              Time to Completion: { calcHumanTime(raidStateKF['e9c'].startTime.getTime() - raidStateKF['e8c'].startTime.getTime())
+               }
+              </div> }
+              <p></p>
+            </div> }
+
+            { raidStateKF['e8c'].completed && 
+              <div className='encounterStats'>
+              <u>Oryx, the Taken King: Challenge Mode</u>
+              <div>
+                <div>
+                  Started: {raidStateKF['e9c'].startTime.toString()}
+                </div>
+                <div>
+                  Attempts: {raidStateKF['e9c'].attempts}
+                </div>
+              </div>  
+            {/* OPERATORS */}
+            {raidStateKF['e9c'].completed ? 
+            <div> Completed </div> :
+            <div> Incomplete </div> }
+            {raidStateKF['e9c'].completed && 
+              <div>
+              Time to Completion: { calcHumanTime(raidStateKF['e9c'].completionTime.getTime() - raidStateKF['e9c'].startTime.getTime())
+               }
+              </div> }
+              <p></p>
+            </div> }
+
+
+
+
+
+            </div>
+
+            
+
+            <button onClick={e=> {
+              e.preventDefault();
+              console.log(raidStateKF);
+              }
+            }>
+              Log stats to console
+            </button>
 
 
             <div className='toolsHeader'>
