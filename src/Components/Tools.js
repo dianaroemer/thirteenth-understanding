@@ -323,7 +323,7 @@ function Tools(props) {
             <div style={{textAlign: 'center'}}>
 
             <div className='encounterStats'>
-                Encounter 1
+                <u style={{fontWeight: 'bold'}}>The Hall of Souls</u>
                 {raidStateKF['e1'].completed ?
                 <div>
                   <div>
@@ -349,7 +349,7 @@ function Tools(props) {
               
               { raidStateKF['e1'].completed && 
               <div className='encounterStats'>
-              Encounter 2
+              <u>Tomb Ships</u>
               <div>
                 <div>
                   Started: {raidStateKF['e2'].startTime.toString()}
@@ -372,7 +372,7 @@ function Tools(props) {
 
             { raidStateKF['e2'].completed && 
               <div className='encounterStats'>
-              Encounter 3
+              <u>Annihilator Totems</u>
               <div>
                 <div>
                   Started: {raidStateKF['e3'].startTime.toString()}
@@ -395,7 +395,7 @@ function Tools(props) {
 
             { raidStateKF['e3'].completed && 
               <div className='encounterStats'>
-              Encounter 4
+              <u>Warpriest</u>
               <div>
                 <div>
                   Started: {raidStateKF['e4'].startTime.toString()}
@@ -418,7 +418,7 @@ function Tools(props) {
 
             { raidStateKF['e4'].completed && 
               <div className='encounterStats'>
-              Encounter 5
+              <u>Golgoroth's Cellar</u>
               <div>
                 <div>
                   Started: {raidStateKF['e5'].startTime.toString()}
@@ -441,7 +441,7 @@ function Tools(props) {
 
             { raidStateKF['e5'].completed && 
               <div className='encounterStats'>
-              Encounter 6
+              <u>Golgoroth</u>
               <div>
                 <div>
                   Started: {raidStateKF['e6'].startTime.toString()}
@@ -464,7 +464,7 @@ function Tools(props) {
               
             { raidStateKF['e6'].completed && 
               <div className='encounterStats'>
-              Encounter 7
+              <u>Piston Jumping Puzzle</u>
               <div>
                 <div>
                   Started: {raidStateKF['e7'].startTime.toString()}
@@ -487,7 +487,7 @@ function Tools(props) {
 
             { raidStateKF['e7'].completed && 
               <div className='encounterStats'>
-              Encounter 8
+              <u>Daughters of Oryx</u>
               <div>
                 <div>
                   Started: {raidStateKF['e8'].startTime.toString()}
@@ -510,7 +510,7 @@ function Tools(props) {
 
             { raidStateKF['e8'].completed && 
               <div className='encounterStats'>
-              Encounter 9
+              <u>Oryx, the Taken King</u>
               <div>
                 <div>
                   Started: {raidStateKF['e9'].startTime.toString()}
@@ -533,7 +533,7 @@ function Tools(props) {
 
             { raidStateKF['e9'].completed && 
               <div className='encounterStats'>
-              Encounter 1, Challenge Mode
+              <u>Hall of Souls, Challenge Mode</u>
               <div>
                 <div>
                   Started: {raidStateKF['e1c'].startTime.toString()}
@@ -556,7 +556,7 @@ function Tools(props) {
 
             { raidStateKF['e1c'].completed && 
               <div className='encounterStats'>
-              Encounter 2, Challenge Mode
+              <u>Tomb Ships, Challenge Mode</u>
               <div>
                 <div>
                   Started: {raidStateKF['e2c'].startTime.toString()}
@@ -579,7 +579,7 @@ function Tools(props) {
 
             { raidStateKF['e2c'].completed && 
               <div className='encounterStats'>
-              Encounter 3, Challenge Mode
+              <u>Annihilator Totems, Challenge Mode</u>
               <div>
                 <div>
                   Started: {raidStateKF['e3c'].startTime.toString()}
@@ -602,7 +602,7 @@ function Tools(props) {
 
             { raidStateKF['e3c'].completed && 
               <div className='encounterStats'>
-              Encounter 4, Challenge Mode
+              <u>Warpriest, Challenge Mode</u>
               <div>
                 <div>
                   Started: {raidStateKF['e4c'].startTime.toString()}
@@ -625,7 +625,7 @@ function Tools(props) {
 
             { raidStateKF['e4c'].completed && 
               <div className='encounterStats'>
-              Encounter 5, Challenge Mode
+              <u>Golgoroth's Cellar, Challenge Mode</u>
               <div>
                 <div>
                   Started: {raidStateKF['e5c'].startTime.toString()}
@@ -648,7 +648,7 @@ function Tools(props) {
 
             { raidStateKF['e5c'].completed && 
               <div className='encounterStats'>
-              Encounter 6, Challenge Mode
+              <u>Golgoroth, Challenge Mode</u>
               <div>
                 <div>
                   Started: {raidStateKF['e6c'].startTime.toString()}
@@ -671,7 +671,7 @@ function Tools(props) {
 
             { raidStateKF['e6c'].completed && 
               <div className='encounterStats'>
-              Encounter 7, Challenge Mode
+              <u>Piston Jumping Puzzle, Challenge Mode</u>
               <div>
                 <div>
                   Started: {raidStateKF['e7c'].startTime.toString()}
@@ -694,7 +694,7 @@ function Tools(props) {
 
             { raidStateKF['e7c'].completed && 
               <div className='encounterStats'>
-              Encounter 8, Challenge Mode
+              <u>Daughters of Oryx, Challenge Mode</u>
               <div>
                 <div>
                   Started: {raidStateKF['e8c'].startTime.toString()}
@@ -717,7 +717,7 @@ function Tools(props) {
 
             { raidStateKF['e8c'].completed && 
               <div className='encounterStats'>
-              Encounter 9, Challenge Mode
+              <u>Oryx, the Taken King: Challenge Mode</u>
               <div>
                 <div>
                   Started: {raidStateKF['e9c'].startTime.toString()}
