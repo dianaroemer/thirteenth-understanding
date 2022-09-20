@@ -770,7 +770,7 @@ function App() {
                   <li>
                     This application is in DEMO MODE. The timers demonstrate the functionality present during the previous raid race
                   </li>
-                  <li> A stats view in Tools is in development (Meanwhile, do not clear localStorage!)</li>
+                  <li> A stats view in Tools is now available in Tools</li>
                   <li>
                     On mobile, Portrait is recommended for the best experience
                   </li>
