@@ -10,7 +10,7 @@ Reddit post managing the sharing of Thirteenth Understanding:
 
 Made by one highly caffeinated, incredibly sleep deprived developer. Hire me at 
 
-# https://github.com/dominicroemer
+# https://github.com/dianaroemer
 
 What does it do:
  - Blind Run mode - want to go through spoiler free, but still have a guide (that won't spoil you) handy for when you get stuck? 
